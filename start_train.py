@@ -34,6 +34,8 @@ def get_XY(dat, time_steps, len_skip = -1, len_output = -1):
 
 ws_range = [2, 3, 4, 5, 10, 20, 30]
 ws_range = [2, 3, 4, 10]
+ws_range = [2, 4, 10, 20, 30]
+ws_range = [2, 4, 10]
 ws_range = [10]
 sf1, sf2 = 5, 5
 sf1, sf2 = 1, 1
@@ -164,18 +166,21 @@ for nf1 in range(sf1):
                     print(np.shape(x_val_all), np.shape(y_val_all))
                     print(np.shape(x_test_all), np.shape(y_test_all))
 
-                    if not os.path.isdir(model_name + "/"):
-                        os.makedirs(model_name + "/")
+                    saving_dir = model_name + "/" + varname + "/" + str(ws_use)
+                    saving_name = saving_dir + "/" + saving_dir.replace("/", "_")
+
+                    if not os.path.isdir(saving_dir):
+                        os.makedirs(saving_dir)
 
                     # Write output to file
-                    sys.stdout = open(model_name + "/" + model_name + "_" + str(ws_use) + ".txt", "w", encoding="utf-8")
+                    sys.stdout = open(saving_name + ".txt", "w", encoding="utf-8")
  
                     if model_name == "Bi":
-                        help_train.new_train("val_loss", ws_use, -1, model_name + "/" + model_name + "_" + str(ws_use), x_train_val_all, y_train_val_all, x_val_all, y_val_all)
+                        help_train.new_train("val_loss", ws_use, -1, saving_name, x_train_val_all, y_train_val_all, x_val_all, y_val_all)
                     else:
-                        help_train.new_train("val_loss", ws_use, 4, model_name + "/" + model_name + "_" + str(ws_use), x_train_val_all, y_train_val_all, x_val_all, y_val_all)
-
-                    help_train.new_test(model_name + "/" + model_name + "_" + str(ws_use) + ".h5", model_name + "/" + model_name + "_" + str(ws_use) + "_test_pred.csv", x_test_all_short, y_test_all_short)
+                        help_train.new_train("val_loss", ws_use, 4, saving_name, x_train_val_all, y_train_val_all, x_val_all, y_val_all)
 
                     # Close output file
                     sys.stdout.close()
+
+                    help_train.new_test(saving_name + ".h5", saving_name + "_test_pred.csv", x_test_all_short, y_test_all_short)

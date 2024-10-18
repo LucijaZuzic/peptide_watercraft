@@ -17,3 +17,5 @@ latest*/*
 .megaignore
 desktop.ini
 csv*/*
+Conv*/*
+Bi*/*

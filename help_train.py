@@ -38,8 +38,8 @@ def new_test(best_model_file, pred_file, test_data, test_labels):
         for ix2 in range(len(test_labels[ix1])):
             dict_new_model["predicted"].append(model_predictions[ix1][ix2])
             dict_new_model["actual"].append(test_labels[ix1][ix2])
-    df_new_model = pd.dataFrame(dict_new_model, index_col = False)
-    df_new_model.to_csv(pred_file)
+    df_new_model = pd.DataFrame(dict_new_model)
+    df_new_model.to_csv(pred_file, index = False)
 
 def new_train(metric, num_cells_param, conv_kernel_size_param, model_name, train_and_validation_data, train_and_validation_labels, val_data, val_labels):
     
@@ -60,7 +60,7 @@ def new_train(metric, num_cells_param, conv_kernel_size_param, model_name, train
             lambda2=0.0
         )
     # Save graphical representation of the model to a file.
-    tf.keras.utils.plot_model(model, to_file=model_name + ".png", show_shapes=True)
+    #tf.keras.utils.plot_model(model, to_file=model_name + ".png", show_shapes=True)
 
     # Print model summary.
     model.summary()
@@ -83,9 +83,9 @@ def new_train(metric, num_cells_param, conv_kernel_size_param, model_name, train
 
     dict_hist = dict()
     for history_part in ["val_loss", "val_acc", "loss", "acc"]:
-        if history_part not in history:
+        if history_part not in history.history:
             continue
-        dict_hist[history_part] = history.history[history_part]
-    df_hist = pd.DataFrame(dict_hist, index = False)
-
-    df_hist.to_csv(model_name + ".csv")
+        dict_hist[history_part] = list(history.history[history_part])
+    print(dict_hist)
+    df_hist = pd.DataFrame(dict_hist)
+    df_hist.to_csv(model_name + ".csv", index = False)
