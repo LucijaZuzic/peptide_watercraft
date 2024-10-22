@@ -83,8 +83,6 @@ for nf1 in range(sf1):
 
             varname = filename.replace("actual_train_", "")
 
-            if "abs" not in varname:
-                continue
             if "time" in varname:
                 continue
 
