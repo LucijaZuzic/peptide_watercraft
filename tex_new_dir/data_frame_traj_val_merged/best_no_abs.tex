@@ -1,0 +1,65 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $2.07$ & $\mathbf{2.54}$ & $3.25$ & $4.36$ & $23.98$ & $36.35$ & $41.33$ \\
+			 & ($0.23$) & \textbf{(}$\mathbf{0.28}$\textbf{)} & ($0.4$) & ($0.84$) & ($5.44$) & ($9.41$) & ($7.37$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{1.95}$ & $2.56$ & $3.22$ & $4.08$ & $14.23$ & $33.54$ & $41.8$ \\
+			 & \textbf{(}$\mathbf{0.27}$\textbf{)} & ($0.29$) & ($0.31$) & ($0.41$) & ($3.09$) & ($4.46$) & ($9.25$) \\ \hline
+			\multirow{2}{*}{UniTS} & $2.83$ & $3.12$ & $\mathbf{3.17}$ & $\mathbf{3.75}$ & $\mathbf{6.0}$ & $\mathbf{8.71}$ & $\mathbf{11.51}$ \\
+			 & ($2.33$) & ($2.14$) & \textbf{(}$\mathbf{0.39}$\textbf{)} & \textbf{(}$\mathbf{0.58}$\textbf{)} & \textbf{(}$\mathbf{0.65}$\textbf{)} & \textbf{(}$\mathbf{0.8}$\textbf{)} & \textbf{(}$\mathbf{1.04}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MAE in $\degree$ ($\times 10^{-3}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:best_no_abs_MAE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{99.75\%}$ & $\mathbf{99.59\%}$ & $99.38\%$ & $98.86\%$ & $83.46\%$ & $18.51\%$ & $-22.18\%$ \\
+			 & \textbf{(}$\mathbf{0.11\%}$\textbf{)} & \textbf{(}$\mathbf{0.14\%}$\textbf{)} & ($0.23\%$) & ($0.61\%$) & ($11.42\%$) & ($33.32\%$) & ($76.47\%$) \\ \hline
+			\multirow{2}{*}{UniTS} & $99.31\%$ & $99.33\%$ & $\mathbf{99.45\%}$ & $\mathbf{99.15\%}$ & $\mathbf{98.01\%}$ & $\mathbf{96.12\%}$ & $\mathbf{93.37\%}$ \\
+			 & ($1.54\%$) & ($1.13\%$) & \textbf{(}$\mathbf{0.2\%}$\textbf{)} & \textbf{(}$\mathbf{0.4\%}$\textbf{)} & \textbf{(}$\mathbf{0.77\%}$\textbf{)} & \textbf{(}$\mathbf{1.27\%}$\textbf{)} & \textbf{(}$\mathbf{2.52\%}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:best_no_abs_R2}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{3.11}$ & $\mathbf{4.06}$ & $5.11$ & $6.46$ & $23.37$ & $54.46$ & $68.05$ \\
+			 & \textbf{(}$\mathbf{0.42}$\textbf{)} & \textbf{(}$\mathbf{0.47}$\textbf{)} & ($0.5$) & ($0.66$) & ($5.19$) & ($7.5$) & ($16.8$) \\ \hline
+			\multirow{2}{*}{UniTS} & $4.36$ & $4.88$ & $\mathbf{5.02}$ & $\mathbf{5.87}$ & $\mathbf{9.53}$ & $\mathbf{13.81}$ & $\mathbf{18.21}$ \\
+			 & ($3.28$) & ($3.04$) & \textbf{(}$\mathbf{0.64}$\textbf{)} & \textbf{(}$\mathbf{0.88}$\textbf{)} & \textbf{(}$\mathbf{1.12}$\textbf{)} & \textbf{(}$\mathbf{1.41}$\textbf{)} & \textbf{(}$\mathbf{1.88}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average Euclidean distance in $\degree$ ($\times 10^{-3}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:best_no_abs_euclid}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{0.346}$ & $\mathbf{0.452}$ & $0.569$ & $0.719$ & $2.599$ & $6.056$ & $7.567$ \\
+			 & \textbf{(}$\mathbf{0.046}$\textbf{)} & \textbf{(}$\mathbf{0.052}$\textbf{)} & ($0.055$) & ($0.073$) & ($0.577$) & ($0.834$) & ($1.868$) \\ \hline
+			\multirow{2}{*}{UniTS} & $0.485$ & $0.542$ & $\mathbf{0.558}$ & $\mathbf{0.653}$ & $\mathbf{1.059}$ & $\mathbf{1.536}$ & $\mathbf{2.025}$ \\
+			 & ($0.365$) & ($0.338$) & \textbf{(}$\mathbf{0.071}$\textbf{)} & \textbf{(}$\mathbf{0.098}$\textbf{)} & \textbf{(}$\mathbf{0.124}$\textbf{)} & \textbf{(}$\mathbf{0.157}$\textbf{)} & \textbf{(}$\mathbf{0.209}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average haversine distance in $km$, with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:best_no_abs_haversine}
+\end{table}

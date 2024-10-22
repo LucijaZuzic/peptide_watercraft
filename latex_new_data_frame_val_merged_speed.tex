@@ -1,0 +1,77 @@
+\subsection{Results for Speed}
+%\label{subsec:speed_results}
+%\vspace{10pt}
+
+Figure~\ref{fig:var_speed} represents the $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the speed in the $k$-fold testing datasets using different RNN models, and forecasting times. Darker colors in grayscale represent a higher $p$-value in a range from $0$ to $1$. The values on the secondary diagonal are all equal to $1$ and black because models equal themselves.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width = 0.99 \linewidth]{var_speed.pdf}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the speed in the $k$-fold testing datasets using different RNN models, and forecasting times. Darker colors in grayscale represent a higher $p$-value in a range from $0$ to $1$. The values on the secondary diagonal are all equal to $1$ and black because models equal themselves.}
+	\label{fig:var_speed}
+\end{figure}
+
+The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the speed estimated on the $k$-fold testing datasets by different RNN models, and forecasting times is listed in Table~\ref{tab:best_speed_R2}.
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Conv} & $94.0\%$ & $\mathbf{90.63\%}$ & $87.03\%$ & $83.37\%$ & $69.34\%$ & $55.82\%$ & $49.88\%$ \\
+			 & ($0.66\%$) & \textbf{(}$\mathbf{1.04\%}$\textbf{)} & ($1.31\%$) & ($1.44\%$) & ($2.59\%$) & ($3.81\%$) & ($3.84\%$) \\ \hline
+			\multirow{2}{*}{LSTM Linear} & $\mathbf{94.39\%}$ & $89.11\%$ & $83.69\%$ & $78.54\%$ & $62.8\%$ & $54.98\%$ & $51.44\%$ \\
+			 & \textbf{(}$\mathbf{0.63\%}$\textbf{)} & ($1.3\%$) & ($1.83\%$) & ($2.27\%$) & ($3.95\%$) & ($4.2\%$) & ($4.16\%$) \\ \hline
+			\multirow{2}{*}{UniTS} & $93.45\%$ & $90.5\%$ & $\mathbf{87.48\%}$ & $\mathbf{84.54\%}$ & $\mathbf{72.89\%}$ & $\mathbf{61.53\%}$ & $\mathbf{56.21\%}$ \\
+			 & ($0.64\%$) & ($0.92\%$) & \textbf{(}$\mathbf{1.21\%}$\textbf{)} & \textbf{(}$\mathbf{1.49\%}$\textbf{)} & \textbf{(}$\mathbf{2.68\%}$\textbf{)} & \textbf{(}$\mathbf{3.89\%}$\textbf{)} & \textbf{(}$\mathbf{3.92\%}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the speed estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_speed_R2}
+\end{table}
+
+The Conv model achieved the highest $R^{2}$ (\%) for speed, and a forecasting time of $3$ $s$ with an average value and standard deviation (in brackets) that equals $90.63$\% ($1.04$\%).
+
+The LSTM Linear model achieved the highest $R^{2}$ (\%) for speed, and a forecasting time of $2$ $s$ with an average value and standard deviation (in brackets) that equals $94.39$\% ($0.63$\%).
+
+The LSTM Linear model does not make statistically significantly different predictions than the GRU Linear model for speed using a forecasting time of $2$ $s$, with a $p$-value equaling $5.067 \times 10^{-4}$.
+
+\markertable{tab:\label{tab:speed:p:2}}
+
+The UniTS model achieved the highest $R^{2}$ (\%) for speed, and a forecasting time of $4$, $5$, $10$, $20$, and $30$ $s$ with average values and standard deviation (in brackets) that equal $87.48$\% ($1.21$\%), $84.54$\% ($1.49$\%), $72.89$\% ($2.68$\%), $61.53$\% ($3.89$\%), and $56.21$\% ($3.92$\%) respectively.
+
+The UniTS model does not make statistically significantly different predictions than the GRU Att 1 model for speed using a forecasting time of $10$ $s$, with a $p$-value equaling $7.354 \times 10^{-2}$.
+
+\markertable{tab:\label{tab:speed:p:10}}
+
+The average MAE in $km/h$, with standard deviation in brackets, across $k$-fold validation datasets for the speed estimated on the $k$-fold testing datasets by different RNN models, and forecasting times is listed in Table~\ref{tab:best_speed_MAE}.
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Conv} & $2.7$ & $\mathbf{3.29}$ & $3.91$ & $4.43$ & $6.22$ & $7.86$ & $8.56$ \\
+			 & ($0.25$) & \textbf{(}$\mathbf{0.31}$\textbf{)} & ($0.37$) & ($0.42$) & ($0.56$) & ($0.61$) & ($0.69$) \\ \hline
+			\multirow{2}{*}{LSTM Linear} & $\mathbf{2.46}$ & $3.42$ & $4.22$ & $4.87$ & $6.77$ & $7.92$ & $8.46$ \\
+			 & \textbf{(}$\mathbf{0.23}$\textbf{)} & ($0.34$) & ($0.43$) & ($0.45$) & ($0.56$) & ($0.59$) & ($0.67$) \\ \hline
+			\multirow{2}{*}{UniTS} & $2.76$ & $3.31$ & $\mathbf{3.8}$ & $\mathbf{4.23}$ & $\mathbf{5.7}$ & $\mathbf{7.02}$ & $\mathbf{7.65}$ \\
+			 & ($0.26$) & ($0.31$) & \textbf{(}$\mathbf{0.36}$\textbf{)} & \textbf{(}$\mathbf{0.4}$\textbf{)} & \textbf{(}$\mathbf{0.55}$\textbf{)} & \textbf{(}$\mathbf{0.66}$\textbf{)} & \textbf{(}$\mathbf{0.67}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MAE in $km/h$, with standard deviation in brackets, across $k$-fold validation datasets for the speed estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_speed_MAE}
+\end{table}
+
+The Conv model achieved the lowest MAE for speed, and a forecasting time of $3$ $s$ with an average value and standard deviation (in brackets) that equals $3.29$ $km/h$ ($0.31$ $km/h$).
+
+The LSTM Linear model achieved the lowest MAE for speed, and a forecasting time of $2$ $s$ with an average value and standard deviation (in brackets) that equals $2.46$ $km/h$ ($0.23$ $km/h$).
+
+The LSTM Linear model does not make statistically significantly different predictions than the GRU Linear model for speed using a forecasting time of $2$ $s$, with a $p$-value equaling $5.067 \times 10^{-4}$.
+
+The UniTS model achieved the lowest MAE for speed, and a forecasting time of $4$, $5$, $10$, $20$, and $30$ $s$ with average values and standard deviation (in brackets) that equal $3.8$ $km/h$ ($0.36$ $km/h$), $4.23$ $km/h$ ($0.4$ $km/h$), $5.7$ $km/h$ ($0.55$ $km/h$), $7.02$ $km/h$ ($0.66$ $km/h$), and $7.65$ $km/h$ ($0.67$ $km/h$) respectively.
+
+The UniTS model does not make statistically significantly different predictions than the GRU Att 1 model for speed using a forecasting time of $10$ $s$, with a $p$-value equaling $7.354 \times 10^{-2}$.
+

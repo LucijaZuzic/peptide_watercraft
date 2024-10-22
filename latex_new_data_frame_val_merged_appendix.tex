@@ -1,0 +1,269 @@
+\appendix
+\section{Appendix A}
+\label{appA}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, heading, and a forecasting time of $2$ $s$ are listed in Table~\ref{tab:direction:p:2}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Model & GRU Att 1 & GRU Att 4 \\ \hline
+		GRU Att 1 & / & $\mathbf{3.018 \times 10^{-1}}$ \\ \hline
+		GRU Att 4 & $\mathbf{3.018 \times 10^{-1}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, heading, and a forecasting time of $2$ $s$.}
+	\label{tab:direction:p:2}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, heading, and a forecasting time of $3$ $s$ are listed in Table~\ref{tab:direction:p:3}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Model & Conv & GRU Att 1 & GRU Att 3 \\ \hline
+		Conv & / & $\mathbf{6.527 \times 10^{-1}}$ & $\mathbf{1.564 \times 10^{-1}}$ \\ \hline
+		GRU Att 1 & $\mathbf{6.527 \times 10^{-1}}$ & / & $\mathbf{4.596 \times 10^{-4}}$ \\ \hline
+		GRU Att 3 & $\mathbf{1.564 \times 10^{-1}}$ & $\mathbf{4.596 \times 10^{-4}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, heading, and a forecasting time of $3$ $s$.}
+	\label{tab:direction:p:3}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $4$ $s$ are listed in Table~\ref{tab:latitude:no:abs:p:4}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Model & GRU Att 2 & GRU Att 3 \\ \hline
+		GRU Att 2 & / & $\mathbf{2.656 \times 10^{-4}}$ \\ \hline
+		GRU Att 3 & $\mathbf{2.656 \times 10^{-4}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $4$ $s$.}
+	\label{tab:latitude:no:abs:p:4}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $3$ $s$ are listed in Table~\ref{tab:latitude:no:abs:p:3}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Model & LSTM Third & LSTM Twice \\ \hline
+		LSTM Third & / & $\mathbf{6.104 \times 10^{-2}}$ \\ \hline
+		LSTM Twice & $\mathbf{6.104 \times 10^{-2}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $3$ $s$.}
+	\label{tab:latitude:no:abs:p:3}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $10$ $s$ are listed in Table~\ref{tab:latitude:no:abs:p:10}.
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Model & GRU Att 3 & GRU Att 4 & LSTM Linear & UniTS & actual \\ \hline
+			GRU Att 3 & / & $2.567 \times 10^{-14}$ & $8.664 \times 10^{-264}$ & $\mathbf{7.389 \times 10^{-3}}$ & $\mathbf{3.222 \times 10^{-2}}$ \\ \hline
+			GRU Att 4 & $2.567 \times 10^{-14}$ & / & $\mathbf{1.121 \times 10^{-2}}$ & $6.824 \times 10^{-23}$ & $2.369 \times 10^{-9}$ \\ \hline
+			LSTM Linear & $8.664 \times 10^{-264}$ & $\mathbf{1.121 \times 10^{-2}}$ & / & $6.617 \times 10^{-7}$ & $\mathbf{3.648 \times 10^{-2}}$ \\ \hline
+			UniTS & $\mathbf{7.389 \times 10^{-3}}$ & $6.824 \times 10^{-23}$ & $6.617 \times 10^{-7}$ & / & $\mathbf{4.075 \times 10^{-1}}$ \\ \hline
+			actual & $\mathbf{3.222 \times 10^{-2}}$ & $2.369 \times 10^{-9}$ & $\mathbf{3.648 \times 10^{-2}}$ & $\mathbf{4.075 \times 10^{-1}}$ & / \\ \hline
+		\end{tabular}
+	}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $10$ $s$.}
+	\label{tab:latitude:no:abs:p:10}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $20$ $s$ are listed in Table~\ref{tab:latitude:no:abs:p:20}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Model & Bi & UniTS & actual \\ \hline
+		Bi & / & $\mathbf{1.408 \times 10^{-3}}$ & $\mathbf{7.725 \times 10^{-1}}$ \\ \hline
+		UniTS & $\mathbf{1.408 \times 10^{-3}}$ & / & $\mathbf{6.866 \times 10^{-2}}$ \\ \hline
+		actual & $\mathbf{7.725 \times 10^{-1}}$ & $\mathbf{6.866 \times 10^{-2}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $20$ $s$.}
+	\label{tab:latitude:no:abs:p:20}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $2$ $s$ are listed in Table~\ref{tab:latitude:no:abs:p:2}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Model & GRU Att 1 & UniTS \\ \hline
+		GRU Att 1 & / & $\mathbf{1.373 \times 10^{-3}}$ \\ \hline
+		UniTS & $\mathbf{1.373 \times 10^{-3}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $2$ $s$.}
+	\label{tab:latitude:no:abs:p:2}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $30$ $s$ are listed in Table~\ref{tab:latitude:no:abs:p:30}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		Model & GRU Att 2 & GRU Linear & UniTS & actual \\ \hline
+		GRU Att 2 & / & $3.405 \times 10^{-16}$ & $\mathbf{1.002 \times 10^{-1}}$ & $6.982 \times 10^{-26}$ \\ \hline
+		GRU Linear & $3.405 \times 10^{-16}$ & / & $\mathbf{3.812 \times 10^{-3}}$ & $\mathbf{1.134 \times 10^{-1}}$ \\ \hline
+		UniTS & $\mathbf{1.002 \times 10^{-1}}$ & $\mathbf{3.812 \times 10^{-3}}$ & / & $\mathbf{1.084 \times 10^{-2}}$ \\ \hline
+		actual & $6.982 \times 10^{-26}$ & $\mathbf{1.134 \times 10^{-1}}$ & $\mathbf{1.084 \times 10^{-2}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $y$ offset, and a forecasting time of $30$ $s$.}
+	\label{tab:latitude:no:abs:p:30}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $20$ $s$ are listed in Table~\ref{tab:longitude:no:abs:p:20}.
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Model & Bi & GRU Att 1 & LSTM Twice & UniTS & actual \\ \hline
+			Bi & / & $2.999 \times 10^{-192}$ & $1.128 \times 10^{-184}$ & $2.161 \times 10^{-54}$ & $\mathbf{3.471 \times 10^{-1}}$ \\ \hline
+			GRU Att 1 & $2.999 \times 10^{-192}$ & / & $4.307 \times 10^{-5}$ & $\mathbf{7.814 \times 10^{-1}}$ & $1.508 \times 10^{-86}$ \\ \hline
+			LSTM Twice & $1.128 \times 10^{-184}$ & $4.307 \times 10^{-5}$ & / & $\mathbf{5.546 \times 10^{-2}}$ & $\mathbf{4.707 \times 10^{-3}}$ \\ \hline
+			UniTS & $2.161 \times 10^{-54}$ & $\mathbf{7.814 \times 10^{-1}}$ & $\mathbf{5.546 \times 10^{-2}}$ & / & $6.206 \times 10^{-108}$ \\ \hline
+			actual & $\mathbf{3.471 \times 10^{-1}}$ & $1.508 \times 10^{-86}$ & $\mathbf{4.707 \times 10^{-3}}$ & $6.206 \times 10^{-108}$ & / \\ \hline
+		\end{tabular}
+	}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $20$ $s$.}
+	\label{tab:longitude:no:abs:p:20}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $3$ $s$ are listed in Table~\ref{tab:longitude:no:abs:p:3}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Model & GRU Att 1 & GRU Att 4 & RNN Third \\ \hline
+		GRU Att 1 & / & $\mathbf{1.579 \times 10^{-1}}$ & $\mathbf{8.207 \times 10^{-1}}$ \\ \hline
+		GRU Att 4 & $\mathbf{1.579 \times 10^{-1}}$ & / & $\mathbf{3.988 \times 10^{-2}}$ \\ \hline
+		RNN Third & $\mathbf{8.207 \times 10^{-1}}$ & $\mathbf{3.988 \times 10^{-2}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $3$ $s$.}
+	\label{tab:longitude:no:abs:p:3}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $5$ $s$ are listed in Table~\ref{tab:longitude:no:abs:p:5}.
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Model & Conv & GRU Att 1 & GRU Twice & LSTM Third & UniTS \\ \hline
+			Conv & / & $\mathbf{5.193 \times 10^{-2}}$ & $0$ & $2.641 \times 10^{-133}$ & $5.567 \times 10^{-5}$ \\ \hline
+			GRU Att 1 & $\mathbf{5.193 \times 10^{-2}}$ & / & $5.926 \times 10^{-84}$ & $5.013 \times 10^{-15}$ & $7.281 \times 10^{-80}$ \\ \hline
+			GRU Twice & $0$ & $5.926 \times 10^{-84}$ & / & $\mathbf{8.347 \times 10^{-3}}$ & $\mathbf{6.213 \times 10^{-1}}$ \\ \hline
+			LSTM Third & $2.641 \times 10^{-133}$ & $5.013 \times 10^{-15}$ & $\mathbf{8.347 \times 10^{-3}}$ & / & $\mathbf{2.591 \times 10^{-1}}$ \\ \hline
+			UniTS & $5.567 \times 10^{-5}$ & $7.281 \times 10^{-80}$ & $\mathbf{6.213 \times 10^{-1}}$ & $\mathbf{2.591 \times 10^{-1}}$ & / \\ \hline
+		\end{tabular}
+	}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $5$ $s$.}
+	\label{tab:longitude:no:abs:p:5}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $10$ $s$ are listed in Table~\ref{tab:longitude:no:abs:p:10}.
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Model & Bi & GRU Att 2 & GRU Reference & RNN Third & UniTS \\ \hline
+			Bi & / & $\mathbf{1.319 \times 10^{-2}}$ & $6.833 \times 10^{-19}$ & $2.907 \times 10^{-15}$ & $\mathbf{4.766 \times 10^{-1}}$ \\ \hline
+			GRU Att 2 & $\mathbf{1.319 \times 10^{-2}}$ & / & $\mathbf{4.694 \times 10^{-1}}$ & $1.225 \times 10^{-14}$ & $1.496 \times 10^{-6}$ \\ \hline
+			GRU Reference & $6.833 \times 10^{-19}$ & $\mathbf{4.694 \times 10^{-1}}$ & / & $\mathbf{8.673 \times 10^{-2}}$ & $6.325 \times 10^{-13}$ \\ \hline
+			RNN Third & $2.907 \times 10^{-15}$ & $1.225 \times 10^{-14}$ & $\mathbf{8.673 \times 10^{-2}}$ & / & $\mathbf{1.747 \times 10^{-3}}$ \\ \hline
+			UniTS & $\mathbf{4.766 \times 10^{-1}}$ & $1.496 \times 10^{-6}$ & $6.325 \times 10^{-13}$ & $\mathbf{1.747 \times 10^{-3}}$ & / \\ \hline
+		\end{tabular}
+	}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $10$ $s$.}
+	\label{tab:longitude:no:abs:p:10}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $2$ $s$ are listed in Table~\ref{tab:longitude:no:abs:p:2}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Model & GRU Att 1 & GRU Att 2 & GRU Att 3 \\ \hline
+		GRU Att 1 & / & $\mathbf{7.278 \times 10^{-1}}$ & $\mathbf{2.838 \times 10^{-2}}$ \\ \hline
+		GRU Att 2 & $\mathbf{7.278 \times 10^{-1}}$ & / & $\mathbf{4.192 \times 10^{-1}}$ \\ \hline
+		GRU Att 3 & $\mathbf{2.838 \times 10^{-2}}$ & $\mathbf{4.192 \times 10^{-1}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $2$ $s$.}
+	\label{tab:longitude:no:abs:p:2}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $4$ $s$ are listed in Table~\ref{tab:longitude:no:abs:p:4}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Model & Bi & GRU Att 1 & RNN Linear \\ \hline
+		Bi & / & $\mathbf{3.721 \times 10^{-3}}$ & $4.3 \times 10^{-129}$ \\ \hline
+		GRU Att 1 & $\mathbf{3.721 \times 10^{-3}}$ & / & $\mathbf{2.789 \times 10^{-2}}$ \\ \hline
+		RNN Linear & $4.3 \times 10^{-129}$ & $\mathbf{2.789 \times 10^{-2}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $4$ $s$.}
+	\label{tab:longitude:no:abs:p:4}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $30$ $s$ are listed in Table~\ref{tab:longitude:no:abs:p:30}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Model & GRU Reference & UniTS \\ \hline
+		GRU Reference & / & $\mathbf{6.734 \times 10^{-3}}$ \\ \hline
+		UniTS & $\mathbf{6.734 \times 10^{-3}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, $x$ offset, and a forecasting time of $30$ $s$.}
+	\label{tab:longitude:no:abs:p:30}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, speed, and a forecasting time of $2$ $s$ are listed in Table~\ref{tab:speed:p:2}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Model & GRU Linear & LSTM Linear \\ \hline
+		GRU Linear & / & $\mathbf{5.067 \times 10^{-4}}$ \\ \hline
+		LSTM Linear & $\mathbf{5.067 \times 10^{-4}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, speed, and a forecasting time of $2$ $s$.}
+	\label{tab:speed:p:2}
+\end{table}
+
+The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, speed, and a forecasting time of $10$ $s$ are listed in Table~\ref{tab:speed:p:10}.
+
+\begin{table}[!ht]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Model & GRU Att 1 & UniTS \\ \hline
+		GRU Att 1 & / & $\mathbf{7.354 \times 10^{-2}}$ \\ \hline
+		UniTS & $\mathbf{7.354 \times 10^{-2}}$ & / \\ \hline
+	\end{tabular}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $k$-fold testing datasets using different RNN models, speed, and a forecasting time of $10$ $s$.}
+	\label{tab:speed:p:10}
+\end{table}
+

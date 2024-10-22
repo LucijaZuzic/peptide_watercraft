@@ -1,4 +1,4 @@
-Vehicle*/*/*
+Vehicle*/*
 *.pyc
 probability/*
 pytorch_result*/*/*

@@ -83,6 +83,8 @@ for nf1 in range(sf1):
 
             varname = filename.replace("actual_train_", "")
 
+            if "abs" not in varname:
+                continue
             if "time" in varname:
                 continue
 
@@ -207,8 +209,8 @@ for nf1 in range(sf1):
                     # Write output to file
                     sys.stdout = open(saving_name + ".txt", "w", encoding="utf-8")
                     
-                    numcells = 32
-                    kernelsize = 4
+                    numcells = 96
+                    kernelsize = 8
                     if model_name == "Bi":
                         help_train.new_train("val_loss", ws_use, numcells, -1, saving_name, x_train_val_all, y_train_val_all, x_val_all, y_val_all)
                     else:
