@@ -25,7 +25,7 @@ name_list_total = []
 name_list_total.extend(name_list)
 name_list_total.extend(name_list_traj)
 
-round_val = {"R2": (100, 2, 3), "MAE": (1, 2, 1), "euclid": (1, 2, 1), "haversine": (1, 2, 1)}
+round_val = {"R2": (100, 2, 3), "MAE": (1, 2, 1), "RMSE": (1, 2, 1), "MSE": (1, 2, 1), "euclid": (1, 2, 1), "haversine": (1, 2, 1)}
 cm = 1/2.54  # centimeters in inches
 plot_draw = True
 legend_pos = {19: 8, 4: 4, 5: 5, 7: 5, 6: 5, 9: 6}
@@ -194,13 +194,20 @@ for name in name_list_total:
                 metricnew = metric.replace("R2", "$R^{2}$ (\%)")
                 metricnew = metricnew.replace("euclid", "Euclidean distance in $\\degree$")
                 metricnew = metricnew.replace("haversine", "haversine distance in $km$")
-                if "MAE" in metricnew:
+                if metricnew in ["MAE", "RMSE"]:
                     if "speed" in var and "actual" not in var:
                         metricnew += " in $km/h$"
                     if "direction" in var:
                         metricnew += " in $\\degree$"
                     if "abs" in var or "actual" in var:
                         metricnew += " in $\\degree$"
+                if metricnew == "MSE":
+                    if "speed" in var and "actual" not in var:
+                        metricnew += " in ${km/h}^{2}$"
+                    if "direction" in var:
+                        metricnew += " in $\\degree$ $^{2}$"
+                    if "abs" in var or "actual" in var:
+                        metricnew += " in $\\degree$ $^{2}$"
                 varnew = var.replace("_", " ").replace("longitude no abs", "$x$ offset").replace("direction", "heading")
                 varnew = varnew.replace("latitude no abs", "$y$ offset").replace("no abs", "$x$ and $y$ offset")
                 varnew = varnew.replace("speed actual dir", "speed, heading, and time")
@@ -311,13 +318,20 @@ for name in name_list_total:
                 varnew = var.replace("_", " ").replace("longitude no abs", "$x$ offset").replace("direction", "heading")
                 varnew = varnew.replace("latitude no abs", "$y$ offset").replace("no abs", "$x$ and $y$ offset")
                 varnew = varnew.replace("speed actual dir", "speed, heading, and time")
-                if "MAE" in metricnew:
+                if metricnew in ["MAE", "RMSE"]:
                     if "speed" == varnew:
                         varnew += " ($km/h$)"
                     if "heading" == varnew:
                         varnew += " ($\\degree$)"
                     if "offset" in varnew or " time" in varnew:
                         varnew += " ($\\degree$)"
+                if metricnew == "MSE":
+                    if "speed" == varnew:
+                        varnew += " (${km/h}^{2}$)"
+                    if "heading" == varnew:
+                        varnew += " ($\\degree$ $^{2}$)"
+                    if "offset" in varnew or " time" in varnew:
+                        varnew += " ($\\degree$ $^{2}$)"
                 plt.ylabel(varnew.capitalize())
                 if ix == len(dictio) - 1 * ("time" in dictio):
                     plt.xticks(sorted_ws)

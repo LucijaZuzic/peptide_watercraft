@@ -2,7 +2,16 @@
 %\label{subsec:speed_actual_dir_results}
 %\vspace{10pt}
 
-The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times is listed in Table~\ref{tab:best_speed_actual_dir_R2}.
+Figure~\ref{fig:traj_speed_actual_dir_RMSE} represents the $p$-values for the Wilcoxon signed-rank test on RMSE values across $k$-fold validation datasets for the trajectories estimated using speed, heading, and time in the $k$-fold testing datasets using different RNN models, and forecasting times. Darker colors in grayscale represent a higher $p$-value in a range from $0$ to $1$. The values on the secondary diagonal are all equal to $1$ and black because models equal themselves.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width = 0.99 \linewidth]{traj_speed_actual_dir_RMSE.pdf}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on RMSE values across $k$-fold validation datasets for the trajectories estimated using speed, heading, and time in the $k$-fold testing datasets using different RNN models, and forecasting times. Darker colors in grayscale represent a higher $p$-value in a range from $0$ to $1$. The values on the secondary diagonal are all equal to $1$ and black because models equal themselves.}
+	\label{fig:traj_speed_actual_dir_RMSE}
+\end{figure}
+
+The average RMSE in $\degree$ ($\times 10^{-2}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times is listed in Table~\ref{tab:best_speed_actual_dir_RMSE}.
 
 \begin{table}[!ht]
 	\centering
@@ -10,73 +19,49 @@ The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold v
 		\begin{tabular}{|c|c|c|c|c|c|c|c|}
 			\hline
 			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
-			\multirow{2}{*}{GRU Att 1} & $96.53\%$ & $96.303\%$ & $95.928\%$ & $\mathbf{95.699\%}$ & $\mathbf{94.222\%}$ & $\mathbf{81.816\%}$ & $-151.278\%$ \\
-			 & ($0.211\%$) & ($0.233\%$) & ($0.336\%$) & \textbf{(}$\mathbf{0.445\%}$\textbf{)} & \textbf{(}$\mathbf{1.083\%}$\textbf{)} & \textbf{(}$\mathbf{6.541\%}$\textbf{)} & ($454.465\%$) \\ \hline
-			\multirow{2}{*}{GRU Att 2} & $96.526\%$ & $96.205\%$ & $95.862\%$ & $95.398\%$ & $93.415\%$ & $80.484\%$ & $\mathbf{54.101\%}$ \\
-			 & ($0.161\%$) & ($0.303\%$) & ($0.482\%$) & ($0.959\%$) & ($2.341\%$) & ($8.479\%$) & \textbf{(}$\mathbf{25.777\%}$\textbf{)} \\ \hline
-			\multirow{2}{*}{GRU Att 4} & $\mathbf{96.554\%}$ & $\mathbf{96.359\%}$ & $\mathbf{95.93\%}$ & $95.334\%$ & $92.902\%$ & $80.1\%$ & $-3.241\%$ \\
-			 & \textbf{(}$\mathbf{0.204\%}$\textbf{)} & \textbf{(}$\mathbf{0.243\%}$\textbf{)} & \textbf{(}$\mathbf{0.4\%}$\textbf{)} & ($0.53\%$) & ($1.989\%$) & ($7.486\%$) & ($190.754\%$) \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $1.501$ & $1.524$ & $1.587$ & $\mathbf{1.598}$ & $\mathbf{1.745}$ & $\mathbf{2.657}$ & $7.659$ \\
+			 & ($0.163$) & ($0.154$) & ($0.163$) & \textbf{(}$\mathbf{0.135}$\textbf{)} & \textbf{(}$\mathbf{0.108}$\textbf{)} & \textbf{(}$\mathbf{0.17}$\textbf{)} & ($6.196$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $1.495$ & $1.536$ & $1.586$ & $1.616$ & $1.818$ & $2.72$ & $\mathbf{3.919}$ \\
+			 & ($0.161$) & ($0.177$) & ($0.173$) & ($0.165$) & ($0.192$) & ($0.19$) & \textbf{(}$\mathbf{0.589}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{1.494}$ & $\mathbf{1.514}$ & $\mathbf{1.581}$ & $1.616$ & $1.842$ & $2.737$ & $5.269$ \\
+			 & \textbf{(}$\mathbf{0.152}$\textbf{)} & \textbf{(}$\mathbf{0.163}$\textbf{)} & \textbf{(}$\mathbf{0.173}$\textbf{)} & ($0.15$) & ($0.125$) & ($0.238$) & ($4.403$) \\ \hline
 		\end{tabular}
 	}
-	\caption{The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
-	\label{tab:best_speed_actual_dir_R2}
+	\caption{The average RMSE in $\degree$ ($\times 10^{-2}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
+	\label{tab:best_speed_actual_dir_RMSE}
 \end{table}
 
-The GRU Att 1 model achieved the highest $R^{2}$ (\%) for trajectories estimated using speed, heading, and time, and a forecasting time of $10$, $20$, and $5$ $s$ with average values and standard deviation (in brackets) that equal $94.22$\% ($1.08$\%), $81.82$\% ($6.54$\%), and $95.7$\% ($0.44$\%) respectively.
+The GRU Att 1 model achieved the lowest RMSE for trajectories estimated using speed, heading, and time, and a forecasting time of $10$, $20$, and $5$ $s$ with average values and standard deviation (in brackets) that equal $17.45 \times 10^{-3}$ $\degree$ ($1.08 \times 10^{-3}$ $\degree$), $26.57 \times 10^{-3}$ $\degree$ ($1.7 \times 10^{-3}$ $\degree$), and $15.98 \times 10^{-3}$ $\degree$ ($1.35 \times 10^{-3}$ $\degree$) respectively.
 
-The GRU Att 2 model achieved the highest $R^{2}$ (\%) for trajectories estimated using speed, heading, and time, and a forecasting time of $30$ $s$ with an average value and standard deviation (in brackets) that equals $54.1$\% ($25.78$\%).
+The GRU Att 1 model does not have a statistically significantly different RMSE than the GRU Att 2 model for speed, heading, and time using a forecasting time of $10$ $s$, with a $p$-value equaling $1.874 \times 10^{-2}$.
 
-The GRU Att 4 model achieved the highest $R^{2}$ (\%) for trajectories estimated using speed, heading, and time, and a forecasting time of $2$, $3$, and $4$ $s$ with average values and standard deviation (in brackets) that equal $96.55$\% ($0.2$\%), $96.36$\% ($0.24$\%), and $95.93$\% ($0.4$\%) respectively.
+\markertable{tab:\label{tab:RMSE:speed:actual:dir:p:10}}
 
-The average MAE in $\degree$ ($\times 10^{-3}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times is listed in Table~\ref{tab:best_speed_actual_dir_MAE}.
+The GRU Att 1 model does not have a statistically significantly different RMSE than the GRU Att 2, GRU Att 3, and GRU Att 4 models for speed, heading, and time using a forecasting time of $20$ $s$, with $p$-values equaling $4.215 \times 10^{-2}$, $7.15 \times 10^{-4}$, and $8.069 \times 10^{-3}$.
 
-\begin{table}[!ht]
-	\centering
-	\resizebox{\linewidth}{!}{
-		\begin{tabular}{|c|c|c|c|c|c|c|c|}
-			\hline
-			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
-			\multirow{2}{*}{GRU Att 1} & $7.298$ & $7.77$ & $\mathbf{8.419}$ & $\mathbf{8.638}$ & $\mathbf{10.223}$ & $\mathbf{17.111}$ & $48.15$ \\
-			 & ($0.407$) & ($0.337$) & \textbf{(}$\mathbf{0.385}$\textbf{)} & \textbf{(}$\mathbf{0.449}$\textbf{)} & \textbf{(}$\mathbf{0.618}$\textbf{)} & \textbf{(}$\mathbf{1.225}$\textbf{)} & ($38.906$) \\ \hline
-			\multirow{2}{*}{GRU Att 2} & $7.308$ & $7.924$ & $8.442$ & $8.803$ & $10.78$ & $17.518$ & $\mathbf{24.644}$ \\
-			 & ($0.373$) & ($0.53$) & ($0.491$) & ($0.584$) & ($1.085$) & ($1.404$) & \textbf{(}$\mathbf{3.038}$\textbf{)} \\ \hline
-			\multirow{2}{*}{GRU Att 4} & $\mathbf{7.267}$ & $\mathbf{7.674}$ & $8.444$ & $9.031$ & $11.367$ & $17.745$ & $32.805$ \\
-			 & \textbf{(}$\mathbf{0.369}$\textbf{)} & \textbf{(}$\mathbf{0.397}$\textbf{)} & ($0.414$) & ($0.438$) & ($0.984$) & ($1.489$) & ($26.7$) \\ \hline
-		\end{tabular}
-	}
-	\caption{The average MAE in $\degree$ ($\times 10^{-3}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
-	\label{tab:best_speed_actual_dir_MAE}
-\end{table}
+\markertable{tab:\label{tab:RMSE:speed:actual:dir:p:20}}
 
-The GRU Att 1 model achieved the lowest MAE for trajectories estimated using speed, heading, and time, and a forecasting time of $10$, $20$, $4$, and $5$ $s$ with average values and standard deviation (in brackets) that equal $10.22 \times 10^{-3}$ $\degree$ ($0.62 \times 10^{-3}$ $\degree$), $17.11 \times 10^{-3}$ $\degree$ ($1.22 \times 10^{-3}$ $\degree$), $8.42 \times 10^{-3}$ $\degree$ ($0.39 \times 10^{-3}$ $\degree$), and $8.64 \times 10^{-3}$ $\degree$ ($0.45 \times 10^{-3}$ $\degree$) respectively.
+The GRU Att 1 model does not have a statistically significantly different RMSE than the GRU Att 2, GRU Att 3, and GRU Att 4 models for speed, heading, and time using a forecasting time of $5$ $s$, with $p$-values equaling $7.712 \times 10^{-1}$, $1.73 \times 10^{-1}$, and $1.485 \times 10^{-1}$.
 
-The GRU Att 2 model achieved the lowest MAE for trajectories estimated using speed, heading, and time, and a forecasting time of $30$ $s$ with an average value and standard deviation (in brackets) that equals $24.64 \times 10^{-3}$ $\degree$ ($3.04 \times 10^{-3}$ $\degree$).
+\markertable{tab:\label{tab:RMSE:speed:actual:dir:p:5}}
 
-The GRU Att 4 model achieved the lowest MAE for trajectories estimated using speed, heading, and time, and a forecasting time of $2$, and $3$ $s$ with average values and standard deviation (in brackets) that equal $7.27 \times 10^{-3}$ $\degree$ ($0.37 \times 10^{-3}$ $\degree$), and $7.67 \times 10^{-3}$ $\degree$ ($0.4 \times 10^{-3}$ $\degree$) respectively.
+The GRU Att 2 model achieved the lowest RMSE for trajectories estimated using speed, heading, and time, and a forecasting time of $30$ $s$ with an average value and standard deviation (in brackets) that equals $39.19 \times 10^{-3}$ $\degree$ ($5.89 \times 10^{-3}$ $\degree$).
 
-The average haversine distance in $km$, with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times is listed in Table~\ref{tab:best_speed_actual_dir_haversine}.
+The GRU Att 2 model does not have a statistically significantly different RMSE than the GRU Att 1, GRU Att 3, and GRU Att 4 models for speed, heading, and time using a forecasting time of $30$ $s$, with $p$-values equaling $3.419 \times 10^{-3}$, $7.098 \times 10^{-2}$, and $1.817 \times 10^{-1}$.
 
-\begin{table}[!ht]
-	\centering
-	\resizebox{\linewidth}{!}{
-		\begin{tabular}{|c|c|c|c|c|c|c|c|}
-			\hline
-			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
-			\multirow{2}{*}{GRU Att 1} & $1.474$ & $1.532$ & $1.637$ & $\mathbf{1.665}$ & $\mathbf{1.906}$ & $\mathbf{3.075}$ & $8.261$ \\
-			 & ($0.09$) & ($0.081$) & ($0.082$) & \textbf{(}$\mathbf{0.083}$\textbf{)} & \textbf{(}$\mathbf{0.116}$\textbf{)} & \textbf{(}$\mathbf{0.202}$\textbf{)} & ($6.403$) \\ \hline
-			\multirow{2}{*}{GRU Att 2} & $1.47$ & $1.554$ & $\mathbf{1.634}$ & $1.681$ & $2.001$ & $3.145$ & $\mathbf{4.38}$ \\
-			 & ($0.086$) & ($0.109$) & \textbf{(}$\mathbf{0.095}$\textbf{)} & ($0.108$) & ($0.191$) & ($0.232$) & \textbf{(}$\mathbf{0.515}$\textbf{)} \\ \hline
-			\multirow{2}{*}{GRU Att 4} & $\mathbf{1.467}$ & $\mathbf{1.518}$ & $1.638$ & $1.716$ & $2.098$ & $3.17$ & $5.773$ \\
-			 & \textbf{(}$\mathbf{0.084}$\textbf{)} & \textbf{(}$\mathbf{0.092}$\textbf{)} & ($0.089$) & ($0.086$) & ($0.169$) & ($0.248$) & ($4.507$) \\ \hline
-		\end{tabular}
-	}
-	\caption{The average haversine distance in $km$, with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
-	\label{tab:best_speed_actual_dir_haversine}
-\end{table}
+\markertable{tab:\label{tab:RMSE:speed:actual:dir:p:30}}
 
-The GRU Att 1 model achieved the lowest haversine distance for trajectories estimated using speed, heading, and time, and a forecasting time of $10$, $20$, and $5$ $s$ with average values and standard deviation (in brackets) that equal $1.906$ $km$ ($0.116$ $km$), $3.075$ $km$ ($0.202$ $km$), and $1.665$ $km$ ($0.083$ $km$) respectively.
+The GRU Att 4 model achieved the lowest RMSE for trajectories estimated using speed, heading, and time, and a forecasting time of $2$, $3$, and $4$ $s$ with average values and standard deviation (in brackets) that equal $14.94 \times 10^{-3}$ $\degree$ ($1.52 \times 10^{-3}$ $\degree$), $15.14 \times 10^{-3}$ $\degree$ ($1.63 \times 10^{-3}$ $\degree$), and $15.81 \times 10^{-3}$ $\degree$ ($1.73 \times 10^{-3}$ $\degree$) respectively.
 
-The GRU Att 2 model achieved the lowest haversine distance for trajectories estimated using speed, heading, and time, and a forecasting time of $30$, and $4$ $s$ with average values and standard deviation (in brackets) that equal $4.38$ $km$ ($0.515$ $km$), and $1.634$ $km$ ($0.095$ $km$) respectively.
+The GRU Att 4 model does not have a statistically significantly different RMSE than the GRU Att 1, GRU Att 2, and GRU Att 3 models for speed, heading, and time using a forecasting time of $2$ $s$, with $p$-values equaling $3.81 \times 10^{-1}$, $5.249 \times 10^{-1}$, and $2.027 \times 10^{-2}$.
 
-The GRU Att 4 model achieved the lowest haversine distance for trajectories estimated using speed, heading, and time, and a forecasting time of $2$, and $3$ $s$ with average values and standard deviation (in brackets) that equal $1.467$ $km$ ($0.084$ $km$), and $1.518$ $km$ ($0.092$ $km$) respectively.
+\markertable{tab:\label{tab:RMSE:speed:actual:dir:p:2}}
+
+The GRU Att 4 model does not have a statistically significantly different RMSE than the GRU Att 1, GRU Att 2, and GRU Att 3 models for speed, heading, and time using a forecasting time of $3$ $s$, with $p$-values equaling $4.108 \times 10^{-1}$, $2.872 \times 10^{-1}$, and $2.027 \times 10^{-2}$.
+
+\markertable{tab:\label{tab:RMSE:speed:actual:dir:p:3}}
+
+The GRU Att 4 model does not have a statistically significantly different RMSE than the GRU Att 1, GRU Att 2, and GRU Att 3 models for speed, heading, and time using a forecasting time of $4$ $s$, with $p$-values equaling $6.528 \times 10^{-1}$, $9.578 \times 10^{-1}$, and $5.875 \times 10^{-2}$.
+
+\markertable{tab:\label{tab:RMSE:speed:actual:dir:p:4}}
 

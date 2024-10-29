@@ -22,6 +22,24 @@
 		\begin{tabular}{|c|c|c|c|c|c|c|c|}
 			\hline
 			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Conv} & $17.4$ & $\mathbf{27.17}$ & $37.64$ & $48.27$ & $88.94$ & $127.95$ & $145.03$ \\
+			 & ($2.48$) & \textbf{(}$\mathbf{3.91}$\textbf{)} & ($5.32$) & ($6.7$) & ($12.15$) & ($16.05$) & ($17.21$) \\ \hline
+			\multirow{2}{*}{LSTM Linear} & $\mathbf{16.3}$ & $31.66$ & $47.42$ & $62.42$ & $108.09$ & $131.32$ & $142.22$ \\
+			 & \textbf{(}$\mathbf{2.44}$\textbf{)} & ($5.09$) & ($7.22$) & ($9.41$) & ($14.87$) & ($17.24$) & ($18.18$) \\ \hline
+			\multirow{2}{*}{UniTS} & $19.03$ & $27.65$ & $\mathbf{36.44}$ & $\mathbf{45.0}$ & $\mathbf{78.92}$ & $\mathbf{112.0}$ & $\mathbf{127.41}$ \\
+			 & ($2.6$) & ($3.91$) & \textbf{(}$\mathbf{5.17}$\textbf{)} & \textbf{(}$\mathbf{6.41}$\textbf{)} & \textbf{(}$\mathbf{11.56}$\textbf{)} & \textbf{(}$\mathbf{16.67}$\textbf{)} & \textbf{(}$\mathbf{17.29}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MSE in ${km/h}^{2}$, with standard deviation in brackets, across $k$-fold validation datasets for the speed estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_speed_MSE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
 			\multirow{2}{*}{Conv} & $94.0\%$ & $\mathbf{90.63\%}$ & $87.03\%$ & $83.37\%$ & $69.34\%$ & $55.82\%$ & $49.88\%$ \\
 			 & ($0.66\%$) & \textbf{(}$\mathbf{1.04\%}$\textbf{)} & ($1.31\%$) & ($1.44\%$) & ($2.59\%$) & ($3.81\%$) & ($3.84\%$) \\ \hline
 			\multirow{2}{*}{LSTM Linear} & $\mathbf{94.39\%}$ & $89.11\%$ & $83.69\%$ & $78.54\%$ & $62.8\%$ & $54.98\%$ & $51.44\%$ \\
@@ -32,4 +50,22 @@
 	}
 	\caption{The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the speed estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
 	\label{tab:best_speed_R2}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Conv} & $4.16$ & $\mathbf{5.2}$ & $6.12$ & $6.93$ & $9.41$ & $11.29$ & $12.02$ \\
+			 & ($0.3$) & \textbf{(}$\mathbf{0.37}$\textbf{)} & ($0.43$) & ($0.48$) & ($0.64$) & ($0.7$) & ($0.71$) \\ \hline
+			\multirow{2}{*}{LSTM Linear} & $\mathbf{4.03}$ & $5.61$ & $6.87$ & $7.88$ & $10.37$ & $11.43$ & $11.9$ \\
+			 & \textbf{(}$\mathbf{0.3}$\textbf{)} & ($0.45$) & ($0.53$) & ($0.59$) & ($0.71$) & ($0.75$) & ($0.76$) \\ \hline
+			\multirow{2}{*}{UniTS} & $4.35$ & $5.25$ & $\mathbf{6.02}$ & $\mathbf{6.69}$ & $\mathbf{8.86}$ & $\mathbf{10.55}$ & $\mathbf{11.26}$ \\
+			 & ($0.3$) & ($0.37$) & \textbf{(}$\mathbf{0.42}$\textbf{)} & \textbf{(}$\mathbf{0.47}$\textbf{)} & \textbf{(}$\mathbf{0.64}$\textbf{)} & \textbf{(}$\mathbf{0.77}$\textbf{)} & \textbf{(}$\mathbf{0.75}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average RMSE in $km/h$, with standard deviation in brackets, across $k$-fold validation datasets for the speed estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_speed_RMSE}
 \end{table}

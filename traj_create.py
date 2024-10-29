@@ -38,8 +38,8 @@ ride_zero = os.listdir("csv_results/1/1/" + vehicle_zero)[0]
 var_list = os.listdir("csv_results/1/1/" + vehicle_zero + "/" + ride_zero + "/")
 model_list = os.listdir("csv_results/1/1/" + vehicle_zero + "/" + ride_zero + "/" + var_list[0] + "/")
 
-for nf2 in range(sf2):
-    for nf1 in range(sf1):
+for nf2 in [0]:
+    for nf1 in [2]:
         for model in model_list:
             for ws in [2, 3, 4, 5, 10, 20, 30]:
                 for vehicle in os.listdir("csv_results/" + str(nf1 + 1) + "/" + str(nf2 + 1) + "/"):

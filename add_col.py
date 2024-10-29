@@ -28,9 +28,9 @@ def get_XY(dat, time_steps, len_skip = -1, len_output = -1):
     
 sf1, sf2 = 5, 5
 
-for nf1 in range(sf1):
+for nf1 in [2]:
 
-    for nf2 in range(sf2):
+    for nf2 in [0]:
 
         ride_name = "csv_results/" + str(nf1 + 1) + "/" + str(nf2 + 1) + "/"
 

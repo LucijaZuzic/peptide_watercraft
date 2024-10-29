@@ -1,0 +1,19 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Bi} & $2.31$ & $3.66$ & $5.15$ & $6.77$ & $14.1$ & $24.48$ & $\mathbf{30.63}$ \\
+			 & ($0.44$) & ($0.72$) & ($0.99$) & ($1.26$) & ($2.34$) & ($3.16$) & \textbf{(}$\mathbf{4.26}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $2.0$ & $\mathbf{3.47}$ & $5.2$ & $6.53$ & $21.12$ & $36.78$ & $42.21$ \\
+			 & ($0.52$) & \textbf{(}$\mathbf{0.85}$\textbf{)} & ($1.18$) & ($1.32$) & ($6.45$) & ($5.61$) & ($8.0$) \\ \hline
+			\multirow{2}{*}{LSTM Third} & $\mathbf{1.3}$ & $4.2$ & $6.9$ & $10.02$ & $22.29$ & $43.36$ & $53.06$ \\
+			 & \textbf{(}$\mathbf{0.44}$\textbf{)} & ($1.55$) & ($1.98$) & ($2.23$) & ($3.75$) & ($6.14$) & ($6.13$) \\ \hline
+			\multirow{2}{*}{UniTS} & $2.53$ & $3.72$ & $\mathbf{4.98}$ & $\mathbf{6.28}$ & $\mathbf{12.81}$ & $\mathbf{24.12}$ & $32.16$ \\
+			 & ($0.54$) & ($0.73$) & \textbf{(}$\mathbf{0.94}$\textbf{)} & \textbf{(}$\mathbf{1.16}$\textbf{)} & \textbf{(}$\mathbf{2.19}$\textbf{)} & \textbf{(}$\mathbf{3.84}$\textbf{)} & ($4.76$) \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MSE in $\degree$ $^{2}$ ($\times 10^{-8}$), with standard deviation in brackets, across $k$-fold validation datasets for the $x$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_longitude_no_abs_MSE}
+\end{table}

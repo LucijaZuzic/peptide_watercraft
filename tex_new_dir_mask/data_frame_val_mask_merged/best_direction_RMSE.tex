@@ -1,0 +1,15 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{RNN Linear} & $\mathbf{38.85}$ & $\mathbf{47.63}$ & $\mathbf{54.36}$ & $58.71$ & $72.54$ & $88.35$ & $95.47$ \\
+			 & \textbf{(}$\mathbf{1.85}$\textbf{)} & \textbf{(}$\mathbf{2.42}$\textbf{)} & \textbf{(}$\mathbf{2.22}$\textbf{)} & ($2.05$) & ($2.33$) & ($1.93$) & ($2.48$) \\ \hline
+			\multirow{2}{*}{UniTS} & $49.88$ & $53.14$ & $56.02$ & $\mathbf{58.6}$ & $\mathbf{67.8}$ & $\mathbf{78.04}$ & $\mathbf{84.09}$ \\
+			 & ($2.18$) & ($2.29$) & ($2.35$) & \textbf{(}$\mathbf{2.38}$\textbf{)} & \textbf{(}$\mathbf{2.26}$\textbf{)} & \textbf{(}$\mathbf{2.29}$\textbf{)} & \textbf{(}$\mathbf{2.47}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average RMSE in $\degree$, with standard deviation in brackets, across $k$-fold validation datasets for the heading estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_direction_RMSE}
+\end{table}

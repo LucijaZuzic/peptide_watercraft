@@ -1,0 +1,79 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $\mathbf{5.558}$ & $\mathbf{7.454}$ & $8.885$ & $10.171$ & $20.701$ & $28.391$ & $32.677$ \\
+			 & \textbf{(}$\mathbf{0.492}$\textbf{)} & \textbf{(}$\mathbf{0.708}$\textbf{)} & ($0.707$) & ($0.941$) & ($4.684$) & ($3.632$) & ($2.745$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $6.187$ & $7.917$ & $\mathbf{8.816}$ & $\mathbf{10.118}$ & $16.546$ & $23.948$ & $29.776$ \\
+			 & ($0.608$) & ($1.082$) & \textbf{(}$\mathbf{0.762}$\textbf{)} & \textbf{(}$\mathbf{0.997}$\textbf{)} & ($1.513$) & ($2.1$) & ($2.891$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $5.863$ & $8.231$ & $9.942$ & $11.388$ & $\mathbf{16.223}$ & $26.774$ & $32.495$ \\
+			 & ($0.526$) & ($0.708$) & ($0.854$) & ($1.044$) & \textbf{(}$\mathbf{1.953}$\textbf{)} & ($4.307$) & ($3.099$) \\ \hline
+			\multirow{2}{*}{UniTS} & $7.176$ & $8.763$ & $10.181$ & $11.466$ & $16.562$ & $\mathbf{23.209}$ & $\mathbf{27.355}$ \\
+			 & ($0.607$) & ($0.759$) & ($0.88$) & ($0.988$) & ($1.426$) & \textbf{(}$\mathbf{2.001}$\textbf{)} & \textbf{(}$\mathbf{2.3}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MAE in $\degree$ ($\times 10^{-5}$), with standard deviation in brackets, across $k$-fold validation datasets for the $y$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_latitude_no_abs_MAE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $1.737$ & $2.566$ & $\mathbf{3.138}$ & $\mathbf{4.072}$ & $9.833$ & $18.497$ & $25.73$ \\
+			 & ($0.565$) & ($0.752$) & \textbf{(}$\mathbf{0.705}$\textbf{)} & \textbf{(}$\mathbf{0.848}$\textbf{)} & ($1.585$) & ($2.769$) & ($4.411$) \\ \hline
+			\multirow{2}{*}{GRU Reference} & $\mathbf{1.124}$ & $3.213$ & $5.048$ & $6.478$ & $13.847$ & $25.303$ & $31.686$ \\
+			 & \textbf{(}$\mathbf{0.592}$\textbf{)} & ($1.343$) & ($1.631$) & ($1.261$) & ($1.99$) & ($3.388$) & ($4.404$) \\ \hline
+			\multirow{2}{*}{LSTM Third} & $1.533$ & $\mathbf{2.301}$ & $4.429$ & $5.802$ & $13.747$ & $25.552$ & $31.702$ \\
+			 & ($0.895$) & \textbf{(}$\mathbf{1.3}$\textbf{)} & ($2.255$) & ($1.7$) & ($1.654$) & ($3.891$) & ($4.589$) \\ \hline
+			\multirow{2}{*}{UniTS} & $1.866$ & $2.562$ & $3.323$ & $4.113$ & $\mathbf{8.07}$ & $\mathbf{14.69}$ & $\mathbf{19.092}$ \\
+			 & ($0.727$) & ($0.708$) & ($0.764$) & ($0.839$) & \textbf{(}$\mathbf{1.325}$\textbf{)} & \textbf{(}$\mathbf{2.294}$\textbf{)} & \textbf{(}$\mathbf{2.906}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MSE in $\degree$ $^{2}$ ($\times 10^{-8}$), with standard deviation in brackets, across $k$-fold validation datasets for the $y$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_latitude_no_abs_MSE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $93.23\%$ & $90.0\%$ & $\mathbf{87.69\%}$ & $\mathbf{84.05\%}$ & $61.6\%$ & $28.71\%$ & $2.39\%$ \\
+			 & ($1.51\%$) & ($2.05\%$) & \textbf{(}$\mathbf{1.72\%}$\textbf{)} & \textbf{(}$\mathbf{1.93\%}$\textbf{)} & ($3.4\%$) & ($6.2\%$) & ($8.4\%$) \\ \hline
+			\multirow{2}{*}{GRU Reference} & $\mathbf{95.61\%}$ & $87.54\%$ & $80.31\%$ & $74.42\%$ & $45.82\%$ & $2.42\%$ & $-20.58\%$ \\
+			 & \textbf{(}$\mathbf{2.14\%}$\textbf{)} & ($4.07\%$) & ($4.96\%$) & ($4.09\%$) & ($4.34\%$) & ($5.99\%$) & ($7.07\%$) \\ \hline
+			\multirow{2}{*}{LSTM Third} & $93.81\%$ & $\mathbf{90.91\%}$ & $82.5\%$ & $77.25\%$ & $46.06\%$ & $1.72\%$ & $-20.76\%$ \\
+			 & ($3.93\%$) & \textbf{(}$\mathbf{5.23\%}$\textbf{)} & ($8.75\%$) & ($5.43\%$) & ($3.94\%$) & ($5.94\%$) & ($9.82\%$) \\ \hline
+			\multirow{2}{*}{UniTS} & $92.75\%$ & $89.96\%$ & $86.92\%$ & $83.77\%$ & $\mathbf{68.0\%}$ & $\mathbf{41.68\%}$ & $\mathbf{24.17\%}$ \\
+			 & ($1.98\%$) & ($1.67\%$) & ($1.63\%$) & ($1.67\%$) & \textbf{(}$\mathbf{2.31\%}$\textbf{)} & \textbf{(}$\mathbf{3.95\%}$\textbf{)} & \textbf{(}$\mathbf{4.68\%}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the $y$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_latitude_no_abs_R2}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $1.302$ & $1.584$ & $\mathbf{1.76}$ & $\mathbf{2.007}$ & $3.125$ & $4.289$ & $5.054$ \\
+			 & ($0.207$) & ($0.238$) & \textbf{(}$\mathbf{0.198}$\textbf{)} & \textbf{(}$\mathbf{0.213}$\textbf{)} & ($0.26$) & ($0.325$) & ($0.438$) \\ \hline
+			\multirow{2}{*}{GRU Reference} & $\mathbf{1.027}$ & $1.757$ & $2.219$ & $2.533$ & $3.711$ & $5.019$ & $5.615$ \\
+			 & \textbf{(}$\mathbf{0.266}$\textbf{)} & ($0.357$) & ($0.352$) & ($0.251$) & ($0.276$) & ($0.34$) & ($0.395$) \\ \hline
+			\multirow{2}{*}{LSTM Third} & $1.189$ & $\mathbf{1.473}$ & $2.049$ & $2.383$ & $3.701$ & $5.04$ & $5.616$ \\
+			 & ($0.346$) & \textbf{(}$\mathbf{0.36}$\textbf{)} & ($0.479$) & ($0.349$) & ($0.23$) & ($0.386$) & ($0.406$) \\ \hline
+			\multirow{2}{*}{UniTS} & $1.343$ & $1.586$ & $1.811$ & $2.017$ & $\mathbf{2.831}$ & $\mathbf{3.821}$ & $\mathbf{4.357}$ \\
+			 & ($0.248$) & ($0.217$) & ($0.21$) & ($0.21$) & \textbf{(}$\mathbf{0.238}$\textbf{)} & \textbf{(}$\mathbf{0.301}$\textbf{)} & \textbf{(}$\mathbf{0.331}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average RMSE in $\degree$ ($\times 10^{-4}$), with standard deviation in brackets, across $k$-fold validation datasets for the $y$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_latitude_no_abs_RMSE}
+\end{table}

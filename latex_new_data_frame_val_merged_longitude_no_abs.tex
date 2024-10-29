@@ -2,16 +2,16 @@
 %\label{subsec:longitude_no_abs_results}
 %\vspace{10pt}
 
-Figure~\ref{fig:var_long} represents the $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $x$ offset in the $k$-fold testing datasets using different RNN models, and forecasting times. Darker colors in grayscale represent a higher $p$-value in a range from $0$ to $1$. The values on the secondary diagonal are all equal to $1$ and black because models equal themselves.
+Figure~\ref{fig:var_long_RMSE} represents the $p$-values for the Wilcoxon signed-rank test on RMSE values across $k$-fold validation datasets for the $x$ offset in the $k$-fold testing datasets using different RNN models, and forecasting times. Darker colors in grayscale represent a higher $p$-value in a range from $0$ to $1$. The values on the secondary diagonal are all equal to $1$ and black because models equal themselves.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width = 0.99 \linewidth]{var_long.pdf}
-	\caption{The $p$-values for the Wilcoxon signed-rank test on actual and predicted values across $k$-fold validation datasets for the $x$ offset in the $k$-fold testing datasets using different RNN models, and forecasting times. Darker colors in grayscale represent a higher $p$-value in a range from $0$ to $1$. The values on the secondary diagonal are all equal to $1$ and black because models equal themselves.}
-	\label{fig:var_long}
+	\includegraphics[width = 0.99 \linewidth]{var_long_RMSE.pdf}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on RMSE values across $k$-fold validation datasets for the $x$ offset in the $k$-fold testing datasets using different RNN models, and forecasting times. Darker colors in grayscale represent a higher $p$-value in a range from $0$ to $1$. The values on the secondary diagonal are all equal to $1$ and black because models equal themselves.}
+	\label{fig:var_long_RMSE}
 \end{figure}
 
-The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the $x$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times is listed in Table~\ref{tab:best_longitude_no_abs_R2}.
+The average RMSE in $\degree$ ($\times 10^{-4}$), with standard deviation in brackets, across $k$-fold validation datasets for the $x$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times is listed in Table~\ref{tab:best_longitude_no_abs_RMSE}.
 
 \begin{table}[!ht]
 	\centering
@@ -19,87 +19,53 @@ The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold v
 		\begin{tabular}{|c|c|c|c|c|c|c|c|}
 			\hline
 			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
-			\multirow{2}{*}{Bi} & $94.51\%$ & $91.31\%$ & $87.8\%$ & $84.03\%$ & $66.95\%$ & $\mathbf{43.14\%}$ & $\mathbf{29.73\%}$ \\
-			 & ($0.79\%$) & ($1.3\%$) & ($1.64\%$) & ($1.75\%$) & ($2.53\%$) & \textbf{(}$\mathbf{2.76\%}$\textbf{)} & \textbf{(}$\mathbf{3.03\%}$\textbf{)} \\ \hline
-			\multirow{2}{*}{GRU Att 1} & $95.29\%$ & $\mathbf{91.83\%}$ & $87.74\%$ & $84.62\%$ & $50.34\%$ & $14.63\%$ & $3.01\%$ \\
-			 & ($0.92\%$) & \textbf{(}$\mathbf{1.53\%}$\textbf{)} & ($2.02\%$) & ($2.12\%$) & ($14.06\%$) & ($5.96\%$) & ($13.0\%$) \\ \hline
-			\multirow{2}{*}{LSTM Third} & $\mathbf{96.88\%}$ & $89.96\%$ & $83.59\%$ & $76.3\%$ & $47.76\%$ & $-0.74\%$ & $-22.31\%$ \\
-			 & \textbf{(}$\mathbf{1.13\%}$\textbf{)} & ($3.73\%$) & ($4.38\%$) & ($4.29\%$) & ($4.45\%$) & ($5.66\%$) & ($4.66\%$) \\ \hline
-			\multirow{2}{*}{UniTS} & $93.99\%$ & $91.18\%$ & $\mathbf{88.19\%}$ & $\mathbf{85.09\%}$ & $\mathbf{69.54\%}$ & $42.6\%$ & $23.39\%$ \\
-			 & ($0.83\%$) & ($1.05\%$) & \textbf{(}$\mathbf{1.32\%}$\textbf{)} & \textbf{(}$\mathbf{1.57\%}$\textbf{)} & \textbf{(}$\mathbf{2.54\%}$\textbf{)} & ($3.68\%$) & ($4.0\%$) \\ \hline
+			\multirow{2}{*}{Bi} & $1.512$ & $1.903$ & $2.257$ & $2.589$ & $3.74$ & $4.936$ & $\mathbf{5.52}$ \\
+			 & ($0.154$) & ($0.196$) & ($0.231$) & ($0.257$) & ($0.327$) & ($0.333$) & \textbf{(}$\mathbf{0.397}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $1.401$ & $\mathbf{1.846}$ & $2.265$ & $2.541$ & $4.544$ & $6.046$ & $6.47$ \\
+			 & ($0.188$) & \textbf{(}$\mathbf{0.24}$\textbf{)} & ($0.271$) & ($0.274$) & ($0.694$) & ($0.471$) & ($0.597$) \\ \hline
+			\multirow{2}{*}{LSTM Third} & $\mathbf{1.123}$ & $2.014$ & $2.601$ & $3.145$ & $4.704$ & $6.568$ & $7.272$ \\
+			 & \textbf{(}$\mathbf{0.201}$\textbf{)} & ($0.379$) & ($0.368$) & ($0.363$) & ($0.408$) & ($0.475$) & ($0.428$) \\ \hline
+			\multirow{2}{*}{UniTS} & $1.582$ & $1.917$ & $\mathbf{2.219}$ & $\mathbf{2.494}$ & $\mathbf{3.565}$ & $\mathbf{4.895}$ & $5.654$ \\
+			 & ($0.178$) & ($0.202$) & \textbf{(}$\mathbf{0.224}$\textbf{)} & \textbf{(}$\mathbf{0.244}$\textbf{)} & \textbf{(}$\mathbf{0.319}$\textbf{)} & \textbf{(}$\mathbf{0.404}$\textbf{)} & ($0.433$) \\ \hline
 		\end{tabular}
 	}
-	\caption{The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the $x$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
-	\label{tab:best_longitude_no_abs_R2}
+	\caption{The average RMSE in $\degree$ ($\times 10^{-4}$), with standard deviation in brackets, across $k$-fold validation datasets for the $x$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_longitude_no_abs_RMSE}
 \end{table}
 
-The Bi model achieved the highest $R^{2}$ (\%) for $x$ offset, and a forecasting time of $20$, and $30$ $s$ with average values and standard deviation (in brackets) that equal $43.14$\% ($2.76$\%), and $29.73$\% ($3.03$\%) respectively.
+The Bi model achieved the lowest RMSE for $x$ offset, and a forecasting time of $30$ $s$ with an average value and standard deviation (in brackets) that equals $55.2 \times 10^{-5}$ $\degree$ ($3.97 \times 10^{-5}$ $\degree$).
 
-The Bi model does not make statistically significantly different predictions than the actual value model for $x$ offset using a forecasting time of $20$ $s$, with a $p$-value equaling $3.471 \times 10^{-1}$.
+The Bi model does not have a statistically significantly different RMSE than the UniTS model for $x$ offset using a forecasting time of $30$ $s$, with a $p$-value equaling $2.996 \times 10^{-1}$.
 
-\markertable{tab:\label{tab:longitude:no:abs:p:20}}
+\markertable{tab:\label{tab:RMSE:longitude:no:abs:p:30}}
 
-The GRU Att 1 model achieved the highest $R^{2}$ (\%) for $x$ offset, and a forecasting time of $3$ $s$ with an average value and standard deviation (in brackets) that equals $91.83$\% ($1.53$\%).
+The GRU Att 1 model achieved the lowest RMSE for $x$ offset, and a forecasting time of $3$ $s$ with an average value and standard deviation (in brackets) that equals $18.46 \times 10^{-5}$ $\degree$ ($2.4 \times 10^{-5}$ $\degree$).
 
-The GRU Att 1 model does not make statistically significantly different predictions than the GRU Att 4, and RNN Third models for $x$ offset using a forecasting time of $3$ $s$, with $p$-values equaling $1.579 \times 10^{-1}$, and $8.207 \times 10^{-1}$.
+The GRU Att 1 model does not have a statistically significantly different RMSE than the Bi, Conv, GRU Att 2, GRU Third, GRU Twice, LSTM Linear, LSTM Third, LSTM Twice, RNN Third, and UniTS models for $x$ offset using a forecasting time of $3$ $s$, with $p$-values equaling $3.254 \times 10^{-1}$, $6.721 \times 10^{-1}$, $1.073 \times 10^{-1}$, $2.255 \times 10^{-3}$, $4.605 \times 10^{-3}$, $5.564 \times 10^{-4}$, $2.027 \times 10^{-2}$, $9.789 \times 10^{-1}$, $3.764 \times 10^{-4}$, and $7.15 \times 10^{-4}$.
 
-\markertable{tab:\label{tab:longitude:no:abs:p:3}}
+\markertable{tab:\label{tab:RMSE:longitude:no:abs:p:3}}
 
-The LSTM Third model achieved the highest $R^{2}$ (\%) for $x$ offset, and a forecasting time of $2$ $s$ with an average value and standard deviation (in brackets) that equals $96.88$\% ($1.13$\%).
+The LSTM Third model achieved the lowest RMSE for $x$ offset, and a forecasting time of $2$ $s$ with an average value and standard deviation (in brackets) that equals $11.23 \times 10^{-5}$ $\degree$ ($2.01 \times 10^{-5}$ $\degree$).
 
-The UniTS model achieved the highest $R^{2}$ (\%) for $x$ offset, and a forecasting time of $4$, $5$, and $10$ $s$ with average values and standard deviation (in brackets) that equal $88.19$\% ($1.32$\%), $85.09$\% ($1.57$\%), and $69.54$\% ($2.54$\%) respectively.
+The LSTM Third model does not have a statistically significantly different RMSE than the GRU Linear, GRU Third, GRU Twice, LSTM Linear, and LSTM Reference models for $x$ offset using a forecasting time of $2$ $s$, with $p$-values equaling $6.313 \times 10^{-4}$, $7.112 \times 10^{-1}$, $5.424 \times 10^{-1}$, $6.263 \times 10^{-2}$, and $2.027 \times 10^{-2}$.
 
-The UniTS model does not make statistically significantly different predictions than the GRU Twice, and LSTM Third models for $x$ offset using a forecasting time of $5$ $s$, with $p$-values equaling $6.213 \times 10^{-1}$, and $2.591 \times 10^{-1}$.
+\markertable{tab:\label{tab:RMSE:longitude:no:abs:p:2}}
 
-\markertable{tab:\label{tab:longitude:no:abs:p:5}}
+The UniTS model achieved the lowest RMSE for $x$ offset, and a forecasting time of $4$, $5$, $10$, and $20$ $s$ with average values and standard deviation (in brackets) that equal $22.19 \times 10^{-5}$ $\degree$ ($2.24 \times 10^{-5}$ $\degree$), $24.94 \times 10^{-5}$ $\degree$ ($2.44 \times 10^{-5}$ $\degree$), $35.65 \times 10^{-5}$ $\degree$ ($3.19 \times 10^{-5}$ $\degree$), and $48.95 \times 10^{-5}$ $\degree$ ($4.04 \times 10^{-5}$ $\degree$) respectively.
 
-The UniTS model does not make statistically significantly different predictions than the RNN Third, and Bi models for $x$ offset using a forecasting time of $10$ $s$, with $p$-values equaling $1.747 \times 10^{-3}$, and $4.766 \times 10^{-1}$.
+The UniTS model does not have a statistically significantly different RMSE than the Bi, Conv, GRU Att 1, GRU Att 2, and GRU Att 3 models for $x$ offset using a forecasting time of $4$ $s$, with $p$-values equaling $5.965 \times 10^{-1}$, $2.411 \times 10^{-1}$, $5.875 \times 10^{-2}$, $1.908 \times 10^{-1}$, and $3.291 \times 10^{-4}$.
 
-\markertable{tab:\label{tab:longitude:no:abs:p:10}}
+\markertable{tab:\label{tab:RMSE:longitude:no:abs:p:4}}
 
-The average MAE in $\degree$ ($\times 10^{-5}$), with standard deviation in brackets, across $k$-fold validation datasets for the $x$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times is listed in Table~\ref{tab:best_longitude_no_abs_MAE}.
+The UniTS model does not have a statistically significantly different RMSE than the Bi, Conv, GRU Att 1, and GRU Att 2 models for $x$ offset using a forecasting time of $5$ $s$, with $p$-values equaling $9.032 \times 10^{-2}$, $3.291 \times 10^{-4}$, $2.748 \times 10^{-2}$, and $9.032 \times 10^{-2}$.
 
-\begin{table}[!ht]
-	\centering
-	\resizebox{\linewidth}{!}{
-		\begin{tabular}{|c|c|c|c|c|c|c|c|}
-			\hline
-			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
-			\multirow{2}{*}{GRU Att 1} & $\mathbf{6.81}$ & $\mathbf{9.13}$ & $\mathbf{11.39}$ & $\mathbf{12.77}$ & $25.31$ & $37.95$ & $42.58$ \\
-			 & \textbf{(}$\mathbf{0.85}$\textbf{)} & \textbf{(}$\mathbf{1.09}$\textbf{)} & \textbf{(}$\mathbf{1.48}$\textbf{)} & \textbf{(}$\mathbf{1.41}$\textbf{)} & ($5.26$) & ($3.28$) & ($3.71$) \\ \hline
-			\multirow{2}{*}{GRU Att 2} & $7.15$ & $9.67$ & $11.58$ & $13.14$ & $\mathbf{20.61}$ & $31.95$ & $40.63$ \\
-			 & ($0.86$) & ($1.3$) & ($1.44$) & ($2.01$) & \textbf{(}$\mathbf{2.81}$\textbf{)} & ($3.97$) & ($4.81$) \\ \hline
-			\multirow{2}{*}{UniTS} & $9.01$ & $11.04$ & $12.85$ & $14.49$ & $21.05$ & $\mathbf{29.73}$ & $\mathbf{35.17}$ \\
-			 & ($0.96$) & ($1.19$) & ($1.38$) & ($1.55$) & ($2.2$) & \textbf{(}$\mathbf{3.04}$\textbf{)} & \textbf{(}$\mathbf{3.37}$\textbf{)} \\ \hline
-		\end{tabular}
-	}
-	\caption{The average MAE in $\degree$ ($\times 10^{-5}$), with standard deviation in brackets, across $k$-fold validation datasets for the $x$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
-	\label{tab:best_longitude_no_abs_MAE}
-\end{table}
+\markertable{tab:\label{tab:RMSE:longitude:no:abs:p:5}}
 
-The GRU Att 1 model achieved the lowest MAE for $x$ offset, and a forecasting time of $2$, $3$, $4$, and $5$ $s$ with average values and standard deviation (in brackets) that equal $6.81 \times 10^{-5}$ $\degree$ ($0.85 \times 10^{-5}$ $\degree$), $9.13 \times 10^{-5}$ $\degree$ ($1.09 \times 10^{-5}$ $\degree$), $11.39 \times 10^{-5}$ $\degree$ ($1.48 \times 10^{-5}$ $\degree$), and $12.77 \times 10^{-5}$ $\degree$ ($1.41 \times 10^{-5}$ $\degree$) respectively.
+The UniTS model does not have a statistically significantly different RMSE than the Bi model for $x$ offset using a forecasting time of $10$ $s$, with a $p$-value equaling $6.263 \times 10^{-2}$.
 
-The GRU Att 1 model does not make statistically significantly different predictions than the GRU Att 2, and GRU Att 3 models for $x$ offset using a forecasting time of $2$ $s$, with $p$-values equaling $7.278 \times 10^{-1}$, and $2.838 \times 10^{-2}$.
+\markertable{tab:\label{tab:RMSE:longitude:no:abs:p:10}}
 
-\markertable{tab:\label{tab:longitude:no:abs:p:2}}
+The UniTS model does not have a statistically significantly different RMSE than the Bi model for $x$ offset using a forecasting time of $20$ $s$, with a $p$-value equaling $7.712 \times 10^{-1}$.
 
-The GRU Att 1 model does not make statistically significantly different predictions than the GRU Att 4, and RNN Third models for $x$ offset using a forecasting time of $3$ $s$, with $p$-values equaling $1.579 \times 10^{-1}$, and $8.207 \times 10^{-1}$.
-
-The GRU Att 1 model does not make statistically significantly different predictions than the RNN Linear, and Bi models for $x$ offset using a forecasting time of $4$ $s$, with $p$-values equaling $2.789 \times 10^{-2}$, and $3.721 \times 10^{-3}$.
-
-\markertable{tab:\label{tab:longitude:no:abs:p:4}}
-
-The GRU Att 1 model does not make statistically significantly different predictions than the Conv model for $x$ offset using a forecasting time of $5$ $s$, with a $p$-value equaling $5.193 \times 10^{-2}$.
-
-The GRU Att 2 model achieved the lowest MAE for $x$ offset, and a forecasting time of $10$ $s$ with an average value and standard deviation (in brackets) that equals $20.61 \times 10^{-5}$ $\degree$ ($2.81 \times 10^{-5}$ $\degree$).
-
-The GRU Att 2 model does not make statistically significantly different predictions than the GRU Reference, and Bi models for $x$ offset using a forecasting time of $10$ $s$, with $p$-values equaling $4.694 \times 10^{-1}$, and $1.319 \times 10^{-2}$.
-
-The UniTS model achieved the lowest MAE for $x$ offset, and a forecasting time of $20$, and $30$ $s$ with average values and standard deviation (in brackets) that equal $29.73 \times 10^{-5}$ $\degree$ ($3.04 \times 10^{-5}$ $\degree$), and $35.17 \times 10^{-5}$ $\degree$ ($3.37 \times 10^{-5}$ $\degree$) respectively.
-
-The UniTS model does not make statistically significantly different predictions than the GRU Att 1, and LSTM Twice models for $x$ offset using a forecasting time of $20$ $s$, with $p$-values equaling $7.814 \times 10^{-1}$, and $5.546 \times 10^{-2}$.
-
-The UniTS model does not make statistically significantly different predictions than the GRU Reference model for $x$ offset using a forecasting time of $30$ $s$, with a $p$-value equaling $6.734 \times 10^{-3}$.
-
-\markertable{tab:\label{tab:longitude:no:abs:p:30}}
+\markertable{tab:\label{tab:RMSE:longitude:no:abs:p:20}}
 

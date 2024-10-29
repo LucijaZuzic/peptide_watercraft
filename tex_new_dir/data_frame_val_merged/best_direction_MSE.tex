@@ -1,0 +1,17 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Conv} & $1994.58$ & $2477.51$ & $\mathbf{2875.37}$ & $\mathbf{3247.2}$ & $4684.15$ & $6362.97$ & $7229.31$ \\
+			 & ($180.95$) & ($227.35$) & \textbf{(}$\mathbf{223.46}$\textbf{)} & \textbf{(}$\mathbf{256.33}$\textbf{)} & ($295.5$) & ($362.05$) & ($397.83$) \\ \hline
+			\multirow{2}{*}{RNN Linear} & $\mathbf{1512.9}$ & $\mathbf{2274.11}$ & $2959.91$ & $3450.74$ & $5267.49$ & $7808.74$ & $9119.86$ \\
+			 & \textbf{(}$\mathbf{144.1}$\textbf{)} & \textbf{(}$\mathbf{228.69}$\textbf{)} & ($239.22$) & ($237.28$) & ($337.94$) & ($338.88$) & ($468.98$) \\ \hline
+			\multirow{2}{*}{UniTS} & $2493.14$ & $2828.78$ & $3143.44$ & $3439.64$ & $\mathbf{4602.13}$ & $\mathbf{6094.78}$ & $\mathbf{7076.69}$ \\
+			 & ($216.72$) & ($242.03$) & ($262.61$) & ($278.22$) & \textbf{(}$\mathbf{304.73}$\textbf{)} & \textbf{(}$\mathbf{354.48}$\textbf{)} & \textbf{(}$\mathbf{411.25}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MSE in $\degree$ $^{2}$, with standard deviation in brackets, across $k$-fold validation datasets for the heading estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:best_direction_MSE}
+\end{table}

@@ -8,7 +8,7 @@ ride_zero = os.listdir("csv_results_traj/1/1/" + vehicle_zero)[0]
 var_list = os.listdir("csv_results_traj/1/1/" + vehicle_zero + "/" + ride_zero + "/")
 model_list = os.listdir("csv_results_traj/1/1/" + vehicle_zero + "/" + ride_zero + "/" + var_list[0] + "/")
 for var in var_list:
-    for ws in [2, 3, 4, 5, 10, 20, 30]:
+    for ws in [4]:
         dict_pred = dict()
         for nf2 in range(sf2):
             for nf1 in range(sf1):
