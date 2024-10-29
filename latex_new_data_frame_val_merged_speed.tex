@@ -11,7 +11,7 @@ Figure~\ref{fig:var_speed_RMSE} represents the $p$-values for the Wilcoxon signe
 	\label{fig:var_speed_RMSE}
 \end{figure}
 
-The average RMSE in $km/h$, with standard deviation in brackets, across $k$-fold validation datasets for the speed estimated on the $k$-fold testing datasets by different RNN models, and forecasting times is listed in Table~\ref{tab:best_speed_RMSE}.
+The average RMSE in $km/h$, with standard deviation in brackets, across $k$-fold validation datasets for the speed estimated on the $k$-fold testing datasets by different RNN models, and forecasting times is listed in Table~\ref{tab:wilcoxon_speed_RMSE}.
 
 \begin{table}[!ht]
 	\centering
@@ -19,16 +19,22 @@ The average RMSE in $km/h$, with standard deviation in brackets, across $k$-fold
 		\begin{tabular}{|c|c|c|c|c|c|c|c|}
 			\hline
 			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
-			\multirow{2}{*}{Conv} & $4.16$ & $\mathbf{5.2}$ & $6.12$ & $6.93$ & $9.41$ & $11.29$ & $12.02$ \\
-			 & ($0.3$) & \textbf{(}$\mathbf{0.37}$\textbf{)} & ($0.43$) & ($0.48$) & ($0.64$) & ($0.7$) & ($0.71$) \\ \hline
-			\multirow{2}{*}{LSTM Linear} & $\mathbf{4.03}$ & $5.61$ & $6.87$ & $7.88$ & $10.37$ & $11.43$ & $11.9$ \\
-			 & \textbf{(}$\mathbf{0.3}$\textbf{)} & ($0.45$) & ($0.53$) & ($0.59$) & ($0.71$) & ($0.75$) & ($0.76$) \\ \hline
-			\multirow{2}{*}{UniTS} & $4.35$ & $5.25$ & $\mathbf{6.02}$ & $\mathbf{6.69}$ & $\mathbf{8.86}$ & $\mathbf{10.55}$ & $\mathbf{11.26}$ \\
-			 & ($0.3$) & ($0.37$) & \textbf{(}$\mathbf{0.42}$\textbf{)} & \textbf{(}$\mathbf{0.47}$\textbf{)} & \textbf{(}$\mathbf{0.64}$\textbf{)} & \textbf{(}$\mathbf{0.77}$\textbf{)} & \textbf{(}$\mathbf{0.75}$\textbf{)} \\ \hline
+			\multirow{2}{*}{Bi} & $4.179$ & $5.259$ & $6.199$ & $6.994$ & $9.488$ & $11.359$ & $12.115$ \\
+			 & ($0.303$) & ($0.37$) & ($0.43$) & ($0.482$) & ($0.63$) & ($0.689$) & ($0.744$) \\ \hline
+			\multirow{2}{*}{Conv} & $4.161$ & $\mathbf{5.199}$ & $6.12$ & $6.931$ & $9.409$ & $11.29$ & $12.022$ \\
+			 & ($0.296$) & \textbf{(}$\mathbf{0.374}$\textbf{)} & ($0.431$) & ($0.479$) & ($0.64$) & ($0.698$) & ($0.713$) \\ \hline
+			\multirow{2}{*}{GRU Linear} & $4.059$ & $5.654$ & $6.986$ & $7.896$ & $10.444$ & $11.469$ & $11.854$ \\
+			 & ($0.283$) & ($0.481$) & ($0.534$) & ($0.589$) & ($0.812$) & ($0.798$) & ($0.755$) \\ \hline
+			\multirow{2}{*}{LSTM Linear} & $\mathbf{4.026}$ & $5.609$ & $6.866$ & $7.878$ & $10.372$ & $11.435$ & $11.901$ \\
+			 & \textbf{(}$\mathbf{0.301}$\textbf{)} & ($0.447$) & ($0.528$) & ($0.593$) & ($0.707$) & ($0.753$) & ($0.76$) \\ \hline
+			\multirow{2}{*}{RNN Linear} & $4.053$ & $5.589$ & $6.859$ & $7.755$ & $10.232$ & $11.323$ & $11.807$ \\
+			 & ($0.344$) & ($0.472$) & ($0.533$) & ($0.625$) & ($0.785$) & ($0.803$) & ($0.696$) \\ \hline
+			\multirow{2}{*}{UniTS} & $4.353$ & $5.246$ & $\mathbf{6.022}$ & $\mathbf{6.691}$ & $\mathbf{8.861}$ & $\mathbf{10.555}$ & $\mathbf{11.262}$ \\
+			 & ($0.296$) & ($0.369$) & \textbf{(}$\mathbf{0.424}$\textbf{)} & \textbf{(}$\mathbf{0.473}$\textbf{)} & \textbf{(}$\mathbf{0.639}$\textbf{)} & \textbf{(}$\mathbf{0.772}$\textbf{)} & \textbf{(}$\mathbf{0.754}$\textbf{)} \\ \hline
 		\end{tabular}
 	}
 	\caption{The average RMSE in $km/h$, with standard deviation in brackets, across $k$-fold validation datasets for the speed estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
-	\label{tab:best_speed_RMSE}
+	\label{tab:wilcoxon_speed_RMSE}
 \end{table}
 
 The Conv model achieved the lowest RMSE for speed, and a forecasting time of $3$ $s$ with an average value and standard deviation (in brackets) that equals $5.2$ $km/h$ ($0.37$ $km/h$).

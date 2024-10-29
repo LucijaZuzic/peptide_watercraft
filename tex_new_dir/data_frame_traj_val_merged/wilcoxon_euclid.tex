@@ -1,0 +1,41 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $3.311$ & $4.078$ & $5.209$ & $7.016$ & $38.795$ & $59.289$ & $66.103$ \\
+			 & ($0.385$) & ($0.486$) & ($0.662$) & ($1.391$) & ($8.735$) & ($17.179$) & ($11.988$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $3.742$ & $4.858$ & $5.819$ & $8.062$ & $16.792$ & $36.725$ & $66.632$ \\
+			 & ($0.563$) & ($0.706$) & ($0.79$) & ($2.426$) & ($8.847$) & ($11.973$) & ($25.117$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $3.424$ & $4.855$ & $5.914$ & $7.284$ & $22.353$ & $52.871$ & $72.855$ \\
+			 & ($0.453$) & ($0.392$) & ($0.931$) & ($0.757$) & ($10.24$) & ($31.28$) & ($34.788$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{3.111}$ & $\mathbf{4.064}$ & $5.115$ & $6.462$ & $23.372$ & $54.46$ & $68.054$ \\
+			 & \textbf{(}$\mathbf{0.417}$\textbf{)} & \textbf{(}$\mathbf{0.467}$\textbf{)} & ($0.496$) & ($0.66$) & ($5.19$) & ($7.497$) & ($16.796$) \\ \hline
+			\multirow{2}{*}{UniTS} & $4.36$ & $4.875$ & $\mathbf{5.022}$ & $\mathbf{5.872}$ & $\mathbf{9.528}$ & $\mathbf{13.812}$ & $\mathbf{18.212}$ \\
+			 & ($3.281$) & ($3.038$) & \textbf{(}$\mathbf{0.638}$\textbf{)} & \textbf{(}$\mathbf{0.88}$\textbf{)} & \textbf{(}$\mathbf{1.117}$\textbf{)} & \textbf{(}$\mathbf{1.414}$\textbf{)} & \textbf{(}$\mathbf{1.882}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average Euclidean distance in $\degree$ ($\times 10^{-3}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:wilcoxon_no_abs_euclid}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $1.326$ & $1.378$ & $1.472$ & $\mathbf{1.498}$ & $\mathbf{1.714}$ & $\mathbf{2.765}$ & $7.429$ \\
+			 & ($0.081$) & ($0.072$) & ($0.074$) & \textbf{(}$\mathbf{0.074}$\textbf{)} & \textbf{(}$\mathbf{0.105}$\textbf{)} & \textbf{(}$\mathbf{0.182}$\textbf{)} & ($5.758$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $1.322$ & $1.397$ & $\mathbf{1.469}$ & $1.511$ & $1.799$ & $2.828$ & $\mathbf{3.939}$ \\
+			 & ($0.078$) & ($0.098$) & \textbf{(}$\mathbf{0.085}$\textbf{)} & ($0.097$) & ($0.172$) & ($0.209$) & \textbf{(}$\mathbf{0.463}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $1.336$ & $1.407$ & $1.498$ & $1.544$ & $1.874$ & $2.886$ & $4.029$ \\
+			 & ($0.075$) & ($0.085$) & ($0.092$) & ($0.071$) & ($0.155$) & ($0.232$) & ($0.451$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{1.319}$ & $\mathbf{1.365}$ & $1.473$ & $1.543$ & $1.886$ & $2.851$ & $5.192$ \\
+			 & \textbf{(}$\mathbf{0.075}$\textbf{)} & \textbf{(}$\mathbf{0.082}$\textbf{)} & ($0.08$) & ($0.077$) & ($0.152$) & ($0.223$) & ($4.053$) \\ \hline
+		\end{tabular}
+	}
+	\caption{The average Euclidean distance in $\degree$ ($\times 10^{-2}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
+	\label{tab:wilcoxon_speed_actual_dir_euclid}
+\end{table}

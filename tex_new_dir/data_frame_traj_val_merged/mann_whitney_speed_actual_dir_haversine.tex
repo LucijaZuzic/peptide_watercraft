@@ -1,0 +1,19 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $1.474$ & $1.532$ & $1.637$ & $\mathbf{1.665}$ & $\mathbf{1.906}$ & $\mathbf{3.075}$ & $8.261$ \\
+			 & ($0.09$) & ($0.081$) & ($0.082$) & \textbf{(}$\mathbf{0.083}$\textbf{)} & \textbf{(}$\mathbf{0.116}$\textbf{)} & \textbf{(}$\mathbf{0.202}$\textbf{)} & ($6.403$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $1.47$ & $1.554$ & $\mathbf{1.634}$ & $1.681$ & $2.001$ & $3.145$ & $\mathbf{4.38}$ \\
+			 & ($0.086$) & ($0.109$) & \textbf{(}$\mathbf{0.095}$\textbf{)} & ($0.108$) & ($0.191$) & ($0.232$) & \textbf{(}$\mathbf{0.515}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $1.486$ & $1.565$ & $1.666$ & $1.717$ & $2.084$ & $3.209$ & $4.48$ \\
+			 & ($0.084$) & ($0.094$) & ($0.103$) & ($0.079$) & ($0.173$) & ($0.258$) & ($0.501$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{1.467}$ & $\mathbf{1.518}$ & $1.638$ & $1.716$ & $2.098$ & $3.17$ & $5.773$ \\
+			 & \textbf{(}$\mathbf{0.084}$\textbf{)} & \textbf{(}$\mathbf{0.092}$\textbf{)} & ($0.089$) & ($0.086$) & ($0.169$) & ($0.248$) & ($4.507$) \\ \hline
+		\end{tabular}
+	}
+	\caption{The average haversine distance in $km$, with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_speed_actual_dir_haversine}
+\end{table}

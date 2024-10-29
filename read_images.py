@@ -117,19 +117,40 @@ for name in name_list_total:
                             model_min = model
                         min_max_for_metric_for_ws[var][ws][metric] = (metric_min, model_min, metric_max, model_max)
 
+    model_best_for = dict()
+    for metric in round_val:
+        if metric not in df_dictio:
+            continue
+        model_best_for[metric] = dict()
+        for var in min_max_for_metric_for_ws:
+            if "time" in var:
+                continue
+            model_best_for[metric][var] = dict()
+            for model in dictio[var]:
+                model_best_for[metric][var][model] = []
+            for ws in min_max_for_metric_for_ws[var]:
+                metric_min, model_min, metric_max, model_max = min_max_for_metric_for_ws[var][ws][metric]
+                model_best = model_min
+                if "R2" in metric:
+                    model_best = model_max
+                model_best_for[metric][var][model_best].append(ws)
+
     best_used = dict()
     best_all = dict()
+    best_expanded = dict()
     latex_version = dict()
     for metric in used_metric:
         latex_version[metric] = dict()
         best_used[metric] = dict()
         best_all[metric] = dict()
+        best_expanded[metric] = dict()
         for var in dictio:
             if var == "time":
                 continue
             latex_version[metric][var] = dict()
             best_used[metric][var] = dict()
             best_all[metric][var] = dict()
+            best_expanded[metric][var] = dict()
             ix_best = round_val[metric][2]
             set_of_best = set()
             set_of_best_all = set()
@@ -138,7 +159,51 @@ for name in name_list_total:
                     if model == min_max_for_metric_for_ws[var][ws][metric][ix_best]:
                         set_of_best.add(model)
                     set_of_best_all.add(model)
-            sets_used = {"all": set_of_best_all, "best": set_of_best}
+
+            for start_name in ["dicti_mann_whitney", "dicti_wilcoxon"]:
+                if "traj" in name:
+                    df_dictio = pd.read_csv(start_name + "_traj_" + metric + ".csv", index_col = False)
+                else:
+                    df_dictio = pd.read_csv(start_name + "_" + metric + ".csv", index_col = False)
+
+                var_list = set(df_dictio["variable"])
+                model_list1 = set(list(df_dictio["model1"]))
+                model_list2 = set(list(df_dictio["model2"]))
+                model_list = set()
+                for m in model_list1:
+                    model_list.add(m)
+                for m in model_list2:
+                    model_list.add(m)
+                ws_list = set(df_dictio["ws"])
+
+                found_sth_total = set()
+                for ix in range(len(df_dictio["variable"])):
+                    var2 = df_dictio["variable"][ix]
+                    if var2 != var:
+                        continue
+                    ws = df_dictio["ws"][ix]
+                    model1 = df_dictio["model1"][ix]
+                    model2 = df_dictio["model2"][ix]
+                    u = df_dictio["u"][ix] 
+                    p = df_dictio["p"][ix]
+                    len_use = len(model_list)
+                    num_use = (len_use * (len_use + 1)) / 2
+                    if ws in model_best_for[metric][var][model1]:
+                        found_sth_total.add(model1)
+                        if p >= 0.05 / num_use:
+                            found_sth_total.add(model2)
+                    if ws in model_best_for[metric][var][model2]:
+                        found_sth_total.add(model2)
+                        if p >= 0.05 / num_use:
+                            found_sth_total.add(model1)
+                print(metric, var, best_expanded[metric].keys())
+                best_expanded[metric][var][start_name.replace("dicti_", "")] = found_sth_total
+                    
+            sets_used = {"all": set_of_best_all, 
+                         "best": set_of_best, 
+                         "mann_whitney": best_expanded[metric][var]["mann_whitney"],
+                         "wilcoxon": best_expanded[metric][var]["wilcoxon"]
+                         }
             for set_some_key in sets_used:
                 string_latex = ""
                 set_some = sets_used[set_some_key]
@@ -270,7 +335,7 @@ for name in name_list_total:
         continue
 
     for metric in used_metric:
-        for plttype in ["all", "best"]:
+        for plttype in ["all", "best", "mann_whitney", "wilcoxon"]:
             plt.figure(figsize=(21*cm, 29.7/2*cm), dpi = 300)
             
             plt.rcParams["svg.fonttype"] = "none"
@@ -294,7 +359,11 @@ for name in name_list_total:
                 if var == "time":
                     continue
                 ix += 1
-                set_of_models = {"all": best_all[metric][var], "best": best_used[metric][var]}
+                set_of_models = {"all": best_all[metric][var], 
+                                 "best": best_used[metric][var],
+                                 "mann_whitney": best_expanded[metric][var]["mann_whitney"], 
+                                 "wilcoxon": best_expanded[metric][var]["wilcoxon"]
+                                 }
                 plt.subplot(len(dictio) - 1 * ("time" in dictio), 1, ix)
                 if ix == 1:
                     metricnew = metric.replace("R2", "$R^{2}$ (%)")

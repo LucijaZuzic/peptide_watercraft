@@ -1,0 +1,19 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $13.28$ & $22.59$ & $31.84$ & $68.14$ & $2009.71$ & $4401.47$ & $4848.54$ \\
+			 & ($8.43$) & ($14.35$) & ($18.23$) & ($43.12$) & ($916.81$) & ($3480.88$) & ($1816.82$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $11.35$ & $22.79$ & $34.89$ & $57.39$ & $685.31$ & $5223.89$ & $7569.13$ \\
+			 & ($4.82$) & ($5.5$) & ($17.54$) & ($30.18$) & ($605.54$) & ($7293.31$) & ($8662.23$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{9.55}$ & $\mathbf{15.19}$ & $23.87$ & $41.71$ & $766.7$ & $3639.82$ & $5632.01$ \\
+			 & \textbf{(}$\mathbf{3.13}$\textbf{)} & \textbf{(}$\mathbf{3.88}$\textbf{)} & ($5.08$) & ($12.02$) & ($373.45$) & ($1205.55$) & ($3334.15$) \\ \hline
+			\multirow{2}{*}{UniTS} & $30.43$ & $28.43$ & $\mathbf{21.06}$ & $\mathbf{30.88}$ & $\mathbf{80.38}$ & $\mathbf{156.93}$ & $\mathbf{275.52}$ \\
+			 & ($83.91$) & ($63.86$) & \textbf{(}$\mathbf{5.87}$\textbf{)} & \textbf{(}$\mathbf{10.37}$\textbf{)} & \textbf{(}$\mathbf{25.56}$\textbf{)} & \textbf{(}$\mathbf{41.01}$\textbf{)} & \textbf{(}$\mathbf{87.51}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MSE in $\degree$ $^{2}$ ($\times 10^{-6}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:wilcoxon_no_abs_MSE}
+\end{table}

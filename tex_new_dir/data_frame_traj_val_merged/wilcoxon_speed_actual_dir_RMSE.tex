@@ -1,0 +1,19 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $1.501$ & $1.524$ & $1.587$ & $\mathbf{1.598}$ & $\mathbf{1.745}$ & $\mathbf{2.657}$ & $7.659$ \\
+			 & ($0.163$) & ($0.154$) & ($0.163$) & \textbf{(}$\mathbf{0.135}$\textbf{)} & \textbf{(}$\mathbf{0.108}$\textbf{)} & \textbf{(}$\mathbf{0.17}$\textbf{)} & ($6.196$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $1.495$ & $1.536$ & $1.586$ & $1.616$ & $1.818$ & $2.72$ & $\mathbf{3.919}$ \\
+			 & ($0.161$) & ($0.177$) & ($0.173$) & ($0.165$) & ($0.192$) & ($0.19$) & \textbf{(}$\mathbf{0.589}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $1.507$ & $1.54$ & $1.603$ & $1.62$ & $1.85$ & $2.767$ & $4.003$ \\
+			 & ($0.16$) & ($0.16$) & ($0.183$) & ($0.147$) & ($0.169$) & ($0.214$) & ($0.586$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{1.494}$ & $\mathbf{1.514}$ & $\mathbf{1.581}$ & $1.616$ & $1.842$ & $2.737$ & $5.269$ \\
+			 & \textbf{(}$\mathbf{0.152}$\textbf{)} & \textbf{(}$\mathbf{0.163}$\textbf{)} & \textbf{(}$\mathbf{0.173}$\textbf{)} & ($0.15$) & ($0.125$) & ($0.238$) & ($4.403$) \\ \hline
+		\end{tabular}
+	}
+	\caption{The average RMSE in $\degree$ ($\times 10^{-2}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
+	\label{tab:wilcoxon_speed_actual_dir_RMSE}
+\end{table}

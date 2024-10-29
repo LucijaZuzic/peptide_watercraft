@@ -1,0 +1,111 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $\mathbf{11.77}$ & $\mathbf{15.7}$ & $\mathbf{19.33}$ & $\mathbf{21.9}$ & $\mathbf{32.74}$ & $49.41$ & $63.77$ \\
+			 & \textbf{(}$\mathbf{1.29}$\textbf{)} & \textbf{(}$\mathbf{1.63}$\textbf{)} & \textbf{(}$\mathbf{1.67}$\textbf{)} & \textbf{(}$\mathbf{1.75}$\textbf{)} & \textbf{(}$\mathbf{2.14}$\textbf{)} & ($2.48$) & ($10.68$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $12.59$ & $16.3$ & $19.4$ & $22.11$ & $33.67$ & $49.19$ & $59.9$ \\
+			 & ($1.49$) & ($1.8$) & ($1.77$) & ($1.9$) & ($2.39$) & ($2.5$) & ($3.56$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $12.1$ & $17.31$ & $21.17$ & $24.24$ & $34.98$ & $50.23$ & $60.8$ \\
+			 & ($1.6$) & ($1.53$) & ($1.48$) & ($1.76$) & ($2.14$) & ($2.63$) & ($3.35$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $12.02$ & $16.36$ & $20.23$ & $23.04$ & $34.64$ & $50.07$ & $62.03$ \\
+			 & ($1.54$) & ($1.71$) & ($1.7$) & ($1.87$) & ($2.42$) & ($2.41$) & ($7.61$) \\ \hline
+			\multirow{2}{*}{UniTS} & $16.17$ & $19.54$ & $22.46$ & $25.04$ & $34.91$ & $\mathbf{47.49}$ & $\mathbf{55.81}$ \\
+			 & ($1.21$) & ($1.41$) & ($1.56$) & ($1.68$) & ($2.0$) & \textbf{(}$\mathbf{2.55}$\textbf{)} & \textbf{(}$\mathbf{3.01}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MAE in $\degree$, with standard deviation in brackets, across $k$-fold validation datasets for the heading estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_direction_MAE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Bi} & $8.158$ & $10.376$ & $11.8$ & $13.09$ & $18.864$ & $25.627$ & $29.026$ \\
+			 & ($0.723$) & ($1.566$) & ($1.495$) & ($1.036$) & ($1.535$) & ($1.945$) & ($2.073$) \\ \hline
+			\multirow{2}{*}{Conv} & $7.825$ & $9.571$ & $11.018$ & $12.309$ & $18.673$ & $25.208$ & $28.35$ \\
+			 & ($1.12$) & ($1.183$) & ($1.046$) & ($1.148$) & ($1.433$) & ($1.922$) & ($2.001$) \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $\mathbf{5.558}$ & $\mathbf{7.454}$ & $8.885$ & $10.171$ & $20.701$ & $28.391$ & $32.677$ \\
+			 & \textbf{(}$\mathbf{0.492}$\textbf{)} & \textbf{(}$\mathbf{0.708}$\textbf{)} & ($0.707$) & ($0.941$) & ($4.684$) & ($3.632$) & ($2.745$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $6.187$ & $7.917$ & $\mathbf{8.816}$ & $\mathbf{10.118}$ & $16.546$ & $23.948$ & $29.776$ \\
+			 & ($0.608$) & ($1.082$) & \textbf{(}$\mathbf{0.762}$\textbf{)} & \textbf{(}$\mathbf{0.997}$\textbf{)} & ($1.513$) & ($2.1$) & ($2.891$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $6.461$ & $8.764$ & $10.547$ & $11.917$ & $17.846$ & $25.923$ & $31.411$ \\
+			 & ($0.592$) & ($0.806$) & ($0.909$) & ($0.929$) & ($2.435$) & ($2.825$) & ($2.883$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $5.863$ & $8.231$ & $9.942$ & $11.388$ & $\mathbf{16.223}$ & $26.774$ & $32.495$ \\
+			 & ($0.526$) & ($0.708$) & ($0.854$) & ($1.044$) & \textbf{(}$\mathbf{1.953}$\textbf{)} & ($4.307$) & ($3.099$) \\ \hline
+			\multirow{2}{*}{GRU Reference} & $7.174$ & $11.739$ & $14.699$ & $17.098$ & $24.507$ & $34.329$ & $39.622$ \\
+			 & ($2.27$) & ($2.629$) & ($3.023$) & ($2.136$) & ($2.128$) & ($2.632$) & ($2.805$) \\ \hline
+			\multirow{2}{*}{UniTS} & $7.176$ & $8.763$ & $10.181$ & $11.466$ & $16.562$ & $\mathbf{23.209}$ & $\mathbf{27.355}$ \\
+			 & ($0.607$) & ($0.759$) & ($0.88$) & ($0.988$) & ($1.426$) & \textbf{(}$\mathbf{2.001}$\textbf{)} & \textbf{(}$\mathbf{2.3}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MAE in $\degree$ ($\times 10^{-5}$), with standard deviation in brackets, across $k$-fold validation datasets for the $y$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_latitude_no_abs_MAE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Bi} & $9.076$ & $11.393$ & $13.361$ & $15.202$ & $22.694$ & $31.793$ & $36.999$ \\
+			 & ($1.058$) & ($1.321$) & ($1.458$) & ($1.532$) & ($1.94$) & ($2.328$) & ($2.76$) \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $\mathbf{6.805}$ & $\mathbf{9.127}$ & $\mathbf{11.395}$ & $\mathbf{12.773}$ & $25.313$ & $37.95$ & $42.578$ \\
+			 & \textbf{(}$\mathbf{0.849}$\textbf{)} & \textbf{(}$\mathbf{1.085}$\textbf{)} & \textbf{(}$\mathbf{1.477}$\textbf{)} & \textbf{(}$\mathbf{1.412}$\textbf{)} & ($5.259$) & ($3.279$) & ($3.71$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $7.151$ & $9.669$ & $11.581$ & $13.137$ & $\mathbf{20.606}$ & $31.95$ & $40.634$ \\
+			 & ($0.859$) & ($1.304$) & ($1.438$) & ($2.01$) & \textbf{(}$\mathbf{2.807}$\textbf{)} & ($3.97$) & ($4.814$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $7.733$ & $10.397$ & $12.401$ & $14.476$ & $22.957$ & $34.935$ & $43.106$ \\
+			 & ($0.9$) & ($1.347$) & ($1.562$) & ($1.702$) & ($3.66$) & ($4.689$) & ($6.694$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $7.179$ & $10.066$ & $12.122$ & $14.34$ & $21.567$ & $35.481$ & $43.351$ \\
+			 & ($0.818$) & ($1.171$) & ($1.487$) & ($1.769$) & ($2.848$) & ($3.836$) & ($5.255$) \\ \hline
+			\multirow{2}{*}{GRU Third} & $8.454$ & $14.528$ & $18.667$ & $20.682$ & $31.444$ & $45.083$ & $50.946$ \\
+			 & ($2.317$) & ($3.596$) & ($3.317$) & ($2.659$) & ($3.526$) & ($4.086$) & ($3.882$) \\ \hline
+			\multirow{2}{*}{GRU Twice} & $8.921$ & $14.125$ & $17.526$ & $20.483$ & $30.816$ & $43.804$ & $50.751$ \\
+			 & ($2.711$) & ($3.093$) & ($2.535$) & ($1.712$) & ($3.194$) & ($4.212$) & ($3.336$) \\ \hline
+			\multirow{2}{*}{LSTM Third} & $8.363$ & $14.826$ & $17.677$ & $21.515$ & $30.813$ & $44.776$ & $50.6$ \\
+			 & ($1.834$) & ($3.824$) & ($3.588$) & ($3.181$) & ($2.947$) & ($3.81$) & ($3.316$) \\ \hline
+			\multirow{2}{*}{UniTS} & $9.015$ & $11.043$ & $12.853$ & $14.495$ & $21.054$ & $\mathbf{29.727}$ & $\mathbf{35.175}$ \\
+			 & ($0.961$) & ($1.194$) & ($1.383$) & ($1.55$) & ($2.203$) & \textbf{(}$\mathbf{3.042}$\textbf{)} & \textbf{(}$\mathbf{3.373}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MAE in $\degree$ ($\times 10^{-5}$), with standard deviation in brackets, across $k$-fold validation datasets for the $x$ offset estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_longitude_no_abs_MAE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Bi} & $2.691$ & $3.372$ & $3.971$ & $4.494$ & $6.34$ & $7.91$ & $8.689$ \\
+			 & ($0.241$) & ($0.288$) & ($0.335$) & ($0.362$) & ($0.486$) & ($0.591$) & ($0.655$) \\ \hline
+			\multirow{2}{*}{Conv} & $2.696$ & $\mathbf{3.294}$ & $3.907$ & $4.432$ & $6.219$ & $7.858$ & $8.561$ \\
+			 & ($0.247$) & \textbf{(}$\mathbf{0.309}$\textbf{)} & ($0.365$) & ($0.424$) & ($0.563$) & ($0.614$) & ($0.688$) \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $2.698$ & $3.761$ & $4.308$ & $4.46$ & $5.752$ & $7.728$ & $8.715$ \\
+			 & ($0.337$) & ($0.442$) & ($0.734$) & ($0.742$) & ($0.617$) & ($0.827$) & ($0.785$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $2.672$ & $3.712$ & $4.372$ & $4.909$ & $6.24$ & $8.106$ & $9.127$ \\
+			 & ($0.328$) & ($0.481$) & ($0.519$) & ($0.675$) & ($0.688$) & ($0.868$) & ($0.754$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $2.686$ & $3.722$ & $4.507$ & $5.198$ & $6.922$ & $8.457$ & $9.781$ \\
+			 & ($0.331$) & ($0.479$) & ($0.485$) & ($0.621$) & ($0.77$) & ($0.894$) & ($0.971$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $2.74$ & $3.812$ & $4.641$ & $5.289$ & $7.002$ & $8.31$ & $9.586$ \\
+			 & ($0.361$) & ($0.45$) & ($0.558$) & ($0.566$) & ($0.897$) & ($1.005$) & ($1.001$) \\ \hline
+			\multirow{2}{*}{GRU Linear} & $2.511$ & $3.502$ & $4.339$ & $4.943$ & $6.915$ & $8.053$ & $8.559$ \\
+			 & ($0.248$) & ($0.353$) & ($0.395$) & ($0.44$) & ($0.656$) & ($0.698$) & ($0.696$) \\ \hline
+			\multirow{2}{*}{LSTM Linear} & $\mathbf{2.463}$ & $3.421$ & $4.224$ & $4.872$ & $6.772$ & $7.917$ & $8.459$ \\
+			 & \textbf{(}$\mathbf{0.234}$\textbf{)} & ($0.336$) & ($0.425$) & ($0.449$) & ($0.56$) & ($0.594$) & ($0.674$) \\ \hline
+			\multirow{2}{*}{RNN Linear} & $2.568$ & $3.51$ & $4.289$ & $4.906$ & $6.758$ & $7.906$ & $8.445$ \\
+			 & ($0.267$) & ($0.341$) & ($0.437$) & ($0.471$) & ($0.666$) & ($0.642$) & ($0.658$) \\ \hline
+			\multirow{2}{*}{UniTS} & $2.757$ & $3.314$ & $\mathbf{3.799}$ & $\mathbf{4.226}$ & $\mathbf{5.7}$ & $\mathbf{7.016}$ & $\mathbf{7.648}$ \\
+			 & ($0.259$) & ($0.312$) & \textbf{(}$\mathbf{0.358}$\textbf{)} & \textbf{(}$\mathbf{0.4}$\textbf{)} & \textbf{(}$\mathbf{0.545}$\textbf{)} & \textbf{(}$\mathbf{0.659}$\textbf{)} & \textbf{(}$\mathbf{0.667}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MAE in $km/h$, with standard deviation in brackets, across $k$-fold validation datasets for the speed estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_speed_MAE}
+\end{table}

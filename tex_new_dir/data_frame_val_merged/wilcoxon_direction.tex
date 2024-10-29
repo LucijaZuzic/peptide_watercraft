@@ -1,0 +1,93 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $\mathbf{11.77}$ & $\mathbf{15.7}$ & $\mathbf{19.33}$ & $\mathbf{21.9}$ & $\mathbf{32.74}$ & $49.41$ & $63.77$ \\
+			 & \textbf{(}$\mathbf{1.29}$\textbf{)} & \textbf{(}$\mathbf{1.63}$\textbf{)} & \textbf{(}$\mathbf{1.67}$\textbf{)} & \textbf{(}$\mathbf{1.75}$\textbf{)} & \textbf{(}$\mathbf{2.14}$\textbf{)} & ($2.48$) & ($10.68$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $12.59$ & $16.3$ & $19.4$ & $22.11$ & $33.67$ & $49.19$ & $59.9$ \\
+			 & ($1.49$) & ($1.8$) & ($1.77$) & ($1.9$) & ($2.39$) & ($2.5$) & ($3.56$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $12.1$ & $17.31$ & $21.17$ & $24.24$ & $34.98$ & $50.23$ & $60.8$ \\
+			 & ($1.6$) & ($1.53$) & ($1.48$) & ($1.76$) & ($2.14$) & ($2.63$) & ($3.35$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $12.02$ & $16.36$ & $20.23$ & $23.04$ & $34.64$ & $50.07$ & $62.03$ \\
+			 & ($1.54$) & ($1.71$) & ($1.7$) & ($1.87$) & ($2.42$) & ($2.41$) & ($7.61$) \\ \hline
+			\multirow{2}{*}{UniTS} & $16.17$ & $19.54$ & $22.46$ & $25.04$ & $34.91$ & $\mathbf{47.49}$ & $\mathbf{55.81}$ \\
+			 & ($1.21$) & ($1.41$) & ($1.56$) & ($1.68$) & ($2.0$) & \textbf{(}$\mathbf{2.55}$\textbf{)} & \textbf{(}$\mathbf{3.01}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MAE in $\degree$, with standard deviation in brackets, across $k$-fold validation datasets for the heading estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:wilcoxon_direction_MAE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Bi} & $2354.44$ & $2726.11$ & $3040.98$ & $3490.61$ & $4783.44$ & $6441.5$ & $7397.77$ \\
+			 & ($229.26$) & ($242.25$) & ($242.93$) & ($304.84$) & ($289.65$) & ($381.08$) & ($420.88$) \\ \hline
+			\multirow{2}{*}{Conv} & $1994.58$ & $2477.51$ & $\mathbf{2875.37}$ & $\mathbf{3247.2}$ & $4684.15$ & $6362.97$ & $7229.31$ \\
+			 & ($180.95$) & ($227.35$) & \textbf{(}$\mathbf{223.46}$\textbf{)} & \textbf{(}$\mathbf{256.33}$\textbf{)} & ($295.5$) & ($362.05$) & ($397.83$) \\ \hline
+			\multirow{2}{*}{GRU Linear} & $1647.73$ & $2449.73$ & $3062.01$ & $3553.33$ & $5407.4$ & $7851.73$ & $9258.71$ \\
+			 & ($149.75$) & ($215.81$) & ($236.22$) & ($278.08$) & ($282.61$) & ($420.68$) & ($434.4$) \\ \hline
+			\multirow{2}{*}{LSTM Linear} & $1654.71$ & $2424.55$ & $3390.85$ & $3542.64$ & $5309.81$ & $7530.75$ & $8816.96$ \\
+			 & ($198.5$) & ($201.47$) & ($1515.06$) & ($276.99$) & ($317.94$) & ($321.51$) & ($407.97$) \\ \hline
+			\multirow{2}{*}{RNN Linear} & $\mathbf{1512.9}$ & $\mathbf{2274.11}$ & $2959.91$ & $3450.74$ & $5267.49$ & $7808.74$ & $9119.86$ \\
+			 & \textbf{(}$\mathbf{144.1}$\textbf{)} & \textbf{(}$\mathbf{228.69}$\textbf{)} & ($239.22$) & ($237.28$) & ($337.94$) & ($338.88$) & ($468.98$) \\ \hline
+			\multirow{2}{*}{UniTS} & $2493.14$ & $2828.78$ & $3143.44$ & $3439.64$ & $\mathbf{4602.13}$ & $\mathbf{6094.78}$ & $\mathbf{7076.69}$ \\
+			 & ($216.72$) & ($242.03$) & ($262.61$) & ($278.22$) & \textbf{(}$\mathbf{304.73}$\textbf{)} & \textbf{(}$\mathbf{354.48}$\textbf{)} & \textbf{(}$\mathbf{411.25}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MSE in $\degree$ $^{2}$, with standard deviation in brackets, across $k$-fold validation datasets for the heading estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:wilcoxon_direction_MSE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Bi} & $78.37\%$ & $74.96\%$ & $72.07\%$ & $67.94\%$ & $56.09\%$ & $40.96\%$ & $32.29\%$ \\
+			 & ($2.14\%$) & ($2.26\%$) & ($2.18\%$) & ($2.85\%$) & ($2.73\%$) & ($3.62\%$) & ($3.94\%$) \\ \hline
+			\multirow{2}{*}{Conv} & $81.67\%$ & $77.24\%$ & $\mathbf{73.59\%}$ & $\mathbf{70.18\%}$ & $57.0\%$ & $41.68\%$ & $33.83\%$ \\
+			 & ($1.68\%$) & ($2.1\%$) & \textbf{(}$\mathbf{2.03\%}$\textbf{)} & \textbf{(}$\mathbf{2.35\%}$\textbf{)} & ($2.73\%$) & ($3.38\%$) & ($3.72\%$) \\ \hline
+			\multirow{2}{*}{GRU Linear} & $84.87\%$ & $77.51\%$ & $71.9\%$ & $67.4\%$ & $50.47\%$ & $28.05\%$ & $14.94\%$ \\
+			 & ($1.38\%$) & ($1.98\%$) & ($2.17\%$) & ($2.58\%$) & ($2.56\%$) & ($3.81\%$) & ($4.04\%$) \\ \hline
+			\multirow{2}{*}{LSTM Linear} & $84.8\%$ & $77.75\%$ & $68.83\%$ & $67.5\%$ & $51.36\%$ & $30.99\%$ & $18.99\%$ \\
+			 & ($1.8\%$) & ($1.79\%$) & ($14.24\%$) & ($2.56\%$) & ($2.9\%$) & ($2.95\%$) & ($3.92\%$) \\ \hline
+			\multirow{2}{*}{RNN Linear} & $\mathbf{86.11\%}$ & $\mathbf{79.12\%}$ & $72.83\%$ & $68.34\%$ & $51.75\%$ & $28.44\%$ & $16.2\%$ \\
+			 & \textbf{(}$\mathbf{1.3\%}$\textbf{)} & \textbf{(}$\mathbf{2.11\%}$\textbf{)} & ($2.27\%$) & ($2.23\%$) & ($3.08\%$) & ($3.04\%$) & ($4.48\%$) \\ \hline
+			\multirow{2}{*}{UniTS} & $77.09\%$ & $74.0\%$ & $71.12\%$ & $68.39\%$ & $\mathbf{57.72\%}$ & $\mathbf{44.0\%}$ & $\mathbf{34.98\%}$ \\
+			 & ($1.99\%$) & ($2.25\%$) & ($2.42\%$) & ($2.55\%$) & \textbf{(}$\mathbf{2.76\%}$\textbf{)} & \textbf{(}$\mathbf{3.21\%}$\textbf{)} & \textbf{(}$\mathbf{3.79\%}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the heading estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:wilcoxon_direction_R2}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Bi} & $48.47$ & $52.16$ & $55.1$ & $59.02$ & $69.13$ & $80.22$ & $85.97$ \\
+			 & ($2.35$) & ($2.31$) & ($2.21$) & ($2.58$) & ($2.11$) & ($2.4$) & ($2.49$) \\ \hline
+			\multirow{2}{*}{Conv} & $44.62$ & $49.72$ & $\mathbf{53.58}$ & $\mathbf{56.94}$ & $68.41$ & $79.74$ & $84.99$ \\
+			 & ($2.02$) & ($2.28$) & \textbf{(}$\mathbf{2.09}$\textbf{)} & \textbf{(}$\mathbf{2.26}$\textbf{)} & ($2.17$) & ($2.29$) & ($2.37$) \\ \hline
+			\multirow{2}{*}{GRU Linear} & $40.55$ & $49.45$ & $55.29$ & $59.56$ & $73.51$ & $88.58$ & $96.2$ \\
+			 & ($1.86$) & ($2.15$) & ($2.16$) & ($2.35$) & ($1.94$) & ($2.39$) & ($2.26$) \\ \hline
+			\multirow{2}{*}{LSTM Linear} & $40.61$ & $49.2$ & $57.42$ & $59.47$ & $72.83$ & $86.76$ & $93.87$ \\
+			 & ($2.43$) & ($2.05$) & ($9.67$) & ($2.34$) & ($2.21$) & ($1.87$) & ($2.2$) \\ \hline
+			\multirow{2}{*}{RNN Linear} & $\mathbf{38.85}$ & $\mathbf{47.63}$ & $54.36$ & $58.71$ & $72.54$ & $88.35$ & $95.47$ \\
+			 & \textbf{(}$\mathbf{1.85}$\textbf{)} & \textbf{(}$\mathbf{2.42}$\textbf{)} & ($2.22$) & ($2.05$) & ($2.33$) & ($1.93$) & ($2.48$) \\ \hline
+			\multirow{2}{*}{UniTS} & $49.88$ & $53.14$ & $56.02$ & $58.6$ & $\mathbf{67.8}$ & $\mathbf{78.04}$ & $\mathbf{84.09}$ \\
+			 & ($2.18$) & ($2.29$) & ($2.35$) & ($2.38$) & \textbf{(}$\mathbf{2.26}$\textbf{)} & \textbf{(}$\mathbf{2.29}$\textbf{)} & \textbf{(}$\mathbf{2.47}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average RMSE in $\degree$, with standard deviation in brackets, across $k$-fold validation datasets for the heading estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:wilcoxon_direction_RMSE}
+\end{table}

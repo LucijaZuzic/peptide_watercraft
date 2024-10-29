@@ -11,7 +11,7 @@ Figure~\ref{fig:traj_speed_actual_dir_RMSE} represents the $p$-values for the Wi
 	\label{fig:traj_speed_actual_dir_RMSE}
 \end{figure}
 
-The average RMSE in $\degree$ ($\times 10^{-2}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times is listed in Table~\ref{tab:best_speed_actual_dir_RMSE}.
+The average RMSE in $\degree$ ($\times 10^{-2}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times is listed in Table~\ref{tab:wilcoxon_speed_actual_dir_RMSE}.
 
 \begin{table}[!ht]
 	\centering
@@ -23,12 +23,14 @@ The average RMSE in $\degree$ ($\times 10^{-2}$), with standard deviation in bra
 			 & ($0.163$) & ($0.154$) & ($0.163$) & \textbf{(}$\mathbf{0.135}$\textbf{)} & \textbf{(}$\mathbf{0.108}$\textbf{)} & \textbf{(}$\mathbf{0.17}$\textbf{)} & ($6.196$) \\ \hline
 			\multirow{2}{*}{GRU Att 2} & $1.495$ & $1.536$ & $1.586$ & $1.616$ & $1.818$ & $2.72$ & $\mathbf{3.919}$ \\
 			 & ($0.161$) & ($0.177$) & ($0.173$) & ($0.165$) & ($0.192$) & ($0.19$) & \textbf{(}$\mathbf{0.589}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $1.507$ & $1.54$ & $1.603$ & $1.62$ & $1.85$ & $2.767$ & $4.003$ \\
+			 & ($0.16$) & ($0.16$) & ($0.183$) & ($0.147$) & ($0.169$) & ($0.214$) & ($0.586$) \\ \hline
 			\multirow{2}{*}{GRU Att 4} & $\mathbf{1.494}$ & $\mathbf{1.514}$ & $\mathbf{1.581}$ & $1.616$ & $1.842$ & $2.737$ & $5.269$ \\
 			 & \textbf{(}$\mathbf{0.152}$\textbf{)} & \textbf{(}$\mathbf{0.163}$\textbf{)} & \textbf{(}$\mathbf{0.173}$\textbf{)} & ($0.15$) & ($0.125$) & ($0.238$) & ($4.403$) \\ \hline
 		\end{tabular}
 	}
 	\caption{The average RMSE in $\degree$ ($\times 10^{-2}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
-	\label{tab:best_speed_actual_dir_RMSE}
+	\label{tab:wilcoxon_speed_actual_dir_RMSE}
 \end{table}
 
 The GRU Att 1 model achieved the lowest RMSE for trajectories estimated using speed, heading, and time, and a forecasting time of $10$, $20$, and $5$ $s$ with average values and standard deviation (in brackets) that equal $17.45 \times 10^{-3}$ $\degree$ ($1.08 \times 10^{-3}$ $\degree$), $26.57 \times 10^{-3}$ $\degree$ ($1.7 \times 10^{-3}$ $\degree$), and $15.98 \times 10^{-3}$ $\degree$ ($1.35 \times 10^{-3}$ $\degree$) respectively.

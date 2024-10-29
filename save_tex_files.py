@@ -482,14 +482,14 @@ for name in name_list_total:
                 text_mod = "average " + metricfigure + " across $k$-fold testing datasets using different validation datasets for all variables estimated in nested $k$-fold cross-validation by different RNN models, and forecasting times."
                 if "traj" in name:
                     text_mod = text_mod.replace("variables", "trajectories").replace("different", "different trajectory estimation methods,")
-                    label_mod = "best_" + metric + "_traj_val"
+                    label_mod = "wilcoxon_" + metric + "_traj_val"
                 else:
-                    label_mod = "best_" + metric + "_val"
+                    label_mod = "wilcoxon_" + metric + "_val"
                 my_text_var += "\n\n\nFigure~\\ref{fig:" + label_mod + "_merged} contains the " + text_mod
                 my_text_var += "\n\n\\begin{figure}[!ht]\n\t\\centering\n\t\\includegraphics[width = 0.99 \\linewidth]{" + label_mod + "_merged.pdf}"
                 my_text_var += "\n\t\\caption{The " + text_mod + "}\n\t\\label{fig:" + label_mod + "_merged}\n\\end{figure}\n\n\n"
                 metric_occured.add(metric)
-            texfilepath = "tex_new_dir/" + name + "/best_" + var.replace(" ", "_") + "_" + metric + ".tex"
+            texfilepath = "tex_new_dir/" + name + "/wilcoxon_" + var.replace(" ", "_") + "_" + metric + ".tex"
             texfile = open(texfilepath, "r")
             texlines = texfile.readlines()
             linestex = ""

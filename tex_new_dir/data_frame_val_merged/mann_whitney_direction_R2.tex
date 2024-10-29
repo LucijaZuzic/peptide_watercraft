@@ -1,0 +1,23 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{Bi} & $78.37\%$ & $74.96\%$ & $72.07\%$ & $67.94\%$ & $56.09\%$ & $40.96\%$ & $32.29\%$ \\
+			 & ($2.14\%$) & ($2.26\%$) & ($2.18\%$) & ($2.85\%$) & ($2.73\%$) & ($3.62\%$) & ($3.94\%$) \\ \hline
+			\multirow{2}{*}{Conv} & $81.67\%$ & $77.24\%$ & $\mathbf{73.59\%}$ & $\mathbf{70.18\%}$ & $57.0\%$ & $41.68\%$ & $33.83\%$ \\
+			 & ($1.68\%$) & ($2.1\%$) & \textbf{(}$\mathbf{2.03\%}$\textbf{)} & \textbf{(}$\mathbf{2.35\%}$\textbf{)} & ($2.73\%$) & ($3.38\%$) & ($3.72\%$) \\ \hline
+			\multirow{2}{*}{GRU Linear} & $84.87\%$ & $77.51\%$ & $71.9\%$ & $67.4\%$ & $50.47\%$ & $28.05\%$ & $14.94\%$ \\
+			 & ($1.38\%$) & ($1.98\%$) & ($2.17\%$) & ($2.58\%$) & ($2.56\%$) & ($3.81\%$) & ($4.04\%$) \\ \hline
+			\multirow{2}{*}{LSTM Linear} & $84.8\%$ & $77.75\%$ & $68.83\%$ & $67.5\%$ & $51.36\%$ & $30.99\%$ & $18.99\%$ \\
+			 & ($1.8\%$) & ($1.79\%$) & ($14.24\%$) & ($2.56\%$) & ($2.9\%$) & ($2.95\%$) & ($3.92\%$) \\ \hline
+			\multirow{2}{*}{RNN Linear} & $\mathbf{86.11\%}$ & $\mathbf{79.12\%}$ & $72.83\%$ & $68.34\%$ & $51.75\%$ & $28.44\%$ & $16.2\%$ \\
+			 & \textbf{(}$\mathbf{1.3\%}$\textbf{)} & \textbf{(}$\mathbf{2.11\%}$\textbf{)} & ($2.27\%$) & ($2.23\%$) & ($3.08\%$) & ($3.04\%$) & ($4.48\%$) \\ \hline
+			\multirow{2}{*}{UniTS} & $77.09\%$ & $74.0\%$ & $71.12\%$ & $68.39\%$ & $\mathbf{57.72\%}$ & $\mathbf{44.0\%}$ & $\mathbf{34.98\%}$ \\
+			 & ($1.99\%$) & ($2.25\%$) & ($2.42\%$) & ($2.55\%$) & \textbf{(}$\mathbf{2.76\%}$\textbf{)} & \textbf{(}$\mathbf{3.21\%}$\textbf{)} & \textbf{(}$\mathbf{3.79\%}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the heading estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_direction_R2}
+\end{table}

@@ -1,0 +1,21 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $\mathbf{11.77}$ & $\mathbf{15.7}$ & $\mathbf{19.33}$ & $\mathbf{21.9}$ & $\mathbf{32.74}$ & $49.41$ & $63.77$ \\
+			 & \textbf{(}$\mathbf{1.29}$\textbf{)} & \textbf{(}$\mathbf{1.63}$\textbf{)} & \textbf{(}$\mathbf{1.67}$\textbf{)} & \textbf{(}$\mathbf{1.75}$\textbf{)} & \textbf{(}$\mathbf{2.14}$\textbf{)} & ($2.48$) & ($10.68$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $12.59$ & $16.3$ & $19.4$ & $22.11$ & $33.67$ & $49.19$ & $59.9$ \\
+			 & ($1.49$) & ($1.8$) & ($1.77$) & ($1.9$) & ($2.39$) & ($2.5$) & ($3.56$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $12.1$ & $17.31$ & $21.17$ & $24.24$ & $34.98$ & $50.23$ & $60.8$ \\
+			 & ($1.6$) & ($1.53$) & ($1.48$) & ($1.76$) & ($2.14$) & ($2.63$) & ($3.35$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $12.02$ & $16.36$ & $20.23$ & $23.04$ & $34.64$ & $50.07$ & $62.03$ \\
+			 & ($1.54$) & ($1.71$) & ($1.7$) & ($1.87$) & ($2.42$) & ($2.41$) & ($7.61$) \\ \hline
+			\multirow{2}{*}{UniTS} & $16.17$ & $19.54$ & $22.46$ & $25.04$ & $34.91$ & $\mathbf{47.49}$ & $\mathbf{55.81}$ \\
+			 & ($1.21$) & ($1.41$) & ($1.56$) & ($1.68$) & ($2.0$) & \textbf{(}$\mathbf{2.55}$\textbf{)} & \textbf{(}$\mathbf{3.01}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MAE in $\degree$, with standard deviation in brackets, across $k$-fold validation datasets for the heading estimated on the $k$-fold testing datasets by different RNN models, and forecasting times.}
+	\label{tab:wilcoxon_direction_MAE}
+\end{table}

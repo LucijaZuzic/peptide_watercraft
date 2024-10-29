@@ -9,9 +9,9 @@ cm = 1/2.54  # centimeters in inches
 
 def stringify(value_round, rounding, skip_mul):
     if value_round == 0:
-        return "0", 0
+        return "$0$", 0
     if abs(value_round) >= 1 or skip_mul:
-        return str(np.round(value_round, rounding)), 0
+        return "$" + str(np.round(value_round, rounding)) + "$", 0
     else:
         pot = 0
         while abs(value_round) < 1:

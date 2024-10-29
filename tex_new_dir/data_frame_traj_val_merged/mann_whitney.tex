@@ -1,0 +1,251 @@
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $2.067$ & $\mathbf{2.541}$ & $3.254$ & $4.362$ & $23.978$ & $36.354$ & $41.33$ \\
+			 & ($0.23$) & \textbf{(}$\mathbf{0.278}$\textbf{)} & ($0.401$) & ($0.837$) & ($5.439$) & ($9.406$) & ($7.368$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $2.337$ & $3.036$ & $3.617$ & $4.964$ & $10.359$ & $22.645$ & $40.077$ \\
+			 & ($0.332$) & ($0.407$) & ($0.466$) & ($1.309$) & ($5.069$) & ($6.86$) & ($13.808$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $2.158$ & $3.038$ & $3.726$ & $4.587$ & $13.606$ & $31.482$ & $44.068$ \\
+			 & ($0.276$) & ($0.245$) & ($0.573$) & ($0.472$) & ($6.237$) & ($17.116$) & ($20.385$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{1.95}$ & $2.563$ & $3.223$ & $4.075$ & $14.226$ & $33.539$ & $41.795$ \\
+			 & \textbf{(}$\mathbf{0.267}$\textbf{)} & ($0.288$) & ($0.309$) & ($0.411$) & ($3.09$) & ($4.463$) & ($9.252$) \\ \hline
+			\multirow{2}{*}{UniTS} & $2.833$ & $3.119$ & $\mathbf{3.167}$ & $\mathbf{3.746}$ & $\mathbf{6.003}$ & $\mathbf{8.714}$ & $\mathbf{11.509}$ \\
+			 & ($2.329$) & ($2.136$) & \textbf{(}$\mathbf{0.392}$\textbf{)} & \textbf{(}$\mathbf{0.579}$\textbf{)} & \textbf{(}$\mathbf{0.649}$\textbf{)} & \textbf{(}$\mathbf{0.803}$\textbf{)} & \textbf{(}$\mathbf{1.036}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MAE in $\degree$ ($\times 10^{-3}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_no_abs_MAE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $7.298$ & $7.77$ & $\mathbf{8.419}$ & $\mathbf{8.638}$ & $\mathbf{10.223}$ & $\mathbf{17.111}$ & $48.15$ \\
+			 & ($0.407$) & ($0.337$) & \textbf{(}$\mathbf{0.385}$\textbf{)} & \textbf{(}$\mathbf{0.449}$\textbf{)} & \textbf{(}$\mathbf{0.618}$\textbf{)} & \textbf{(}$\mathbf{1.225}$\textbf{)} & ($38.906$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $7.308$ & $7.924$ & $8.442$ & $8.803$ & $10.78$ & $17.518$ & $\mathbf{24.644}$ \\
+			 & ($0.373$) & ($0.53$) & ($0.491$) & ($0.584$) & ($1.085$) & ($1.404$) & \textbf{(}$\mathbf{3.038}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $7.389$ & $7.969$ & $8.617$ & $9.079$ & $11.334$ & $17.926$ & $25.215$ \\
+			 & ($0.361$) & ($0.44$) & ($0.49$) & ($0.46$) & ($0.907$) & ($1.526$) & ($2.982$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{7.267}$ & $\mathbf{7.674}$ & $8.444$ & $9.031$ & $11.367$ & $17.745$ & $32.805$ \\
+			 & \textbf{(}$\mathbf{0.369}$\textbf{)} & \textbf{(}$\mathbf{0.397}$\textbf{)} & ($0.414$) & ($0.438$) & ($0.984$) & ($1.489$) & ($26.7$) \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MAE in $\degree$ ($\times 10^{-3}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_speed_actual_dir_MAE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $13.28$ & $22.59$ & $31.84$ & $68.14$ & $2009.71$ & $4401.47$ & $4848.54$ \\
+			 & ($8.43$) & ($14.35$) & ($18.23$) & ($43.12$) & ($916.81$) & ($3480.88$) & ($1816.82$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $16.19$ & $30.66$ & $40.76$ & $98.42$ & $418.9$ & $1818.9$ & $6133.21$ \\
+			 & ($10.78$) & ($27.48$) & ($25.92$) & ($94.55$) & ($605.16$) & ($1514.65$) & ($5790.49$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $11.35$ & $22.79$ & $34.89$ & $57.39$ & $685.31$ & $5223.89$ & $7569.13$ \\
+			 & ($4.82$) & ($5.5$) & ($17.54$) & ($30.18$) & ($605.54$) & ($7293.31$) & ($8662.23$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{9.55}$ & $\mathbf{15.19}$ & $23.87$ & $41.71$ & $766.7$ & $3639.82$ & $5632.01$ \\
+			 & \textbf{(}$\mathbf{3.13}$\textbf{)} & \textbf{(}$\mathbf{3.88}$\textbf{)} & ($5.08$) & ($12.02$) & ($373.45$) & ($1205.55$) & ($3334.15$) \\ \hline
+			\multirow{2}{*}{UniTS} & $30.43$ & $28.43$ & $\mathbf{21.06}$ & $\mathbf{30.88}$ & $\mathbf{80.38}$ & $\mathbf{156.93}$ & $\mathbf{275.52}$ \\
+			 & ($83.91$) & ($63.86$) & \textbf{(}$\mathbf{5.87}$\textbf{)} & \textbf{(}$\mathbf{10.37}$\textbf{)} & \textbf{(}$\mathbf{25.56}$\textbf{)} & \textbf{(}$\mathbf{41.01}$\textbf{)} & \textbf{(}$\mathbf{87.51}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MSE in $\degree$ $^{2}$ ($\times 10^{-6}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_no_abs_MSE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $2.28$ & $2.35$ & $2.54$ & $\mathbf{2.57}$ & $\mathbf{3.06}$ & $\mathbf{7.09}$ & $97.05$ \\
+			 & ($0.49$) & ($0.47$) & ($0.51$) & \textbf{(}$\mathbf{0.43}$\textbf{)} & \textbf{(}$\mathbf{0.38}$\textbf{)} & \textbf{(}$\mathbf{0.89}$\textbf{)} & ($163.58$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $2.26$ & $2.39$ & $2.55$ & $2.64$ & $3.34$ & $7.44$ & $\mathbf{15.71}$ \\
+			 & ($0.49$) & ($0.55$) & ($0.55$) & ($0.54$) & ($0.75$) & ($1.02$) & \textbf{(}$\mathbf{4.48}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $2.3$ & $2.4$ & $2.6$ & $2.65$ & $3.45$ & $7.7$ & $16.37$ \\
+			 & ($0.48$) & ($0.49$) & ($0.58$) & ($0.47$) & ($0.65$) & ($1.17$) & ($4.53$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{2.25}$ & $\mathbf{2.32}$ & $\mathbf{2.53}$ & $2.63$ & $3.41$ & $7.55$ & $47.15$ \\
+			 & \textbf{(}$\mathbf{0.46}$\textbf{)} & \textbf{(}$\mathbf{0.49}$\textbf{)} & \textbf{(}$\mathbf{0.54}$\textbf{)} & ($0.49$) & ($0.46$) & ($1.37$) & ($105.12$) \\ \hline
+		\end{tabular}
+	}
+	\caption{The average MSE in $\degree$ $^{2}$ ($\times 10^{-4}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_speed_actual_dir_MSE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $99.688\%$ & $99.499\%$ & $99.252\%$ & $98.493\%$ & $50.963\%$ & $10.773\%$ & $-4.909\%$ \\
+			 & ($0.177\%$) & ($0.311\%$) & ($0.391\%$) & ($0.86\%$) & ($21.32\%$) & ($51.163\%$) & ($41.741\%$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $99.593\%$ & $99.289\%$ & $99.008\%$ & $97.822\%$ & $90.778\%$ & $59.988\%$ & $-24.763\%$ \\
+			 & ($0.235\%$) & ($0.581\%$) & ($0.589\%$) & ($1.723\%$) & ($12.2\%$) & ($24.542\%$) & ($94.376\%$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $99.7\%$ & $99.419\%$ & $99.076\%$ & $98.508\%$ & $85.72\%$ & $4.067\%$ & $-54.002\%$ \\
+			 & ($0.161\%$) & ($0.206\%$) & ($0.493\%$) & ($0.766\%$) & ($14.997\%$) & ($127.709\%$) & ($143.014\%$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{99.748\%}$ & $\mathbf{99.594\%}$ & $99.384\%$ & $98.859\%$ & $83.455\%$ & $18.51\%$ & $-22.185\%$ \\
+			 & \textbf{(}$\mathbf{0.113\%}$\textbf{)} & \textbf{(}$\mathbf{0.143\%}$\textbf{)} & ($0.226\%$) & ($0.608\%$) & ($11.422\%$) & ($33.32\%$) & ($76.466\%$) \\ \hline
+			\multirow{2}{*}{UniTS} & $99.312\%$ & $99.334\%$ & $\mathbf{99.446\%}$ & $\mathbf{99.154\%}$ & $\mathbf{98.011\%}$ & $\mathbf{96.116\%}$ & $\mathbf{93.373\%}$ \\
+			 & ($1.541\%$) & ($1.132\%$) & \textbf{(}$\mathbf{0.198\%}$\textbf{)} & \textbf{(}$\mathbf{0.396\%}$\textbf{)} & \textbf{(}$\mathbf{0.774\%}$\textbf{)} & \textbf{(}$\mathbf{1.274\%}$\textbf{)} & \textbf{(}$\mathbf{2.518\%}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_no_abs_R2}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $96.53\%$ & $96.303\%$ & $95.928\%$ & $\mathbf{95.699\%}$ & $\mathbf{94.222\%}$ & $\mathbf{81.816\%}$ & $-151.278\%$ \\
+			 & ($0.211\%$) & ($0.233\%$) & ($0.336\%$) & \textbf{(}$\mathbf{0.445\%}$\textbf{)} & \textbf{(}$\mathbf{1.083\%}$\textbf{)} & \textbf{(}$\mathbf{6.541\%}$\textbf{)} & ($454.465\%$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $96.526\%$ & $96.205\%$ & $95.862\%$ & $95.398\%$ & $93.415\%$ & $80.484\%$ & $\mathbf{54.101\%}$ \\
+			 & ($0.161\%$) & ($0.303\%$) & ($0.482\%$) & ($0.959\%$) & ($2.341\%$) & ($8.479\%$) & \textbf{(}$\mathbf{25.777\%}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $96.47\%$ & $96.172\%$ & $95.714\%$ & $95.203\%$ & $92.998\%$ & $79.597\%$ & $50.883\%$ \\
+			 & ($0.168\%$) & ($0.324\%$) & ($0.429\%$) & ($0.753\%$) & ($1.609\%$) & ($7.951\%$) & ($26.747\%$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{96.554\%}$ & $\mathbf{96.359\%}$ & $\mathbf{95.93\%}$ & $95.334\%$ & $92.902\%$ & $80.1\%$ & $-3.241\%$ \\
+			 & \textbf{(}$\mathbf{0.204\%}$\textbf{)} & \textbf{(}$\mathbf{0.243\%}$\textbf{)} & \textbf{(}$\mathbf{0.4\%}$\textbf{)} & ($0.53\%$) & ($1.989\%$) & ($7.486\%$) & ($190.754\%$) \\ \hline
+		\end{tabular}
+	}
+	\caption{The average $R^{2}$ (\%), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_speed_actual_dir_R2}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $3.512$ & $4.567$ & $5.475$ & $7.893$ & $43.61$ & $63.161$ & $68.645$ \\
+			 & ($0.973$) & ($1.319$) & ($1.367$) & ($2.416$) & ($10.387$) & ($20.301$) & ($11.678$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $3.878$ & $5.212$ & $6.17$ & $9.191$ & $17.665$ & $39.843$ & $71.935$ \\
+			 & ($1.07$) & ($1.869$) & ($1.64$) & ($3.735$) & ($10.337$) & ($15.214$) & ($30.96$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $3.312$ & $4.741$ & $5.78$ & $7.406$ & $23.705$ & $60.194$ & $77.469$ \\
+			 & ($0.617$) & ($0.557$) & ($1.219$) & ($1.596$) & ($11.108$) & ($40.006$) & ($39.595$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{3.051}$ & $\mathbf{3.864}$ & $4.858$ & $6.402$ & $26.801$ & $59.524$ & $72.495$ \\
+			 & \textbf{(}$\mathbf{0.492}$\textbf{)} & \textbf{(}$\mathbf{0.506}$\textbf{)} & ($0.521$) & ($0.851$) & ($6.958$) & ($9.833$) & ($19.405$) \\ \hline
+			\multirow{2}{*}{UniTS} & $4.259$ & $4.469$ & $\mathbf{4.542}$ & $\mathbf{5.471}$ & $\mathbf{8.861}$ & $\mathbf{12.431}$ & $\mathbf{16.414}$ \\
+			 & ($3.507$) & ($2.909$) & \textbf{(}$\mathbf{0.66}$\textbf{)} & \textbf{(}$\mathbf{0.975}$\textbf{)} & \textbf{(}$\mathbf{1.366}$\textbf{)} & \textbf{(}$\mathbf{1.552}$\textbf{)} & \textbf{(}$\mathbf{2.472}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average RMSE in $\degree$ ($\times 10^{-3}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_no_abs_RMSE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $1.501$ & $1.524$ & $1.587$ & $\mathbf{1.598}$ & $\mathbf{1.745}$ & $\mathbf{2.657}$ & $7.659$ \\
+			 & ($0.163$) & ($0.154$) & ($0.163$) & \textbf{(}$\mathbf{0.135}$\textbf{)} & \textbf{(}$\mathbf{0.108}$\textbf{)} & \textbf{(}$\mathbf{0.17}$\textbf{)} & ($6.196$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $1.495$ & $1.536$ & $1.586$ & $1.616$ & $1.818$ & $2.72$ & $\mathbf{3.919}$ \\
+			 & ($0.161$) & ($0.177$) & ($0.173$) & ($0.165$) & ($0.192$) & ($0.19$) & \textbf{(}$\mathbf{0.589}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $1.507$ & $1.54$ & $1.603$ & $1.62$ & $1.85$ & $2.767$ & $4.003$ \\
+			 & ($0.16$) & ($0.16$) & ($0.183$) & ($0.147$) & ($0.169$) & ($0.214$) & ($0.586$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{1.494}$ & $\mathbf{1.514}$ & $\mathbf{1.581}$ & $1.616$ & $1.842$ & $2.737$ & $5.269$ \\
+			 & \textbf{(}$\mathbf{0.152}$\textbf{)} & \textbf{(}$\mathbf{0.163}$\textbf{)} & \textbf{(}$\mathbf{0.173}$\textbf{)} & ($0.15$) & ($0.125$) & ($0.238$) & ($4.403$) \\ \hline
+		\end{tabular}
+	}
+	\caption{The average RMSE in $\degree$ ($\times 10^{-2}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_speed_actual_dir_RMSE}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $3.311$ & $4.078$ & $5.209$ & $7.016$ & $38.795$ & $59.289$ & $66.103$ \\
+			 & ($0.385$) & ($0.486$) & ($0.662$) & ($1.391$) & ($8.735$) & ($17.179$) & ($11.988$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $3.742$ & $4.858$ & $5.819$ & $8.062$ & $16.792$ & $36.725$ & $66.632$ \\
+			 & ($0.563$) & ($0.706$) & ($0.79$) & ($2.426$) & ($8.847$) & ($11.973$) & ($25.117$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $3.424$ & $4.855$ & $5.914$ & $7.284$ & $22.353$ & $52.871$ & $72.855$ \\
+			 & ($0.453$) & ($0.392$) & ($0.931$) & ($0.757$) & ($10.24$) & ($31.28$) & ($34.788$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{3.111}$ & $\mathbf{4.064}$ & $5.115$ & $6.462$ & $23.372$ & $54.46$ & $68.054$ \\
+			 & \textbf{(}$\mathbf{0.417}$\textbf{)} & \textbf{(}$\mathbf{0.467}$\textbf{)} & ($0.496$) & ($0.66$) & ($5.19$) & ($7.497$) & ($16.796$) \\ \hline
+			\multirow{2}{*}{UniTS} & $4.36$ & $4.875$ & $\mathbf{5.022}$ & $\mathbf{5.872}$ & $\mathbf{9.528}$ & $\mathbf{13.812}$ & $\mathbf{18.212}$ \\
+			 & ($3.281$) & ($3.038$) & \textbf{(}$\mathbf{0.638}$\textbf{)} & \textbf{(}$\mathbf{0.88}$\textbf{)} & \textbf{(}$\mathbf{1.117}$\textbf{)} & \textbf{(}$\mathbf{1.414}$\textbf{)} & \textbf{(}$\mathbf{1.882}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average Euclidean distance in $\degree$ ($\times 10^{-3}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_no_abs_euclid}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $1.326$ & $1.378$ & $1.472$ & $\mathbf{1.498}$ & $\mathbf{1.714}$ & $\mathbf{2.765}$ & $7.429$ \\
+			 & ($0.081$) & ($0.072$) & ($0.074$) & \textbf{(}$\mathbf{0.074}$\textbf{)} & \textbf{(}$\mathbf{0.105}$\textbf{)} & \textbf{(}$\mathbf{0.182}$\textbf{)} & ($5.758$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $1.322$ & $1.397$ & $\mathbf{1.469}$ & $1.511$ & $1.799$ & $2.828$ & $\mathbf{3.939}$ \\
+			 & ($0.078$) & ($0.098$) & \textbf{(}$\mathbf{0.085}$\textbf{)} & ($0.097$) & ($0.172$) & ($0.209$) & \textbf{(}$\mathbf{0.463}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $1.336$ & $1.407$ & $1.498$ & $1.544$ & $1.874$ & $2.886$ & $4.029$ \\
+			 & ($0.075$) & ($0.085$) & ($0.092$) & ($0.071$) & ($0.155$) & ($0.232$) & ($0.451$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{1.319}$ & $\mathbf{1.365}$ & $1.473$ & $1.543$ & $1.886$ & $2.851$ & $5.192$ \\
+			 & \textbf{(}$\mathbf{0.075}$\textbf{)} & \textbf{(}$\mathbf{0.082}$\textbf{)} & ($0.08$) & ($0.077$) & ($0.152$) & ($0.223$) & ($4.053$) \\ \hline
+		\end{tabular}
+	}
+	\caption{The average Euclidean distance in $\degree$ ($\times 10^{-2}$), with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_speed_actual_dir_euclid}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $0.368$ & $0.453$ & $0.579$ & $0.78$ & $4.314$ & $6.593$ & $7.35$ \\
+			 & ($0.043$) & ($0.054$) & ($0.074$) & ($0.155$) & ($0.971$) & ($1.91$) & ($1.333$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $0.416$ & $0.54$ & $0.647$ & $0.896$ & $1.867$ & $4.084$ & $7.409$ \\
+			 & ($0.063$) & ($0.078$) & ($0.088$) & ($0.27$) & ($0.984$) & ($1.331$) & ($2.793$) \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $0.381$ & $0.54$ & $0.658$ & $0.81$ & $2.486$ & $5.879$ & $8.101$ \\
+			 & ($0.05$) & ($0.044$) & ($0.104$) & ($0.084$) & ($1.139$) & ($3.478$) & ($3.868$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{0.346}$ & $\mathbf{0.452}$ & $0.569$ & $0.719$ & $2.599$ & $6.056$ & $7.567$ \\
+			 & \textbf{(}$\mathbf{0.046}$\textbf{)} & \textbf{(}$\mathbf{0.052}$\textbf{)} & ($0.055$) & ($0.073$) & ($0.577$) & ($0.834$) & ($1.868$) \\ \hline
+			\multirow{2}{*}{UniTS} & $0.485$ & $0.542$ & $\mathbf{0.558}$ & $\mathbf{0.653}$ & $\mathbf{1.059}$ & $\mathbf{1.536}$ & $\mathbf{2.025}$ \\
+			 & ($0.365$) & ($0.338$) & \textbf{(}$\mathbf{0.071}$\textbf{)} & \textbf{(}$\mathbf{0.098}$\textbf{)} & \textbf{(}$\mathbf{0.124}$\textbf{)} & \textbf{(}$\mathbf{0.157}$\textbf{)} & \textbf{(}$\mathbf{0.209}$\textbf{)} \\ \hline
+		\end{tabular}
+	}
+	\caption{The average haversine distance in $km$, with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using $x$ and $y$ offset, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_no_abs_haversine}
+\end{table}
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|}
+			\hline
+			Model & $2$ $s$ & $3$ $s$ & $4$ $s$ & $5$ $s$ & $10$ $s$ & $20$ $s$ & $30$ $s$ \\ \hline
+			\multirow{2}{*}{GRU Att 1} & $1.474$ & $1.532$ & $1.637$ & $\mathbf{1.665}$ & $\mathbf{1.906}$ & $\mathbf{3.075}$ & $8.261$ \\
+			 & ($0.09$) & ($0.081$) & ($0.082$) & \textbf{(}$\mathbf{0.083}$\textbf{)} & \textbf{(}$\mathbf{0.116}$\textbf{)} & \textbf{(}$\mathbf{0.202}$\textbf{)} & ($6.403$) \\ \hline
+			\multirow{2}{*}{GRU Att 2} & $1.47$ & $1.554$ & $\mathbf{1.634}$ & $1.681$ & $2.001$ & $3.145$ & $\mathbf{4.38}$ \\
+			 & ($0.086$) & ($0.109$) & \textbf{(}$\mathbf{0.095}$\textbf{)} & ($0.108$) & ($0.191$) & ($0.232$) & \textbf{(}$\mathbf{0.515}$\textbf{)} \\ \hline
+			\multirow{2}{*}{GRU Att 3} & $1.486$ & $1.565$ & $1.666$ & $1.717$ & $2.084$ & $3.209$ & $4.48$ \\
+			 & ($0.084$) & ($0.094$) & ($0.103$) & ($0.079$) & ($0.173$) & ($0.258$) & ($0.501$) \\ \hline
+			\multirow{2}{*}{GRU Att 4} & $\mathbf{1.467}$ & $\mathbf{1.518}$ & $1.638$ & $1.716$ & $2.098$ & $3.17$ & $5.773$ \\
+			 & \textbf{(}$\mathbf{0.084}$\textbf{)} & \textbf{(}$\mathbf{0.092}$\textbf{)} & ($0.089$) & ($0.086$) & ($0.169$) & ($0.248$) & ($4.507$) \\ \hline
+		\end{tabular}
+	}
+	\caption{The average haversine distance in $km$, with standard deviation in brackets, across $k$-fold validation datasets for the trajectories in the $k$-fold testing datasets estimated using speed, heading, and time, different RNN models, and forecasting times.}
+	\label{tab:mann_whitney_speed_actual_dir_haversine}
+\end{table}
