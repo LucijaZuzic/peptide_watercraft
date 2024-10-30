@@ -1,0 +1,35 @@
+
+Table~\ref{tab:var_speed actual dir_RMSE} represents the $p$-values for the Wilcoxon signed-rank test on RMSE values across $k$-fold validation datasets for the trajectories estimated using speed, heading, and time in the $k$-fold testing datasets using different RNN models, and forecasting times. The values on the primary diagonal are omitted because models equal themselves.
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+			\cline{1-14}
+			\multicolumn{4}{c}{$2$ $s$} & \multicolumn{4}{c}{$4$ $s$} & \multicolumn{2}{c}{$10$ $s$} & \multicolumn{4}{c}{$20$ $s$} \\ \cline{1-14}
+			GRU & GRU & GRU & GRU & GRU & GRU & GRU & GRU & GRU & GRU & GRU & GRU & GRU & GRU\\ 
+			Att 1 & Att 2 & Att 3 & Att 4 & Att 1 & Att 2 & Att 3 & Att 4 & Att 1 & Att 2 & Att 1 & Att 2 & Att 3 & Att 4\\ \cline{1-14}
+			\multirow{2}{*}{} & $\mathbf{4.261}$ & $\mathbf{4.261}$ & $\mathbf{3.81}$ & \multirow{2}{*}{} & $\mathbf{6.15}$ & $\mathbf{1.645}$ & $\mathbf{6.528}$ & \multirow{2}{*}{} & $\mathbf{1.874}$ & \multirow{2}{*}{} & $\mathbf{4.215}$ & $\mathbf{7.15}$ & $\mathbf{8.069}$\\ 
+			 & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-2}}$ & & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-4}}$ & $\mathbf{\times 10^{-3}}$\\ \cline{1-14}
+			$\mathbf{4.261}$ & \multirow{2}{*}{} & $\mathbf{5.507}$ & $\mathbf{5.249}$ & $\mathbf{6.15}$ & \multirow{2}{*}{} & $\mathbf{3.957}$ & $\mathbf{9.578}$ & $\mathbf{1.874}$ & \multirow{2}{*}{} & $\mathbf{4.215}$ & \multirow{2}{*}{} & $\mathbf{1.336}$ & $\mathbf{7.915}$\\ 
+			$\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-2}}$ & & $\mathbf{\times 10^{-2}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$\\ \cline{1-14}
+			$\mathbf{4.261}$ & $\mathbf{5.507}$ & \multirow{2}{*}{} & $\mathbf{2.027}$ & $\mathbf{1.645}$ & $\mathbf{3.957}$ & \multirow{2}{*}{} & $\mathbf{5.875}$ & \multicolumn{2}{c}{} & $\mathbf{7.15}$ & $\mathbf{1.336}$ & \multirow{2}{*}{} & $\mathbf{2.304}$\\ 
+			$\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-2}}$ & & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-2}}$ & \multicolumn{2}{c}{} & $\mathbf{\times 10^{-4}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-1}}$\\ \cline{1-8} \cline{11-14}
+			$\mathbf{3.81}$ & $\mathbf{5.249}$ & $\mathbf{2.027}$ & \multirow{2}{*}{} & $\mathbf{6.528}$ & $\mathbf{9.578}$ & $\mathbf{5.875}$ & \multirow{2}{*}{} & \multicolumn{2}{c}{} & $\mathbf{8.069}$ & $\mathbf{7.915}$ & $\mathbf{2.304}$ & \multirow{2}{*}{} \\ 
+			$\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-2}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-2}}$ & & \multicolumn{2}{c}{} & $\mathbf{\times 10^{-3}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & \\ \cline{1-8} \cline{11-14}
+			\multicolumn{4}{c}{$3$ $s$} & \multicolumn{4}{c}{$5$ $s$} & \multicolumn{2}{c}{} & \multicolumn{4}{c}{$30$ $s$} \\ \cline{1-8} \cline{11-14}
+			GRU & GRU & GRU & GRU & GRU & GRU & GRU & GRU & \multicolumn{2}{c}{} & GRU & GRU & GRU & GRU\\ 
+			Att 1 & Att 2 & Att 3 & Att 4 & Att 1 & Att 2 & Att 3 & Att 4 & \multicolumn{2}{c}{} & Att 1 & Att 2 & Att 3 & Att 4\\ \cline{1-8} \cline{11-14}
+			\multirow{2}{*}{} & $\mathbf{4.578}$ & $\mathbf{8.514}$ & $\mathbf{4.108}$ & \multirow{2}{*}{} & $\mathbf{7.712}$ & $\mathbf{1.73}$ & $\mathbf{1.485}$ & \multicolumn{2}{c}{} & \multirow{2}{*}{} & $\mathbf{3.419}$ & $\mathbf{1.145}$ & $\mathbf{8.02}$\\ 
+			 & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & \multicolumn{2}{c}{} & & $\mathbf{\times 10^{-3}}$ & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-2}}$\\ \cline{1-8} \cline{11-14}
+			$\mathbf{4.578}$ & \multirow{2}{*}{} & $\mathbf{3.525}$ & $\mathbf{2.872}$ & $\mathbf{7.712}$ & \multirow{2}{*}{} & $\mathbf{2.996}$ & $\mathbf{4.742}$ & \multicolumn{2}{c}{} & $\mathbf{3.419}$ & \multirow{2}{*}{} & $\mathbf{7.098}$ & $\mathbf{1.817}$\\ 
+			$\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & \multicolumn{2}{c}{} & $\mathbf{\times 10^{-3}}$ & & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-1}}$\\ \cline{1-8} \cline{11-14}
+			$\mathbf{8.514}$ & $\mathbf{3.525}$ & \multirow{2}{*}{} & $\mathbf{2.027}$ & $\mathbf{1.73}$ & $\mathbf{2.996}$ & \multirow{2}{*}{} & $\mathbf{7.712}$ & \multicolumn{2}{c}{} & $\mathbf{1.145}$ & $\mathbf{7.098}$ & \multirow{2}{*}{} & $\mathbf{3.957}$\\ 
+			$\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-1}}$ & \multicolumn{2}{c}{} & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-2}}$ & & $\mathbf{\times 10^{-1}}$\\ \cline{1-8} \cline{11-14}
+			$\mathbf{4.108}$ & $\mathbf{2.872}$ & $\mathbf{2.027}$ & \multirow{2}{*}{} & $\mathbf{1.485}$ & $\mathbf{4.742}$ & $\mathbf{7.712}$ & \multirow{2}{*}{} & \multicolumn{2}{c}{} & $\mathbf{8.02}$ & $\mathbf{1.817}$ & $\mathbf{3.957}$ & \multirow{2}{*}{} \\ 
+			$\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-2}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & \multicolumn{2}{c}{} & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & \\ \cline{1-8} \cline{10-14}
+		\end{tabular}
+	}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on RMSE values across $k$-fold validation datasets for the trajectories estimated using speed, heading, and time in the $k$-fold testing datasets using different RNN models, and forecasting times. The values on the primary diagonal are omitted because models equal themselves.}
+	\label{tab:var_speed actual dir_RMSE}
+\end{table}

@@ -17,67 +17,17 @@ def stringify(value_round, rounding, skip_mul):
             value_round *= 10
         return "$" + str(np.round(value_round, rounding)) + "$\n$\\times 10^{-" + str(pot) + "}$", pot
 
-
-def place_in_board_vertical(dimensions, ord_dimensions, places, board_current):
-    if len(dimensions) == len(places):
-        empty_part = (0, 0)
-        for x2 in range(len(board_current)):
-            for y2 in range(len(board_current[x2])):
-                if board_current[x2][y2]:
-                    empty_part = (max(empty_part[0], x2), max(empty_part[1], y2))
-        return [(places, board_current, empty_part)]
-    configs_set = []
-    for ws in ord_dimensions:
-        if ws not in places:
-            for x_place in range(len(board_current) - dimensions[ws][0]):
-                for y_place in range(len(board_current[0]) - dimensions[ws][1]):
-                    empty_part = 0
-                    for x2 in range(x_place, x_place + dimensions[ws][0]):
-                        for y2 in range(y_place, y_place + dimensions[ws][1]):
-                            empty_part = max(empty_part, board_current[x2][y2])
-                    if not empty_part:
-                        places_new = {d: places[d] for d in places}
-                        places_new[ws] = (x_place, y_place)
-                        board_new = [[board_current[x][y] for y in range(len(board_current[x]))] for x in range(len(board_current))]
-                        for x2 in range(x_place, x_place + dimensions[ws][0]):
-                            for y2 in range(y_place, y_place + dimensions[ws][1]):
-                                board_new[x2][y2] = ws
-                        configs_returned = place_in_board_vertical(dimensions, ord_dimensions, places_new, board_new)
-                        return configs_returned
-                        for c in configs_returned:
-                            configs_set.append(c)
-    return configs_set
-
-def place_in_board_horizontal(dimensions, ord_dimensions, places, board_current):
-    if len(dimensions) == len(places):
-        empty_part = (0, 0)
-        for x2 in range(len(board_current)):
-            for y2 in range(len(board_current[x2])):
-                if board_current[x2][y2]:
-                    empty_part = (max(empty_part[0], x2), max(empty_part[1], y2))
-        return [(places, board_current, empty_part)]
-    configs_set = []
-    for ws in ord_dimensions:
-        if ws not in places:
-            for y_place in range(len(board_current[0]) - dimensions[ws][1]):
-                for x_place in range(len(board_current) - dimensions[ws][0]):
-                    empty_part = 0
-                    for x2 in range(x_place, x_place + dimensions[ws][0]):
-                        for y2 in range(y_place, y_place + dimensions[ws][1]):
-                            empty_part = max(empty_part, board_current[x2][y2])
-                    if not empty_part:
-                        places_new = {d: places[d] for d in places}
-                        places_new[ws] = (x_place, y_place)
-                        board_new = [[board_current[x][y] for y in range(len(board_current[x]))] for x in range(len(board_current))]
-                        for x2 in range(x_place, x_place + dimensions[ws][0]):
-                            for y2 in range(y_place, y_place + dimensions[ws][1]):
-                                board_new[x2][y2] = ws
-                        configs_returned = place_in_board_horizontal(dimensions, ord_dimensions, places_new, board_new)
-                        return configs_returned
-                        for c in configs_returned:
-                            configs_set.append(c)
-    return configs_set
-
+def place_in_board_on_pos(dimensions, places):
+    maxx = max([places[ws][0] + dimensions[ws][0] for ws in places])
+    maxy = max([places[ws][1] + dimensions[ws][1] for ws in places])
+    board_current = [[0 for y in range(maxy)] for x in range(maxx)]
+    for ws in places:
+        x_place, y_place = places[ws]
+        for x2 in range(x_place, x_place + dimensions[ws][0]):
+            for y2 in range(y_place, y_place + dimensions[ws][1]):
+                board_current[x2][y2] = ws
+    return board_current
+ 
 def plot_dict(begin_name, significant_val, dict_use, save_name, subtitle, use_var = []):
     if len(use_var) == 0:
         use_var = list(dict_use.keys())
@@ -90,7 +40,7 @@ def plot_dict(begin_name, significant_val, dict_use, save_name, subtitle, use_va
         dict_sizes[var] = dict()
         for ws in sorted(dict_use[var]):
             if len(dict_use[var][ws]) > 1:
-                string_for_var[var][ws] = [["\\multicolumn{" + str(len(dict_use[var][ws])) + "}{|c|}{Forecasting time $" + str(ws) + "$ $s$}"]]
+                string_for_var[var][ws] = [["\\multicolumn{" + str(len(dict_use[var][ws])) + "}{c}{$" + str(ws) + "$ $s$}"]]
                 line_one = []
                 line_two = []
                 for m1 in sorted(dict_use[var][ws]):
@@ -108,109 +58,40 @@ def plot_dict(begin_name, significant_val, dict_use, save_name, subtitle, use_va
                     line_two = []
                     for m2 in sorted(dict_use[var][ws]):
                         label_hex = stringify(dict_use[var][ws][m1][m2][1], 3, False)[0]
-                        if "\n" in label_hex:
-                            parts = label_hex.split("\n")
+                        if dict_use[var][ws][m1][m2][1] > significant_val and m1 != m2:
+                            if "\n" in label_hex:
+                                parts = label_hex.split("\n")
+                                parts = ["$\\mathbf{" + parts[0][1:-1] + "}$", "$\\mathbf{" + parts[1][1:-1] + "}$"]
+                            else:
+                                parts = ["\\multirow{2}{*}{$\\mathbf{" + label_hex[1:-1] + "}$}", "XXXXXXXXXX"]
                         else:
-                            parts = ["\\multirow{2}{*}{" + label_hex + "}", "XXXXXXXXXX"]
+                            if "\n" in label_hex:
+                                parts = label_hex.split("\n")
+                            else:
+                                parts = ["\\multirow{2}{*}{" + label_hex + "}", "XXXXXXXXXX"]
                         line_one.append(parts[0])
                         line_two.append(parts[1])
                     string_for_var[var][ws].append(line_one)
                     string_for_var[var][ws].append(line_two)
                 dict_sizes[var][ws] = (len(string_for_var[var][ws]), len(dict_use[var][ws]))
-        sort_by_ws = dict(sorted(dict_sizes[var].items(), key=lambda item: item[0]))
-        sort_by_x = dict(sorted(dict_sizes[var].items(), key=lambda item: item[1][0]))
-        sort_by_ws_rev = dict(sorted(dict_sizes[var].items(), key=lambda item: item[0], reverse = True))
-        sort_by_x_rev = dict(sorted(dict_sizes[var].items(), key=lambda item: item[1][0], reverse = True))
+        
+        if "speed" in var and "dir" not in var:
+            p = {2: (0, 0), 3: (13, 0), 4: (0, 5), 5: (9, 5), 10: (0, 8), 20: (9, 8), 30: (18, 8)}
+        if "dir" in var and "speed" not in var:
+            p = {2: (0, 0), 3: (7, 0), 4: (0, 2), 5: (13, 2), 10: (0, 7), 20: (9, 7), 30: (18, 7)}
+        if "lat" in var:
+            p = {2: (0, 0), 3: (23, 0), 4: (0, 10), 5: (23, 14), 10: (36, 14), 20: (45, 14), 30: (36, 17)}
+        if "long" in var:
+            p = {2: (0, 0), 3: (15, 0), 4: (0, 6), 5: (15, 11), 10: (0, 12), 20: (7, 12), 30: (0, 14)}
+        if "abs" in var and "lon" not in var and "lat" not in var:
+            p = {2: (0, 0), 3: (0, 4), 4: (9, 4), 5: (0, 7)}
+        if "dir" in var and "speed" in var:
+            p = {2: (0, 0), 3: (11, 0), 4: (0, 4), 5: (11, 4), 10: (0, 8), 20: (0, 10), 30: (11, 10)}
+        b = place_in_board_on_pos(dict_sizes[var], p)
 
-        min_x = max([dict_sizes[var][ws][0] for ws in dict_sizes[var]])
-        min_y = max([dict_sizes[var][ws][1] for ws in dict_sizes[var]])
-        sum_x = sum([dict_sizes[var][ws][0] for ws in dict_sizes[var]])
-        sum_y = sum([dict_sizes[var][ws][1] for ws in dict_sizes[var]])
-        best_config_mul = (-1, sum_x, sum_y, [], [])
-        best_config_x = (-1, sum_x, sum_y, [], [])
-        best_config_y = (-1, sum_x, sum_y, [], [])
-        best_config_xydiff = (-1, sum_x, sum_y, [], [])
-        for new_ord_dimensions in [sort_by_ws]:
-            found_configs = False
-            for mx in range(sum_x // 2 - 1, sum_x):
-                for my in range(sum_y // 2 - 1, sum_y):
-                    board = [[0 for y in range(my)] for x in range(mx)]
-                    configs_sets_vertical = place_in_board_vertical(dict_sizes[var], new_ord_dimensions, dict(), board)
-                    if len(configs_sets_vertical):
-                        mxv, myv = configs_sets_vertical[0][2][0], configs_sets_vertical[0][2][1]
-                    else:
-                        mxv, myv = 1000000, 1000000
-                    configs_sets_horizontal = place_in_board_horizontal(dict_sizes[var], new_ord_dimensions, dict(), board)
-                    if len(configs_sets_horizontal):
-                        mxh, myh = configs_sets_horizontal[0][2][0], configs_sets_horizontal[0][2][1]
-                    else:
-                        mxh, myh = 1000000, 1000000
-                    if len(configs_sets_vertical):
-                        found_configs = True
-                        if mxv * myv < best_config_mul[1] * best_config_mul[2]:
-                            best_config_mul = (0, mxv, myv, configs_sets_vertical, new_ord_dimensions)
-                        if mxv < best_config_x[1]:
-                            best_config_x = (0, mxv, myv, configs_sets_vertical, new_ord_dimensions)
-                        if myv < best_config_y[2]:
-                            best_config_y = (0, mxv, myv, configs_sets_vertical, new_ord_dimensions)
-                        if abs(mxv - myv) < abs(best_config_xydiff[1] - best_config_xydiff[2]):
-                            best_config_xydiff = (0, mxv, myv, configs_sets_vertical, new_ord_dimensions)
-                    if len(configs_sets_horizontal):
-                        found_configs = True
-                        if mxh * myh < best_config_mul[1] * best_config_mul[2]:
-                            best_config_mul = (1, mxh, myh, configs_sets_horizontal, new_ord_dimensions)
-                        if mxh < best_config_x[1]:
-                            best_config_x = (1, mxh, myh, configs_sets_horizontal, new_ord_dimensions)
-                        if myh < best_config_y[2]:
-                            best_config_y = (1, mxh, myh, configs_sets_horizontal, new_ord_dimensions)
-                        if abs(mxh - myh) < abs(best_config_xydiff[1] - best_config_xydiff[2]):
-                            best_config_xydiff = (0, mxh, myh, configs_sets_horizontal, new_ord_dimensions)
-                    if found_configs:
-                        break
-                if found_configs:
-                    break
-            found_configs = False
-            for my in range(sum_y // 2 - 1, sum_y):
-                for mx in range(sum_x // 2 - 1, sum_x):
-                    board = [[0 for y in range(my)] for x in range(mx)]
-                    configs_sets_vertical = place_in_board_vertical(dict_sizes[var], new_ord_dimensions, dict(), board)
-                    if len(configs_sets_vertical):
-                        mxv, myv = configs_sets_vertical[0][2][0], configs_sets_vertical[0][2][1]
-                    else:
-                        mxv, myv = 1000000, 1000000
-                    configs_sets_horizontal = place_in_board_horizontal(dict_sizes[var], new_ord_dimensions, dict(), board)
-                    if len(configs_sets_horizontal):
-                        mxh, myh = configs_sets_horizontal[0][2][0], configs_sets_horizontal[0][2][1]
-                    else:
-                        mxh, myh = 1000000, 1000000
-                    if len(configs_sets_vertical):
-                        found_configs = True
-                        if mxv * myv < best_config_mul[1] * best_config_mul[2]:
-                            best_config_mul = (0, mxv, myv, configs_sets_vertical, new_ord_dimensions)
-                        if mxv < best_config_x[1]:
-                            best_config_x = (0, mxv, myv, configs_sets_vertical, new_ord_dimensions)
-                        if myv < best_config_y[2]:
-                            best_config_y = (0, mxv, myv, configs_sets_vertical, new_ord_dimensions)
-                        if abs(mxv - myv) < abs(best_config_xydiff[1] - best_config_xydiff[2]):
-                            best_config_xydiff = (0, mxv, myv, configs_sets_vertical, new_ord_dimensions)
-                    if len(configs_sets_horizontal):
-                        found_configs = True
-                        if mxh * myh < best_config_mul[1] * best_config_mul[2]:
-                            best_config_mul = (1, mxh, myh, configs_sets_horizontal, new_ord_dimensions)
-                        if mxh < best_config_x[1]:
-                            best_config_x = (1, mxh, myh, configs_sets_horizontal, new_ord_dimensions)
-                        if myh < best_config_y[2]:
-                            best_config_y = (1, mxh, myh, configs_sets_horizontal, new_ord_dimensions)
-                        if abs(mxh - myh) < abs(best_config_xydiff[1] - best_config_xydiff[2]):
-                            best_config_xydiff = (0, mxh, myh, configs_sets_horizontal, new_ord_dimensions)
-                    if found_configs:
-                        break
-                if found_configs:
-                    break
-                
-    for cfg in [best_config_xydiff]:
-        b = cfg[3][0][1]
-        p = cfg[3][0][0]
+        #for b1 in b:
+            #print(b1)
+        
         is_line = []
         for x2 in range(len(b)):
             is_line.append([])
@@ -223,50 +104,68 @@ def plot_dict(begin_name, significant_val, dict_use, save_name, subtitle, use_va
                         b[x2][y2] = string_for_var[var][ws][x2 - p[ws][0]][y2 - p[ws][1]]
                         if "1.0" not in b[x2][y2] and not ("$" in b[x2][y2] and not "times" in b[x2][y2] and not "s" in b[x2][y2]) and "UniTS" not in b[x2][y2] and "Conv" not in b[x2][y2] and "Bi" not in b[x2][y2] and "RNN" not in b[x2][y2] and "GRU" not in b[x2][y2] and "LSTM" not in b[x2][y2]:
                             is_line[x2][y2] = 1
-                        if "Fore" in b[x2][y2]:
+                        if x2 + 1 < len(b) and "$s$" in str(b[x2 + 1][y2]):
+                            is_line[x2][y2] = 1
+                        if "$s$" in b[x2][y2]:
                             is_line[x2][y2] = 1
                     else:
                         is_line[x2 - 1][y2] = 1
                         is_line[x2][y2] = 1
+
+        clines = ""
+        for num_ix in range(len(b[0])):
+            if b[0][num_ix] != 0:
+                clines += " \\cline{" + str(num_ix + 1) + "-" + str(num_ix + 1) + "}"
+
         for x2 in range(len(b)):
             for y2 in range(len(b[x2])):
                 if b[x2][y2] == 0:
                     b[x2][y2] = " "
 
         use_resizebox = True
-        usable_cols = max([len(b[ixw]) for ixw in range(len(b))]) - 2
+        usable_cols = max([len(b[ixw]) for ixw in range(len(b))]) - 1
         var_fig = var.replace("_", " ").replace("longitude no abs", "$x$ offset").replace("direction", "heading")
         var_fig = var_fig.replace("latitude no abs", "$y$ offset").replace("no abs", "trajectories estimated using $x$ and $y$ offset")
         var_fig = var_fig.replace("speed actual dir", "trajectories estimated using speed, heading, and time")
-        
+        sentence_add = " The values on the primary diagonal are omitted because models equal themselves."
+
         translate_start_name = {"dicti_wilcoxon": "Wilcoxon signed-rank test", "dicti_mann_whitney": "Mann-Whitney $U$-test"}
         if "traj" in subtitle:
             label_mod = "traj_" + var.replace(" ", "_")
         else:    
             label_mod = "var_" + var.replace("itude_no_abs", "")
         text_mod = "$p$-values for the " + translate_start_name[start_name]  + " on RMSE values across $k$-fold validation datasets for the " + var_fig + " in the $k$-fold testing datasets using different RNN models, and forecasting times."
-        my_text_var = "\n\n\nTable~\\ref{tab:" + label_mod + "_RMSE} represents the " + text_mod
-        start_latex = "\n\n\\begin{table}[!ht]\n\t\\centering" + "\n\t\\resizebox{\\linewidth}{!}{" * use_resizebox + "\n\t" + "\t" * use_resizebox + "\\begin{tabular}{|c" + "|c" * usable_cols + "|}\n\t\t" + "\t" * use_resizebox + "\\hline\n"
-        end_latex = "\t" + "\t" * use_resizebox + "\\end{tabular}" + "\n\t}" * use_resizebox + "\n\t\\caption{The " + text_mod + "}\n\t\\label{tab:" + label_mod + "_RMSE}\n\\end{table}"
-
-        strpr = ""
-        for rix in range(len(b[:-1])):
-            rn = [i for i in b[rix] if i not in p][:-1]
+        my_text_var = "\nTable~\\ref{tab:" + label_mod + "_RMSE} represents the " + text_mod + sentence_add
+        start_latex = "\n\n\\begin{table}[!ht]\n\t\\centering" + "\n\t\\resizebox{\\linewidth}{!}{" * use_resizebox + "\n\t" + "\t" * use_resizebox + "\\begin{tabular}{|c" + "|c" * usable_cols + "|}\n\t\t" + "\t" * use_resizebox + clines[1:] + "\n"
+        for num in range(usable_cols + 2):
+            start_latex = start_latex.replace("-" + str(num) + "} \\cline{" + str(num + 1),  "")
+        end_latex = "\t" + "\t" * use_resizebox + "\\end{tabular}" + "\n\t}" * use_resizebox + "\n\t\\caption{The " + text_mod + sentence_add + "}\n\t\\label{tab:" + label_mod + "_RMSE}\n\\end{table}"
+        strpr = my_text_var + start_latex
+        for rix in range(len(b)):
+            rn = [i for i in b[rix] if i not in p]
             clines = ""
             for num_ix in range(len(is_line[rix])):
                 if is_line[rix][num_ix]:
                     clines += " \\cline{" + str(num_ix + 1) + "-" + str(num_ix + 1) + "}"
-            strprpart = str(rn).replace("', '", " & ").replace("']", "\\\\ " + clines + "\n").replace("['", "\t\t" + use_resizebox * "\t")
+            strprpart = str(rn).replace("', '", " & ").replace("']", "\\\\ " + clines).replace("['", "\t\t" + use_resizebox * "\t")
             while "  " in strprpart:
                 strprpart = strprpart.replace("  ", " ")
-            for num_cols in range(len(is_line[rix]) + 4, 1, -1):
+            strprpart = strprpart.replace("\\\\m", "\\m").replace("\\\\t", "\\t").replace("}\\", "} \\").replace("&\\", "& \\")
+            for num_cols in range(len(is_line[rix]) + 4, 2, -1):
                 pattern = "& " * num_cols
-                strprpart = strprpart.replace(pattern[:-1], "& \\multicolumn{" + str(num_cols - 1) + "}{|c|}{} &")
-                strprpart = strprpart.replace("\t" + pattern[1:-1], "\t \\multicolumn{" + str(num_cols - 1) + "}{c|}{} &")
-                strprpart = strprpart.replace(pattern[:-2] + "\\\\ ", "& \\multicolumn{" + str(num_cols - 1) + "}{|c}{} \\\\ ")
+                strprpart = strprpart.replace(pattern[:-1], "& \\multicolumn{" + str(num_cols - 1) + "}{c}{} &")
+                strprpart = strprpart.replace("\t" + pattern[1:-1], "\t \\multicolumn{" + str(num_cols - 1) + "}{c}{} &")
+                strprpart = strprpart.replace(pattern[:-2] + "\\\\ ", "& \\multicolumn{" + str(num_cols - 1) + "}{c}{} \\\\ ")
                 strprpart = strprpart.replace("\t" + pattern[1:-2] + "\\\\ ", "\t \\multicolumn{" + str(num_cols - 1) + "}{c}{} \\\\ ")
-            strpr += strprpart.replace("XXXXXXXXXX", "")
-        print(my_text_var + start_latex + strpr.replace("\\\\m", "\\m").replace("\\\\t", "\\t") + end_latex)
+            for num in range(usable_cols + 2):
+                strprpart = strprpart.replace("-" + str(num) + "} \\cline{" + str(num + 1),  "")
+            strprpart = strprpart.replace("$1.0$", "")
+            while "  " in strprpart:
+                strprpart = strprpart.replace("  ", " ")
+            strprpart = strprpart.replace("XXXXXXXXXX", "").replace("\\\\m", "\\m").replace("\\\\t", "\\t").replace("}\\", "} \\").replace("&\\", "& \\")
+            while "  " in strprpart:
+                strprpart = strprpart.replace("  ", " ")
+            strpr += strprpart + "\n"
     new_dir_name = "stats_dir_table/"    
     if begin_name == "dicti_wilcoxon":
         new_dir_name += "wilcoxon/"
@@ -274,7 +173,10 @@ def plot_dict(begin_name, significant_val, dict_use, save_name, subtitle, use_va
         new_dir_name += "mann_whitney/"
     if not os.path.isdir(new_dir_name):
         os.makedirs(new_dir_name)
-    name = new_dir_name + save_name + ".svg"
+    filenewtext =new_dir_name + save_name + ".tex"
+    filenewtextopened = open(filenewtext, "w")
+    filenewtextopened.write(strpr + end_latex)
+    filenewtextopened.close()
 
 name_list_total = ["data_frame_val_merged", "data_frame_traj_val_merged"]
 
@@ -463,8 +365,6 @@ for start_name in ["dicti_wilcoxon"]:
         plot_dict(start_name, 0.05 / num_use, dicti_mann_whitney_filter, "var_lat_" + metric, metricnew, ["latitude_no_abs"])
         plot_dict(start_name, 0.05 / num_use, dicti_mann_whitney_filter, "var_speed_" + metric, metricnew, ["speed"])
         plot_dict(start_name, 0.05 / num_use, dicti_mann_whitney_filter, "var_direction_" + metric, metricnew, ["direction"])
-        #plot_dict(start_name, 0.05 / num_use, dicti_mann_whitney_filter_total, "var_long_lat_" + metric, metricnew, ["longitude_no_abs", "latitude_no_abs"])
-        #plot_dict(start_name, 0.05 / num_use, dicti_mann_whitney_filter_total, "var_speed_direction_" + metric, metricnew, ["speed", "direction"])
 
     #for metric in ["R2", "MAE", "RMSE", "MSE", "euclid", "haversine"]:
     for metric in ["RMSE"]:
@@ -551,4 +451,3 @@ for start_name in ["dicti_wilcoxon"]:
         metricnew = metricnew.replace("haversine", "Haversine distance")
         plot_dict(start_name, 0.05 / num_use, dicti_mann_whitney_traj_filter, "traj_no_abs_" + metric, metricnew, ["no abs"])
         plot_dict(start_name, 0.05 / num_use, dicti_mann_whitney_traj_filter, "traj_speed_actual_dir_" + metric, metricnew, ["speed actual dir"])
-        #plot_dict(start_name, 0.05 / num_use, dicti_mann_whitney_traj_filter_total, "traj_all_" + metric, metricnew, ["no abs", "speed actual dir"])

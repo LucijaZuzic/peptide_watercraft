@@ -1,0 +1,31 @@
+
+Table~\ref{tab:var_no abs_RMSE} represents the $p$-values for the Wilcoxon signed-rank test on RMSE values across $k$-fold validation datasets for the trajectories estimated using $x$ and $y$ offset in the $k$-fold testing datasets using different RNN models, and forecasting times. The values on the primary diagonal are omitted because models equal themselves.
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+			\cline{1-9}
+			\multicolumn{4}{c}{$2$ $s$} & \multicolumn{3}{c}{$3$ $s$} & \multicolumn{2}{c}{$5$ $s$} \\ \cline{1-9}
+			GRU & GRU & GRU & \multirow{2}{*}{UniTS} & GRU & GRU & \multirow{2}{*}{UniTS} & GRU & \multirow{2}{*}{UniTS} \\ 
+			Att 1 & Att 3 & Att 4 & & Att 1 & Att 4 & & Att 4 & \\ \cline{1-9}
+			\multirow{2}{*}{} & $\mathbf{3.388}$ & $\mathbf{5.579}$ & $\mathbf{6.528}$ & \multirow{2}{*}{} & $\mathbf{3.417}$ & $\mathbf{1.266}$ & \multirow{2}{*}{} & $\mathbf{1.027}$\\ 
+			 & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-3}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-3}}$\\ \cline{1-9}
+			$\mathbf{3.388}$ & \multirow{2}{*}{} & $\mathbf{7.098}$ & $\mathbf{2.996}$ & $\mathbf{3.417}$ & \multirow{2}{*}{} & $\mathbf{5.077}$ & $\mathbf{1.027}$ & \multirow{2}{*}{} \\ 
+			$\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-2}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-3}}$ & \\ \cline{1-9}
+			$\mathbf{5.579}$ & $\mathbf{7.098}$ & \multirow{2}{*}{} & $\mathbf{9.119}$ & $\mathbf{1.266}$ & $\mathbf{5.077}$ & \multirow{2}{*}{} & \multicolumn{2}{c}{} \\ 
+			$\mathbf{\times 10^{-3}}$ & $\mathbf{\times 10^{-2}}$ & & $\mathbf{\times 10^{-4}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & \multicolumn{2}{c}{} \\ \cline{1-7}
+			$\mathbf{6.528}$ & $\mathbf{2.996}$ & $\mathbf{9.119}$ & \multirow{2}{*}{} & \multicolumn{3}{c}{$4$ $s$} & \multicolumn{2}{c}{} \\ \cline{5-7}
+			$\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-4}}$ & & GRU & GRU & \multirow{2}{*}{UniTS} & \multicolumn{2}{c}{} \\ \cline{1-4}
+			 \multicolumn{4}{c}{} & Att 1 & Att 4 & & \multicolumn{2}{c}{} \\ \cline{5-7}
+			 \multicolumn{4}{c}{} & \multirow{2}{*}{} & $\mathbf{6.263}$ & $\mathbf{4.297}$ & \multicolumn{2}{c}{} \\ 
+			 \multicolumn{4}{c}{} & & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-4}}$ & \multicolumn{2}{c}{} \\ \cline{5-7}
+			 \multicolumn{4}{c}{} & $\mathbf{6.263}$ & \multirow{2}{*}{} & $\mathbf{5.158}$ & \multicolumn{2}{c}{} \\ 
+			 \multicolumn{4}{c}{} & $\mathbf{\times 10^{-2}}$ & & $\mathbf{\times 10^{-2}}$ & \multicolumn{2}{c}{} \\ \cline{5-7}
+			 \multicolumn{4}{c}{} & $\mathbf{4.297}$ & $\mathbf{5.158}$ & \multirow{2}{*}{} & \multicolumn{2}{c}{} \\ 
+			 \multicolumn{4}{c}{} & $\mathbf{\times 10^{-4}}$ & $\mathbf{\times 10^{-2}}$ & & \multicolumn{2}{c}{} \\ \cline{2-7} \cline{9-9}
+		\end{tabular}
+	}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on RMSE values across $k$-fold validation datasets for the trajectories estimated using $x$ and $y$ offset in the $k$-fold testing datasets using different RNN models, and forecasting times. The values on the primary diagonal are omitted because models equal themselves.}
+	\label{tab:var_no abs_RMSE}
+\end{table}

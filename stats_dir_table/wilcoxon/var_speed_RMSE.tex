@@ -1,0 +1,40 @@
+
+Table~\ref{tab:var_speed_RMSE} represents the $p$-values for the Wilcoxon signed-rank test on RMSE values across $k$-fold validation datasets for the speed in the $k$-fold testing datasets using different RNN models, and forecasting times. The values on the primary diagonal are omitted because models equal themselves.
+
+\begin{table}[!ht]
+	\centering
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+			\cline{1-11}
+			\multicolumn{5}{c}{$2$ $s$} & \multicolumn{3}{c}{$4$ $s$} & \multicolumn{3}{c}{$10$ $s$} \\ \cline{1-11}
+			\multirow{2}{*}{Bi} & \multirow{2}{*}{Conv} & GRU & LSTM & RNN & \multirow{2}{*}{Bi} & \multirow{2}{*}{Conv} & \multirow{2}{*}{UniTS} & \multirow{2}{*}{Bi} & \multirow{2}{*}{Conv} & \multirow{2}{*}{UniTS} \\ 
+			 & & Linear & Linear & Linear & & & & & & \\ \cline{1-11}
+			\multirow{2}{*}{} & $\mathbf{9.635}$ & $\mathbf{2.099}$ & $\mathbf{1.266}$ & $\mathbf{2.872}$ & \multirow{2}{*}{} & $1.192$ & $\mathbf{1.908}$ & \multirow{2}{*}{} & $1.788$ & $\mathbf{2.785}$\\ 
+			 & $\mathbf{\times 10^{-3}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & $\times 10^{-7}$ & $\mathbf{\times 10^{-1}}$ & & $\times 10^{-7}$ & $\mathbf{\times 10^{-3}}$\\ \cline{1-11}
+			$\mathbf{9.635}$ & \multirow{2}{*}{} & $\mathbf{2.996}$ & $\mathbf{1.645}$ & $\mathbf{3.957}$ & $1.192$ & \multirow{2}{*}{} & $\mathbf{3.81}$ & $1.788$ & \multirow{2}{*}{} & $\mathbf{7.371}$\\ 
+			$\mathbf{\times 10^{-3}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\times 10^{-7}$ & & $\mathbf{\times 10^{-1}}$ & $\times 10^{-7}$ & & $\mathbf{\times 10^{-3}}$\\ \cline{1-11}
+			$\mathbf{2.099}$ & $\mathbf{2.996}$ & \multirow{2}{*}{} & $\mathbf{2.099}$ & $\mathbf{8.119}$ & $\mathbf{1.908}$ & $\mathbf{3.81}$ & \multirow{2}{*}{} & $\mathbf{2.785}$ & $\mathbf{7.371}$ & \multirow{2}{*}{} \\ 
+			$\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-3}}$ & $\mathbf{\times 10^{-3}}$ & \\ \cline{1-11}
+			$\mathbf{1.266}$ & $\mathbf{1.645}$ & $\mathbf{2.099}$ & \multirow{2}{*}{} & $\mathbf{2.002}$ & \multicolumn{3}{c}{$5$ $s$} & \multicolumn{3}{c}{$20$ $s$} \\ \cline{6-11}
+			$\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-1}}$ & \multirow{2}{*}{Bi} & \multirow{2}{*}{Conv} & \multirow{2}{*}{UniTS} & \multirow{2}{*}{Bi} & \multirow{2}{*}{Conv} & \multirow{2}{*}{UniTS} \\ \cline{1-5}
+			$\mathbf{2.872}$ & $\mathbf{3.957}$ & $\mathbf{8.119}$ & $\mathbf{2.002}$ & \multirow{2}{*}{} & & & & & & \\ \cline{6-11}
+			$\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & \multirow{2}{*}{} & $1.007$ & $\mathbf{4.826}$ & \multirow{2}{*}{} & $4.542$ & $\mathbf{9.119}$\\ \cline{1-5}
+			\multicolumn{5}{c}{$3$ $s$} & & $\times 10^{-5}$ & $\mathbf{\times 10^{-2}}$ & & $\times 10^{-5}$ & $\mathbf{\times 10^{-4}}$\\ \cline{1-11}
+			\multirow{2}{*}{Conv} & GRU & LSTM & RNN & \multirow{2}{*}{UniTS} & $1.007$ & \multirow{2}{*}{} & $\mathbf{1.336}$ & $4.542$ & \multirow{2}{*}{} & $\mathbf{2.255}$\\ 
+			 & Linear & Linear & Linear & & $\times 10^{-5}$ & & $\mathbf{\times 10^{-1}}$ & $\times 10^{-5}$ & & $\mathbf{\times 10^{-3}}$\\ \cline{1-11}
+			\multirow{2}{*}{} & $\mathbf{1.027}$ & $\mathbf{2.255}$ & $\mathbf{3.419}$ & $\mathbf{4.742}$ & $\mathbf{4.826}$ & $\mathbf{1.336}$ & \multirow{2}{*}{} & $\mathbf{9.119}$ & $\mathbf{2.255}$ & \multirow{2}{*}{} \\ 
+			 & $\mathbf{\times 10^{-3}}$ & $\mathbf{\times 10^{-3}}$ & $\mathbf{\times 10^{-3}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-2}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-4}}$ & $\mathbf{\times 10^{-3}}$ & \\ \cline{1-11}
+			$\mathbf{1.027}$ & \multirow{2}{*}{} & $\mathbf{2.2}$ & $\mathbf{1.336}$ & $5.96$ & \multicolumn{3}{c}{} & \multicolumn{3}{c}{$30$ $s$} \\ \cline{9-11}
+			$\mathbf{\times 10^{-3}}$ & & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & $\times 10^{-8}$ & \multicolumn{3}{c}{} & \multirow{2}{*}{Bi} & \multirow{2}{*}{Conv} & \multirow{2}{*}{UniTS} \\ \cline{1-5}
+			$\mathbf{2.255}$ & $\mathbf{2.2}$ & \multirow{2}{*}{} & $\mathbf{4.578}$ & $5.96$ & \multicolumn{3}{c}{} & & & \\ \cline{9-11}
+			$\mathbf{\times 10^{-3}}$ & $\mathbf{\times 10^{-1}}$ & & $\mathbf{\times 10^{-1}}$ & $\times 10^{-8}$ & \multicolumn{3}{c}{} & \multirow{2}{*}{} & $1.49$ & $\mathbf{8.081}$\\ \cline{1-5}
+			$\mathbf{3.419}$ & $\mathbf{1.336}$ & $\mathbf{4.578}$ & \multirow{2}{*}{} & $1.788$ & \multicolumn{3}{c}{} & & $\times 10^{-6}$ & $\mathbf{\times 10^{-4}}$\\ \cline{9-11}
+			$\mathbf{\times 10^{-3}}$ & $\mathbf{\times 10^{-1}}$ & $\mathbf{\times 10^{-1}}$ & & $\times 10^{-7}$ & \multicolumn{3}{c}{} & $1.49$ & \multirow{2}{*}{} & $\mathbf{1.453}$\\ \cline{1-5}
+			$\mathbf{4.742}$ & $5.96$ & $5.96$ & $1.788$ & \multirow{2}{*}{} & \multicolumn{3}{c}{} & $\times 10^{-6}$ & & $\mathbf{\times 10^{-3}}$\\ \cline{9-11}
+			$\mathbf{\times 10^{-1}}$ & $\times 10^{-8}$ & $\times 10^{-8}$ & $\times 10^{-7}$ & & \multicolumn{3}{c}{} & $\mathbf{8.081}$ & $\mathbf{1.453}$ & \multirow{2}{*}{} \\ \cline{1-5}
+			 \multicolumn{8}{c}{} & $\mathbf{\times 10^{-4}}$ & $\mathbf{\times 10^{-3}}$ & \\ \cline{2-5} \cline{7-11}
+		\end{tabular}
+	}
+	\caption{The $p$-values for the Wilcoxon signed-rank test on RMSE values across $k$-fold validation datasets for the speed in the $k$-fold testing datasets using different RNN models, and forecasting times. The values on the primary diagonal are omitted because models equal themselves.}
+	\label{tab:var_speed_RMSE}
+\end{table}
