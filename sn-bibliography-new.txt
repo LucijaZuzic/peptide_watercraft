@@ -1,0 +1,850 @@
+%%% 1
+\bibitem{ototrakOtoTrakTrack}
+\begin{botherref}
+\oauthor{\bsnm{OtoTrak}}
+(\byear{2024}).
+{O}to{T}rak - {T}rack your watercraft --- ototrak.com.
+\url{https://www.ototrak.com/en-us}.
+Accessed 01 November 2024.
+\end{botherref}
+\endbibitem
+
+%%% 2
+\bibitem{dolgov2016google}
+\begin{bchapter}
+\bauthor{\bsnm{Anonymous}}
+(\byear{2016}).
+\bctitle{{I}ncident {N}umber 71}.
+In \beditor{\binits{S.} \bsnm{McGregor}} (Ed.),
+\bbtitle{{A}{I} {I}ncident {D}atabase}.
+\bpublisher{Responsible AI Collaborative}.
+\url{https://incidentdatabase.ai/cite/71}.
+Accessed 01 November 2024.
+\end{bchapter}
+\endbibitem
+
+%%% 3
+\bibitem{ding2013neural}
+\begin{barticle}
+\bauthor{\bsnm{Ding}, \binits{C.}},
+\bauthor{\bsnm{Wang}, \binits{W.}},
+\bauthor{\bsnm{Wang}, \binits{X.}},
+\bauthor{\bsnm{Baumann}, \binits{M.}}, \&
+\bauthor{\bsnm{others}}
+(\byear{2013}).
+\batitle{{A} neural network model for driver’s lane-changing trajectory prediction in urban traffic flow}.
+\bjtitle{Mathematical Problems in Engineering},
+\bvolume{2013}.
+doi:10.1155/2013/967358.
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{zheng2014predicting}
+\begin{barticle}
+\bauthor{\bsnm{Zheng}, \binits{J.}},
+\bauthor{\bsnm{Suzuki}, \binits{K.}}, \&
+\bauthor{\bsnm{Fujita}, \binits{M.}}
+(\byear{2014}).
+\batitle{{P}redicting driver’s lane-changing decisions using a neural network model}.
+\bjtitle{Simulation Modelling Practice and Theory},
+\bvolume{42},
+\bfpage{73}--\bfpage{83}.
+doi:10.1016/j.simpat.2013.12.007.
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem{kumar2013learning}
+\begin{bchapter}
+\bauthor{\bsnm{Kumar}, \binits{P.}},
+\bauthor{\bsnm{Perrollaz}, \binits{M.}},
+\bauthor{\bsnm{Lefevre}, \binits{S.}}, \&
+\bauthor{\bsnm{Laugier}, \binits{C.}}
+(\byear{2013}).
+\bctitle{{L}earning-based approach for online lane change intention prediction}.
+In \bbtitle{2013 {I}{E}{E}{E} {I}ntelligent {V}ehicles {S}ymposium ({I}{V})}
+(pp. \bfpage{797}--\bfpage{802}).
+doi:10.1109/IVS.2013.6629564.
+\end{bchapter}
+\endbibitem
+
+%%% 6
+\bibitem{hochreiter1997long}
+\begin{barticle}
+\bauthor{\bsnm{Hochreiter}, \binits{S.}}, \&
+\bauthor{\bsnm{Schmidhuber}, \binits{J.}}
+(\byear{1997}).
+\batitle{{L}ong short-term memory}.
+\bjtitle{Neural computation},
+\bvolume{9},
+\bfpage{1735}--\bfpage{1780}.
+doi:10.1162/neco.1997.9.8.1735.
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem{altche2017lstm}
+\begin{bchapter}
+\bauthor{\bsnm{Altch{\'e}}, \binits{F.}}, \&
+\bauthor{\bsnm{de La Fortelle}, \binits{A.}}
+(\byear{2017}).
+\bctitle{{A}n {L}{S}{T}{M} network for highway trajectory prediction}.
+In \bbtitle{2017 {I}{E}{E}{E} 20th international conference on intelligent transportation systems ({I}{T}{S}{C})}
+(pp. \bfpage{353}--\bfpage{359}).
+doi:10.48550/arXiv.1801.07962.
+\end{bchapter}
+\endbibitem
+
+%%% 8
+\bibitem{gers2000learning}
+\begin{barticle}
+\bauthor{\bsnm{Gers}, \binits{F.A.}},
+\bauthor{\bsnm{Schmidhuber}, \binits{J.}}, \&
+\bauthor{\bsnm{Cummins}, \binits{F.}}
+(\byear{2000}).
+\batitle{{L}earning to forget: {C}ontinual prediction with {L}{S}{T}{M}}.
+\bjtitle{Neural computation},
+\bvolume{12},
+\bfpage{2451}--\bfpage{2471}.
+doi:10.1162/089976600300015015.
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem{phillips2017generalizable}
+\begin{bchapter}
+\bauthor{\bsnm{Phillips}, \binits{D.J.}},
+\bauthor{\bsnm{Wheeler}, \binits{T.A.}}, \&
+\bauthor{\bsnm{Kochenderfer}, \binits{M.J.}}
+(\byear{2017}).
+\bctitle{{G}eneralizable intention prediction of human drivers at intersections}.
+In \bbtitle{2017 {I}{E}{E}{E} intelligent vehicles symposium ({I}{V})}
+(pp. \bfpage{1665}--\bfpage{1670}).
+doi:10.1109/IVS.2017.7995948.
+\end{bchapter}
+\endbibitem
+
+%%% 10
+\bibitem{zyner2017long}
+\begin{bchapter}
+\bauthor{\bsnm{Zyner}, \binits{A.}},
+\bauthor{\bsnm{Worrall}, \binits{S.}},
+\bauthor{\bsnm{Ward}, \binits{J.}}, \&
+\bauthor{\bsnm{Nebot}, \binits{E.}}
+(\byear{2017}).
+\bctitle{{L}ong short term memory for driver intent prediction}.
+In \bbtitle{2017 {I}{E}{E}{E} {I}ntelligent {V}ehicles {S}ymposium ({I}{V})}
+(pp. \bfpage{1484}--\bfpage{1489}).
+doi:10.1109/IVS.2017.7995919.
+\end{bchapter}
+\endbibitem
+
+%%% 11
+\bibitem{duan2016travel}
+\begin{bchapter}
+\bauthor{\bsnm{Duan}, \binits{Y.}},
+\bauthor{\bsnm{Yisheng}, \binits{L.V.}}, \&
+\bauthor{\bsnm{Wang}, \binits{F.Y.}}
+(\byear{2016}).
+\bctitle{{T}ravel time prediction with {L}{S}{T}{M} neural network}.
+In \bbtitle{2016 {I}{E}{E}{E} 19th international conference on intelligent transportation systems ({I}{T}{S}{C})}
+(pp. \bfpage{1053}--\bfpage{1058}).
+doi:10.1109/ITSC.2016.7795686.
+\end{bchapter}
+\endbibitem
+
+%%% 12
+\bibitem{alahi2016social}
+\begin{bchapter}
+\bauthor{\bsnm{Alahi}, \binits{A.}},
+\bauthor{\bsnm{Goel}, \binits{K.}},
+\bauthor{\bsnm{Ramanathan}, \binits{V.}},
+\bauthor{\bsnm{Robicquet}, \binits{A.}},
+\bauthor{\bsnm{Fei-Fei}, \binits{L.}}, \&
+\bauthor{\bsnm{Savarese}, \binits{S.}}
+(\byear{2016}).
+\bctitle{{S}ocial {L}{S}{T}{M}: {H}uman trajectory prediction in crowded spaces}.
+In \bbtitle{{P}roceedings of the {I}{E}{E}{E} conference on computer vision and pattern recognition}
+(pp. \bfpage{961}--\bfpage{971}).
+doi:10.1109/CVPR.2016.110.
+\end{bchapter}
+\endbibitem
+
+%%% 13
+\bibitem{lefevre2014survey}
+\begin{barticle}
+\bauthor{\bsnm{Lef{\`e}vre}, \binits{S.}},
+\bauthor{\bsnm{Vasquez}, \binits{D.}}, \&
+\bauthor{\bsnm{Laugier}, \binits{Ch.}}
+(\byear{2014}).
+\batitle{{A} survey on motion prediction and risk assessment for intelligent vehicles}.
+\bjtitle{ROBOMECH journal},
+\bvolume{1},
+\bfpage{1}--\bfpage{14}.
+doi:10.1186/s40648-014-0001-z.
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{tay2012probabilistic}
+\begin{bchapter}
+\bauthor{\bsnm{Tay}, \binits{C.}},
+\bauthor{\bsnm{Mekhnacha}, \binits{K.}}, \&
+\bauthor{\bsnm{Laugier}, \binits{C.}}
+(\byear{2012}).
+\bctitle{{P}robabilistic {V}ehicle {M}otion {M}odeling and {R}isk {E}stimation}.
+In \bbtitle{{H}andbook of {I}ntelligent {V}ehicles}
+(pp. \bfpage{1479}--\bfpage{1516}).
+\blocation{Berlin/Heidelberg, Germany}: 
+\bpublisher{Springer}.
+doi:10.1007/978-0-85729-085-4\_57.
+\end{bchapter}
+\endbibitem
+
+%%% 15
+\bibitem{streubel2014prediction}
+\begin{bchapter}
+\bauthor{\bsnm{Streubel}, \binits{T.}}, \&
+\bauthor{\bsnm{Hoffmann}, \binits{K.H.}}
+(\byear{2014}).
+\bctitle{{P}rediction of driver intended path at intersections}.
+In \bbtitle{2014 {I}{E}{E}{E} intelligent vehicles symposium proceedings}
+(pp. \bfpage{134}--\bfpage{139}).
+doi:10.1109/IVS.2014.6856508.
+\end{bchapter}
+\endbibitem
+
+%%% 16
+\bibitem{carvalho2014stochastic}
+\begin{bchapter}
+\bauthor{\bsnm{Carvalho}, \binits{A.}},
+\bauthor{\bsnm{Gao}, \binits{Y.}},
+\bauthor{\bsnm{Lefevre}, \binits{S.}}, \&
+\bauthor{\bsnm{Borrelli}, \binits{F.}}
+(\byear{2014}).
+\bctitle{{S}tochastic predictive control of autonomous vehicles in uncertain environments}.
+In \bbtitle{12th international symposium on advanced vehicle control}.
+\end{bchapter}
+\endbibitem
+
+%%% 17
+\bibitem{mandalia2005using}
+\begin{bchapter}
+\bauthor{\bsnm{Mandalia}, \binits{H.M.}}, \&
+\bauthor{\bsnm{Salvucci}, \binits{M.D.D.}}
+(\byear{2005}).
+\bctitle{{U}sing support vector machines for lane-change detection}.
+In \bbtitle{{P}roceedings of the human factors and ergonomics society annual meeting}
+(pp. \bfpage{1965}--\bfpage{1969}).
+\blocation{Los Angeles, California}: 
+\bpublisher{SAGE Publications Sage CA}.
+\end{bchapter}
+\endbibitem
+
+%%% 18
+\bibitem{houenou2013vehicle}
+\begin{bchapter}
+\bauthor{\bsnm{Houenou}, \binits{A.}},
+\bauthor{\bsnm{Bonnifait}, \binits{P.}},
+\bauthor{\bsnm{Cherfaoui}, \binits{V.}}, \&
+\bauthor{\bsnm{Yao}, \binits{W.}}
+(\byear{2013}).
+\bctitle{{V}ehicle trajectory prediction based on motion model and maneuver recognition}.
+In \bbtitle{2013 {I}{E}{E}{E}/{R}{S}{J} international conference on intelligent robots and systems}
+(pp. \bfpage{4363}--\bfpage{4369}).
+doi:10.1109/IROS.2013.6696982.
+\end{bchapter}
+\endbibitem
+
+%%% 19
+\bibitem{yoon2016multilayer}
+\begin{bchapter}
+\bauthor{\bsnm{Yoon}, \binits{S.}}, \&
+\bauthor{\bsnm{Kum}, \binits{D.}}
+(\byear{2016}).
+\bctitle{{T}he multilayer perceptron approach to lateral motion prediction of surrounding vehicles for autonomous vehicles}.
+In \bbtitle{2016 {I}{E}{E}{E} {I}ntelligent {V}ehicles {S}ymposium ({I}{V})}
+(pp. \bfpage{1307}--\bfpage{1312}).
+doi:10.1109/IVS.2016.7535559.
+\end{bchapter}
+\endbibitem
+
+%%% 20
+\bibitem{khosroshahi2016surround}
+\begin{bchapter}
+\bauthor{\bsnm{Khosroshahi}, \binits{A.}},
+\bauthor{\bsnm{Ohn-Bar}, \binits{E.}}, \&
+\bauthor{\bsnm{Trivedi}, \binits{M.M.}}
+(\byear{2016}).
+\bctitle{{S}urround vehicles trajectory analysis with recurrent neural networks}.
+In \bbtitle{2016 {I}{E}{E}{E} 19th {I}nternational {C}onference on {I}ntelligent {T}ransportation {S}ystems ({I}{T}{S}{C})}
+(pp. \bfpage{2267}--\bfpage{2272}).
+doi:10.1109/ITSC.2016.7795922.
+\end{bchapter}
+\endbibitem
+
+%%% 21
+\bibitem{olesen2023contextually}
+\begin{barticle}
+\bauthor{\bsnm{Olesen}, \binits{K.V.}},
+\bauthor{\bsnm{Boubekki}, \binits{A.}},
+\bauthor{\bsnm{Kampffmeyer}, \binits{M.C.}},
+\bauthor{\bsnm{Jenssen}, \binits{R.}},
+\bauthor{\bsnm{Christensen}, \binits{A.N.}},
+\bauthor{\bsnm{H{\o}rl{\"u}ck}, \binits{S.}}, \&
+\bauthor{\bsnm{Clemmensen}, \binits{L.H.}}
+(\byear{2023}).
+\batitle{{A} {C}ontextually {S}upported {A}bnormality {D}etector for {M}aritime {T}rajectories}.
+\bjtitle{Journal of Marine Science and Engineering},
+\bvolume{11},
+\bfpage{2085}.
+doi:10.3390/jmse11112085.
+\end{barticle}
+\endbibitem
+
+%%% 22
+\bibitem{volz2016predicting}
+\begin{bchapter}
+\bauthor{\bsnm{V{\"o}lz}, \binits{B.}},
+\bauthor{\bsnm{Mielenz}, \binits{H.}},
+\bauthor{\bsnm{Siegwart}, \binits{R.}}, \&
+\bauthor{\bsnm{Nieto}, \binits{J.}}
+(\byear{2016}).
+\bctitle{{P}redicting pedestrian crossing using quantile regression forests}.
+In \bbtitle{2016 {I}{E}{E}{E} {I}ntelligent {V}ehicles {S}ymposium ({I}{V})}
+(pp. \bfpage{426}--\bfpage{432}).
+doi:10.1109/IVS.2016.7535421.
+\end{bchapter}
+\endbibitem
+
+%%% 23
+\bibitem{tomar2012safety}
+\begin{barticle}
+\bauthor{\bsnm{Tomar}, \binits{R.S.}}, \&
+\bauthor{\bsnm{Verma}, \binits{S.}}
+(\byear{2012}).
+\batitle{{S}afety of {L}ane {C}hange {M}aneuver {T}hrough {A} {P}riori {P}rediction of {T}rajectory {U}sing {N}eural {N}etworks}.
+\bjtitle{Netw. Protoc. Algorithms},
+\bvolume{4},
+\bfpage{4}--\bfpage{21}.
+doi:10.5296/npa.v4i1.1240.
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem{liu2014vehicle}
+\begin{bchapter}
+\bauthor{\bsnm{Liu}, \binits{Q.}},
+\bauthor{\bsnm{Lathrop}, \binits{B.}}, \&
+\bauthor{\bsnm{Butakov}, \binits{V.}}
+(\byear{2014}).
+\bctitle{{V}ehicle lateral position prediction: {A} small step towards a comprehensive risk assessment system}.
+In \bbtitle{17th {I}nternational {I}{E}{E}{E} {C}onference on {I}ntelligent {T}ransportation {S}ystems ({I}{T}{S}{C})}
+(pp. \bfpage{667}--\bfpage{672}).
+doi:10.1109/ITSC.2014.6957766.
+\end{bchapter}
+\endbibitem
+
+%%% 25
+\bibitem{zernetsch2016trajectory}
+\begin{bchapter}
+\bauthor{\bsnm{Zernetsch}, \binits{S.}},
+\bauthor{\bsnm{Kohnen}, \binits{S.}},
+\bauthor{\bsnm{Goldhammer}, \binits{M.}},
+\bauthor{\bsnm{Doll}, \binits{K.}}, \&
+\bauthor{\bsnm{Sick}, \binits{B.}}
+(\byear{2016}).
+\bctitle{{T}rajectory prediction of cyclists using a physical model and an artificial neural network}.
+In \bbtitle{2016 {I}{E}{E}{E} {I}ntelligent {V}ehicles {S}ymposium ({I}{V})}
+(pp. \bfpage{833}--\bfpage{838}).
+doi:10.1109/IVS.2016.7535484.
+\end{bchapter}
+\endbibitem
+
+%%% 26
+\bibitem{gregov2022modeling}
+\begin{barticle}
+\bauthor{\bsnm{Gregov}, \binits{G.}}
+(\byear{2022}).
+\batitle{{M}odeling and predictive analysis of the hydraulic {G}{E}{R}{O}{L}{E}{R} motor based on artificial neural network}.
+\bjtitle{Engineering Review},
+\bvolume{42},
+\bfpage{91}--\bfpage{100}.
+doi:10.30765/er.1813.
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem{fushiki2011estimation}
+\begin{barticle}
+\bauthor{\bsnm{Fushiki}, \binits{T.}}
+(\byear{2011}).
+\batitle{{E}stimation of prediction error by using {K}-fold cross-validation}.
+\bjtitle{Statistics and Computing},
+\bvolume{21},
+\bfpage{137}--\bfpage{146}.
+doi:10.1007/s11222-009-9153-8.
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem{gal2016dropout}
+\begin{bchapter}
+\bauthor{\bsnm{Gal}, \binits{Y.}}, \&
+\bauthor{\bsnm{Ghahramani}, \binits{Z.}}
+(\byear{2016}).
+\bctitle{{D}ropout as a {B}ayesian {A}pproximation: {R}epresenting {M}odel {U}ncertainty in {D}eep {L}earning}.
+In \beditor{\binits{M.F.} \bsnm{Balcan}}, \&
+\beditor{\binits{K.Q.} \bsnm{Weinberger}} (Ed.),
+\bbtitle{{P}roceedings of {T}he 33rd {I}nternational {C}onference on {M}achine {L}earning}
+(pp. \bfpage{1050}--\bfpage{1059}).
+\blocation{New York, New York, United States of America}: 
+\bpublisher{Proceedings of Machine Learning Research}.
+\url{https://proceedings.mlr.press/v48/gal16.html}.
+Accessed 01 November 2024.
+\end{bchapter}
+\endbibitem
+
+%%% 29
+\bibitem{venskus2021unsupervised}
+\begin{barticle}
+\bauthor{\bsnm{Venskus}, \binits{J.}},
+\bauthor{\bsnm{Treigys}, \binits{P.}}, \&
+\bauthor{\bsnm{Markevi{\v{c}}i{\=u}t{\.e}}, \binits{J.}}
+(\byear{2021}).
+\batitle{{U}nsupervised marine vessel trajectory prediction using {L}{S}{T}{M} network and wild bootstrapping techniques}.
+\bjtitle{Nonlinear analysis: modelling and control.},
+\bvolume{26},
+\bfpage{718}--\bfpage{737}.
+doi:10.15388/namc.2021.26.23056.
+\end{barticle}
+\endbibitem
+
+%%% 30
+\bibitem{jiang2022graph}
+\begin{barticle}
+\bauthor{\bsnm{Jiang}, \binits{W.}}, \&
+\bauthor{\bsnm{Luo}, \binits{J.}}
+(\byear{2022}).
+\batitle{{G}raph neural network for traffic forecasting: {A} survey}.
+\bjtitle{Expert systems with applications},
+\bvolume{207},
+\bfpage{117921}.
+doi:10.1016/j.eswa.2022.117921.
+\end{barticle}
+\endbibitem
+
+%%% 31
+\bibitem{jiang2023graph}
+\begin{barticle}
+\bauthor{\bsnm{Jiang}, \binits{W.}},
+\bauthor{\bsnm{Luo}, \binits{J.}},
+\bauthor{\bsnm{He}, \binits{M.}}, \&
+\bauthor{\bsnm{Gu}, \binits{W.}}
+(\byear{2023}).
+\batitle{{G}raph neural network for traffic forecasting: {T}he research progress}.
+\bjtitle{ISPRS International Journal of Geo-Information},
+\bvolume{12},
+\bfpage{100}.
+doi:10.3390/ijgi12030100.
+\end{barticle}
+\endbibitem
+
+%%% 32
+\bibitem{singh2020investigating}
+\begin{barticle}
+\bauthor{\bsnm{Singh}, \binits{D.}}, \&
+\bauthor{\bsnm{Singh}, \binits{B.}}
+(\byear{2020}).
+\batitle{{I}nvestigating the impact of data normalization on classification performance}.
+\bjtitle{Applied Soft Computing},
+\bvolume{97},
+\bfpage{105524}.
+doi:10.1016/j.asoc.2019.105524.
+\end{barticle}
+\endbibitem
+
+%%% 33
+\bibitem{nawi2013effect}
+\begin{barticle}
+\bauthor{\bsnm{Nawi}, \binits{N.M.}},
+\bauthor{\bsnm{Atomi}, \binits{W.H.}}, \&
+\bauthor{\bsnm{Rehman}, \binits{M.Z.}}
+(\byear{2013}).
+\batitle{{T}he effect of data pre-processing on optimized training of artificial neural networks}.
+\bjtitle{Procedia Technology},
+\bvolume{11},
+\bfpage{32}--\bfpage{39}.
+doi:10.1016/j.protcy.2013.12.159.
+\end{barticle}
+\endbibitem
+
+%%% 34
+\bibitem{bao2023spatial}
+\begin{barticle}
+\bauthor{\bsnm{Bao}, \binits{K.}},
+\bauthor{\bsnm{Bi}, \binits{J.}},
+\bauthor{\bsnm{Ma}, \binits{R.}},
+\bauthor{\bsnm{Sun}, \binits{Y.}},
+\bauthor{\bsnm{Zhang}, \binits{W.}}, \&
+\bauthor{\bsnm{Wang}, \binits{Y.}}
+(\byear{2023}).
+\batitle{{A} spatial-reduction attention-based {B}i{G}{R}{U} network for water level prediction}.
+\bjtitle{Water},
+\bvolume{15},
+\bfpage{1306}.
+doi:10.3390/w15071306.
+\end{barticle}
+\endbibitem
+
+%%% 35
+\bibitem{bao2022improved}
+\begin{barticle}
+\bauthor{\bsnm{Bao}, \binits{K.}},
+\bauthor{\bsnm{Bi}, \binits{J.}},
+\bauthor{\bsnm{Gao}, \binits{M.}},
+\bauthor{\bsnm{Sun}, \binits{Y.}},
+\bauthor{\bsnm{Zhang}, \binits{X.}}, \&
+\bauthor{\bsnm{Zhang}, \binits{W.}}
+(\byear{2022}).
+\batitle{{A}n improved ship trajectory prediction based on {A}{I}{S} data using {M}{H}{A}-{B}i{G}{R}{U}}.
+\bjtitle{Journal of Marine Science and Engineering},
+\bvolume{10},
+\bfpage{804}.
+doi:10.3390/jmse10060804.
+\end{barticle}
+\endbibitem
+
+%%% 36
+\bibitem{agarap2018statistical}
+\begin{barticle}
+\bauthor{\bsnm{Agarap}, \binits{A.F.}}
+(\byear{2018}).
+\batitle{{S}tatistical analysis on {E}-commerce reviews, with sentiment classification using bidirectional recurrent neural network ({R}{N}{N})}.
+\bjtitle{arXiv preprint arXiv:1805.03687}.
+doi:10.48550/arXiv.1805.03687.
+\end{barticle}
+\endbibitem
+
+%%% 37
+\bibitem{olah2015neural}
+\begin{botherref}
+\oauthor{\bsnm{Olah}, \binits{C.}}
+(\byear{2015}).
+{N}eural {N}etworks, {T}ypes, and {F}unctional {P}rogramming.
+\url{http://colah.github.io/posts/2015-09-NN-Types-FP/}.
+Accessed 01 November 2024.
+\end{botherref}
+\endbibitem
+
+%%% 38
+\bibitem{sutskever2014sequence}
+\begin{barticle}
+\bauthor{\bsnm{Sutskever}, \binits{I.}},
+\bauthor{\bsnm{Vinyals}, \binits{O.}}, \&
+\bauthor{\bsnm{Le}, \binits{Q.V.}}
+(\byear{2014}).
+\batitle{{S}equence to {S}equence {L}earning with {N}eural {N}etworks}.
+\bjtitle{Advances in neural information processing systems},
+\bvolume{27}.
+doi:10.48550/arXiv.1409.3215.
+\end{barticle}
+\endbibitem
+
+%%% 39
+\bibitem{vaswani2017attention}
+\begin{barticle}
+\bauthor{\bsnm{Vaswani}, \binits{A.}},
+\bauthor{\bsnm{Shazeer}, \binits{N.}},
+\bauthor{\bsnm{Parmar}, \binits{N.}},
+\bauthor{\bsnm{Uszkoreit}, \binits{J.and Jones}},
+\bauthor{\bsnm{Gomez}, \binits{A.N.and Kaiser}}, \&
+\bauthor{\bsnm{Polosukhin}, \binits{I.}}
+(\byear{2017}).
+\batitle{{A}ttention is {A}ll {Y}ou {N}eed}.
+\bjtitle{Advances in neural information processing systems},
+\bvolume{30}.
+doi:10.48550/arXiv.1706.03762.
+\end{barticle}
+\endbibitem
+
+%%% 40
+\bibitem{bahdanau2014neural}
+\begin{barticle}
+\bauthor{\bsnm{Bahdanau}, \binits{D.}},
+\bauthor{\bsnm{Cho}, \binits{K.}}, \&
+\bauthor{\bsnm{Bengio}, \binits{Y.}}
+(\byear{2014}).
+\batitle{{N}eural {M}achine {T}ranslation by {J}ointly {L}{L}earning to {A}lign and {T}ranslate}.
+\bjtitle{arXiv preprint arXiv:1409.0473}.
+doi:10.48550/arXiv.1409.0473.
+\end{barticle}
+\endbibitem
+
+%%% 41
+\bibitem{Hiemsch2023}
+\begin{botherref}
+\oauthor{\bsnm{Hiemsch}, \binits{P.}}
+(\byear{2023}).
+{I}ncorporating {A}ttention {M}echanisms in {R}{N}{N}-based {E}ncoder-{D}ecoder {M}odels.
+\url{https://github.com/PatrickSVM/Seq2Seq-with-Attention.git}.
+Accessed 01 November 2024.
+\end{botherref}
+\endbibitem
+
+%%% 42
+\bibitem{gowda2020finding}
+\begin{bchapter}
+\bauthor{\bsnm{Gowda}, \binits{T.}}, \&
+\bauthor{\bsnm{May}, \binits{J.}}
+(\byear{2020}).
+\bctitle{{F}inding the {O}ptimal {V}ocabulary {S}ize for {N}eural {M}achine {T}ranslation}.
+In \beditor{\binits{T.} \bsnm{Cohn}},
+\beditor{\binits{Y.} \bsnm{He}}, \&
+\beditor{\binits{Y.} \bsnm{Liu}} (Ed.),
+\bbtitle{{F}indings of the {A}ssociation for {C}omputational {L}inguistics: {E}{M}{N}{L}{P} 2020}
+(pp. \bfpage{3955}--\bfpage{3964}).
+\blocation{Online}: 
+\bpublisher{Association for Computational Linguistics}.
+doi:10.18653/v1/2020.findings-emnlp.352.
+\end{bchapter}
+\endbibitem
+
+%%% 43
+\bibitem{gao2024units}
+\begin{barticle}
+\bauthor{\bsnm{Gao}, \binits{S.}},
+\bauthor{\bsnm{Koker}, \binits{T.}},
+\bauthor{\bsnm{Queen}, \binits{O.}},
+\bauthor{\bsnm{Hartvigsen}, \binits{T.}},
+\bauthor{\bsnm{Tsiligkaridis}, \binits{T.}}, \&
+\bauthor{\bsnm{Zitnik}, \binits{M.}}
+(\byear{2024}).
+\batitle{{U}ni{T}{S}: {B}uilding a {U}nified {T}ime {S}eries {M}odel}.
+\bjtitle{arXiv preprint arXiv:2403.00131}.
+doi:10.48550/arXiv.2403.00131.
+\end{barticle}
+\endbibitem
+
+%%% 44
+\bibitem{touvron2023llama}
+\begin{barticle}
+\bauthor{\bsnm{Touvron}, \binits{H.}},
+\bauthor{\bsnm{Lavril}, \binits{T.}},
+\bauthor{\bsnm{Izacard}, \binits{G.}},
+\bauthor{\bsnm{Martinet}, \binits{X.and Lachaux}},
+\bauthor{\bsnm{Lacroix}, \binits{T.}},
+\bauthor{\bsnm{Rozi{\`e}re}, \binits{B.}},
+\bauthor{\bsnm{Goyal}, \binits{N.}},
+\bauthor{\bsnm{Hambro}, \binits{E.}},
+\bauthor{\bsnm{Azhar}, \binits{F.}}, \&
+\bauthor{\bsnm{others}}
+(\byear{2023}).
+\batitle{{L}{L}a{M}{A}: {O}pen and {E}fficient {F}oundation {L}anguage {M}odels}.
+\bjtitle{arXiv preprint arXiv:2302.13971}.
+doi:10.48550/arXiv.2302.13971.
+\end{barticle}
+\endbibitem
+
+%%% 45
+\bibitem{pascanu2013difficulty}
+\begin{bchapter}
+\bauthor{\bsnm{Pascanu}, \binits{R.}},
+\bauthor{\bsnm{Mikolov}, \binits{T.}}, \&
+\bauthor{\bsnm{Bengio}, \binits{Y.}}
+(\byear{2013}).
+\bctitle{{O}n the difficulty of training recurrent neural networks}.
+In \bbtitle{{I}nternational {C}onference on {M}achine {L}earning}
+(pp. \bfpage{1310}--\bfpage{1318}).
+doi:10.48550/arXiv.1211.5063.
+\end{bchapter}
+\endbibitem
+
+%%% 46
+\bibitem{otovic2022sequential}
+\begin{barticle}
+\bauthor{\bsnm{Otovi{\'{c}}}, \binits{E.}},
+\bauthor{\bsnm{Njirjak}, \binits{M.}},
+\bauthor{\bsnm{Kalafatovic}, \binits{D.}}, \&
+\bauthor{\bsnm{Mau{\v{s}}a}, \binits{G.}}
+(\byear{2022}).
+\batitle{{S}equential {P}roperties {R}epresentation {S}cheme for {R}ecurrent {N}eural {N}etwork-{B}ased {P}rediction of {T}herapeutic {P}eptides}.
+\bjtitle{Journal of Chemical Information and Modeling},
+\bvolume{62},
+\bfpage{2961}--\bfpage{2972}.
+doi:10.1021/acs.jcim.2c00526.
+\end{barticle}
+\endbibitem
+
+%%% 47
+\bibitem{srivastava2014dropout}
+\begin{barticle}
+\bauthor{\bsnm{Srivastava}, \binits{N.}},
+\bauthor{\bsnm{Hinton}, \binits{G.}},
+\bauthor{\bsnm{Krizhevsky}, \binits{A.}},
+\bauthor{\bsnm{Sutskever}, \binits{I.}}, \&
+\bauthor{\bsnm{Salakhutdinov}, \binits{R.}}
+(\byear{2014}).
+\batitle{{D}ropout: {A} simple way to prevent neural networks from overfitting}.
+\bjtitle{The Journal of Machine Learning Research},
+\bvolume{15},
+\bfpage{1929}--\bfpage{1958}.
+doi:10.5555/2627435.2670313.
+\end{barticle}
+\endbibitem
+
+%%% 48
+\bibitem{Booij1999}
+\begin{barticle}
+\bauthor{\bsnm{Booij}, \binits{N.}},
+\bauthor{\bsnm{Ris}, \binits{R.}}, \&
+\bauthor{\bsnm{Holthuijsen}, \binits{Leo}}
+(\byear{1999}).
+\batitle{{A} third-generation wave model for coastal regions, {P}art {I}, {M}odel description and validation}.
+\bjtitle{J. Geophys. Res.},
+\bvolume{104},
+\bfpage{7649}--\bfpage{7656}.
+doi:10.1029/98JC02622.
+\end{barticle}
+\endbibitem
+
+%%% 49
+\bibitem{Ris1999}
+\begin{barticle}
+\bauthor{\bsnm{Ris}, \binits{R.}},
+\bauthor{\bsnm{Booij}, \binits{N.}}, \&
+\bauthor{\bsnm{Holthuijsen}, \binits{Leo}}
+(\byear{1999}).
+\batitle{{A} third-generation wave model for coastal regions: 2. {V}erification}.
+\bjtitle{J. Geophys. Res.},
+\bvolume{104},
+\bfpage{7667}--\bfpage{7681}.
+doi:10.1029/1998JC900123.
+\end{barticle}
+\endbibitem
+
+%%% 50
+\bibitem{Zambreskey1988}
+\begin{bbook}
+\bauthor{\bsnm{Zambreskey}, \binits{L.}}
+(\byear{1988}).
+\bbtitle{{A} verification study of the global {W}{A}{M} model {D}ecember 1987 – {N}ovember 1988.}.
+\blocation{Geesthacht}: 
+\bpublisher{GKSS Forschungszentrum}.
+\end{bbook}
+\endbibitem
+
+%%% 51
+\bibitem{2021Pedroche}
+\begin{barticle}
+\bauthor{\bsnm{Pedroche}, \binits{D.S.}},
+\bauthor{\bsnm{Herrero}, \binits{D.A.}},
+\bauthor{\bsnm{Herrero}, \binits{J.G.}}, \&
+\bauthor{\bsnm{Lopez}, \binits{J.M.M.}}
+(\byear{2021}).
+\batitle{{C}lustering of maritime trajectories with {A}{I}{S} features for context learning}.
+\bjtitle{2021 IEEE 24th International Conference on Infaormation Fusion (FUSION)}.
+doi:10.23919/fusion49465.2021.9626956.
+\end{barticle}
+\endbibitem
+
+%%% 52
+\bibitem{conover1999practical}
+\begin{bbook}
+\bauthor{\bsnm{Conover}, \binits{W.J.}}
+(\byear{1999}).
+\bbtitle{{P}ractical nonparametric statistics}.
+\blocation{Hoboken, New Jersey, United States of America}: 
+\bpublisher{John Wiley \& Sons}.
+\end{bbook}
+\endbibitem
+
+%%% 53
+\bibitem{mcdonald2014wilcoxon}
+\begin{bchapter}
+\bauthor{\bsnm{McDonald}, \binits{J.H.}}
+(\byear{2014}).
+\bctitle{{W}ilcoxon signed-rank test}.
+In \bbtitle{{H}andbook of {B}iological {S}tatistics}
+(pp. \bfpage{186}--\bfpage{189}).
+\blocation{Baltimore, Maryland}: 
+\bpublisher{Sparky House Publishing}.
+\end{bchapter}
+\endbibitem
+
+%%% 54
+\bibitem{wilcoxon1992individual}
+\begin{barticle}
+\bauthor{\bsnm{Wilcoxon}, \binits{F.}}
+(\byear{1945}).
+\batitle{{I}ndividual {C}omparisons by {R}anking {M}ethods}.
+\bjtitle{Biometrics Bulletin},
+\bvolume{1},
+\bfpage{80}--\bfpage{83}.
+doi:10.2307/3001968.
+\end{barticle}
+\endbibitem
+
+%%% 55
+\bibitem{sidney1957nonparametric}
+\begin{barticle}
+\bauthor{\bsnm{Sidney}, \binits{Siegel}}
+(\byear{1957}).
+\batitle{{N}onparametric statistics for the behavioral sciences}.
+\bjtitle{The Journal of Nervous and Mental Disease},
+\bvolume{125},
+\bfpage{497}.
+doi:10.1097/00005053-195707000-00032.
+\end{barticle}
+\endbibitem
+
+%%% 56
+\bibitem{bonferroni1936teoria}
+\begin{bbook}
+\bauthor{\bsnm{Bonferroni}, \binits{C.E.}}
+(\byear{1936}).
+\bbtitle{{T}eoria statistica delle classi e calcolo delle probabilit\`a}.
+\blocation{Bagni di Lucca, Italy}: 
+\bpublisher{Seeber}.
+\end{bbook}
+\endbibitem
+
+%%% 57
+\bibitem{dunn1961multiple}
+\begin{barticle}
+\bauthor{\bsnm{Dunn}, \binits{O.J.}}
+(\byear{1961}).
+\batitle{{M}ultiple comparisons among means}.
+\bjtitle{Journal of the American statistical association},
+\bvolume{56},
+\bfpage{52}--\bfpage{64}.
+doi:10.2307/2282330.
+\end{barticle}
+\endbibitem
+
+%%% 58
+\bibitem{mittelhammer2000econometric}
+\begin{bbook}
+\bauthor{\bsnm{Mittelhammer}, \binits{R.}},
+\bauthor{\bsnm{Judge}, \binits{G.G.}}, \&
+\bauthor{\bsnm{Miller}, \binits{D.J.}}
+(\byear{2000}).
+\bbtitle{{E}conometric foundations pack with {C}{D}-{R}{O}{M}}.
+\blocation{Cambridge, United Kingdom}: 
+\bpublisher{Cambridge University Press}.
+\end{bbook}
+\endbibitem
+
+%%% 59
+\bibitem{rupert2012simultaneous}
+\begin{bbook}
+\bauthor{\bsnm{Rupert Jr}, \binits{G.}}, \&
+\bauthor{\bsnm{others}}
+(\byear{2012}).
+\bbtitle{{S}imultaneous statistical inference}.
+\blocation{Berlin/Heidelberg, Germany}: 
+\bpublisher{Springer Science \& Business Media}.
+\end{bbook}
+\endbibitem
+
