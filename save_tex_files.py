@@ -510,12 +510,20 @@ for name in name_list_total:
                     if metric == "R2":
                         mul_val = 2
                         direction_use = "highest"
-                    if metric in ["MAE", "RMSE"] and "no_abs" in var:
+                    if metric == "MAE" and "no_abs" in var:
                         mul_val = 5
-                    if metric in ["MAE", "RMSE"] and ("no abs" in var or "actual" in var):
+                    if metric == "MAE" and ("no abs" in var or "actual" in var):
                         mul_val = 3
+                    if metric == "RMSE" and "no_abs" in var:
+                        mul_val = 4
+                    if metric == "RMSE" and "no abs" in var:
+                        mul_val = 3
+                    if metric == "RMSE" and "actual" in var:
+                        mul_val = 2
                     rnd_val = 2
-                    if metric in ["MAE", "RMSE"] and "latitude" in var:
+                    if metric == "MAE" and "latitude" in var:
+                        rnd_val = 3
+                    if metric == "RMSE" and ("no_abs" in var or "actual" in var):
                         rnd_val = 3
                     if metric == "haversine":
                         rnd_val = 3
