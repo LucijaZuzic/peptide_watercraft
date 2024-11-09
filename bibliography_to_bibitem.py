@@ -11,6 +11,8 @@ all_rows_tex = file_tex.readlines()
 all_tex = ""
 for line in all_rows_tex:
     all_tex += line
+    if "\csname PreBibitemsHook\endcsname" in line:
+        break
 file_tex.close()
 
 unused_fields = set()
@@ -27,14 +29,31 @@ for line in all_rows_bibliography:
         type_key = line[1:ix_key]
     else:
         if "=" not in line:
+            ln = line.replace("}", "").replace("{", "").strip()
+            if len(ln):
+                print("Empty lin", ln)
             continue
         ix_equal = line.find("=")
         category = line[:ix_equal].strip()
         value = line[ix_equal+1:].strip()
-        if value[-1] == ",":
-            value = value[1:-2]
+        if "{" in value:
+            if value[-1] == ",":
+                value = value[1:-2]
+            else:
+                value = value[1:-1]
         else:
-            value = value[1:-1]
+            if '"' == value[0]:
+                #print("Apostrophe lin", key, value, category)
+                if value[-1] == ",":
+                    value = value[1:-2]
+                else:
+                    value = value[1:-1]
+                print("Apostrophe lin", key, value, category)
+            else:
+                #print("No delimiter lin", key, value, category)
+                if value[-1] == ",":
+                    value = value[:-1]
+                print("delimiter lin", key, value, category)
     if key not in entries:
         entries[key] = {"type_of_entry": type_key.lower(), "position_tex": all_tex.find(key)}
     else:
@@ -98,6 +117,8 @@ for position_key in sorted_loc:
     authors_list = [[author_part.strip().replace(". ", ".") for author_part in author_surname_firstname] for author_surname_firstname in authors_list]
     for author_surname_firstname in authors_list:
         if len(author_surname_firstname) > 1:
+            if not len(author_surname_firstname[1]) != author_surname_firstname[1].count(".") * 2 - 1 or not author_surname_firstname[1][-1] == ".":
+                print("Author initial err", locations_keys[position_key],entries[locations_keys[position_key]]["author"] )
             strpr += "\\bauthor{\\bsnm{" + author_surname_firstname[0] + "}, \\binits{" + author_surname_firstname[1] + "}}"
         else:
             strpr += "\\bauthor{\\bsnm{" + author_surname_firstname[0] + "}}"
@@ -196,7 +217,7 @@ for position_key in sorted_loc:
     if "doi" in entries[locations_keys[position_key]]:
         strpr += "doi:" + entries[locations_keys[position_key]]["doi"] + ".\n"
         #strpr += "\\doiurl{" + entries[locations_keys[position_key]]["doi"] + "}.\n"
-    if "note" in entries[locations_keys[position_key]]:
+    if "note" in entries[locations_keys[position_key]] and "url" in entries[locations_keys[position_key]]:
         strpr += "\\url{" + entries[locations_keys[position_key]]["url"] + "}.\n"
         strpr += "Accessed " + today.strftime("%d %B %Y") + ".\n"
     strpr += "\\end{b" + type_entry + "}\n"
@@ -204,7 +225,45 @@ for position_key in sorted_loc:
     strtotal += strpr + "\n"
         
 file_bibliography = open("sn-bibliography-new.txt", "w")
-file_bibliography.write(strtotal)
+file_bibliography.write(strtotal[:-2])
 file_bibliography.close()
 
 print(count_key, len(list_key))
+
+reordered = ""
+
+for position_key in sorted_loc:
+    if position_key == -1:
+        print("NO POS", position_key, locations_keys[position_key])
+        continue
+    reorderedone = "@" + entries[locations_keys[position_key]]["type_of_entry"] + "{" + locations_keys[position_key] + ",\n"
+    for k in entries[locations_keys[position_key]]:
+        if k == "type_of_entry" or k == "position_tex":
+            continue
+        value = entries[locations_keys[position_key]][k]
+        if "title" == k:
+            title_new = value.replace("{", "").replace("}", "")
+            replaced_letters = set()
+            for letter in entries[locations_keys[position_key]][k]:
+                if letter.isupper() and letter not in replaced_letters:
+                    title_new = title_new.replace(letter, "{" + letter + "}")
+                    replaced_letters.add(letter)
+            value = title_new
+        if "pages" == k:
+            pages_new = entries[locations_keys[position_key]][k].replace("--", "-").replace(" ", "").split("-")
+            if len(pages_new) > 1:           
+                value = pages_new[0] + "--" + pages_new[1]
+            else:   
+                value = pages_new[0]
+        reorderedone += "\t" + k + " = {" + value + "},\n"
+    reorderedone = reorderedone[:-2] + "\n}\n\n"
+    reordered += reorderedone
+#print(reordered[:-2])
+
+file_bibliographyn = open("sn-bibliography-new-new.txt", "w")
+file_bibliographyn.write(reordered[:-2])
+file_bibliographyn.close()
+
+file_bibliographyart = open("sn-article-new.txt", "w", encoding = "UTF8")
+file_bibliographyart.write(all_tex.replace("\csname PreBibitemsHook\endcsname\n", "\csname PreBibitemsHook\endcsname\n\n" + strtotal[:-2] + "\n\n\n\\end{thebibliography}\n\n\n\\end{document}"))
+file_bibliographyart.close()

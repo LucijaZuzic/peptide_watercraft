@@ -598,7 +598,7 @@ This work was fully supported by the EU Horizon 2020 project INNO2MARE under the
 (\byear{2024}).
 {O}to{T}rak - {T}rack your watercraft --- ototrak.com.
 \url{https://www.ototrak.com/en-us}.
-Accessed 01 November 2024.
+Accessed 09 November 2024.
 \end{botherref}
 \endbibitem
 
@@ -1077,7 +1077,7 @@ doi:10.1002/gepi.20211.
 %%% 35
 \bibitem{mcnemar1947note}
 \begin{barticle}
-\bauthor{\bsnm{McNemar}, \binits{Quinn}}
+\bauthor{\bsnm{McNemar}, \binits{Q.}}
 (\byear{1947}).
 \batitle{{N}ote on the sampling error of the difference between correlated proportions or percentages}.
 \bjtitle{Psychometrika},
@@ -1087,6 +1087,8 @@ doi:10.1007/BF02295996.
 \end{barticle}
 \endbibitem
 
+
 \end{thebibliography}
+
 
 \end{document}
