@@ -1,12 +1,19 @@
 %%% 1
-\bibitem{ototrakOtoTrakTrack}
-\begin{botherref}
-\oauthor{\bsnm{OtoTrak}}
-(\byear{2024}).
-{O}to{T}rak - {T}rack your watercraft --- ototrak.com.
-\url{https://www.ototrak.com/en-us}.
-Accessed 09 November 2024.
-\end{botherref}
+\bibitem{2022Kim}
+\begin{barticle}
+\bauthor{\bsnm{Kim}, \binits{Y.J.}},
+\bauthor{\bsnm{Lee}, \binits{J.S.}},
+\bauthor{\bsnm{Pititto}, \binits{A.}},
+\bauthor{\bsnm{Falco}, \binits{L.}},
+\bauthor{\bsnm{Lee}, \binits{M.S.}},
+\bauthor{\bsnm{Yoon}, \binits{K.K.}}, \&
+\bauthor{\bsnm{Cho}, \binits{I.S.}}
+(\byear{2022}).
+\batitle{{M}aritime {T}raffic {E}valuation {U}sing {S}patial-{T}emporal {D}ensity {A}nalysis {B}ased on {B}ig {A}{I}{S} {D}ata}.
+\bjtitle{Applied Sciences},
+\bvolume{12}.
+doi:10.3390/app122111246.
+\end{barticle}
 \endbibitem
 
 %%% 2
@@ -27,6 +34,42 @@ doi:10.1016/j.eswa.2013.04.029.
 \endbibitem
 
 %%% 3
+\bibitem{2009Chandola}
+\begin{barticle}
+\bauthor{\bsnm{Chandola}, \binits{V.}},
+\bauthor{\bsnm{Banerjee}, \binits{A.}}, \&
+\bauthor{\bsnm{Kumar}, \binits{V.}}
+(\byear{2009}).
+\batitle{{A}nomaly {D}etection: {A} {S}urvey}.
+\bjtitle{ACM Comput. Surv.},
+\bvolume{41}.
+doi:10.1145/1541880.1541882.
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{2011Martineau}
+\begin{barticle}
+\bauthor{\bsnm{Martineau}, \binits{E.}}, \&
+\bauthor{\bsnm{Roy}, \binits{J.}}
+(\byear{2011}).
+\batitle{{M}aritime {A}nomaly {D}etection: {D}omain {I}ntroduction and {R}eview of {S}elected {L}iterature}.
+\bjtitle{DEFENCE RESEARCH AND DEVELOPMENT CANADA VALCARTIER (QUEBEC)}.
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem{2008Roy}
+\begin{barticle}
+\bauthor{\bsnm{Roy}, \binits{J.}}
+(\byear{2008}).
+\batitle{{A}nomaly detection in the maritime domain}.
+\bjtitle{Proc SPIE}.
+doi:10.1117/12.776230.
+\end{barticle}
+\endbibitem
+
+%%% 6
 \bibitem{2014Mascaro}
 \begin{barticle}
 \bauthor{\bsnm{Mascaro}, \binits{S.}},
@@ -41,7 +84,7 @@ doi:10.1016/j.ijar.2013.03.012.
 \end{barticle}
 \endbibitem
 
-%%% 4
+%%% 7
 \bibitem{2008Laxhammar}
 \begin{bchapter}
 \bauthor{\bsnm{Laxhammar}, \binits{R.}}
@@ -52,121 +95,37 @@ In \bbtitle{2008 11th {I}nternational {C}onference on {I}nformation {F}usion}
 \end{bchapter}
 \endbibitem
 
-%%% 5
-\bibitem{2009Chandola}
-\begin{barticle}
-\bauthor{\bsnm{Chandola}, \binits{V.}},
-\bauthor{\bsnm{Banerjee}, \binits{A.}}, \&
-\bauthor{\bsnm{Kumar}, \binits{V.}}
-(\byear{2009}).
-\batitle{{A}nomaly {D}etection: {A} {S}urvey}.
-\bjtitle{ACM Comput. Surv.},
-\bvolume{41}.
-doi:10.1145/1541880.1541882.
-\end{barticle}
-\endbibitem
-
-%%% 6
-\bibitem{2011Martineau}
+%%% 8
+\bibitem{2016Coraluppi}
 \begin{bchapter}
-\bauthor{\bsnm{Martineau}, \binits{E.}}, \&
-\bauthor{\bsnm{Roy}, \binits{J.}}
-(\byear{2011}).
-\bctitle{{M}aritime {A}nomaly {D}etection: {D}omain {I}ntroduction and {R}eview of {S}elected {L}iterature}.
-In \bbtitle{{D}efence {R}esearch and {D}evelopment {C}anada {V}alcartier ({Q}uebec)}.
+\bauthor{\bsnm{Coraluppi}, \binits{S.}},
+\bauthor{\bsnm{Carthel}, \binits{C.}},
+\bauthor{\bsnm{Braca}, \binits{P.}}, \&
+\bauthor{\bsnm{Millefiori}, \binits{L.}}
+(\byear{2016}).
+\bctitle{{T}he {M}ixed {O}rnstein-{U}hlenbeck {P}rocess and context exploitation in multi-target tracking}.
+In \bbtitle{2016 19th {I}nternational {C}onference on {I}nformation {F}usion ({F}{U}{S}{I}{O}{N})}
+(pp. \bfpage{217}--\bfpage{224}).
 \end{bchapter}
 \endbibitem
 
-%%% 7
-\bibitem{2008Roy}
-\begin{barticle}
-\bauthor{\bsnm{Roy}, \binits{J.}}
-(\byear{2008}).
-\batitle{{A}nomaly detection in the maritime domain}.
-\bjtitle{Proc SPIE}.
-doi:10.1117/12.776230.
-\end{barticle}
-\endbibitem
-
-%%% 8
-\bibitem{2022Kim}
-\begin{barticle}
-\bauthor{\bsnm{Kim}, \binits{Y.J.}},
-\bauthor{\bsnm{Lee}, \binits{J.S.}},
-\bauthor{\bsnm{Pititto}, \binits{A.}},
-\bauthor{\bsnm{Falco}, \binits{L.}},
-\bauthor{\bsnm{Lee}, \binits{M.S.}},
-\bauthor{\bsnm{Yoon}, \binits{K.K.}}, \&
-\bauthor{\bsnm{Cho}, \binits{I.S.}}
-(\byear{2022}).
-\batitle{{M}aritime {T}raffic {E}valuation {U}sing {S}patial-{T}emporal {D}ensity {A}nalysis {B}ased on {B}ig {A}{I}{S} {D}ata}.
-\bjtitle{Applied Sciences},
-\bvolume{12}.
-doi:10.3390/app122111246.
-\end{barticle}
-\endbibitem
-
 %%% 9
-\bibitem{2017Fu}
+\bibitem{2018dAfflisio1}
 \begin{barticle}
-\bauthor{\bsnm{Fu}, \binits{P.}},
-\bauthor{\bsnm{Wang}, \binits{H.}},
-\bauthor{\bsnm{Liu}, \binits{K.}},
-\bauthor{\bsnm{Hu}, \binits{X.}}, \&
-\bauthor{\bsnm{Zhang}, \binits{H.}}
-(\byear{2017}).
-\batitle{{F}inding {A}bnormal {V}essel {T}rajectories {U}sing {F}eature {L}earning}.
-\bjtitle{IEEE Access},
-\bvolume{5},
-\bfpage{7898}--\bfpage{7909}.
-doi:10.1109/ACCESS.2017.2698208.
+\bauthor{\bsnm{d'Afflisio}, \binits{E.}},
+\bauthor{\bsnm{Braca}, \binits{P.}},
+\bauthor{\bsnm{Millefiori}, \binits{L.M.}}, \&
+\bauthor{\bsnm{Willett}, \binits{P.}}
+(\byear{2018}).
+\batitle{{D}etecting {A}nomalous {D}eviations {F}rom {S}tandard {M}aritime {R}outes {U}sing the {O}rnstein-{U}hlenbeck {P}rocess}.
+\bjtitle{IEEE Transactions on Signal Processing},
+\bvolume{66},
+\bfpage{6474}--\bfpage{6487}.
+doi:10.1109/TSP.2018.2875887.
 \end{barticle}
 \endbibitem
 
 %%% 10
-\bibitem{2021Pedroche}
-\begin{barticle}
-\bauthor{\bsnm{Pedroche}, \binits{D.S.}},
-\bauthor{\bsnm{Herrero}, \binits{D.A.}},
-\bauthor{\bsnm{Herrero}, \binits{J.G.}}, \&
-\bauthor{\bsnm{Lopez}, \binits{J.M.M.}}
-(\byear{2021}).
-\batitle{{C}lustering of maritime trajectories with {A}{I}{S} features for context learning}.
-\bjtitle{2021 IEEE 24th International Conference on Information Fusion (FUSION)}.
-doi:10.23919/fusion49465.2021.9626956.
-\end{barticle}
-\endbibitem
-
-%%% 11
-\bibitem{shanmugaraj2024smart}
-\begin{barticle}
-\bauthor{\bsnm{Shanmugaraj}, \binits{A.K.}},
-\bauthor{\bsnm{Nagaradjane}, \binits{A.}},
-\bauthor{\bsnm{Candassamy}, \binits{A.}}, \&
-\bauthor{\bsnm{Dhamodharan}, \binits{K.}}
-(\byear{2024}).
-\batitle{{S}mart heart disease prediction and amalgamation tracking system}.
-\bjtitle{Engineering Review},
-\bvolume{44},
-\bfpage{14}--\bfpage{24}.
-doi:10.30765/er.2110.
-\end{barticle}
-\endbibitem
-
-%%% 12
-\bibitem{2019Hanyang}
-\begin{barticle}
-\bauthor{\bsnm{Hanyang}, \binits{Z.}},
-\bauthor{\bsnm{Xin}, \binits{S.}}, \&
-\bauthor{\bsnm{Zhenguo}, \binits{Y.}}
-(\byear{2019}).
-\batitle{{V}essel {S}ailing {P}atterns {A}nalysis from {S}-{A}{I}{S} {D}ata {D}ased on {K}-means {C}lustering {A}lgorithm}.
-\bjtitle{2019 IEEE 4th International Conference on Big Data Analytics (ICBDA)}.
-doi:10.1109/icbda.2019.8713231.
-\end{barticle}
-\endbibitem
-
-%%% 13
 \bibitem{2018Coscia}
 \begin{barticle}
 \bauthor{\bsnm{Coscia}, \binits{P.}},
@@ -183,37 +142,253 @@ doi:10.1109/TAES.2018.2808098.
 \end{barticle}
 \endbibitem
 
-%%% 14
-\bibitem{2018dAfflisio1}
+%%% 11
+\bibitem{2018Coscia1}
 \begin{barticle}
-\bauthor{\bsnm{d'Afflisio}, \binits{E.}},
+\bauthor{\bsnm{Coscia}, \binits{P.}},
+\bauthor{\bsnm{Palmieri}, \binits{F.A.N.}},
 \bauthor{\bsnm{Braca}, \binits{P.}},
 \bauthor{\bsnm{Millefiori}, \binits{L.M.}}, \&
 \bauthor{\bsnm{Willett}, \binits{P.}}
 (\byear{2018}).
-\batitle{{D}etecting {A}nomalous {D}eviations {F}rom {S}tandard {M}aritime {R}outes {U}sing the {O}rnstein-{U}hlenbeck {P}rocess}.
-\bjtitle{IEEE Transactions on Signal Processing},
-\bvolume{66},
-\bfpage{6474}--\bfpage{6487}.
-doi:10.1109/TSP.2018.2875887.
+\batitle{{U}nsupervised {M}aritime {T}raffic {G}raph {L}earning with {M}ean-{R}everting {S}tochastic {P}rocesses}.
+\bjtitle{2018 21st International Conference on Information Fusion (FUSION)}.
+doi:10.23919/icif.2018.8455392.
 \end{barticle}
 \endbibitem
 
-%%% 15
-\bibitem{Ester1996ADA}
+%%% 12
+\bibitem{2018Forti}
+\begin{barticle}
+\bauthor{\bsnm{Forti}, \binits{N.}},
+\bauthor{\bsnm{Millefiori}, \binits{L.M.}}, \&
+\bauthor{\bsnm{Braca}, \binits{P.}}
+(\byear{2018}).
+\batitle{{H}ybrid {B}ernoulli {F}iltering for {D}etection and {T}racking of {A}nomalous {P}ath {D}eviations}.
+\bjtitle{2018 21st International Conference on Information Fusion (FUSION)}.
+doi:10.23919/icif.2018.8455567.
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem{2019Forti}
+\begin{barticle}
+\bauthor{\bsnm{Forti}, \binits{N.}},
+\bauthor{\bsnm{Millefiori}, \binits{L.M.}},
+\bauthor{\bsnm{Braca}, \binits{P.}}, \&
+\bauthor{\bsnm{Willett}, \binits{P.}}
+(\byear{2019}).
+\batitle{{A}nomaly {D}etection and {T}racking {B}ased on {M}ean-{R}everting {P}rocesses with {U}nknown {P}arameters}.
+\bjtitle{ICASSP 2019 - 2019 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}.
+doi:10.1109/icassp.2019.8683428.
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{2020Forti}
 \begin{bchapter}
+\bauthor{\bsnm{Forti}, \binits{N.}},
+\bauthor{\bsnm{Millefiori}, \binits{L.M.}},
+\bauthor{\bsnm{Braca}, \binits{P.}}, \&
+\bauthor{\bsnm{Willett}, \binits{P.}}
+(\byear{2020}).
+\bctitle{{R}andom {F}inite {S}et {T}racking for {A}nomaly {D}etection in the {P}resence of {C}lutter}.
+In \bbtitle{2020 {I}{E}{E}{E} {R}adar {C}onference ({R}adar{C}onf20)}
+(pp. \bfpage{1}--\bfpage{6}).
+doi:10.1109/RadarConf2043947.2020.9266705.
+\end{bchapter}
+\endbibitem
+
+%%% 15
+\bibitem{2022Forti2}
+\begin{barticle}
+\bauthor{\bsnm{Forti}, \binits{N.}},
+\bauthor{\bsnm{d'Afflisio}, \binits{E.}},
+\bauthor{\bsnm{Braca}, \binits{P.}},
+\bauthor{\bsnm{Millefiori}, \binits{L.M.}},
+\bauthor{\bsnm{Carniel}, \binits{S.}}, \&
+\bauthor{\bsnm{Willett}, \binits{P.}}
+(\byear{2022}).
+\batitle{{N}ext-{G}en {I}ntelligent {S}ituational {A}wareness {S}ystems for {M}aritime {S}urveillance and {A}utonomous {N}avigation [{P}oint of {V}iew]}.
+\bjtitle{Proceedings of the IEEE},
+\bvolume{110}.
+doi:10.1109/jproc.2022.3194445.
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem{2016Millefiori}
+\begin{barticle}
+\bauthor{\bsnm{Millefiori}, \binits{L.}},
+\bauthor{\bsnm{Braca}, \binits{P.}},
+\bauthor{\bsnm{Bryan}, \binits{K.}}, \&
+\bauthor{\bsnm{Willett}, \binits{P.}}
+(\byear{2016}).
+\batitle{{M}odeling {V}essel {K}inematics {U}sing a {S}tochastic {M}ean-{R}everting {P}rocess for {L}ong-{T}erm {P}rediction}.
+\bjtitle{IEEE Transactions on Aerospace and Electronic Systems},
+\bvolume{52}.
+doi:10.1109/TAES.2016.150596.
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem{2021dAfflisio}
+\begin{barticle}
+\bauthor{\bsnm{d'Afflisio}, \binits{E.}},
+\bauthor{\bsnm{Braca}, \binits{P.}},
+\bauthor{\bsnm{Chisci}, \binits{L.}},
+\bauthor{\bsnm{Battistelli}, \binits{G.}}, \&
+\bauthor{\bsnm{Willett}, \binits{P.}}
+(\byear{2021}).
+\batitle{{M}aritime {A}nomaly {D}etection of {M}alicious {D}ata {S}poofing and {S}tealth {D}eviations from {N}ominal {R}oute {E}xploiting {H}eterogeneous {S}ources of {I}nformation}.
+\bjtitle{2021 IEEE 24th International Conference on Information Fusion (FUSION)}.
+doi:10.23919/fusion49465.2021.9627049.
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem{2021dAfflisio1}
+\begin{barticle}
+\bauthor{\bsnm{d'Afflisio}, \binits{E.}},
+\bauthor{\bsnm{Braca}, \binits{P.}}, \&
+\bauthor{\bsnm{Willett}, \binits{P.}}
+(\byear{2021}).
+\batitle{{M}alicious {A}{I}{S} {S}poofing and {A}bnormal {S}tealth {D}eviations: {A} {C}omprehensive {S}tatistical {F}ramework for {M}aritime {A}nomaly {D}etection}.
+\bjtitle{IEEE Transactions on Aerospace and Electronic Systems},
+\bvolume{57}.
+doi:10.1109/taes.2021.3083466.
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem{10130587}
+\begin{barticle}
+\bauthor{\bsnm{Zhu}, \binits{S.}},
+\bauthor{\bsnm{Cao}, \binits{J.}},
+\bauthor{\bsnm{Lin}, \binits{L.}},
+\bauthor{\bsnm{Rutkowski}, \binits{L.}},
+\bauthor{\bsnm{Lu}, \binits{J.}}, \&
+\bauthor{\bsnm{Lu}, \binits{G.}}
+(\byear{2023}).
+\batitle{{O}bservability and {D}etectability of {S}tochastic {L}abeled {G}raphs}.
+\bjtitle{IEEE Transactions on Automatic Control},
+\bvolume{68},
+\bfpage{7299}--\bfpage{7311}.
+doi:10.1109/TAC.2023.3278797.
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem{10106394}
+\begin{barticle}
+\bauthor{\bsnm{Zhu}, \binits{S.}},
+\bauthor{\bsnm{Cao}, \binits{J.}},
+\bauthor{\bsnm{Lin}, \binits{L.}},
+\bauthor{\bsnm{Lam}, \binits{J.}}, \&
+\bauthor{\bsnm{Azuma}, \binits{S.}}
+(\byear{2024}).
+\batitle{{T}oward {S}tabilizable {L}arge-{S}cale {B}oolean {N}etworks by {C}ontrolling the {M}inimal {S}et of {N}odes}.
+\bjtitle{IEEE Transactions on Automatic Control},
+\bvolume{69},
+\bfpage{174}--\bfpage{188}.
+doi:10.1109/TAC.2023.3269321.
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem{10309224}
+\begin{barticle}
+\bauthor{\bsnm{Zhu}, \binits{S.}},
+\bauthor{\bsnm{Lu}, \binits{J.}},
+\bauthor{\bsnm{Ho}, \binits{D.W.C.}}, \&
+\bauthor{\bsnm{Cao}, \binits{J.}}
+(\byear{2024}).
+\batitle{{M}inimal {C}ontrol {N}odes for {S}trong {S}tructural {O}bservability of {D}iscrete-{T}ime {I}terative {S}ystems: {E}xplicit {F}ormulas and {P}olynomial-{T}ime {A}lgorithms}.
+\bjtitle{IEEE Transactions on Automatic Control},
+\bvolume{69},
+\bfpage{2158}--\bfpage{2173}.
+doi:10.1109/TAC.2023.3330263.
+\end{barticle}
+\endbibitem
+
+%%% 22
+\bibitem{2020FortiO}
+\begin{barticle}
+\bauthor{\bsnm{Forti}, \binits{N.}},
+\bauthor{\bsnm{d'Afflisio}, \binits{E.}},
+\bauthor{\bsnm{Braca}, \binits{P.}},
+\bauthor{\bsnm{Millefiori}, \binits{L.M.}},
+\bauthor{\bsnm{Willett}, \binits{P.}}, \&
+\bauthor{\bsnm{Carniel}, \binits{S.}}
+(\byear{2022}).
+\batitle{{M}aritime {A}nomaly {D}etection in a {R}eal-{W}orld {S}cenario: {E}ver {G}iven {G}rounding in the {S}uez {C}anal}.
+\bjtitle{IEEE Transactions on Intelligent Transportation Systems},
+\bvolume{23},
+\bfpage{13904}--\bfpage{13910}.
+doi:10.1109/TITS.2021.3123890.
+\end{barticle}
+\endbibitem
+
+%%% 23
+\bibitem{2022FortiO}
+\begin{barticle}
+\bauthor{\bsnm{Forti}, \binits{N.}},
+\bauthor{\bsnm{d'Afflisio}, \binits{E.}},
+\bauthor{\bsnm{Braca}, \binits{P.}},
+\bauthor{\bsnm{Millefiori}, \binits{L.M.}},
+\bauthor{\bsnm{Willett}, \binits{P.}}, \&
+\bauthor{\bsnm{Carniel}, \binits{S.}}
+(\byear{2022}).
+\batitle{{M}aritime {A}nomaly {D}etection in a {R}eal-{W}orld {S}cenario: {E}ver {G}iven {G}rounding in the {S}uez {C}anal}.
+\bjtitle{IEEE Transactions on Intelligent Transportation Systems},
+\bvolume{23},
+\bfpage{13904}--\bfpage{13910}.
+doi:10.1109/TITS.2021.3123890.
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem{2022Forti1}
+\begin{barticle}
+\bauthor{\bsnm{Forti}, \binits{N.}},
+\bauthor{\bsnm{Millefiori}, \binits{L.M.}},
+\bauthor{\bsnm{Braca}, \binits{P.}}, \&
+\bauthor{\bsnm{Willett}, \binits{P.}}
+(\byear{2022}).
+\batitle{{B}ayesian {F}iltering for {D}ynamic {A}nomaly {D}etection and {T}racking}.
+\bjtitle{IEEE Transactions on Aerospace and Electronic Systems},
+\bvolume{58}.
+doi:10.1109/TAES.2021.3122888.
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem{2016Ning}
+\begin{barticle}
+\bauthor{\bsnm{Ning}, \binits{J.}}
+(\byear{2016}).
+\batitle{{S}tudy on {M}aritime traffic density calculation and maritime hotspots discovery based on {A}{I}{S} data}.
+\bjtitle{Special Issue of Applied Sciences "Transportation Big Data and Its Applications", section "Computing and Artificial Intelligence"}.
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem{Ester1996ADA}
+\begin{barticle}
 \bauthor{\bsnm{Ester}, \binits{M.}},
 \bauthor{\bsnm{Kriegel}, \binits{H.P.}},
 \bauthor{\bsnm{Sander}, \binits{J.}}, \&
 \bauthor{\bsnm{Xu}, \binits{X.}}
 (\byear{1996}).
-\bctitle{{A} {D}ensity-{B}ased {A}lgorithm for {D}iscovering {C}lusters in {L}arge {S}patial {D}atabases with {N}oise}.
-In \bbtitle{{K}{D}{D}'96: {P}roceedings of the {S}econd {I}nternational {C}onference on {K}nowledge {D}iscovery and {D}ata {M}ining}
-(pp. \bfpage{226}--\bfpage{231}).
-\end{bchapter}
+\batitle{{A} {D}ensity-{B}ased {A}lgorithm for {D}iscovering {C}lusters in {L}arge {S}patial {D}atabases with {N}oise}.
+\bjtitle{Knowledge Discovery and Data Mining},
+\bvolume{96},
+\bfpage{226}--\bfpage{231}.
+doi:10.5120/739-1038.
+\end{barticle}
 \endbibitem
 
-%%% 16
+%%% 27
 \bibitem{Khan2004RealtimePO}
 \begin{bchapter}
 \bauthor{\bsnm{Khan}, \binits{A.}},
@@ -226,270 +401,215 @@ In \bbtitle{24th {I}nternational {C}ongress of the {A}eronautical {S}ciences}.
 \end{bchapter}
 \endbibitem
 
-%%% 17
-\bibitem{2023Li}
-\begin{barticle}
-\bauthor{\bsnm{Li}, \binits{J.}},
-\bauthor{\bsnm{Liu}, \binits{J.}},
-\bauthor{\bsnm{Zhang}, \binits{X.}},
-\bauthor{\bsnm{Li}, \binits{X.}},
-\bauthor{\bsnm{Wang}, \binits{J.}}, \&
-\bauthor{\bsnm{Wu}, \binits{Z.}}
-(\byear{2023}).
-\batitle{{A} {N}ovel {H}ybrid {A}pproach for {D}etecting {A}bnormal {V}essel {B}ehavior in {M}aritime {T}raffic}.
-\bjtitle{2023 7th International Conference on Transportation Information and Safety (ICTIS)}.
-doi:10.1109/ictis60134.2023.10243728.
-\end{barticle}
-\endbibitem
-
-%%% 18
-\bibitem{2014Wang}
-\begin{bchapter}
-\bauthor{\bsnm{Wang}, \binits{X.}},
-\bauthor{\bsnm{Liu}, \binits{X.}},
-\bauthor{\bsnm{Liu}, \binits{B.}},
-\bauthor{\bsnm{de Souza}, \binits{E.N.}}, \&
-\bauthor{\bsnm{Matwin}, \binits{S.}}
-(\byear{2014}).
-\bctitle{{V}essel route anomaly detection with {H}adoop {M}ap{R}educe}.
-In \bbtitle{2014 {I}{E}{E}{E} {I}nternational {C}onference on {B}ig {D}ata ({B}ig {D}ata)}
-(pp. \bfpage{25}--\bfpage{30}).
-doi:10.1109/BigData.2014.7004464.
-\end{bchapter}
-\endbibitem
-
-%%% 19
-\bibitem{2015Pallotta}
-\begin{bchapter}
-\bauthor{\bsnm{Pallotta}, \binits{G.}}, \&
-\bauthor{\bsnm{Jousselme}, \binits{A.L.}}
-(\byear{2015}).
-\bctitle{{D}ata-driven detection and context-based classification of maritime anomalies}.
-In \bbtitle{2015 18th {I}nternational {C}onference on {I}nformation {F}usion ({F}usion)}
-(pp. \bfpage{1152}--\bfpage{1159}).
-\end{bchapter}
-\endbibitem
-
-%%% 20
-\bibitem{2018Lei}
-\begin{barticle}
-\bauthor{\bsnm{Lei}, \binits{B.}}, \&
-\bauthor{\bsnm{Mingchao}, \binits{D.}}
-(\byear{2018}).
-\batitle{{A} distance-based trajectory outlier detection method on maritime traffic data}.
-\bjtitle{2018 4th International Conference on Control, Automation and Robotics (ICCAR)}.
-doi:10.1109/iccar.2018.8384697.
-\end{barticle}
-\endbibitem
-
-%%% 21
-\bibitem{2013Pallotta2}
-\begin{bchapter}
-\bauthor{\bsnm{Pallotta}, \binits{G.}},
-\bauthor{\bsnm{Vespe}, \binits{M.}}, \&
-\bauthor{\bsnm{Bryan}, \binits{K.}}
-(\byear{2013}).
-\bctitle{{T}raffic {R}oute {E}xtraction and {A}nomaly {D}etection from {A}{I}{S} {D}ata}.
-In \bbtitle{{I}nternational {C}{O}{S}{T} {M}{O}{V}{E} {W}orkshop on {M}oving {O}bjects at {S}ea}
-(pp. \bfpage{1}--\bfpage{4}).
-doi:10.3390/s17081792.
-\end{bchapter}
-\endbibitem
-
-%%% 22
-\bibitem{2011Laxhammar}
-\begin{bchapter}
-\bauthor{\bsnm{Laxhammar}, \binits{R.}}
-(\byear{2011}).
-\bctitle{{A}nomaly detection in trajectory data for surveillance applications}.
-In \bbtitle{{S}tudies from the school of science and technology at \"{O}rebro university}
-(pp. \bfpage{130}).
-\blocation{{\"O}rebro}: 
-\bpublisher{{\"O}rebro University}.
-\end{bchapter}
-\endbibitem
-
-%%% 23
-\bibitem{Vries2013}
-\begin{bchapter}
-\bauthor{\bsnm{Vries}, \binits{G.}}, \&
-\bauthor{\bsnm{van Someren}, \binits{M.}}
-(\byear{2013}).
-\bctitle{{R}ecognizing {V}essel {M}ovements from {H}istorical {D}ata}.
-In \bbtitle{{S}ituation {A}wareness with {S}ystems of {S}ystems}
-(pp. \bfpage{105}--\bfpage{118}).
-\blocation{New York, NY}: 
-\bpublisher{Springer New York}.
-doi:10.1007/978-1-4614-6230-9\_7.
-\end{bchapter}
-\endbibitem
-
-%%% 24
-\bibitem{2015Liu}
-\begin{bchapter}
-\bauthor{\bsnm{Liu}, \binits{B.}},
-\bauthor{\bsnm{de Souza}, \binits{E.N.}},
-\bauthor{\bsnm{Hilliard}, \binits{C.}}, \&
-\bauthor{\bsnm{Matwin}, \binits{S.}}
-(\byear{2015}).
-\bctitle{{S}hip movement anomaly detection using specialized distance measures}.
-In \bbtitle{2015 18th {I}nternational {C}onference on {I}nformation {F}usion ({F}usion)}
-(pp. \bfpage{1113}--\bfpage{1120}).
-\end{bchapter}
-\endbibitem
-
-%%% 25
-\bibitem{2012Kowalska}
-\begin{bchapter}
-\bauthor{\bsnm{Kowalska}, \binits{K.}}, \&
-\bauthor{\bsnm{Peel}, \binits{L.}}
-(\byear{2012}).
-\bctitle{{M}aritime anomaly detection using {G}aussian {P}rocess active learning}.
-In \bbtitle{2012 15th {I}nternational {C}onference on {I}nformation {F}usion}
-(pp. \bfpage{1164}--\bfpage{1171}).
-\end{bchapter}
-\endbibitem
-
-%%% 26
-\bibitem{2013Guillarme}
-\begin{bchapter}
-\bauthor{\bsnm{La Guillarme}, \binits{N.}}, \&
-\bauthor{\bsnm{Lerouvreur}, \binits{X.}}
-(\byear{2013}).
-\bctitle{{U}nsupervised extraction of knowledge from {S}-{A}{I}{S} data for maritime situational awareness}.
-In \bbtitle{{P}roceedings of the 16th {I}nternational {C}onference on {I}nformation {F}usion}
-(pp. \bfpage{2025}--\bfpage{2032}).
-\end{bchapter}
-\endbibitem
-
-%%% 27
-\bibitem{2015Sun}
-\begin{bchapter}
-\bauthor{\bsnm{Sun}, \binits{F.}},
-\bauthor{\bsnm{Deng}, \binits{Y.}},
-\bauthor{\bsnm{Deng}, \binits{F.}},
-\bauthor{\bsnm{Zhu}, \binits{Q.}}, \&
-\bauthor{\bsnm{Chu}, \binits{H.}}
-(\byear{2015}).
-\bctitle{{U}nsupervised maritime traffic pattern extraction from spatio-temporal data}.
-In \bbtitle{2015 11th {I}nternational {C}onference on {N}atural {C}omputation ({I}{C}{N}{C})}
-(pp. \bfpage{1218}--\bfpage{1223}).
-doi:10.1109/ICNC.2015.7378165.
-\end{bchapter}
-\endbibitem
-
 %%% 28
-\bibitem{Li2017ADR}
+\bibitem{2021Pedroche}
 \begin{barticle}
-\bauthor{\bsnm{Li}, \binits{H.}},
-\bauthor{\bsnm{Liu}, \binits{J.}},
-\bauthor{\bsnm{Liu}, \binits{R.W.}},
-\bauthor{\bsnm{Xiong}, \binits{N.N.}},
-\bauthor{\bsnm{Wu}, \binits{K.}}, \&
-\bauthor{\bsnm{Kim}, \binits{T.h.}}
-(\byear{2017}).
-\batitle{{A} {D}imensionality {R}eduction-{B}ased {M}ulti-{S}tep {C}lustering {M}ethod for {R}obust {V}essel {T}rajectory {A}nalysis}.
-\bjtitle{Sensors (Basel, Switzerland)},
-\bvolume{17}.
-doi:10.3390/s17081792.
+\bauthor{\bsnm{Pedroche}, \binits{D.S.}},
+\bauthor{\bsnm{Herrero}, \binits{D.A.}},
+\bauthor{\bsnm{Herrero}, \binits{J.G.}}, \&
+\bauthor{\bsnm{Lopez}, \binits{J.M.M.}}
+(\byear{2021}).
+\batitle{{C}lustering of maritime trajectories with {A}{I}{S} features for context learning}.
+\bjtitle{2021 IEEE 24th International Conference on Information Fusion (FUSION)}.
+doi:10.23919/fusion49465.2021.9626956.
 \end{barticle}
 \endbibitem
 
 %%% 29
-\bibitem{2021Botts}
+\bibitem{2013Pallotta}
 \begin{barticle}
-\bauthor{\bsnm{Botts}, \binits{C.H.}}
-(\byear{2021}).
-\batitle{{A} {N}ovel {M}etric for {D}etecting {A}nomalous {S}hip {B}ehavior {U}sing a {V}ariation of the {D}{B}{S}{C}{A}{N} {C}lustering {A}lgorithm}.
-\bjtitle{SN Computer Science},
-\bvolume{2}.
-doi:10.1007/s42979-021-00804-4.
+\bauthor{\bsnm{Pallotta}, \binits{G.}},
+\bauthor{\bsnm{Vespe}, \binits{M.}}, \&
+\bauthor{\bsnm{Bryan}, \binits{K.}}
+(\byear{2013}).
+\batitle{{V}essel {P}attern {K}nowledge {D}iscovery from {A}{I}{S} {D}ata: {A} {F}ramework for {A}nomaly {D}etection and {R}oute {P}rediction}.
+\bjtitle{Entropy},
+\bvolume{15},
+\bfpage{2218}--\bfpage{2245}.
+doi:10.3390/e15062218.
 \end{barticle}
 \endbibitem
 
 %%% 30
-\bibitem{rahmah2016determination}
+\bibitem{2020Loi}
 \begin{bchapter}
-\bauthor{\bsnm{Rahmah}, \binits{N.}}, \&
-\bauthor{\bsnm{Sitanggang}, \binits{I.S.}}
-(\byear{2016}).
-\bctitle{{D}etermination of {O}ptimal {E}psilon ({E}ps) {V}alue on {D}{B}{S}{C}{A}{N} {A}lgorithm to {C}lustering {D}ata on {P}eatland {H}otspots in {S}umatra}.
-In \bbtitle{{I}{O}{P} conference series: earth and environmental science}
-(pp. \bfpage{012012}).
-doi:10.1088/1755-1315/31/1/012012.
+\bauthor{\bsnm{Loi}, \binits{N.V.}},
+\bauthor{\bsnm{Trung}, \binits{K.T.}},
+\bauthor{\bsnm{Hop}, \binits{T.V.}},
+\bauthor{\bsnm{Thanh}, \binits{S.L.}}, \&
+\bauthor{\bsnm{Khuong}, \binits{N.V.}}
+(\byear{2020}).
+\bctitle{{A}bnormal {M}oving {S}peed {D}etection {U}sing {C}ombination of {K}ernel {D}ensity {E}stimator and {D}{B}{S}{C}{A}{N} for {C}oastal {S}urveillance {R}adars}.
+In \bbtitle{2020 7th {I}nternational {C}onference on {S}ignal {P}rocessing and {I}ntegrated {N}etworks ({S}{P}{I}{N})}
+(pp. \bfpage{143}--\bfpage{147}).
+doi:10.1109/SPIN48934.2020.9070885.
 \end{bchapter}
 \endbibitem
 
 %%% 31
-\bibitem{jolliffe2016principal}
-\begin{barticle}
-\bauthor{\bsnm{Jolliffe}, \binits{I.T.}}, \&
-\bauthor{\bsnm{Cadima}, \binits{J.}}
-(\byear{2016}).
-\batitle{{P}rincipal component analysis: a review and recent developments}.
-\bjtitle{Philosophical transactions of the royal society A: Mathematical, Physical and Engineering Sciences},
-\bvolume{374},
-\bfpage{20150202}.
-doi:10.1098/rsta.2015.0202.
-\end{barticle}
+\bibitem{2014Pallotta}
+\begin{bchapter}
+\bauthor{\bsnm{Pallotta}, \binits{G.}},
+\bauthor{\bsnm{Horn}, \binits{S.}},
+\bauthor{\bsnm{Braca}, \binits{P.}}, \&
+\bauthor{\bsnm{Bryan}, \binits{K.}}
+(\byear{2014}).
+\bctitle{{C}ontext-enhanced vessel prediction based on {O}rnstein-{U}hlenbeck processes using historical {A}{I}{S} traffic patterns: {R}eal-world experimental results}.
+In \bbtitle{17th {I}nternational {C}onference on {I}nformation {F}usion ({F}{U}{S}{I}{O}{N})}
+(pp. \bfpage{1}--\bfpage{7}).
+\end{bchapter}
 \endbibitem
 
 %%% 32
-\bibitem{altman1994diagnostic1}
-\begin{barticle}
-\bauthor{\bsnm{Altman}, \binits{D.G.}}, \&
-\bauthor{\bsnm{Bland}, \binits{J.M.}}
-(\byear{1994}).
-\batitle{{D}iagnostic tests. 1: {S}ensitivity and specificity.}.
-\bjtitle{BMJ: British Medical Journal},
-\bvolume{308},
-\bfpage{1552}.
-doi:10.1136/bmj.308.6943.1552.
-\end{barticle}
+\bibitem{Varlamis2019ANA}
+\begin{bchapter}
+\bauthor{\bsnm{Varlamis}, \binits{I.}},
+\bauthor{\bsnm{Tserpes}, \binits{K.}},
+\bauthor{\bsnm{Etemad}, \binits{M.}},
+\bauthor{\bsnm{Junior}, \binits{A.S.}}, \&
+\bauthor{\bsnm{Matwin}, \binits{S.}}
+(\byear{2019}).
+\bctitle{{A} {N}etwork {A}bstraction of {M}ulti-vessel {T}rajectory {D}ata for {D}etecting {A}nomalies}.
+In \bbtitle{{E}{D}{B}{T}/{I}{C}{D}{T} {W}orkshops}.
+\end{bchapter}
 \endbibitem
 
 %%% 33
-\bibitem{altman1994diagnostic2}
+\bibitem{10681283}
 \begin{barticle}
-\bauthor{\bsnm{Altman}, \binits{D.G.}}, \&
-\bauthor{\bsnm{Bland}, \binits{J.M.}}
-(\byear{1994}).
-\batitle{{D}iagnostic test 2: predictive values}.
-\bjtitle{BMJ: British Medical Journal},
-\bvolume{309},
-\bfpage{102}.
-doi:10.1136/bmj.309.6947.102.
+\bauthor{\bsnm{Zong}, \binits{G.}},
+\bauthor{\bsnm{Wang}, \binits{Y.}},
+\bauthor{\bsnm{Niu}, \binits{B.}},
+\bauthor{\bsnm{Su}, \binits{S.F.}}, \&
+\bauthor{\bsnm{Shi}, \binits{K.}}
+(\byear{2024}).
+\batitle{{E}vent-triggered adaptive {N}{N} tracking control for nonlinear systems with asymmetric time-varying output constraints and application to an {A}{U}{V}s}.
+\bjtitle{IEEE Transactions on Vehicular Technology},
+\bfpage{1}--\bfpage{11}.
+doi:10.1109/TVT.2024.3461669.
 \end{barticle}
 \endbibitem
 
 %%% 34
-\bibitem{velez2007balanced}
+\bibitem{10681502}
 \begin{barticle}
-\bauthor{\bsnm{Velez}, \binits{D.R.}},
-\bauthor{\bsnm{White}, \binits{B.C.}},
-\bauthor{\bsnm{Motsinger}, \binits{Alison A.}},
-\bauthor{\bsnm{Bush}, \binits{W.S.}},
-\bauthor{\bsnm{Ritchie}, \binits{M.D.}},
-\bauthor{\bsnm{Williams}, \binits{S.M.}}, \&
-\bauthor{\bsnm{Moore}, \binits{J.H.}}
-(\byear{2007}).
-\batitle{{A} balanced accuracy function for epistasis modeling in imbalanced datasets using multifactor dimensionality reduction}.
-\bjtitle{Genetic Epidemiology: the Official Publication of the International Genetic Epidemiology Society},
-\bvolume{31},
-\bfpage{306}--\bfpage{315}.
-doi:10.1002/gepi.20211.
+\bauthor{\bsnm{Wang}, \binits{Y.}}, \&
+\bauthor{\bsnm{Zong}, \binits{G.}}
+(\byear{2024}).
+\batitle{{D}ynamic {E}vent-{T}riggered {A}daptive {F}ixed-{T}ime {P}ractical {T}racking {C}ontrol for {N}onlinear {S}ystems {T}hrough {F}unnel {F}unction}.
+\bjtitle{IEEE Transactions on Automation Science and Engineering},
+\bfpage{1}--\bfpage{10}.
+doi:10.1109/TASE.2024.3458176.
 \end{barticle}
 \endbibitem
 
 %%% 35
-\bibitem{mcnemar1947note}
+\bibitem{salami2022wind}
 \begin{barticle}
-\bauthor{\bsnm{McNemar}, \binits{Q.}}
-(\byear{1947}).
-\batitle{{N}ote on the sampling error of the difference between correlated proportions or percentages}.
-\bjtitle{Psychometrika},
-\bvolume{12},
-\bfpage{153}--\bfpage{157}.
-doi:10.1007/BF02295996.
+\bauthor{\bsnm{Salami}, \binits{A.A.}},
+\bauthor{\bsnm{Agbessi}, \binits{P.A.}},
+\bauthor{\bsnm{Boureima}, \binits{S.}}, \&
+\bauthor{\bsnm{Ajavon}, \binits{A.S.A.}}
+(\byear{2022}).
+\batitle{{W}ind energy potential estimation using neural network and {S}{V}{R} approaches}.
+\bjtitle{Engineering Review},
+\bvolume{42},
+\bfpage{32}--\bfpage{49}.
+doi:10.30765/er.1632.
 \end{barticle}
+\endbibitem
+
+%%% 36
+\bibitem{https://doi.org/10.48670/moi-00022}
+\begin{barticle}
+\bauthor{\bsnm{{European Union-Copernicus Marine Service}}}
+(\byear{2024}).
+\batitle{{G}lobal {O}cean {W}aves {R}eanalysis {W}{A}{V}{E}{R}{Y}{S}}.
+\bjtitle{E.U. Copernicus Marine Service Information (CMEMS). Marine Data Store (MDS)}.
+doi:10.48670/MOI-00022.
+\url{http://dx.doi.org/10.48670/MOI-00022}.
+Accessed 13 November 2024.
+\end{barticle}
+\endbibitem
+
+%%% 37
+\bibitem{rp5Description}
+\begin{botherref}
+\oauthor{\bsnm{rp5}}
+(\byear{2024}).
+{D}efinitions --- rp5.ru.
+\url{https://rp5.ru/docs/descript/en}.
+Accessed 13 November 2024.
+\end{botherref}
+\endbibitem
+
+%%% 38
+\bibitem{Gagniuc}
+\begin{bbook}
+\bauthor{\bsnm{Gagniuc}, \binits{P.}}
+(\byear{2017}).
+\bbtitle{{M}arkov {C}hains: {F}rom {T}heory to {I}mplementation and {E}xperimentation}.
+\bpublisher{"Wiley"}.
+doi:10.1002/9781119387596.
+\end{bbook}
+\endbibitem
+
+%%% 39
+\bibitem{citeulike:1220946}
+\begin{bbook}
+\bauthor{\bsnm{{\O}ksendal}, \binits{B.}}
+(\byear{2014}).
+\bbtitle{{S}tochastic {D}ifferential {E}quations: {A}n {I}ntroduction with {A}pplications ({U}niversitext)}.
+\bpublisher{Springer}.
+\end{bbook}
+\endbibitem
+
+%%% 40
+\bibitem{Gagniuc2017-jf}
+\begin{bbook}
+\bauthor{\bsnm{Gagniuc}, \binits{P.A.}}
+(\byear{2017}).
+In \bbtitle{{M}arkov chains}
+(pp. \bfpage{159}--\bfpage{163}).
+\blocation{Nashville, TN}: 
+\bpublisher{John Wiley \& Sons}.
+\end{bbook}
+\endbibitem
+
+%%% 41
+\bibitem{Parzen1962-oe}
+\begin{bbook}
+\bauthor{\bsnm{Parzen}, \binits{E.}}
+(\byear{1962}).
+\bbtitle{{S}tochastic processes}.
+\blocation{San Francisco}: 
+\bpublisher{Holden-Day}.
+\end{bbook}
+\endbibitem
+
+%%% 42
+\bibitem{altche2017lstm}
+\begin{bchapter}
+\bauthor{\bsnm{Altch{\'e}}, \binits{F.}}, \&
+\bauthor{\bsnm{de La Fortelle}, \binits{A.}}
+(\byear{2017}).
+\bctitle{{A}n {L}{S}{T}{M} network for highway trajectory prediction}.
+In \bbtitle{2017 {I}{E}{E}{E} 20th international conference on intelligent transportation systems ({I}{T}{S}{C})}
+(pp. \bfpage{353}--\bfpage{359}).
+doi:10.48550/arXiv.1801.07962.
+\end{bchapter}
+\endbibitem
+
+%%% 43
+\bibitem{liu2014vehicle}
+\begin{bchapter}
+\bauthor{\bsnm{Liu}, \binits{Q.}},
+\bauthor{\bsnm{Lathrop}, \binits{B.}}, \&
+\bauthor{\bsnm{Butakov}, \binits{V.}}
+(\byear{2014}).
+\bctitle{{V}ehicle lateral position prediction: {A} small step towards a comprehensive risk assessment system}.
+In \bbtitle{17th {I}nternational {I}{E}{E}{E} {C}onference on {I}ntelligent {T}ransportation {S}ystems ({I}{T}{S}{C})}
+(pp. \bfpage{667}--\bfpage{672}).
+doi:10.1109/ITSC.2014.6957766.
+\end{bchapter}
 \endbibitem

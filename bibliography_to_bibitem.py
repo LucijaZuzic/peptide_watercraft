@@ -48,12 +48,12 @@ for line in all_rows_bibliography:
                     value = value[1:-2]
                 else:
                     value = value[1:-1]
-                print("Apostrophe lin", key, value, category)
+                #print("Apostrophe lin", key, value, category)
             else:
                 #print("No delimiter lin", key, value, category)
                 if value[-1] == ",":
                     value = value[:-1]
-                print("delimiter lin", key, value, category)
+                #print("delimiter lin", key, value, category)
     if key not in entries:
         entries[key] = {"type_of_entry": type_key.lower(), "position_tex": all_tex.find(key)}
     else:
