@@ -74,6 +74,14 @@
 	pages = {1--8}
 }
 
+@misc{ototrakOtoTrakTrack,
+	author = {OtoTrak},
+	title = {{O}to{T}rak - {T}rack your watercraft --- ototrak.com},
+	url = {https://www.ototrak.com/en-us},
+	year = {2024},
+	note = {Accessed}
+}
+
 @inproceedings{2016Coraluppi,
 	author = {Coraluppi, S. and Carthel, C. and Braca, P. and Millefiori, L.},
 	booktitle = {2016 19th International Conference on Information Fusion (FUSION)},

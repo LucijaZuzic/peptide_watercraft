@@ -96,6 +96,17 @@ In \bbtitle{2008 11th {I}nternational {C}onference on {I}nformation {F}usion}
 \endbibitem
 
 %%% 8
+\bibitem{ototrakOtoTrakTrack}
+\begin{botherref}
+\oauthor{\bsnm{OtoTrak}}
+(\byear{2024}).
+{O}to{T}rak - {T}rack your watercraft --- ototrak.com.
+\url{https://www.ototrak.com/en-us}.
+Accessed 15 November 2024.
+\end{botherref}
+\endbibitem
+
+%%% 9
 \bibitem{2016Coraluppi}
 \begin{bchapter}
 \bauthor{\bsnm{Coraluppi}, \binits{S.}},
@@ -109,7 +120,7 @@ In \bbtitle{2016 19th {I}nternational {C}onference on {I}nformation {F}usion ({F
 \end{bchapter}
 \endbibitem
 
-%%% 9
+%%% 10
 \bibitem{2018dAfflisio1}
 \begin{barticle}
 \bauthor{\bsnm{d'Afflisio}, \binits{E.}},
@@ -125,7 +136,7 @@ doi:10.1109/TSP.2018.2875887.
 \end{barticle}
 \endbibitem
 
-%%% 10
+%%% 11
 \bibitem{2018Coscia}
 \begin{barticle}
 \bauthor{\bsnm{Coscia}, \binits{P.}},
@@ -142,7 +153,7 @@ doi:10.1109/TAES.2018.2808098.
 \end{barticle}
 \endbibitem
 
-%%% 11
+%%% 12
 \bibitem{2018Coscia1}
 \begin{barticle}
 \bauthor{\bsnm{Coscia}, \binits{P.}},
@@ -157,7 +168,7 @@ doi:10.23919/icif.2018.8455392.
 \end{barticle}
 \endbibitem
 
-%%% 12
+%%% 13
 \bibitem{2018Forti}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -170,7 +181,7 @@ doi:10.23919/icif.2018.8455567.
 \end{barticle}
 \endbibitem
 
-%%% 13
+%%% 14
 \bibitem{2019Forti}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -184,7 +195,7 @@ doi:10.1109/icassp.2019.8683428.
 \end{barticle}
 \endbibitem
 
-%%% 14
+%%% 15
 \bibitem{2020Forti}
 \begin{bchapter}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -199,7 +210,7 @@ doi:10.1109/RadarConf2043947.2020.9266705.
 \end{bchapter}
 \endbibitem
 
-%%% 15
+%%% 16
 \bibitem{2022Forti2}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -216,7 +227,7 @@ doi:10.1109/jproc.2022.3194445.
 \end{barticle}
 \endbibitem
 
-%%% 16
+%%% 17
 \bibitem{2016Millefiori}
 \begin{barticle}
 \bauthor{\bsnm{Millefiori}, \binits{L.}},
@@ -231,7 +242,7 @@ doi:10.1109/TAES.2016.150596.
 \end{barticle}
 \endbibitem
 
-%%% 17
+%%% 18
 \bibitem{2021dAfflisio}
 \begin{barticle}
 \bauthor{\bsnm{d'Afflisio}, \binits{E.}},
@@ -246,7 +257,7 @@ doi:10.23919/fusion49465.2021.9627049.
 \end{barticle}
 \endbibitem
 
-%%% 18
+%%% 19
 \bibitem{2021dAfflisio1}
 \begin{barticle}
 \bauthor{\bsnm{d'Afflisio}, \binits{E.}},
@@ -260,7 +271,7 @@ doi:10.1109/taes.2021.3083466.
 \end{barticle}
 \endbibitem
 
-%%% 19
+%%% 20
 \bibitem{10130587}
 \begin{barticle}
 \bauthor{\bsnm{Zhu}, \binits{S.}},
@@ -278,7 +289,7 @@ doi:10.1109/TAC.2023.3278797.
 \end{barticle}
 \endbibitem
 
-%%% 20
+%%% 21
 \bibitem{10106394}
 \begin{barticle}
 \bauthor{\bsnm{Zhu}, \binits{S.}},
@@ -295,7 +306,7 @@ doi:10.1109/TAC.2023.3269321.
 \end{barticle}
 \endbibitem
 
-%%% 21
+%%% 22
 \bibitem{10309224}
 \begin{barticle}
 \bauthor{\bsnm{Zhu}, \binits{S.}},
@@ -311,7 +322,7 @@ doi:10.1109/TAC.2023.3330263.
 \end{barticle}
 \endbibitem
 
-%%% 22
+%%% 23
 \bibitem{2020FortiO}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -329,7 +340,7 @@ doi:10.1109/TITS.2021.3123890.
 \end{barticle}
 \endbibitem
 
-%%% 23
+%%% 24
 \bibitem{2022FortiO}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -347,7 +358,7 @@ doi:10.1109/TITS.2021.3123890.
 \end{barticle}
 \endbibitem
 
-%%% 24
+%%% 25
 \bibitem{2022Forti1}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -362,7 +373,7 @@ doi:10.1109/TAES.2021.3122888.
 \end{barticle}
 \endbibitem
 
-%%% 25
+%%% 26
 \bibitem{2016Ning}
 \begin{barticle}
 \bauthor{\bsnm{Ning}, \binits{J.}}
@@ -372,7 +383,7 @@ doi:10.1109/TAES.2021.3122888.
 \end{barticle}
 \endbibitem
 
-%%% 26
+%%% 27
 \bibitem{Ester1996ADA}
 \begin{barticle}
 \bauthor{\bsnm{Ester}, \binits{M.}},
@@ -388,7 +399,7 @@ doi:10.5120/739-1038.
 \end{barticle}
 \endbibitem
 
-%%% 27
+%%% 28
 \bibitem{Khan2004RealtimePO}
 \begin{bchapter}
 \bauthor{\bsnm{Khan}, \binits{A.}},
@@ -401,7 +412,7 @@ In \bbtitle{24th {I}nternational {C}ongress of the {A}eronautical {S}ciences}.
 \end{bchapter}
 \endbibitem
 
-%%% 28
+%%% 29
 \bibitem{2021Pedroche}
 \begin{barticle}
 \bauthor{\bsnm{Pedroche}, \binits{D.S.}},
@@ -415,7 +426,7 @@ doi:10.23919/fusion49465.2021.9626956.
 \end{barticle}
 \endbibitem
 
-%%% 29
+%%% 30
 \bibitem{2013Pallotta}
 \begin{barticle}
 \bauthor{\bsnm{Pallotta}, \binits{G.}},
@@ -430,7 +441,7 @@ doi:10.3390/e15062218.
 \end{barticle}
 \endbibitem
 
-%%% 30
+%%% 31
 \bibitem{2020Loi}
 \begin{bchapter}
 \bauthor{\bsnm{Loi}, \binits{N.V.}},
@@ -446,7 +457,7 @@ doi:10.1109/SPIN48934.2020.9070885.
 \end{bchapter}
 \endbibitem
 
-%%% 31
+%%% 32
 \bibitem{2014Pallotta}
 \begin{bchapter}
 \bauthor{\bsnm{Pallotta}, \binits{G.}},
@@ -460,7 +471,7 @@ In \bbtitle{17th {I}nternational {C}onference on {I}nformation {F}usion ({F}{U}{
 \end{bchapter}
 \endbibitem
 
-%%% 32
+%%% 33
 \bibitem{Varlamis2019ANA}
 \begin{bchapter}
 \bauthor{\bsnm{Varlamis}, \binits{I.}},
@@ -474,7 +485,7 @@ In \bbtitle{{E}{D}{B}{T}/{I}{C}{D}{T} {W}orkshops}.
 \end{bchapter}
 \endbibitem
 
-%%% 33
+%%% 34
 \bibitem{10681283}
 \begin{barticle}
 \bauthor{\bsnm{Zong}, \binits{G.}},
@@ -490,7 +501,7 @@ doi:10.1109/TVT.2024.3461669.
 \end{barticle}
 \endbibitem
 
-%%% 34
+%%% 35
 \bibitem{10681502}
 \begin{barticle}
 \bauthor{\bsnm{Wang}, \binits{Y.}}, \&
@@ -503,7 +514,7 @@ doi:10.1109/TASE.2024.3458176.
 \end{barticle}
 \endbibitem
 
-%%% 35
+%%% 36
 \bibitem{salami2022wind}
 \begin{barticle}
 \bauthor{\bsnm{Salami}, \binits{A.A.}},
@@ -519,7 +530,7 @@ doi:10.30765/er.1632.
 \end{barticle}
 \endbibitem
 
-%%% 36
+%%% 37
 \bibitem{https://doi.org/10.48670/moi-00022}
 \begin{barticle}
 \bauthor{\bsnm{{European Union-Copernicus Marine Service}}}
@@ -528,22 +539,22 @@ doi:10.30765/er.1632.
 \bjtitle{E.U. Copernicus Marine Service Information (CMEMS). Marine Data Store (MDS)}.
 doi:10.48670/MOI-00022.
 \url{http://dx.doi.org/10.48670/MOI-00022}.
-Accessed 13 November 2024.
+Accessed 15 November 2024.
 \end{barticle}
 \endbibitem
 
-%%% 37
+%%% 38
 \bibitem{rp5Description}
 \begin{botherref}
 \oauthor{\bsnm{rp5}}
 (\byear{2024}).
 {D}efinitions --- rp5.ru.
 \url{https://rp5.ru/docs/descript/en}.
-Accessed 13 November 2024.
+Accessed 15 November 2024.
 \end{botherref}
 \endbibitem
 
-%%% 38
+%%% 39
 \bibitem{Gagniuc}
 \begin{bbook}
 \bauthor{\bsnm{Gagniuc}, \binits{P.}}
@@ -554,7 +565,7 @@ doi:10.1002/9781119387596.
 \end{bbook}
 \endbibitem
 
-%%% 39
+%%% 40
 \bibitem{citeulike:1220946}
 \begin{bbook}
 \bauthor{\bsnm{{\O}ksendal}, \binits{B.}}
@@ -564,7 +575,7 @@ doi:10.1002/9781119387596.
 \end{bbook}
 \endbibitem
 
-%%% 40
+%%% 41
 \bibitem{Gagniuc2017-jf}
 \begin{bbook}
 \bauthor{\bsnm{Gagniuc}, \binits{P.A.}}
@@ -576,7 +587,7 @@ In \bbtitle{{M}arkov chains}
 \end{bbook}
 \endbibitem
 
-%%% 41
+%%% 42
 \bibitem{Parzen1962-oe}
 \begin{bbook}
 \bauthor{\bsnm{Parzen}, \binits{E.}}
@@ -587,7 +598,7 @@ In \bbtitle{{M}arkov chains}
 \end{bbook}
 \endbibitem
 
-%%% 42
+%%% 43
 \bibitem{altche2017lstm}
 \begin{bchapter}
 \bauthor{\bsnm{Altch{\'e}}, \binits{F.}}, \&
@@ -600,7 +611,7 @@ doi:10.48550/arXiv.1801.07962.
 \end{bchapter}
 \endbibitem
 
-%%% 43
+%%% 44
 \bibitem{liu2014vehicle}
 \begin{bchapter}
 \bauthor{\bsnm{Liu}, \binits{Q.}},
