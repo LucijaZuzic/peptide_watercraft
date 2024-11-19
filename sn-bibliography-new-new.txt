@@ -245,6 +245,84 @@
 	url = {http://dx.doi.org/10.1109/TAC.2023.3330263}
 }
 
+@article{JAFARIZADEH2024107151,
+	title = {{C}onvergence rate of {M}arkov chains over switching distance regular networks},
+	journal = {Journal of the Franklin Institute},
+	volume = {361},
+	number = {17},
+	pages = {107151},
+	year = {2024},
+	issn = {0016-0032},
+	url = {http://dx.doi.org/10.1016/j.jfranklin.2024.107151},
+	doi = {10.1016/j.jfranklin.2024.107151},
+	author = {Jafarizadeh, S.}
+}
+
+@article{YAO2024107194,
+	title = {{S}tabilization of delayed {M}arkovian jump systems with sampled controllers},
+	journal = {Journal of the Franklin Institute},
+	volume = {361},
+	number = {17},
+	pages = {107194},
+	year = {2024},
+	issn = {0016-0032},
+	url = {http://dx.doi.org/10.1016/j.jfranklin.2024.107194},
+	doi = {10.1016/j.jfranklin.2024.107194},
+	author = {Yao, J. and Zhai, C. and Wang, G.}
+}
+
+@article{SHEN2024107250,
+	title = {{S}{M}{C} for discrete singular stochastic jump systems under semi-{M}arkov kernel},
+	journal = {Journal of the Franklin Institute},
+	volume = {361},
+	number = {17},
+	pages = {107250},
+	year = {2024},
+	issn = {0016-0032},
+	url = {http://dx.doi.org/10.1016/j.jfranklin.2024.107250},
+	doi = {10.1016/j.jfranklin.2024.107250},
+	author = {Shen, F. and Wei, C. and Qi, W. and Cao, J. and Cheng, J. and Shi, K. and Abdel-Aty, M. and Qiu, X.}
+}
+
+@article{LIU2024107294,
+	title = {{R}eachable set control of singular semi-{M}arkov jump multi-agent systems with input delay via state decomposition method},
+	journal = {Journal of the Franklin Institute},
+	volume = {361},
+	number = {17},
+	pages = {107294},
+	year = {2024},
+	issn = {0016-0032},
+	url = {http://dx.doi.org/10.1016/j.jfranklin.2024.107294},
+	doi = {10.1016/j.jfranklin.2024.107294},
+	author = {Liu, M. and Zhang, L. and Zhao, N. and Sharaf, S. and Li, L.}
+}
+
+@article{ZHOU2024107251,
+	title = {{R}obust synchronization of {M}arkovian jump complex dynamical networks under link attacks: {D}elay-dependent dynamic event-triggered control approach},
+	journal = {Journal of the Franklin Institute},
+	volume = {361},
+	number = {17},
+	pages = {107251},
+	year = {2024},
+	issn = {0016-0032},
+	url = {http://dx.doi.org/10.1016/j.jfranklin.2024.107251},
+	doi = {10.1016/j.jfranklin.2024.107251},
+	author = {Zhou, L. and Ma, Y. and Zou, J.}
+}
+
+@article{ZHANG2024107324,
+	title = {{D}iscrete event-triggered security control for {M}arkovian {C}{V}{N}{N}s with additive time-varying delays under random deception attacks},
+	journal = {Journal of the Franklin Institute},
+	volume = {361},
+	number = {17},
+	pages = {107324},
+	year = {2024},
+	issn = {0016-0032},
+	url = {http://dx.doi.org/10.1016/j.jfranklin.2024.107324},
+	doi = {10.1016/j.jfranklin.2024.107324},
+	author = {Zhang, H. and Xiong, L. and Chang, H. and Cao, J. and Yi, Z.}
+}
+
 @article{2020FortiO,
 	author = {Forti, N. and d'Afflisio, E. and Braca, P. and Millefiori, L. M. and Willett, P. and Carniel, S.},
 	journal = {IEEE Transactions on Intelligent Transportation Systems},

@@ -144,7 +144,7 @@ country={Croatia}}
 
 %% Abstract
 \begin{abstract}
-In this work, vessel position is estimated using a Bayesian approach based on heading, speed, time intervals, and offsets of latitude and longitude. An additional approach using a Markov chain is presented. The trajectory data comes from a cloud-based marine watercraft tracking system that enables remote control of the vessels. Wave height and meteorological reports were used to evaluate the impact of weather on personal watercraft trajectories. One proposed approach to trajectory estimation uses the longitude and latitude offsets, while another uses the speed, heading, and actual time intervals. A long-term forecasting window of up to ten seconds is achieved by dividing trajectories into segments that do not overlap. The limitation this method faces in long-term forecasting inspires more sophisticated machine-learning approaches. The most successful estimation method used one or two previous actual values and a Bayesian approach, proving that using previously predicted values in a chain accumulates errors. Considering environmental variables did not improve the model, highlighting that small watercraft operate well even in unstable sea states. This occurs because they generate and ride waves, having a larger impact than oceanic currents.
+In this work, vessel position is estimated using a Bayesian approach based on heading, speed, time intervals, and offsets of latitude and longitude. An additional approach using a Markov chain is presented. The trajectory data comes from a cloud-based marine watercraft tracking system that enables remote control of the vessels. Wave height and meteorological reports were used to evaluate the impact of weather on personal watercraft trajectories. One proposed approach to trajectory estimation uses the longitude and latitude offsets, while another uses the speed, heading, and actual time intervals. A long-term forecasting window of up to ten seconds is achieved by dividing trajectories into segments that do not overlap. The limitation this method faces in long-term forecasting inspires more sophisticated machine-learning approaches. The most successful estimation method used one or two previous actual values and a Bayesian approach, proving that using previously predicted values in a chain accumulates errors. Considering environmental variables did not improve the model, highlighting that small watercrafts operate well even in unstable sea states. This occurs because they generate and ride waves, having a larger impact than oceanic currents.
 \end{abstract}
 
 %%Graphical abstract
@@ -211,7 +211,7 @@ The rest of the paper is structured as follows. Section~\ref{sec:Related} lists 
 
 The methods developed in this paper were influenced by studies in which behavioral anomalies or deviations from the normality paradigm were found in data related to the movement of larger ships. Numerous publications \citep{2016Coraluppi, 2018dAfflisio1, 2018Coscia, 2018Coscia1, 2018Forti, 2019Forti, 2020Forti, 2022Forti2, 2016Millefiori, 2021dAfflisio, 2021dAfflisio1} were found to use Ornstein–Uhlenbeck (OU) process methods for detecting anomalies in maritime traffic. The OU process is a stochastic stationary Gaussisan-Markov process, inspiring the use of Markov chains in the presented approach.
 
-Markov chain methods have been successfully applied in robotic \cite{10130587} and biological engineering \cite{10106394, 10309224} by constructing observable and detectable stochastic graphs, or Strong Structurally Observable Graphs (SSOG), similar to the approach used for watercraft trajectories in this paper.
+Markov chain methods have been successfully applied in robotic \cite{10130587}, and biological engineering \cite{10106394, 10309224} by constructing observable and detectable stochastic graphs, or Strong Structurally Observable Graphs (SSOG), similar to the approach used for watercraft trajectories in this paper. Complex networked contemporary technological systems, classical or quantum, regarding communication, transportation, power, or data transfer, also use Markov chains \cite{JAFARIZADEH2024107151}. Markovian jump systems (MJSs) \cite{YAO2024107194, SHEN2024107250, LIU2024107294}, Markovian jump complex dynamical networks (MJCDNs) \cite{ZHOU2024107251}, and Complex-valued Neural Networks (CVNNs) with Markov Jump Parameters (MJPs) \cite{ZHANG2024107324} are utilized with similar goals in mind, further supporting the proposed method.
 
 Forti and his colleagues presented the Hybrid Bernoulli Random Set (HBRS), a new Bayesian technique applied to larger maritime vessels \citep{2018Forti, 2019Forti, 2020FortiO, 2022Forti2, 2022FortiO, 2022Forti1}, leading to a Bayesian approach considered in this experiment.
 
@@ -229,7 +229,7 @@ Salami et al. \citep{salami2022wind} estimate wind speed distribution for a wind
 
 Vessel trajectories used in this work were recorded in the USA, Canada, Greece, Spain, Portugal, and Croatia in 2023. Trajectories where the maximum time delay between data transmissions was five seconds or more were excluded. Trajectories flagged by OtoTrak \cite{ototrakOtoTrakTrack} as "ERROR" (missing data) or "TRACKING" (lower resolution recording) are not used. Latitude and longitude in each trajectory were converted to relative values, i.e. distances from the start. Since no trajectory covers a larger range of latitude and longitude than $0.1$, they were further normalized to a range of $0.1$ degrees of latitude and longitude. Trajectories on the negative side of the $x$ axis are mirrored on the $y$ axis, and trajectories on the negative side of the $y$ axis are mirrored on the $x$ axis. The times between records in the database are normalized to a range in milliseconds from the start of each trajectory.
 
-The collection of trajectories for each vehicle equipped with an OtoTrak \cite{ototrakOtoTrakTrack} module was split in the ratio of $70:30$ or as close as possible to this ratio. If a vehicle has only one trajectory, it was included in the training set. A total of $384$ trajectories were used, of which $130$ were reserved for testing and $254$ for training. This resulted in the training dataset, comprising $66.15\%$ of the selected trajectory files, which was used to estimate the transition matrix for each variable described by a Markov chain. The remaining $33.85\%$ of the trajectory files were reserved for testing.
+The collection of trajectories for each vehicle equipped with an OtoTrak module \cite{ototrakOtoTrakTrack} was split in the ratio of $70:30$ or as close as possible to this ratio. If a vehicle has only one trajectory, it was included in the training set. A total of $384$ trajectories were used, of which $130$ were reserved for testing and $254$ for training. This resulted in the training dataset, comprising $66.15\%$ of the selected trajectory files, which was used to estimate the transition matrix for each variable described by a Markov chain. The remaining $33.85\%$ of the trajectory files were reserved for testing.
 
 Figure~\ref{fig:all_train_mosaic} and Figure~\ref{fig:all_test_mosaic} show the training and testing trajectories. The number of training and test trajectories for each vehicle and the total number of training and test trajectories, separated by vehicle, can be seen in Table~\ref{tab:testtrain}. Figure~\ref{fig:all_train_mosaic} and Figure~\ref{fig:all_test_mosaic}. These trajectories represent real-world data, not simulations, are not stochastically generated, and were used to train and test the models.
 
@@ -284,7 +284,7 @@ The nearest wave height measurement point is matched with each point in a trajec
 \subsection{Meteorological features}
 %\label{subsec:METAR}
 
-Data on temperature in $\degree C$ (degrees Celsius) and wind speed in $m/s$ (meters per second) was also used to create various conditional probability distributions for the forecasted variables in this study. The assumption is that the sea state is more turbulent with larger wind speeds, while the driver would be less comfortable in lower temperatures, changing watercraft operating conditions. The temperature ranges associated with a separate conditional probability distribution cover $1 \ \degree C$ each, and are centered around whole numbers between $20 \ \degree C$ and $40 \ \degree C$. The wind speed ranges cover $1 \ km/s$ centered around whole numbers between $0 \ km/s$ and $10 \ km/s$.
+Data on temperature in $\degree C$ (degrees Celsius) and wind speed in $m/s$ (meters per second) was also used to create various conditional probability distributions for the forecasted variables in this study. The assumption is that the sea state is more turbulent with larger wind speeds, while the driver would be less comfortable in lower temperatures, changing watercraft operating conditions. The temperature ranges associated with a separate conditional probability distribution cover $1 \ \degree C$ each, centered around whole numbers between $20 \ \degree C$ and $40 \ \degree C$. The wind speed ranges cover $1 \ km/s$ centered around whole numbers between $0 \ km/s$ and $10 \ km/s$.
 
 Publicly available data on meteorological features was used to describe the watercraft trajectories. The website $rp5.ru$ \cite{rp5Description} publishes meteorological forecasts and historical data archives of Meteorological Aerodrome Report (METAR) reports in various file formats, such as \textit{.csv} or \textit{.xlsx}, for many measuring stations and airports. The nearest airport is matched with each watercraft rental location, listed in Table~\ref{tab:airport}.
 
@@ -578,16 +578,16 @@ The simulation was done on \textit{Windows} 11 using the AMD Radeon RX 6600 grap
 %\label{subsec:direction_results}
 %\vspace{10pt}
 
-Figure~\ref{fig:best_RMSE_var} contains the average RMSE for all variables estimated on the testing dataset by different models, and forecasting times.
+Figure~\ref{fig:best_RMSE_var} contains the average RMSE for all variables estimated on the testing dataset by various models and forecasting times.
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width = 0.99 \linewidth]{best_RMSE_var.pdf}
-	\caption{The average RMSE for all variables estimated on the testing dataset by different models, and forecasting times.}
+	\caption{The average RMSE for all variables estimated on the testing dataset by different models and forecasting times.}
 	\label{fig:best_RMSE_var}
 \end{figure}
 
-The average RMSE in $\degree$, for the heading estimated on the testing dataset by different models, and forecasting times is listed in Table~\ref{tab:best_direction_RMSE}.
+Table~\ref{tab:best_direction_RMSE} lists the average RMSE in $\degree$, for the heading estimated on the testing dataset by different models and forecasting times.
 
 \begin{table}[!ht]
 	\centering
@@ -608,29 +608,29 @@ The average RMSE in $\degree$, for the heading estimated on the testing dataset 
 			Wind 2-step Markov & $146.109$ & $148.079$ & $147.538$ & $\mathbf{145.794}$ & $146.307$ \\ \hline
 		\end{tabular}
 	}
-	\caption{The average RMSE in $\degree$, for the heading estimated on the testing dataset by different models, and forecasting times. The numbers in bold indicate the lowest values and best models for each forecasting time.}
+	\caption{The average RMSE in $\degree$, for the heading estimated on the testing dataset by different models and forecasting times. The numbers in bold indicate the lowest values and best models for each forecasting time.}
 	\label{tab:best_direction_RMSE}
 \end{table}
 
-The 2-step Bayes model achieved the lowest RMSE for heading and a forecasting time of $1$, $2$, and $3 \ s$ with average values equaling $51.607 \degree$, $66.974 \degree$, and $114.051 \degree$ respectively.
+The 2-step Bayes model reaches the lowest RMSE for heading and a forecasting time of $1$, $2$, and $3 \ s$. The average values equal $51.607 \degree$, $66.974 \degree$, and $114.051 \degree$ respectively.
 
-The 1-step Bayes model achieved the lowest RMSE for heading and a forecasting time of $4 \ s$ with an average value equaling $141.237 \degree$.
+The 1-step Bayes model has the lowest RMSE for heading and a forecasting time of $4 \ s$ with an average value of $141.237 \degree$.
 
-The Wave 2-step Markov model achieved the lowest RMSE for heading and a forecasting time of $5$, and $7 \ s$ with average values equaling $145.469 \degree$, and $146.196 \degree$ respectively.
+The Wave 2-step Markov model provides the lowest RMSE for heading and a forecasting time of $5$ and $7 \ s$. The average values amount to $145.469 \degree$, and $146.196 \degree$ respectively.
 
-The Temperature 2-step Markov model achieved the lowest RMSE for heading and a forecasting time of $6 \ s$ with an average value equaling $143.236 \degree$.
+The Temperature 2-step Markov model achieves the lowest RMSE for heading and a forecasting time of $6 \ s$. The average value is $143.236 \degree$.
 
-The 1-step Markov model achieved the lowest RMSE for heading and a forecasting time of $8 \ s$ with an average value equaling $144.265 \degree$.
+The 1-step Markov model demonstrates the lowest RMSE for heading and a forecasting time of $8 \ s$. The average value equals $144.265 \degree$.
 
-The Wind 2-step Markov model achieved the lowest RMSE for heading and a forecasting time of $9 \ s$ with an average value equaling $145.794 \degree$.
+The Wind 2-step Markov model attains the lowest RMSE for heading and a forecasting time of $9 \ s$. The average value amounts to $145.794 \degree$.
 
-The Wind 2-step Bayes model achieved the lowest RMSE for heading and a forecasting time of $10 \ s$ with an average value equaling $146.001 \degree$.
+The Wind 2-step Bayes model achieves the lowest RMSE for heading and a forecasting time of $10 \ s$ with an average value equaling $146.001 \degree$.
 
 \subsection{Results for $y$ Offset}
 %\label{subsec:latitude_results}
 %\vspace{10pt}
 
-The average RMSE in $\degree$ ($\times 10^{-4}$), for the $y$ offset estimated on the testing dataset by different models, and forecasting times is listed in Table~\ref{tab:best_latitude_RMSE}.
+Table~\ref{tab:best_latitude_RMSE} exhibits the average RMSE in $\degree$ ($\times 10^{-4}$), for the $y$ offset estimated on the testing dataset by different models and forecasting times.
 
 \begin{table}[!ht]
 	\centering
@@ -648,29 +648,29 @@ The average RMSE in $\degree$ ($\times 10^{-4}$), for the $y$ offset estimated o
 		Wind 2-step Bayes & $6.948$ & $7.068$ & $\mathbf{6.958}$ & $7.042$ & $7.042$ \\ \hline
 		Wind 2-step Markov & $\mathbf{6.867}$ & $7.234$ & $7.134$ & $7.104$ & $7.044$ \\ \hline
 	\end{tabular}
-	\caption{The average RMSE in \degree ($\times 10^{-4}$), for the $y$ offset estimated on the testing dataset by different models, and forecasting times. The numbers in bold indicate the lowest values and best models for each forecasting time.}
+	\caption{The average RMSE in \degree ($\times 10^{-4}$), for the $y$ offset estimated on the testing dataset by different models and forecasting times. The numbers in bold indicate the lowest values and best models for each forecasting time.}
 	\label{tab:best_latitude_RMSE}
 \end{table}
 
-The 2-step Bayes model achieved the lowest RMSE for $y$ offset and a forecasting time of $1$, $2$, $4$, and $5 \ s$ with average values equaling $1.105 \times 10^{-4} \ \degree$, $2.588 \times 10^{-4} \ \degree$, $6.382 \times 10^{-4} \ \degree$, and $6.753 \times 10^{-4} \ \degree$ respectively.
+The lowest RMSE for $y$ offset and a forecasting time of $1$, $2$, $4$, and $5 \ s$ is for the 2-step Bayes model. The average values equal $1.105 \times 10^{-4} \ \degree$, $2.588 \times 10^{-4} \ \degree$, $6.382 \times 10^{-4} \ \degree$, and $6.753 \times 10^{-4} \ \degree$ respectively.
 
-The 1-step Bayes model achieved the lowest RMSE for $y$ offset and a forecasting time of $3 \ s$ with an average value equaling $5.387 \times 10^{-4} \ \degree$.
+The lowest average RMSE for $y$ offset and a forecasting time of $3 \ s$ is $5.387 \times 10^{-4} \ \degree$, reached by the 1-step Bayes model.
 
-The Wind 2-step Markov model achieved the lowest RMSE for $y$ offset and a forecasting time of $6 \ s$ with an average value equaling $6.867 \times 10^{-4} \ \degree$.
+The lowest average RMSE for $y$ offset and a forecasting time of $6 \ s$ is achieved by the Wind 2-step Markov model and amounts to $6.867 \times 10^{-4} \ \degree $.
 
-The Temperature 1-step Markov model achieved the lowest RMSE for $y$ offset and a forecasting time of $7 \ s$ with an average value equaling $6.842 \times 10^{-4} \ \degree$.
+The Temperature 1-step Markov model accounts for the lowest RMSE for $y$ offset and a forecasting time of $7 \ s$ with an average value equaling $6.842 \times 10^{-4} \ \degree$.
 
-The Wind 2-step Bayes model achieved the lowest RMSE for $y$ offset and a forecasting time of $8 \ s$ with an average value equaling $6.958 \times 10^{-4} \ \degree$.
+The lowest RMSE for $y$ offset and a forecasting time of $8 \ s$ is attained by the Wind 2-step Bayes model with an average value of $6.958 \times 10^{-4} \ \degree$.
 
-The 2-step Markov model achieved the lowest RMSE for $y$ offset and a forecasting time of $9 \ s$ with an average value equaling $6.946 \times 10^{-4} \ \degree$.
+For $y$ offset and a forecasting time of $9 \ s$, the 2-step Markov model demonstrates the lowest RMSE with an average value equaling $6.946 \times 10^{-4} \ \degree$.
 
-The Wind 1-step Bayes model achieved the lowest RMSE for $y$ offset and a forecasting time of $10 \ s$ with an average value equaling $6.949 \times 10^{-4} \ \degree$.
+Regarding $y$ offset and a forecasting time of $10 \ s$, the Wind 1-step Bayes model achieves the lowest RMSE   with an average value of $6.949 \times 10^{-4} \ \degree$.
 
 \subsection{Results for $x$ Offset}
 %\label{subsec:longitude_results}
 %\vspace{10pt}
 
-The average RMSE in $\degree$ ($\times 10^{-4}$), for the $x$ offset estimated on the testing dataset by different models, and forecasting times is listed in Table~\ref{tab:best_longitude_RMSE}.
+Table~\ref{tab:best_longitude_RMSE} shows the average RMSE in $\degree$ ($\times 10^{-4}$), for the $x$ offset estimated on the testing dataset by different models and forecasting times.
 
 \begin{table}[!ht]
 	\centering
@@ -687,25 +687,25 @@ The average RMSE in $\degree$ ($\times 10^{-4}$), for the $x$ offset estimated o
 		Wave 2-step Markov & $9.132$ & $\mathbf{9.091}$ & $9.064$ & $9.153$ & $9.135$ \\ \hline
 		Wind 2-step Markov & $\mathbf{8.951}$ & $9.312$ & $9.11$ & $\mathbf{8.947}$ & $9.188$ \\ \hline
 	\end{tabular}
-	\caption{The average RMSE in \degree ($\times 10^{-4}$), for the $x$ offset estimated on the testing dataset by different models, and forecasting times. The numbers in bold indicate the lowest values and best models for each forecasting time.}
+	\caption{The average RMSE in \degree ($\times 10^{-4}$), for the $x$ offset estimated on the testing dataset by different models and forecasting times. The numbers in bold indicate the lowest values and best models for each forecasting time.}
 	\label{tab:best_longitude_RMSE}
 \end{table}
 
-The 2-step Bayes model achieved the lowest RMSE for $x$ offset and a forecasting time of $1$, $2$, and $4 \ s$ with average values equaling $1.504 \times 10^{-4} \ \degree$, $3.735 \times 10^{-4} \ \degree$, and $8.593 \times 10^{-4} \ \degree$ respectively.
+Concerning $x$ offset and a forecasting time of $1$, $2$, and $4 \ s$, the 2-step Bayes model reaches the lowest RMSE. The average values are $1.504 \times 10^{-4} \ \degree$, $3.735 \times 10^{-4} \ \degree$, and $8.593 \times 10^{-4} \ \degree$ respectively.
 
-The 1-step Bayes model achieved the lowest RMSE for $x$ offset and a forecasting time of $3 \ s$ with an average value equaling $7.474 \times 10^{-4} \ \degree$.
+Observing $x$ offset and a forecasting time of $3 \ s$, the 1-step Bayes model exhibits the lowest RMSE with an average value equaling $7.474 \times 10^{-4} \ \degree$.
 
-The Wave 2-step Markov model achieved the lowest RMSE for $x$ offset and a forecasting time of $5$, and $7 \ s$ with average values equaling $8.937 \times 10^{-4} \ \degree$, and $9.091 \times 10^{-4} \ \degree$ respectively.
+The lowest average RMSE values for $x$ offset amount to $8.937 \times 10^{-4} \ \degree$, and $9.091 \times 10^{-4} \ \degree$ for a forecasting time of $5$ and $7 \ s$ respectively. The Wave 2-step Markov model is used for these results.
 
-The Wind 2-step Markov model achieved the lowest RMSE for $x$ offset and a forecasting time of $6$, and $9 \ s$ with average values equaling $8.951 \times 10^{-4} \ \degree$, and $8.947 \times 10^{-4} \ \degree$ respectively.
+When using a forecasting time of $6$ and $9 \ s$, the Wind 2-step Markov model achieves the lowest RMSE for $x$ offset. The average values equal $8.951 \times 10^{-4} \ \degree$, and $8.947 \times 10^{-4} \ \degree$ respectively.
 
-The Wave 1-step Markov model achieved the lowest RMSE for $x$ offset and a forecasting time of $8$, and $10 \ s$ with average values equaling $8.942 \times 10^{-4} \ \degree$, and $8.877 \times 10^{-4} \ \degree$ respectively.
+Viewing $x$ offset and a forecasting time of $8$ and $10 \ s$, the lowest average RMSE values are $8.942 \times 10^{-4} \ \degree$ and $8.877 \times 10^{-4} \ \degree$ respectively. The Wave 1-step Markov model reaches these results.
 
 \subsection{Results for Speed}
 %\label{subsec:speed_results}
 %\vspace{10pt}
 
-The average RMSE in $km/h$, for the speed estimated on the testing dataset by different models, and forecasting times is listed in Table~\ref{tab:best_speed_RMSE}.
+Table~\ref{tab:best_speed_RMSE} contains the average RMSE in $km/h$, for the speed estimated on the testing dataset by different models and forecasting times.
 
 \begin{table}[!ht]
 	\centering
@@ -720,21 +720,21 @@ The average RMSE in $km/h$, for the speed estimated on the testing dataset by di
 		2-step Bayes & $21.41$ & $\mathbf{22.15}$ & $22.86$ & $23.26$ & $23.51$ \\ \hline
 		Wave 2-step Markov & $24.64$ & $23.73$ & $24.0$ & $23.57$ & $\mathbf{23.18}$ \\ \hline
 	\end{tabular}
-	\caption{The average RMSE in $km/h$, for the speed estimated on the testing dataset by different models, and forecasting times. The numbers in bold indicate the lowest values and best models for each forecasting time.}
+	\caption{The average RMSE in $km/h$, for the speed estimated on the testing dataset by different models and forecasting times. The numbers in bold indicate the lowest values and best models for each forecasting time.}
 	\label{tab:best_speed_RMSE}
 \end{table}
 
-The 2-step Bayes model achieved the lowest RMSE for speed and a forecasting time of $1$, $2$, $3$, $4$, $5$, and $7 \ s$ with average values equaling $4.12 \ km/h$, $5.98 \ km/h$, $10.56 \ km/h$, $17.14 \ km/h$, $20.07 \ km/h$, and $22.15 \ km/h$ respectively.
+The 2-step Bayes model demonstrates the lowest RMSE for speed and a forecasting time of $1$, $2$, $3$, $4$, $5$, and $7 \ s$. The average values are $4.12 \ km/h$, $5.98 \ km/h$, $10.56 \ km/h$, $17.14 \ km/h$, $20.07 \ km/h$, and $22.15 \ km/h$ respectively.
 
-The 1-step Bayes model achieved the lowest RMSE for speed and a forecasting time of $6$, $8$, and $9 \ s$ with average values equaling $21.4 \ km/h$, $22.66 \ km/h$, and $23.13 \ km/h$ respectively.
+The 1-step Bayes model represents the lowest RMSE for speed and a forecasting time of $6$, $8$, and $9 \ s$. The values amount to $21.4 \ km/h$, $22.66 \ km/h$, and $23.13 \ km/h$ respectively.
 
-The Wave 2-step Markov model achieved the lowest RMSE for speed and a forecasting time of $10 \ s$ with an average value equaling $23.18 \ km/h$.
+The Wave 2-step Markov model accounts for the lowest RMSE for speed and a forecasting time of $10 \ s$, supported by an average value of $23.18 \ km/h$.
 
 \subsection{Results for Trajectories Estimated Using $x$ and $y$ Offset}
 %\label{subsec:no_abs_results}
 %\vspace{10pt}
 
-Figure~\ref{fig:best_RMSE_traj} contains the average RMSE for all trajectories in the testing dataset generated using different trajectory estimation methods, models, and forecasting times.
+Figure~\ref{fig:best_RMSE_traj} demonstrates the average RMSE for all trajectories in the testing dataset generated using different trajectory estimation methods, models, and forecasting times.
 
 \begin{figure}[!ht]
 	\centering
@@ -743,7 +743,7 @@ Figure~\ref{fig:best_RMSE_traj} contains the average RMSE for all trajectories i
 	\label{fig:best_RMSE_traj}
 \end{figure}
 
-The average RMSE in $\degree$ ($\times 10^{-3}$), for the trajectories in the testing dataset estimated using $x$ and $y$ offset, different models, and forecasting times is listed in Table~\ref{tab:best_no_abs_RMSE}.
+Table~\ref{tab:best_no_abs_RMSE} provides the average RMSE in $\degree$ ($\times 10^{-3}$), for the trajectories in the testing dataset estimated using $x$ and $y$ offset, different models, and forecasting times.
 
 \begin{table}[!ht]
 	\centering
@@ -766,19 +766,19 @@ The average RMSE in $\degree$ ($\times 10^{-3}$), for the trajectories in the te
 	\label{tab:best_no_abs_RMSE}
 \end{table}
 
-The 1-step Bayes model achieved the lowest RMSE for trajectories estimated using $x$ and $y$ offset, and a forecasting time of $1$, $2$, $3$, $5$, and $10 \ s$ with average values equaling $5.207 \times 10^{-3} \ \degree$, $18.164 \times 10^{-3} \ \degree$, $46.026 \times 10^{-3} \ \degree$, $70.401 \times 10^{-3} \ \degree$, and $78.266 \times 10^{-3} \ \degree$ respectively.
+The 1-step Bayes model accounts for the lowest RMSE for trajectories estimated using $x$ and $y$ offset, and a forecasting time of $1$, $2$, $3$, $5$, and $10 \ s$. This is cooroborated by average values of $5.207 \times 10^{-3} \ \degree$, $18.164 \times 10^{-3} \ \degree$, $46.026 \times 10^{-3} \ \degree$, $70.401 \times 10^{-3} \ \degree$, and $78.266 \times 10^{-3} \ \degree$ respectively.
 
-The 2-step Bayes model achieved the lowest RMSE for trajectories estimated using $x$ and $y$ offset, and a forecasting time of $4$, and $7 \ s$ with average values equaling $61.627 \times 10^{-3} \ \degree$, and $73.814 \times 10^{-3} \ \degree$ respectively.
+The 2-step Bayes model shows the lowest RMSE using a forecasting time of $4$ and $7 \ s$ for trajectories estimated using $x$ and $y$ offset. The supporting average values equal $61.627 \times 10^{-3} \ \degree$ and $73.814 \times 10^{-3} \ \degree$ respectively.
 
-The Wind 2-step Bayes model achieved the lowest RMSE for trajectories estimated using $x$ and $y$ offset, and a forecasting time of $6 \ s$ with an average value equaling $72.742 \times 10^{-3} \ \degree$.
+The Wind 2-step Bayes model attains the lowest RMSE for trajectories estimated using $x$ and $y$ offset, and a forecasting time of $6 \ s$ with an average value equaling $72.742 \times 10^{-3} \ \degree$.
 
-The Wind 1-step Bayes model achieved the lowest RMSE for trajectories estimated using $x$ and $y$ offset, and a forecasting time of $8$, and $9 \ s$ with average values equaling $76.48 \times 10^{-3} \ \degree$, and $72.218 \times 10^{-3} \ \degree$ respectively.
+The Wind 1-step Bayes model reaches the lowest RMSE for trajectories estimated using $x$ and $y$ offset, and a forecasting time of $8$ and $9 \ s$. The appropriate average values amount to $76.48 \times 10^{-3} \ \degree$, and $72.218 \times 10^{-3} \ \degree$ respectively.
 
 \subsection{Results for Trajectories Estimated Using Speed, Heading, and Actual Time Intervals}
 %\label{subsec:speed_actual_dir_results}
 %\vspace{10pt}
 
-The average RMSE in $\degree$ ($\times 10^{-2}$), for the trajectories in the testing dataset estimated using speed, heading, and actual time intervals, different models, and forecasting times is listed in Table~\ref{tab:best_speed_actual_dir_RMSE}.
+Table~\ref{tab:best_speed_actual_dir_RMSE} informs of the average RMSE in $\degree$ ($\times 10^{-2}$), for the trajectories in the testing dataset estimated using speed, heading, and actual time intervals, different models, and forecasting times.
 
 \begin{table}[!ht]
 	\centering
@@ -801,13 +801,13 @@ The average RMSE in $\degree$ ($\times 10^{-2}$), for the trajectories in the te
 	\label{tab:best_speed_actual_dir_RMSE}
 \end{table}
 
-The 1-step Bayes model achieved the lowest RMSE for trajectories estimated using speed, heading, and actual time intervals, and a forecasting time of $1$, $2$, $3$, $5$, and $10 \ s$ with average values equaling $1.438 \times 10^{-2} \ \degree$, $1.966 \times 10^{-2} \ \degree$, $3.936 \times 10^{-2} \ \degree$, $6.192 \times 10^{-2} \ \degree$, and $6.938 \times 10^{-2} \ \degree$ respectively.
+The 1-step Bayes model exhibits the lowest RMSE for trajectories estimated using speed, heading, and actual time intervals, and a forecasting time of $1$, $2$, $3$, $5$, and $10 \ s$. The average values validating this statement are $1.438 \times 10^{-2} \ \degree$, $1.966 \times 10^{-2} \ \degree$, $3.936 \times 10^{-2} \ \degree$, $6.192 \times 10^{-2} \ \degree$, and $6.938 \times 10^{-2} \ \degree$ respectively.
 
-The 2-step Bayes model achieved the lowest RMSE for trajectories estimated using speed, heading, and actual time intervals, and a forecasting time of $4$, and $7 \ s$ with average values equaling $5.412 \times 10^{-2} \ \degree$, and $6.52 \times 10^{-2} \ \degree$ respectively.
+The 2-step Bayes model provides the lowest RMSE for trajectories estimated using speed, heading, and actual time intervals, and a forecasting time of $4$ and $7 \ s$. The average values equal $5.412 \times 10^{-2} \ \degree$  and $6.52 \times 10^{-2} \ \degree$ respectively, strengthening this conclusion.
 
-The Wind 2-step Bayes model achieved the lowest RMSE for trajectories estimated using speed, heading, and actual time intervals, and a forecasting time of $6 \ s$ with an average value equaling $6.557 \times 10^{-2} \ \degree$.
+The Wind 2-step Bayes model demonstrates the lowest RMSE for trajectories estimated using speed, heading, and actual time intervals, and a forecasting time of $6 \ s$ with an average value of $6.557 \times 10^{-2} \ \degree$.
 
-The Wind 1-step Bayes model achieved the lowest RMSE for trajectories estimated using speed, heading, and actual time intervals, and a forecasting time of $8$, and $9 \ s$ with average values equaling $6.796 \times 10^{-2} \ \degree$, and $6.453 \times 10^{-2} \ \degree$ respectively.
+The Wind 1-step Bayes model shows the lowest RMSE for trajectories estimated using speed, heading, and actual time intervals, and a forecasting time of $8$, and $9 \ s$. The average values amount to $6.796 \times 10^{-2} \ \degree$ and $6.453 \times 10^{-2} \ \degree$ respectively.
 
 \subsection{Comparison with Existing Neural Network Models}
 
@@ -906,7 +906,7 @@ The authors declare no conflict of interest.
 
 % acknowledgment
 \section*{Funding}
-This work was fully supported by the EU Horizon 2020 project INNO2MARE under the no. 101087348, Ministry of Education, Science and Innovation of Montenegro grant no. 04-082/23-2527/1, and University of Rijeka projects no. uniri-iskusni-tehnic-23-11, uniri-iskusni-tehnic-23-83, and uniri-zip-2103-4-22.
+This work was fully supported by the EU Horizon 2020 project INNO2MARE under the no. 101087348, Ministry of Education, Science and Innovation of Montenegro grant no. 04-082/23-2527/1, and University of Rijeka projects no. uniri-iskusni-tehnic-23-11, uuniri-iskusni-tehnic-23-83, and uniri-zip-2103-4-22.
 
 \appendix
 \section{Transition Matrices For Estimated Variables}
@@ -1234,7 +1234,7 @@ In \bbtitle{2008 11th {I}nternational {C}onference on {I}nformation {F}usion}
 (\byear{2024}).
 {O}to{T}rak - {T}rack your watercraft --- ototrak.com.
 \url{https://www.ototrak.com/en-us}.
-Accessed 15 November 2024.
+Accessed 19 November 2024.
 \end{botherref}
 \endbibitem
 
@@ -1455,6 +1455,103 @@ doi:10.1109/TAC.2023.3330263.
 \endbibitem
 
 %%% 23
+\bibitem{JAFARIZADEH2024107151}
+\begin{barticle}
+\bauthor{\bsnm{Jafarizadeh}, \binits{S.}}
+(\byear{2024}).
+\batitle{{C}onvergence rate of {M}arkov chains over switching distance regular networks}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107151}.
+doi:10.1016/j.jfranklin.2024.107151.
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem{YAO2024107194}
+\begin{barticle}
+\bauthor{\bsnm{Yao}, \binits{J.}},
+\bauthor{\bsnm{Zhai}, \binits{C.}}, \&
+\bauthor{\bsnm{Wang}, \binits{G.}}
+(\byear{2024}).
+\batitle{{S}tabilization of delayed {M}arkovian jump systems with sampled controllers}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107194}.
+doi:10.1016/j.jfranklin.2024.107194.
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem{SHEN2024107250}
+\begin{barticle}
+\bauthor{\bsnm{Shen}, \binits{F.}},
+\bauthor{\bsnm{Wei}, \binits{C.}},
+\bauthor{\bsnm{Qi}, \binits{W.}},
+\bauthor{\bsnm{Cao}, \binits{J.}},
+\bauthor{\bsnm{Cheng}, \binits{J.}},
+\bauthor{\bsnm{Shi}, \binits{K.}},
+\bauthor{\bsnm{Abdel-Aty}, \binits{M.}}, \&
+\bauthor{\bsnm{Qiu}, \binits{X.}}
+(\byear{2024}).
+\batitle{{S}{M}{C} for discrete singular stochastic jump systems under semi-{M}arkov kernel}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107250}.
+doi:10.1016/j.jfranklin.2024.107250.
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem{LIU2024107294}
+\begin{barticle}
+\bauthor{\bsnm{Liu}, \binits{M.}},
+\bauthor{\bsnm{Zhang}, \binits{L.}},
+\bauthor{\bsnm{Zhao}, \binits{N.}},
+\bauthor{\bsnm{Sharaf}, \binits{S.}}, \&
+\bauthor{\bsnm{Li}, \binits{L.}}
+(\byear{2024}).
+\batitle{{R}eachable set control of singular semi-{M}arkov jump multi-agent systems with input delay via state decomposition method}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107294}.
+doi:10.1016/j.jfranklin.2024.107294.
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem{ZHOU2024107251}
+\begin{barticle}
+\bauthor{\bsnm{Zhou}, \binits{L.}},
+\bauthor{\bsnm{Ma}, \binits{Y.}}, \&
+\bauthor{\bsnm{Zou}, \binits{J.}}
+(\byear{2024}).
+\batitle{{R}obust synchronization of {M}arkovian jump complex dynamical networks under link attacks: {D}elay-dependent dynamic event-triggered control approach}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107251}.
+doi:10.1016/j.jfranklin.2024.107251.
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem{ZHANG2024107324}
+\begin{barticle}
+\bauthor{\bsnm{Zhang}, \binits{H.}},
+\bauthor{\bsnm{Xiong}, \binits{L.}},
+\bauthor{\bsnm{Chang}, \binits{H.}},
+\bauthor{\bsnm{Cao}, \binits{J.}}, \&
+\bauthor{\bsnm{Yi}, \binits{Z.}}
+(\byear{2024}).
+\batitle{{D}iscrete event-triggered security control for {M}arkovian {C}{V}{N}{N}s with additive time-varying delays under random deception attacks}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107324}.
+doi:10.1016/j.jfranklin.2024.107324.
+\end{barticle}
+\endbibitem
+
+%%% 29
 \bibitem{2020FortiO}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -1472,7 +1569,7 @@ doi:10.1109/TITS.2021.3123890.
 \end{barticle}
 \endbibitem
 
-%%% 24
+%%% 30
 \bibitem{2022FortiO}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -1490,7 +1587,7 @@ doi:10.1109/TITS.2021.3123890.
 \end{barticle}
 \endbibitem
 
-%%% 25
+%%% 31
 \bibitem{2022Forti1}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -1505,7 +1602,7 @@ doi:10.1109/TAES.2021.3122888.
 \end{barticle}
 \endbibitem
 
-%%% 26
+%%% 32
 \bibitem{2016Ning}
 \begin{barticle}
 \bauthor{\bsnm{Ning}, \binits{J.}}
@@ -1515,7 +1612,7 @@ doi:10.1109/TAES.2021.3122888.
 \end{barticle}
 \endbibitem
 
-%%% 27
+%%% 33
 \bibitem{Ester1996ADA}
 \begin{barticle}
 \bauthor{\bsnm{Ester}, \binits{M.}},
@@ -1531,7 +1628,7 @@ doi:10.5120/739-1038.
 \end{barticle}
 \endbibitem
 
-%%% 28
+%%% 34
 \bibitem{Khan2004RealtimePO}
 \begin{bchapter}
 \bauthor{\bsnm{Khan}, \binits{A.}},
@@ -1544,7 +1641,7 @@ In \bbtitle{24th {I}nternational {C}ongress of the {A}eronautical {S}ciences}.
 \end{bchapter}
 \endbibitem
 
-%%% 29
+%%% 35
 \bibitem{2021Pedroche}
 \begin{barticle}
 \bauthor{\bsnm{Pedroche}, \binits{D.S.}},
@@ -1558,7 +1655,7 @@ doi:10.23919/fusion49465.2021.9626956.
 \end{barticle}
 \endbibitem
 
-%%% 30
+%%% 36
 \bibitem{2013Pallotta}
 \begin{barticle}
 \bauthor{\bsnm{Pallotta}, \binits{G.}},
@@ -1573,7 +1670,7 @@ doi:10.3390/e15062218.
 \end{barticle}
 \endbibitem
 
-%%% 31
+%%% 37
 \bibitem{2020Loi}
 \begin{bchapter}
 \bauthor{\bsnm{Loi}, \binits{N.V.}},
@@ -1589,7 +1686,7 @@ doi:10.1109/SPIN48934.2020.9070885.
 \end{bchapter}
 \endbibitem
 
-%%% 32
+%%% 38
 \bibitem{2014Pallotta}
 \begin{bchapter}
 \bauthor{\bsnm{Pallotta}, \binits{G.}},
@@ -1603,7 +1700,7 @@ In \bbtitle{17th {I}nternational {C}onference on {I}nformation {F}usion ({F}{U}{
 \end{bchapter}
 \endbibitem
 
-%%% 33
+%%% 39
 \bibitem{Varlamis2019ANA}
 \begin{bchapter}
 \bauthor{\bsnm{Varlamis}, \binits{I.}},
@@ -1617,7 +1714,7 @@ In \bbtitle{{E}{D}{B}{T}/{I}{C}{D}{T} {W}orkshops}.
 \end{bchapter}
 \endbibitem
 
-%%% 34
+%%% 40
 \bibitem{10681283}
 \begin{barticle}
 \bauthor{\bsnm{Zong}, \binits{G.}},
@@ -1633,7 +1730,7 @@ doi:10.1109/TVT.2024.3461669.
 \end{barticle}
 \endbibitem
 
-%%% 35
+%%% 41
 \bibitem{10681502}
 \begin{barticle}
 \bauthor{\bsnm{Wang}, \binits{Y.}}, \&
@@ -1646,7 +1743,7 @@ doi:10.1109/TASE.2024.3458176.
 \end{barticle}
 \endbibitem
 
-%%% 36
+%%% 42
 \bibitem{salami2022wind}
 \begin{barticle}
 \bauthor{\bsnm{Salami}, \binits{A.A.}},
@@ -1662,7 +1759,7 @@ doi:10.30765/er.1632.
 \end{barticle}
 \endbibitem
 
-%%% 37
+%%% 43
 \bibitem{https://doi.org/10.48670/moi-00022}
 \begin{barticle}
 \bauthor{\bsnm{{European Union-Copernicus Marine Service}}}
@@ -1671,22 +1768,22 @@ doi:10.30765/er.1632.
 \bjtitle{E.U. Copernicus Marine Service Information (CMEMS). Marine Data Store (MDS)}.
 doi:10.48670/MOI-00022.
 \url{http://dx.doi.org/10.48670/MOI-00022}.
-Accessed 15 November 2024.
+Accessed 19 November 2024.
 \end{barticle}
 \endbibitem
 
-%%% 38
+%%% 44
 \bibitem{rp5Description}
 \begin{botherref}
 \oauthor{\bsnm{rp5}}
 (\byear{2024}).
 {D}efinitions --- rp5.ru.
 \url{https://rp5.ru/docs/descript/en}.
-Accessed 15 November 2024.
+Accessed 19 November 2024.
 \end{botherref}
 \endbibitem
 
-%%% 39
+%%% 45
 \bibitem{Gagniuc}
 \begin{bbook}
 \bauthor{\bsnm{Gagniuc}, \binits{P.}}
@@ -1697,7 +1794,7 @@ doi:10.1002/9781119387596.
 \end{bbook}
 \endbibitem
 
-%%% 40
+%%% 46
 \bibitem{citeulike:1220946}
 \begin{bbook}
 \bauthor{\bsnm{{\O}ksendal}, \binits{B.}}
@@ -1707,7 +1804,7 @@ doi:10.1002/9781119387596.
 \end{bbook}
 \endbibitem
 
-%%% 41
+%%% 47
 \bibitem{Gagniuc2017-jf}
 \begin{bbook}
 \bauthor{\bsnm{Gagniuc}, \binits{P.A.}}
@@ -1719,7 +1816,7 @@ In \bbtitle{{M}arkov chains}
 \end{bbook}
 \endbibitem
 
-%%% 42
+%%% 48
 \bibitem{Parzen1962-oe}
 \begin{bbook}
 \bauthor{\bsnm{Parzen}, \binits{E.}}
@@ -1730,7 +1827,7 @@ In \bbtitle{{M}arkov chains}
 \end{bbook}
 \endbibitem
 
-%%% 43
+%%% 49
 \bibitem{altche2017lstm}
 \begin{bchapter}
 \bauthor{\bsnm{Altch{\'e}}, \binits{F.}}, \&
@@ -1743,7 +1840,7 @@ doi:10.48550/arXiv.1801.07962.
 \end{bchapter}
 \endbibitem
 
-%%% 44
+%%% 50
 \bibitem{liu2014vehicle}
 \begin{bchapter}
 \bauthor{\bsnm{Liu}, \binits{Q.}},

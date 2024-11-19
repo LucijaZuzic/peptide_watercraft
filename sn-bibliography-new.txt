@@ -102,7 +102,7 @@ In \bbtitle{2008 11th {I}nternational {C}onference on {I}nformation {F}usion}
 (\byear{2024}).
 {O}to{T}rak - {T}rack your watercraft --- ototrak.com.
 \url{https://www.ototrak.com/en-us}.
-Accessed 15 November 2024.
+Accessed 19 November 2024.
 \end{botherref}
 \endbibitem
 
@@ -323,6 +323,103 @@ doi:10.1109/TAC.2023.3330263.
 \endbibitem
 
 %%% 23
+\bibitem{JAFARIZADEH2024107151}
+\begin{barticle}
+\bauthor{\bsnm{Jafarizadeh}, \binits{S.}}
+(\byear{2024}).
+\batitle{{C}onvergence rate of {M}arkov chains over switching distance regular networks}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107151}.
+doi:10.1016/j.jfranklin.2024.107151.
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem{YAO2024107194}
+\begin{barticle}
+\bauthor{\bsnm{Yao}, \binits{J.}},
+\bauthor{\bsnm{Zhai}, \binits{C.}}, \&
+\bauthor{\bsnm{Wang}, \binits{G.}}
+(\byear{2024}).
+\batitle{{S}tabilization of delayed {M}arkovian jump systems with sampled controllers}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107194}.
+doi:10.1016/j.jfranklin.2024.107194.
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem{SHEN2024107250}
+\begin{barticle}
+\bauthor{\bsnm{Shen}, \binits{F.}},
+\bauthor{\bsnm{Wei}, \binits{C.}},
+\bauthor{\bsnm{Qi}, \binits{W.}},
+\bauthor{\bsnm{Cao}, \binits{J.}},
+\bauthor{\bsnm{Cheng}, \binits{J.}},
+\bauthor{\bsnm{Shi}, \binits{K.}},
+\bauthor{\bsnm{Abdel-Aty}, \binits{M.}}, \&
+\bauthor{\bsnm{Qiu}, \binits{X.}}
+(\byear{2024}).
+\batitle{{S}{M}{C} for discrete singular stochastic jump systems under semi-{M}arkov kernel}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107250}.
+doi:10.1016/j.jfranklin.2024.107250.
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem{LIU2024107294}
+\begin{barticle}
+\bauthor{\bsnm{Liu}, \binits{M.}},
+\bauthor{\bsnm{Zhang}, \binits{L.}},
+\bauthor{\bsnm{Zhao}, \binits{N.}},
+\bauthor{\bsnm{Sharaf}, \binits{S.}}, \&
+\bauthor{\bsnm{Li}, \binits{L.}}
+(\byear{2024}).
+\batitle{{R}eachable set control of singular semi-{M}arkov jump multi-agent systems with input delay via state decomposition method}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107294}.
+doi:10.1016/j.jfranklin.2024.107294.
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem{ZHOU2024107251}
+\begin{barticle}
+\bauthor{\bsnm{Zhou}, \binits{L.}},
+\bauthor{\bsnm{Ma}, \binits{Y.}}, \&
+\bauthor{\bsnm{Zou}, \binits{J.}}
+(\byear{2024}).
+\batitle{{R}obust synchronization of {M}arkovian jump complex dynamical networks under link attacks: {D}elay-dependent dynamic event-triggered control approach}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107251}.
+doi:10.1016/j.jfranklin.2024.107251.
+\end{barticle}
+\endbibitem
+
+%%% 28
+\bibitem{ZHANG2024107324}
+\begin{barticle}
+\bauthor{\bsnm{Zhang}, \binits{H.}},
+\bauthor{\bsnm{Xiong}, \binits{L.}},
+\bauthor{\bsnm{Chang}, \binits{H.}},
+\bauthor{\bsnm{Cao}, \binits{J.}}, \&
+\bauthor{\bsnm{Yi}, \binits{Z.}}
+(\byear{2024}).
+\batitle{{D}iscrete event-triggered security control for {M}arkovian {C}{V}{N}{N}s with additive time-varying delays under random deception attacks}.
+\bjtitle{Journal of the Franklin Institute},
+\bvolume{361},
+\bfpage{107324}.
+doi:10.1016/j.jfranklin.2024.107324.
+\end{barticle}
+\endbibitem
+
+%%% 29
 \bibitem{2020FortiO}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -340,7 +437,7 @@ doi:10.1109/TITS.2021.3123890.
 \end{barticle}
 \endbibitem
 
-%%% 24
+%%% 30
 \bibitem{2022FortiO}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -358,7 +455,7 @@ doi:10.1109/TITS.2021.3123890.
 \end{barticle}
 \endbibitem
 
-%%% 25
+%%% 31
 \bibitem{2022Forti1}
 \begin{barticle}
 \bauthor{\bsnm{Forti}, \binits{N.}},
@@ -373,7 +470,7 @@ doi:10.1109/TAES.2021.3122888.
 \end{barticle}
 \endbibitem
 
-%%% 26
+%%% 32
 \bibitem{2016Ning}
 \begin{barticle}
 \bauthor{\bsnm{Ning}, \binits{J.}}
@@ -383,7 +480,7 @@ doi:10.1109/TAES.2021.3122888.
 \end{barticle}
 \endbibitem
 
-%%% 27
+%%% 33
 \bibitem{Ester1996ADA}
 \begin{barticle}
 \bauthor{\bsnm{Ester}, \binits{M.}},
@@ -399,7 +496,7 @@ doi:10.5120/739-1038.
 \end{barticle}
 \endbibitem
 
-%%% 28
+%%% 34
 \bibitem{Khan2004RealtimePO}
 \begin{bchapter}
 \bauthor{\bsnm{Khan}, \binits{A.}},
@@ -412,7 +509,7 @@ In \bbtitle{24th {I}nternational {C}ongress of the {A}eronautical {S}ciences}.
 \end{bchapter}
 \endbibitem
 
-%%% 29
+%%% 35
 \bibitem{2021Pedroche}
 \begin{barticle}
 \bauthor{\bsnm{Pedroche}, \binits{D.S.}},
@@ -426,7 +523,7 @@ doi:10.23919/fusion49465.2021.9626956.
 \end{barticle}
 \endbibitem
 
-%%% 30
+%%% 36
 \bibitem{2013Pallotta}
 \begin{barticle}
 \bauthor{\bsnm{Pallotta}, \binits{G.}},
@@ -441,7 +538,7 @@ doi:10.3390/e15062218.
 \end{barticle}
 \endbibitem
 
-%%% 31
+%%% 37
 \bibitem{2020Loi}
 \begin{bchapter}
 \bauthor{\bsnm{Loi}, \binits{N.V.}},
@@ -457,7 +554,7 @@ doi:10.1109/SPIN48934.2020.9070885.
 \end{bchapter}
 \endbibitem
 
-%%% 32
+%%% 38
 \bibitem{2014Pallotta}
 \begin{bchapter}
 \bauthor{\bsnm{Pallotta}, \binits{G.}},
@@ -471,7 +568,7 @@ In \bbtitle{17th {I}nternational {C}onference on {I}nformation {F}usion ({F}{U}{
 \end{bchapter}
 \endbibitem
 
-%%% 33
+%%% 39
 \bibitem{Varlamis2019ANA}
 \begin{bchapter}
 \bauthor{\bsnm{Varlamis}, \binits{I.}},
@@ -485,7 +582,7 @@ In \bbtitle{{E}{D}{B}{T}/{I}{C}{D}{T} {W}orkshops}.
 \end{bchapter}
 \endbibitem
 
-%%% 34
+%%% 40
 \bibitem{10681283}
 \begin{barticle}
 \bauthor{\bsnm{Zong}, \binits{G.}},
@@ -501,7 +598,7 @@ doi:10.1109/TVT.2024.3461669.
 \end{barticle}
 \endbibitem
 
-%%% 35
+%%% 41
 \bibitem{10681502}
 \begin{barticle}
 \bauthor{\bsnm{Wang}, \binits{Y.}}, \&
@@ -514,7 +611,7 @@ doi:10.1109/TASE.2024.3458176.
 \end{barticle}
 \endbibitem
 
-%%% 36
+%%% 42
 \bibitem{salami2022wind}
 \begin{barticle}
 \bauthor{\bsnm{Salami}, \binits{A.A.}},
@@ -530,7 +627,7 @@ doi:10.30765/er.1632.
 \end{barticle}
 \endbibitem
 
-%%% 37
+%%% 43
 \bibitem{https://doi.org/10.48670/moi-00022}
 \begin{barticle}
 \bauthor{\bsnm{{European Union-Copernicus Marine Service}}}
@@ -539,22 +636,22 @@ doi:10.30765/er.1632.
 \bjtitle{E.U. Copernicus Marine Service Information (CMEMS). Marine Data Store (MDS)}.
 doi:10.48670/MOI-00022.
 \url{http://dx.doi.org/10.48670/MOI-00022}.
-Accessed 15 November 2024.
+Accessed 19 November 2024.
 \end{barticle}
 \endbibitem
 
-%%% 38
+%%% 44
 \bibitem{rp5Description}
 \begin{botherref}
 \oauthor{\bsnm{rp5}}
 (\byear{2024}).
 {D}efinitions --- rp5.ru.
 \url{https://rp5.ru/docs/descript/en}.
-Accessed 15 November 2024.
+Accessed 19 November 2024.
 \end{botherref}
 \endbibitem
 
-%%% 39
+%%% 45
 \bibitem{Gagniuc}
 \begin{bbook}
 \bauthor{\bsnm{Gagniuc}, \binits{P.}}
@@ -565,7 +662,7 @@ doi:10.1002/9781119387596.
 \end{bbook}
 \endbibitem
 
-%%% 40
+%%% 46
 \bibitem{citeulike:1220946}
 \begin{bbook}
 \bauthor{\bsnm{{\O}ksendal}, \binits{B.}}
@@ -575,7 +672,7 @@ doi:10.1002/9781119387596.
 \end{bbook}
 \endbibitem
 
-%%% 41
+%%% 47
 \bibitem{Gagniuc2017-jf}
 \begin{bbook}
 \bauthor{\bsnm{Gagniuc}, \binits{P.A.}}
@@ -587,7 +684,7 @@ In \bbtitle{{M}arkov chains}
 \end{bbook}
 \endbibitem
 
-%%% 42
+%%% 48
 \bibitem{Parzen1962-oe}
 \begin{bbook}
 \bauthor{\bsnm{Parzen}, \binits{E.}}
@@ -598,7 +695,7 @@ In \bbtitle{{M}arkov chains}
 \end{bbook}
 \endbibitem
 
-%%% 43
+%%% 49
 \bibitem{altche2017lstm}
 \begin{bchapter}
 \bauthor{\bsnm{Altch{\'e}}, \binits{F.}}, \&
@@ -611,7 +708,7 @@ doi:10.48550/arXiv.1801.07962.
 \end{bchapter}
 \endbibitem
 
-%%% 44
+%%% 50
 \bibitem{liu2014vehicle}
 \begin{bchapter}
 \bauthor{\bsnm{Liu}, \binits{Q.}},
