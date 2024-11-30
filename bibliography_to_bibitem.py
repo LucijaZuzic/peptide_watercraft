@@ -112,6 +112,12 @@ for position_key in sorted_loc:
         type_entry = "otherref"
         print(locations_keys[position_key], "otherref")
     strpr += "\\begin{b" + type_entry + "}\n"
+    if "author" not in entries[locations_keys[position_key]]:
+        entries[locations_keys[position_key]]["author"] = "RDevelopers, R."
+        print("RDevelopers", locations_keys[position_key])
+    if "year" not in entries[locations_keys[position_key]]:
+        entries[locations_keys[position_key]]["year"] = "1901"
+        print("1901", locations_keys[position_key])
     authors_list = entries[locations_keys[position_key]]["author"].split(" and ")
     authors_list = [author.split(",") for author in authors_list]
     authors_list = [[author_part.strip().replace(". ", ".") for author_part in author_surname_firstname] for author_surname_firstname in authors_list]
@@ -136,6 +142,16 @@ for position_key in sorted_loc:
         if letter.isupper() and letter not in replaced_letters:
             title_new = title_new.replace(letter, "{" + letter + "}")
             replaced_letters.add(letter)
+    replaced_letters = set()
+    for letter_ix in range(len(title_new) - 2):
+        letter = title_new[letter_ix]
+        letter_next = title_new[letter_ix + 1]
+        letter_next_next = title_new[letter_ix + 2]
+        if letter == "\\" and letter_next.isalpha() and letter_next_next != "{" and letter + letter_next + letter_next_next not in replaced_letters:
+            print(title_new, letter + letter_next + letter_next_next, "{" + letter + letter_next + "{" + letter_next_next + "}}")
+            title_new = title_new.replace(letter + letter_next + letter_next_next, "{" + letter + letter_next + "{" + letter_next_next + "}}")
+            print(title_new)
+            replaced_letters.add(letter + letter_next + letter_next_next)
     if type_entry == "otherref":
         strpr = strpr.replace("bauthor", "oauthor")
         strpr += title_new + ".\n" 
@@ -168,6 +184,9 @@ for position_key in sorted_loc:
             no_pages.add(locations_keys[position_key])
     if type_entry == "book" or type_entry == "chapter":
         if type_entry == "chapter":
+            if "booktitle" not in entries[locations_keys[position_key]]:
+                entries[locations_keys[position_key]]["booktitle"] = "nobooktitle"
+                print("nobooktitle", locations_keys[position_key])
             book_title_new = entries[locations_keys[position_key]]["booktitle"].replace("{", "").replace("}", "")
             replaced_letters = set()
             for letter in entries[locations_keys[position_key]]["booktitle"]:
@@ -248,6 +267,16 @@ for position_key in sorted_loc:
                 if letter.isupper() and letter not in replaced_letters:
                     title_new = title_new.replace(letter, "{" + letter + "}")
                     replaced_letters.add(letter)
+            replaced_letters = set()
+            for letter_ix in range(len(title_new) - 2):
+                letter = title_new[letter_ix]
+                letter_next = title_new[letter_ix + 1]
+                letter_next_next = title_new[letter_ix + 2]
+                if letter == "\\" and letter_next.isalpha() and letter_next_next != "{" and letter + letter_next + letter_next_next not in replaced_letters:
+                    print(title_new, letter + letter_next + letter_next_next, "{" + letter + letter_next + "{" + letter_next_next + "}}")
+                    title_new = title_new.replace(letter + letter_next + letter_next_next, "{" + letter + letter_next + "{" + letter_next_next + "}}")
+                    print(title_new)
+                    replaced_letters.add(letter + letter_next + letter_next_next)
             value = title_new
         if "pages" == k:
             pages_new = entries[locations_keys[position_key]][k].replace("--", "-").replace(" ", "").split("-")

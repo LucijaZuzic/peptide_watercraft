@@ -1,447 +1,812 @@
-@misc{ototrakOtoTrakTrack,
-	author = {OtoTrak},
-	title = {{O}to{T}rak - {T}rack your watercraft --- ototrak.com},
-	url = {https://www.ototrak.com/en-us},
-	year = {2024},
+@article{McLean2018-jr,
+	title = {trajr: {A}n {R} package for characterisation of animal trajectories},
+	author = {McLean, D. J. and Skowron Volponi, M.},
+	journal = {Ethology},
+	publisher = {Wiley},
+	volume = {124},
+	number = {6},
+	pages = {440--448},
+	month = {jun},
+	year = {2018},
+	copyright = {http://creativecommons.org/licenses/by/4.0/},
+	language = {en},
+	doi = {10.1111/eth.12739},
+	url = {http://dx.doi.org/10.1111/eth.12739}
+}
+
+@article{dumenvcic2022trajectory,
+	title = {{T}rajectory {A}nalysis of {G}riffon {V}ulture in {K}varner {B}ay},
+	author = {Dumen{\v{c}}i{\'c}, S. and {\v{Z}}u{\v{z}}i{\'c}, L. and Bre{\v{s}}, B.},
+	journal = {The Journal of CIEES},
+	volume = {2},
+	number = {2},
+	pages = {36--42},
+	doi = {10.48149/jciees.2022.2.2.6},
+	url = {http://dx.doi.org/10.48149/jciees.2022.2.2.6},
+	year = {2022}
+}
+
+@techreport{Makar2022,
+	title = {{A}naliza putanja zrakoplova kori{\v{s}}tenjem opa{\v{z}}anja iz mre{\v{z}}e {O}pen{S}ky {N}etwork},
+	author = {Makar, D.},
+	year = {2022},
+	url = {https://urn.nsk.hr/urn:nbn:hr:190:547850},
+	institution = {University of Rijeka, Faculty of Enginnering},
 	note = {Accessed}
 }
 
-@article{2013Kazemi,
-	title = {{O}pen data for anomaly detection in maritime surveillance},
-	journal = {Expert Systems with Applications},
-	volume = {40},
-	number = {14},
-	pages = {5719--5729},
-	year = {2013},
-	issn = {0957-4174},
-	doi = {10.1016/j.eswa.2013.04.029},
-	url = {http://dx.doi.org/10.1016/j.eswa.2013.04.029},
-	author = {Kazemi, S. and Abghari, S. and Lavesson, N. and Johnson, H. and Ryman, P.}
+@inproceedings{filjarairplane,
+	title = {{A}irplane {T}rajectory {R}econstruction and {A}nalysis {U}sing {G}{N}{S}{S}-{B}ased {A}{D}{S}-{B} {D}ata: {W}hat to {D}o with the {O}pen {A}ccess {D}ata {U}sing {O}pen-{S}ource {S}oftware},
+	author = {Filjar, R. and Spudi{\'c}, R.},
+	year = {2023},
+	month = {oct},
+	booktitle = {United Nations/Finland Workshop on the Applications of Global Navigation Satellite Systems}
 }
 
-@article{2014Mascaro,
-	author = {Mascaro, S. and Nicholso, A. and Korb, K.},
-	journal = {International Journal of Approximate Reasoning},
-	title = {{A}nomaly detection in vessel tracks using {B}ayesian networks},
-	year = {2014},
-	month = {jan},
-	pages = {84--98},
-	volume = {55},
-	doi = {10.1016/j.ijar.2013.03.012},
-	url = {http://dx.doi.org/10.1016/j.ijar.2013.03.012}
-}
-
-@inproceedings{2008Laxhammar,
-	author = {Laxhammar, R.},
-	booktitle = {2008 11th International Conference on Information Fusion},
-	title = {{A}nomaly detection for sea surveillance},
-	year = {2008},
-	month = {jun},
-	pages = {1--8}
-}
-
-@article{2009Chandola,
-	author = {Chandola, V. and Banerjee, A. and Kumar, V.},
-	journal = {ACM Comput. Surv.},
-	title = {{A}nomaly {D}etection: {A} {S}urvey},
-	year = {2009},
-	month = {jul},
-	volume = {41},
-	doi = {10.1145/1541880.1541882},
-	url = {http://dx.doi.org/10.1145/1541880.1541882}
-}
-
-@inproceedings{2011Martineau,
-	author = {Martineau, E. and Roy, J.},
-	booktitle = {Defence Research and Development Canada Valcartier (Quebec)},
-	title = {{M}aritime {A}nomaly {D}etection: {D}omain {I}ntroduction and {R}eview of {S}elected {L}iterature},
-	year = {2011},
-	month = {jan}
-}
-
-@article{2008Roy,
-	author = {Roy, J.},
-	journal = {Proc SPIE},
-	title = {{A}nomaly detection in the maritime domain},
-	year = {2008},
+@article{Gultepe2019,
+	author = {Gultepe, I. and Sharman, R. and Williams, P. D. and Zhou, B. and Ellrod, G. P. and Minnis, P. and Trier, S. and Griffin, S. and Yum, S. S. and Gharabaghi, B. and Feltz, W. and Temimi, M. and Dimri, A. P. and Dietz, S. and Fran{\c{c}}a, G. B. and Almeida, M. V. and Albquerque, F. and Pu, Z. and Kneringer, P. and Weston, M. and Chuang, H. Y. and Thobois, L.},
+	title = {{A} {R}eview of {H}igh {I}mpact {W}eather for {A}viation {M}eteorology},
+	journal = {Pure and Applied Geophysics},
+	year = {2019},
 	month = {may},
-	doi = {10.1117/12.776230},
-	url = {http://dx.doi.org/10.1117/12.776230}
+	day = {01},
+	volume = {176},
+	number = {5},
+	pages = {1869--1921},
+	doi = {10.1007/s00024-019-02168-6},
+	url = {http://dx.doi.org/10.1007/s00024-019-02168-6}
 }
 
-@article{2022Kim,
-	author = {Kim, Y. J. and Lee, J. S. and Pititto, A. and Falco, L. and Lee, M. S. and Yoon, K. K. and Cho, I. S.},
-	title = {{M}aritime {T}raffic {E}valuation {U}sing {S}patial-{T}emporal {D}ensity {A}nalysis {B}ased on {B}ig {A}{I}{S} {D}ata},
-	journal = {Applied Sciences},
-	volume = {12},
-	year = {2022},
-	number = {21},
-	article-number = {11246},
-	issn = {2076-3417},
-	doi = {10.3390/app122111246},
-	url = {http://dx.doi.org/10.3390/app122111246}
-}
-
-@article{2017Fu,
-	author = {Fu, P. and Wang, H. and Liu, K. and Hu, X. and Zhang, H.},
-	journal = {IEEE Access},
-	title = {{F}inding {A}bnormal {V}essel {T}rajectories {U}sing {F}eature {L}earning},
-	year = {2017},
-	volume = {5},
-	number = {},
-	pages = {7898--7909},
-	doi = {10.1109/ACCESS.2017.2698208},
-	url = {http://dx.doi.org/10.1109/ACCESS.2017.2698208}
-}
-
-@article{2021Pedroche,
-	author = {Pedroche, D. S. and Herrero, D. A. and Herrero, J. G. and Lopez, J. M. M.},
-	journal = {2021 IEEE 24th International Conference on Information Fusion (FUSION)},
-	title = {{C}lustering of maritime trajectories with {A}{I}{S} features for context learning},
-	year = {2021},
-	month = {nov},
-	doi = {10.23919/fusion49465.2021.9626956},
-	publisher = {IEEE},
-	url = {http://dx.doi.org/10.23919/fusion49465.2021.9626956}
-}
-
-@article{BERTAZZI2025104892,
-	title = {{O}nline algorithms for the multi-vehicle inventory-routing problem with real-time demands},
-	journal = {Transportation Research Part C: Emerging Technologies},
-	volume = {170},
-	pages = {104892},
-	year = {2025},
-	issn = {0968-090X},
-	doi = {10.1016/j.trc.2024.104892},
-	url = {http://dx.doi.org/10.1016/j.trc.2024.104892},
-	author = {Bertazzi, L. and Chagas, G. O. and Coelho, L. C. and Lagan{\'a}, D. and Vocaturo, F.}
-}
-
-@article{YU2025104931,
-	title = {{D}ynamic characteristics of commercial {A}daptive {C}ruise {C}ontrol across driving situations: {R}esponse time, string stability, and asymmetric behavior},
-	journal = {Transportation Research Part C: Emerging Technologies},
-	volume = {170},
-	pages = {104931},
-	year = {2025},
-	issn = {0968-090X},
-	doi = {10.1016/j.trc.2024.104931},
-	url = {http://dx.doi.org/10.1016/j.trc.2024.104931},
-	author = {Yu, H. and Yeo, H.}
-}
-
-@article{GUAN2025104914,
-	title = {{D}ynamic lane management for emerging mixed traffic with semi-autonomous vehicles},
-	journal = {Transportation Research Part C: Emerging Technologies},
-	volume = {170},
-	pages = {104914},
-	year = {2025},
-	issn = {0968-090X},
-	doi = {10.1016/j.trc.2024.104914},
-	url = {http://dx.doi.org/10.1016/j.trc.2024.104914},
-	author = {Guan, H. and Meng, Q. and Chen, X.}
-}
-
-@article{BEZA2025104898,
-	title = {{F}rom lane-less to lane-free: {I}mplications in the era of automated vehicles},
-	journal = {Transportation Research Part C: Emerging Technologies},
-	volume = {170},
-	pages = {104898},
-	year = {2025},
-	issn = {0968-090X},
-	doi = {10.1016/j.trc.2024.104898},
-	url = {http://dx.doi.org/10.1016/j.trc.2024.104898},
-	author = {Beza, A. D. and Xie, Z. and Ramezani, M. and Levinson, D.}
-}
-
-@article{BOUKHARI2019236,
-	title = {{T}wo longitudinal fault tolerant control architectures for an autonomous vehicle},
-	journal = {Mathematics and Computers in Simulation},
-	volume = {156},
-	pages = {236--253},
-	year = {2019},
-	issn = {0378-4754},
-	doi = {10.1016/j.matcom.2018.08.002},
-	url = {http://dx.doi.org/10.1016/j.matcom.2018.08.002},
-	author = {Boukhari, M. R. and Chaibet, A. and Boukhnifer, M. and Glaser, S.}
-}
-
-@article{HERMAN20102317,
-	title = {{M}odified set-point controller for underwater vehicles},
-	journal = {Mathematics and Computers in Simulation},
-	volume = {80},
-	number = {12},
-	pages = {2317--2328},
-	year = {2010},
-	issn = {0378-4754},
-	doi = {10.1016/j.matcom.2010.05.011},
-	url = {http://dx.doi.org/10.1016/j.matcom.2010.05.011},
-	author = {Herman, P.}
-}
-
-@article{HERMAN2020175,
-	title = {{T}rajectory tracking control algorithm in terms of quasi-velocities for a class of vehicles},
-	journal = {Mathematics and Computers in Simulation},
-	volume = {172},
-	pages = {175--190},
+@article{csl-202004-0019,
+	author = {Filjar, R. and Sklebar, I. and Horvat, M.},
+	title = {{A} {C}omparison of {M}achine {L}earning-{B}ased {I}ndividual {M}obility {C}lassification {M}odels {D}eveloped on {S}ensor {R}eadings from {L}oosely {A}ttached {S}martphones},
+	journal = {{C}ommunications - {S}cientific {L}etters of the {U}niversity of {Z}ilina},
 	year = {2020},
-	issn = {0378-4754},
-	doi = {10.1016/j.matcom.2019.12.012},
-	url = {http://dx.doi.org/10.1016/j.matcom.2019.12.012},
-	author = {Herman, P. and Adamski, W.}
+	volume = {22},
+	number = {4},
+	pages = {153--162},
+	keywords = {mobility classification; smartphone; inertial sensor; statistical learning},
+	issn = {13354205},
+	doi = {10.26552/com.C.2020.4.153-162},
+	url = {http://dx.doi.org/10.26552/com.C.2020.4.153-162}
 }
 
-@article{FU20231,
-	title = {{I}terative learning control for {U}{A}{V}s formation based on point-to-point trajectory update tracking},
-	journal = {Mathematics and Computers in Simulation},
-	volume = {209},
-	pages = {1--15},
-	year = {2023},
-	issn = {0378-4754},
-	doi = {10.1016/j.matcom.2023.01.038},
-	url = {http://dx.doi.org/10.1016/j.matcom.2023.01.038},
-	author = {Fu, X. and Peng, J.}
-}
-
-@article{XU2022603,
-	title = {{C}ontrol principle and error estimation for inverse trajectory method under locating error with optimization},
-	journal = {Mathematics and Computers in Simulation},
-	volume = {201},
-	pages = {603--615},
-	year = {2022},
-	issn = {0378-4754},
-	doi = {10.1016/j.matcom.2021.04.009},
-	url = {http://dx.doi.org/10.1016/j.matcom.2021.04.009},
-	author = {Xu, S. and Cao, J. and Li, Z. and Qian, W.}
-}
-
-@article{2019Hanyang,
-	author = {Hanyang, Z. and Xin, S. and Zhenguo, Y.},
-	journal = {2019 IEEE 4th International Conference on Big Data Analytics (ICBDA)},
-	title = {{V}essel {S}ailing {P}atterns {A}nalysis from {S}-{A}{I}{S} {D}ata {D}ased on {K}-means {C}lustering {A}lgorithm},
-	year = {2019},
-	month = {mar},
-	doi = {10.1109/icbda.2019.8713231},
-	url = {http://dx.doi.org/10.1109/icbda.2019.8713231},
-	publisher = {IEEE}
-}
-
-@article{2018Coscia,
-	author = {Coscia, P. and Braca, P. and Millefiori, L. M. and Palmieri, F. A. N. and Willett, P.},
-	journal = {IEEE Transactions on Aerospace and Electronic Systems},
-	title = {{M}ultiple {O}rnstein-{U}hlenbeck {P}rocesses for {M}aritime {T}raffic {G}raph {R}epresentation},
-	year = {2018},
-	volume = {54},
-	number = {5},
-	pages = {2158--2170},
-	doi = {10.1109/TAES.2018.2808098},
-	url = {http://dx.doi.org/10.1109/TAES.2018.2808098}
-}
-
-@article{2018dAfflisio1,
-	author = {d'Afflisio, E. and Braca, P. and Millefiori, L. M. and Willett, P.},
-	journal = {IEEE Transactions on Signal Processing},
-	title = {{D}etecting {A}nomalous {D}eviations {F}rom {S}tandard {M}aritime {R}outes {U}sing the {O}rnstein-{U}hlenbeck {P}rocess},
-	year = {2018},
-	volume = {66},
-	number = {24},
-	pages = {6474--6487},
-	doi = {10.1109/TSP.2018.2875887},
-	url = {http://dx.doi.org/10.1109/TSP.2018.2875887}
-}
-
-@inproceedings{Ester1996ADA,
-	title = {{A} {D}ensity-{B}ased {A}lgorithm for {D}iscovering {C}lusters in {L}arge {S}patial {D}atabases with {N}oise},
-	author = {Ester, M. and Kriegel, H. P. and Sander, J. and Xu, X.},
-	journal = {Knowledge Discovery and Data Mining},
-	year = {1996},
-	volume = {96},
-	number = {34},
-	pages = {226--231},
-	booktitle = {KDD'96: Proceedings of the Second International Conference on Knowledge Discovery and Data Mining}
-}
-
-@inproceedings{Khan2004RealtimePO,
-	title = {{R}eal-time prediction of ship motion and attitude using advanced prediction techniques},
-	author = {Khan, A. and Bil, C. and Marion, K. E. and Crozier, M.},
-	year = {2004},
-	booktitle = {24th International Congress of the Aeronautical Sciences},
-	url = {https://api.semanticscholar.org/CorpusID:33398877}
-}
-
-@article{2023Li,
-	author = {Li, J. and Liu, J. and Zhang, X. and Li, X. and Wang, J. and Wu, Z.},
-	journal = {2023 7th International Conference on Transportation Information and Safety (ICTIS)},
-	title = {{A} {N}ovel {H}ybrid {A}pproach for {D}etecting {A}bnormal {V}essel {B}ehavior in {M}aritime {T}raffic},
-	year = {2023},
-	month = {aug},
-	doi = {10.1109/ictis60134.2023.10243728},
-	publisher = {IEEE},
-	url = {http://dx.doi.org/10.1109/ictis60134.2023.10243728}
-}
-
-@inproceedings{2014Wang,
-	author = {Wang, X. and Liu, X. and Liu, B. and de Souza, E. N. and Matwin, S.},
-	booktitle = {2014 IEEE International Conference on Big Data (Big Data)},
-	title = {{V}essel route anomaly detection with {H}adoop {M}ap{R}educe},
-	year = {2014},
-	volume = {},
-	number = {},
-	pages = {25--30},
-	doi = {10.1109/BigData.2014.7004464},
-	url = {http://dx.doi.org/10.1109/BigData.2014.7004464}
-}
-
-@inproceedings{2015Pallotta,
-	author = {Pallotta, G. and Jousselme, A. L.},
-	booktitle = {2015 18th International Conference on Information Fusion (Fusion)},
-	title = {{D}ata-driven detection and context-based classification of maritime anomalies},
-	year = {2015},
-	pages = {1152--1159}
-}
-
-@article{2018Lei,
-	author = {Lei, B. and Mingchao, D.},
-	journal = {2018 4th International Conference on Control, Automation and Robotics (ICCAR)},
-	title = {{A} distance-based trajectory outlier detection method on maritime traffic data},
-	year = {2018},
-	month = {apr},
-	doi = {10.1109/iccar.2018.8384697},
-	publisher = {IEEE},
-	url = {http://dx.doi.org/10.1109/iccar.2018.8384697}
-}
-
-@inproceedings{2013Pallotta2,
-	author = {Pallotta, G. and Vespe, M. and Bryan, K.},
-	booktitle = {International COST MOVE Workshop on Moving Objects at Sea},
-	title = {{T}raffic {R}oute {E}xtraction and {A}nomaly {D}etection from {A}{I}{S} {D}ata},
-	year = {2013},
-	pages = {1--4},
-	month = {jun},
-	doi = {10.3390/s17081792},
-	url = {http://dx.doi.org/10.3390/s17081792}
-}
-
-@inproceedings{2011Laxhammar,
-	author = {Laxhammar, R.},
-	title = {{A}nomaly detection in trajectory data for surveillance applications},
-	year = {2011},
-	institution = {{\"O}rebro University, School of Science and Technology},
-	number = {19},
-	pages = {130},
-	address = {{\"O}rebro},
-	publisher = {{\"O}rebro University},
-	school = {{\"O}rebro University, School of Science and Technology},
-	booktitle = {Studies from the school of science and technology at {\"O}rebro university}
-}
-
-@inbook{Vries2013,
-	author = {Vries, G. and van Someren, M.},
-	pages = {105--118},
-	publisher = {Springer New York},
-	title = {{R}ecognizing {V}essel {M}ovements from {H}istorical {D}ata},
-	year = {2013},
-	address = {New York, NY},
-	isbn = {978-1-4614-6230-9},
-	booktitle = {Situation Awareness with Systems of Systems},
-	doi = {10.1007/978-1-4614-6230-9\_7},
-	url = {http://dx.doi.org/10.1007/978-1-4614-6230-9\_7}
-}
-
-@inproceedings{2015Liu,
-	author = {Liu, B. and de Souza, E. N. and Hilliard, C. and Matwin, S.},
-	booktitle = {2015 18th International Conference on Information Fusion (Fusion)},
-	title = {{S}hip movement anomaly detection using specialized distance measures},
-	year = {2015},
-	pages = {1113--1120}
-}
-
-@inproceedings{2012Kowalska,
-	author = {Kowalska, K. and Peel, L.},
-	booktitle = {2012 15th International Conference on Information Fusion},
-	title = {{M}aritime anomaly detection using {G}aussian {P}rocess active learning},
-	year = {2012},
-	pages = {1164--1171}
-}
-
-@inproceedings{2013Guillarme,
-	author = {La Guillarme, N. and Lerouvreur, X.},
-	booktitle = {Proceedings of the 16th International Conference on Information Fusion},
-	title = {{U}nsupervised extraction of knowledge from {S}-{A}{I}{S} data for maritime situational awareness},
-	year = {2013},
-	pages = {2025--2032}
-}
-
-@inproceedings{2015Sun,
-	author = {Sun, F. and Deng, Y. and Deng, F. and Zhu, Q. and Chu, H.},
-	booktitle = {2015 11th International Conference on Natural Computation (ICNC)},
-	title = {{U}nsupervised maritime traffic pattern extraction from spatio-temporal data},
-	year = {2015},
-	pages = {1218--1223},
-	doi = {10.1109/ICNC.2015.7378165},
-	url = {http://dx.doi.org/10.1109/ICNC.2015.7378165}
-}
-
-@article{Li2017ADR,
-	title = {{A} {D}imensionality {R}eduction-{B}ased {M}ulti-{S}tep {C}lustering {M}ethod for {R}obust {V}essel {T}rajectory {A}nalysis},
-	author = {Li, H. and Liu, J. and Liu, R. W. and Xiong, N. N. and Wu, K. and Kim, T. h.},
-	journal = {Sensors (Basel, Switzerland)},
-	year = {2017},
-	volume = {17},
-	doi = {10.3390/s17081792},
-	url = {http://dx.doi.org/10.3390/s17081792}
-}
-
-@article{2021Botts,
-	author = {Botts, C. H.},
-	journal = {SN Computer Science},
-	title = {{A} {N}ovel {M}etric for {D}etecting {A}nomalous {S}hip {B}ehavior {U}sing a {V}ariation of the {D}{B}{S}{C}{A}{N} {C}lustering {A}lgorithm},
+@book{Garcia_Ceja2021-tw,
+	title = {{B}ehavior analysis with machine learning using {R}},
+	author = {Garcia Ceja, E.},
+	publisher = {Chapman \& Hall/CRC},
+	series = {Chapman \& Hall/CRC The R Series},
+	month = {nov},
 	year = {2021},
-	issn = {2661-8907},
-	month = {aug},
-	number = {5},
+	address = {Philadelphia, PA},
+	language = {en}
+}
+
+@inproceedings{Bosson2018,
+	author = {Bosson, C. and Nikoleris, T.},
+	year = {2018},
+	month = {01},
+	pages = {},
+	booktitle = {2018 AIAA Information Systems-AIAA Infotech},
+	title = {{S}upervised {L}earning {A}pplied to {A}ir {T}raffic {T}rajectory {C}lassification},
+	doi = {10.2514/6.2018-1637},
+	url = {http://dx.doi.org/10.2514/6.2018-1637}
+}
+
+@article{Kegl2013,
+	title = {{T}he return of {A}da{B}oost.{M}{H}: multi-class {H}amming trees},
+	author = {K{\'e}gl, B.},
+	year = {2013},
+	primaryclass = {cs.LG},
+	eprint = {1312.6086},
+	journal = {International Conference on Learning Representations},
+	doi = {10.48550/arXiv.1312.6086},
+	url = {http://dx.doi.org/10.48550/arXiv.1312.6086}
+}
+
+@article{Fix1989,
+	author = {Fix, E. and Hodges, J. L.},
+	journal = {International Statistical Review},
+	title = {{D}iscriminatory {A}nalysis. {N}onparametric {D}iscrimination: {C}onsistency {P}roperties},
+	year = {1989},
+	number = {3},
+	pages = {238--247},
+	volume = {57},
+	publisher = {[Wiley, International Statistical Institute (ISI)]},
+	url = {http://dx.doi.org/10.2307/1403797},
+	doi = {10.2307/1403797}
+}
+
+@article{Cover1967,
+	author = {Cover, T. M. and Hart, P. E.},
+	journal = {IEEE Trans. Inf. Theory},
+	title = {{N}earest neighbor pattern classification},
+	year = {1967},
+	month = {jan},
+	number = {1},
+	pages = {21--27},
+	volume = {13},
+	url = {http://dx.doi.org/10.1109/TIT.1967.1053964},
+	doi = {10.1109/TIT.1967.1053964},
+	copyright = {https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html},
+	publisher = {Institute of Electrical and Electronics Engineers (IEEE)}
+}
+
+@article{Hastie2009,
+	author = {Hastie, T. and Rosset, S. and Zhu, J. and Zou, H.},
+	journal = {Stat. Interface},
+	title = {{M}ulti-class {A}da{B}oost},
+	year = {2009},
+	number = {3},
+	pages = {349--360},
 	volume = {2},
-	doi = {10.1007/s42979-021-00804-4},
+	publisher = {International Press of Boston},
+	doi = {10.4310/SII.2009.v2.n3.a8},
+	url = {http://dx.doi.org/10.4310/SII.2009.v2.n3.a8}
+}
+
+@book{Everitt2011,
+	author = {Everitt, B. S. and Landau, S. and Leese, M. and Stahl, D.},
+	publisher = {Wiley},
+	address = {Hoboken, New Jersey, United States of America},
+	title = {{C}luster {A}nalysis},
+	year = {2011},
+	isbn = {9780470978443},
+	series = {Wiley Series in Probability and Statistics},
+	lccn = {2010037932},
+	url = {https://books.google.hr/books?id=w3bE1kqd-48C}
+}
+
+@article{Hall2008,
+	author = {Hall, P. and Park, B. U. and Samworth, R. J.},
+	journal = {Ann. Stat.},
+	title = {{C}hoice of neighbor order in nearest-neighbor classification},
+	year = {2008},
+	month = {oct},
+	number = {5},
+	pages = {2135--2152},
+	volume = {36},
+	url = {http://dx.doi.org/10.1214/07-AOS537},
+	doi = {10.1214/07-AOS537},
+	publisher = {Institute of Mathematical Statistics}
+}
+
+@article{Kuhn2007,
+	title = {caret: {C}lassification and {R}egression {T}raining},
+	url = {http://dx.doi.org/10.32614/cran.package.caret},
+	doi = {10.32614/cran.package.caret},
+	journal = {CRAN: Contributed Packages},
+	publisher = {The R Foundation},
+	author = {Kuhn, M.},
+	year = {2007},
+	month = {oct}
+}
+
+@book{Rasmussen2005,
+	author = {Rasmussen, C. E. and Williams, C. K. I.},
+	publisher = {MIT Press},
+	address = {Cambridge, Massachusetts},
+	title = {{G}aussian processes for machine learning},
+	year = {2005},
+	month = {nov},
+	series = {Adaptive Computation and Machine Learning series}
+}
+
+@book{Liu2010,
+	author = {Liu, W. and Principe, J. C. and Haykin, S. S.},
+	publisher = {Wiley-Blackwell},
+	title = {{K}ernel adaptive filtering},
+	year = {2010},
+	address = {Hoboken, NJ},
+	month = {feb},
+	series = {Adaptive and Cognitive Dynamic Systems: Signal Processing, Learning, Communications and Control}
+}
+
+@article{Karatzoglou2004,
+	title = {kernlab: {K}ernel-{B}ased {M}achine {L}earning {L}ab},
+	url = {http://dx.doi.org/10.32614/CRAN.package.kernlab},
+	doi = {10.32614/CRAN.package.kernlab},
+	journal = {CRAN: Contributed Packages},
+	publisher = {The R Foundation},
+	author = {Karatzoglou, A. and Smola, A. and Hornik, K.},
+	year = {2004}
+}
+
+@article{Williams1998,
+	author = {Williams, C. K. I. and Barber, D.},
+	journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+	title = {{B}ayesian classification with {G}aussian processes},
+	year = {1998},
+	volume = {20},
+	number = {12},
+	pages = {1342--1351},
+	doi = {10.1109/34.735807},
+	url = {http://dx.doi.org/10.1109/34.735807}
+}
+
+@inproceedings{Ho1995,
+	author = {Ho, T. K.},
+	booktitle = {Proceedings of 3rd International Conference on Document Analysis and Recognition},
+	title = {{R}andom decision forests},
+	year = {1995},
+	pages = {278--282},
+	volume = {1},
+	doi = {10.1109/ICDAR.1995.598994},
+	url = {http://dx.doi.org/10.1109/ICDAR.1995.598994}
+}
+
+@article{Kleinberg1990,
+	author = {Kleinberg, E. M.},
+	journal = {Annals of Mathematics and Artificial Intelligence},
+	title = {{S}tochastic discrimination},
+	year = {1990},
+	month = {sep},
+	number = {1-4},
+	pages = {207--239},
+	volume = {1},
 	publisher = {Springer Science and Business Media LLC},
-	url = {http://dx.doi.org/10.1007/s42979-021-00804-4}
+	url = {http://dx.doi.org/10.1007/BF01531079},
+	doi = {10.1007/BF01531079}
 }
 
-@article{shanmugaraj2024smart,
-	title = {{S}mart heart disease prediction and amalgamation tracking system},
-	author = {Shanmugaraj, A. K. and Nagaradjane, A. and Candassamy, A. and Dhamodharan, K.},
-	journal = {Engineering Review},
-	volume = {44},
+@article{Kleinberg1996,
+	author = {Kleinberg, E. M.},
+	journal = {Ann. Stat.},
+	title = {{A}n overtraining-resistant stochastic modeling method for pattern recognition},
+	year = {1996},
+	month = {dec},
+	number = {6},
+	pages = {2319--2349},
+	volume = {24},
+	publisher = {Institute of Mathematical Statistics},
+	url = {http://dx.doi.org/10.1214/aos/1032181157},
+	doi = {10.1214/aos/1032181157}
+}
+
+@article{Kleinberg2000,
+	author = {Kleinberg, E. M.},
+	journal = {IEEE Trans. Pattern Anal. Mach. Intell.},
+	title = {{O}n the algorithmic implementation of stochastic discrimination},
+	year = {2000},
+	month = {may},
+	number = {5},
+	pages = {473--490},
+	volume = {22},
+	copyright = {https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html},
+	publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+	url = {http://dx.doi.org/10.1109/34.857004},
+	doi = {10.1109/34.857004}
+}
+
+@article{Breiman2001,
+	author = {Breiman, L.},
+	journal = {Machine Learning},
+	title = {{R}andom {F}orests},
+	year = {2001},
 	number = {1},
-	pages = {14--24},
+	pages = {5--32},
+	volume = {45},
+	publisher = {Springer Nature},
+	url = {http://dx.doi.org/10.1023/A:1010933404324},
+	doi = {10.1023/A:1010933404324}
+}
+
+@article{Breiman2002,
+	title = {random{F}orest: {B}reiman and {C}utlers {R}andom {F}orests for {C}lassification and {R}egression},
+	url = {http://dx.doi.org/10.32614/CRAN.package.randomForest},
+	doi = {10.32614/CRAN.package.randomForest},
+	journal = {CRAN: Contributed Packages},
+	publisher = {The R Foundation},
+	author = {Breiman, L. and Cutler, A. and Liaw, A. and Wiener, M.},
+	year = {2002}
+}
+
+@article{Amit1997,
+	author = {Amit, Y. and Geman, D.},
+	journal = {Neural Comput.},
+	title = {{S}hape quantization and recognition with randomized trees},
+	year = {1997},
+	month = {oct},
+	number = {7},
+	pages = {1545--1588},
+	volume = {9},
+	publisher = {MIT Press - Journals},
+	address = {Cambridge, Massachusetts},
+	url = {http://dx.doi.org/10.1162/neco.1997.9.7.1545},
+	doi = {10.1162/neco.1997.9.7.1545}
+}
+
+@article{Cybenko1989,
+	author = {Cybenko, G.},
+	journal = {Mathematics of Control, Signals and Systems},
+	title = {{A}pproximation by superpositions of a sigmoidal function},
+	year = {1989},
+	issn = {1435-568X},
+	month = {dec},
+	number = {4},
+	pages = {303--314},
+	volume = {2},
+	day = {01},
+	doi = {10.1007/BF02551274},
+	url = {http://dx.doi.org/10.1007/BF02551274}
+}
+
+@article{Linnainmaa1976,
+	author = {Linnainmaa, S.},
+	journal = {BIT Numerical Mathematics},
+	title = {{T}aylor expansion of the accumulated rounding error},
+	year = {1976},
+	issn = {1572-9125},
+	month = {jun},
+	number = {2},
+	pages = {146--160},
+	volume = {16},
+	day = {01},
+	doi = {10.1007/BF01931367},
+	url = {http://dx.doi.org/10.1007/BF01931367}
+}
+
+@article{Kelley1960,
+	author = {Kelley, H. J.},
+	journal = {ARS J.},
+	title = {{G}radient theory of optimal flight paths},
+	year = {1960},
+	month = {oct},
+	number = {10},
+	pages = {947--954},
+	volume = {30},
+	publisher = {American Institute of Aeronautics and Astronautics (AIAA)},
+	doi = {10.2514/8.5282},
+	url = {http://dx.doi.org/10.2514/8.5282}
+}
+
+@book{Rosenblatt1962,
+	author = {Rosenblatt, F.},
+	publisher = {Spartan books},
+	address = {Lymington, Hampshire, United Kingdom},
+	title = {{P}rinciples of {N}eurodynamics: {P}erceptrons and the {T}heory of {B}rain {M}echanisms},
+	year = {1962},
+	series = {Cornell Aeronautical Laboratory. Report no. VG-1196-G-8},
+	lccn = {62012882},
+	url = {https://books.google.hr/books?id=7FhRAAAAMAAJ}
+}
+
+@article{Werbos1970,
+	author = {Werbos, P.},
+	pages = {762--770},
+	publisher = {Springer},
+	address = {Berlin/Heidelberg, Germany},
+	title = {{A}pplications of advances in nonlinear sensitivity analysis},
+	year = {1970},
+	isbn = {3-540-11691-5},
+	month = {jan},
+	volume = {38},
+	doi = {10.1007/BFb0006203},
+	url = {http://dx.doi.org/10.1007/BFb0006203},
+	journal = {System Modeling and Optimization}
+}
+
+@inbook{Rumelhart1987,
+	author = {Rumelhart, D. E. and McClelland, J. L.},
+	pages = {318--362},
+	publisher = {MIT Press},
+	address = {Cambridge, Massachusetts},
+	title = {{L}earning {I}nternal {R}epresentations by {E}rror {P}ropagation},
+	year = {1987},
+	booktitle = {Parallel Distributed Processing: Explorations in the Microstructure of Cognition: Foundations}
+}
+
+@article{Blansche2019,
+	title = {fdm2id: {D}ata {M}ining and {R} {P}rogramming for {B}eginners},
+	url = {http://dx.doi.org/10.32614/CRAN.package.fdm2id},
+	doi = {10.32614/CRAN.package.fdm2id},
+	journal = {CRAN: Contributed Packages},
+	publisher = {The R Foundation},
+	author = {Blansch{\'e}, A.},
+	year = {2019}
+}
+
+@article{Ripley2009,
+	title = {nnet: {F}eed-{F}orward {N}eural {N}etworks and {M}ultinomial {L}og-{L}inear {M}odels},
+	url = {http://dx.doi.org/10.32614/CRAN.package.nnet},
+	doi = {10.32614/CRAN.package.nnet},
+	journal = {CRAN: Contributed Packages},
+	publisher = {The R Foundation},
+	author = {Ripley, B.},
+	year = {2009}
+}
+
+@inproceedings{Boser1992,
+	author = {Boser, Bernhard E. and Guyon, Isabelle M. and Vapnik, Vladimir N.},
+	booktitle = {Proceedings of the fifth annual workshop on Computational learning theory},
+	title = {{A} training algorithm for optimal margin classifiers},
+	year = {1992},
+	address = {New York, NY, USA},
+	month = {jul},
+	publisher = {ACM},
+	conference = {COLT92: 5th Annual Workshop on Computational Learning Theory}
+}
+
+@article{HastieRosset2009,
+	author = {Hastie, T. and Rosset, S. and Zhu, J. and Zou, H.},
+	journal = {Stat. Interface},
+	title = {{M}ulti-class {A}da{B}oost},
+	year = {2009},
+	doi = {10.4310/SII.2009.v2.n3.a8},
+	url = {http://dx.doi.org/10.4310/SII.2009.v2.n3.a8},
+	number = {3},
+	pages = {349--360},
+	volume = {2},
+	publisher = {International Press of Boston}
+}
+
+@article{Meyer2003,
+	author = {Meyer, D. and Leisch, F. and Hornik, K.},
+	journal = {Neurocomputing},
+	title = {{T}he support vector machine under test},
+	year = {2003},
+	month = {sep},
+	number = {1-2},
+	pages = {169--186},
+	volume = {55},
+	doi = {10.1016/S0925-2312(03)00431-4},
+	url = {http://dx.doi.org/10.1016/S0925-2312(03)00431-4},
+	publisher = {Elsevier BV}
+}
+
+@book{Press2007,
+	author = {Press, William H. and Teukolsky, Saul A. and Vetterling, William T. and Flannery, Brian P.},
+	publisher = {Cambridge University Press},
+	title = {{N}umerical recipes 3rd edition},
+	year = {2007},
+	address = {Cambridge, England},
+	edition = {Third},
+	month = {sep}
+}
+
+@article{Meyer1999,
+	title = {e1071: {M}isc {F}unctions of the {D}epartment of {S}tatistics, {P}robability {T}heory {G}roup ({F}ormerly: {E}1071)},
+	url = {http://dx.doi.org/10.32614/CRAN.package.e1071},
+	doi = {10.32614/CRAN.package.e1071},
+	journal = {CRAN: Contributed Packages},
+	publisher = {The R Foundation},
+	author = {Meyer, D. and Dimitriadou, E. and Hornik, K. and Weingessel, A. and Leisch, F.},
+	year = {1999}
+}
+
+@article{Chang2007,
+	author = {Chang, C. C. and Lin, C. J.},
+	title = {{L}{I}{B}{S}{V}{M}: {A} library for support vector machines},
+	year = {2011},
+	issue_date = {April 2011},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	volume = {2},
+	number = {3},
+	issn = {2157-6904},
+	url = {http://dx.doi.org/10.1145/1961189.1961199},
+	doi = {10.1145/1961189.1961199},
+	journal = {ACM Trans. Intell. Syst. Technol.},
+	month = {may},
+	articleno = {27},
+	numpages = {27}
+}
+
+@article{Fan2008,
+	author = {Fan, R. E. and Chang, K. W. and Hsieh, C. J. and Wang, X. R. and Lin, C. J.},
+	journal = {Journal of Machine Learning Research},
+	title = {{L}{I}{B}{L}{I}{N}{E}{A}{R}: a library for large linear classification},
+	year = {2008},
+	month = {aug},
+	pages = {1871--1874},
+	volume = {9},
+	doi = {10.1145/1390681.1442794},
+	url = {http://dx.doi.org/10.1145/1390681.1442794}
+}
+
+@article{Wu2008,
+	author = {Wu, X. and Kumar, V. and Quinlan, R. J. and Ghosh, J. and Yang, Q. and Motoda, H. and McLachlan, G. J. and Ng, A. and Liu, B. and Yu, P. S. and Zhou, Z. H. and Steinbach, M. and Hand, D. J. and Steinberg, D.},
+	journal = {Knowl. Inf. Syst.},
+	title = {{T}op 10 algorithms in data mining},
+	year = {2008},
+	month = {jan},
+	number = {1},
+	pages = {1--37},
+	volume = {14},
+	publisher = {Springer Science and Business Media LLC},
+	url = {http://dx.doi.org/10.1007/s10115-007-0114-2},
+	doi = {10.1007/s10115-007-0114-2}
+}
+
+@inbook{ShalevShwartz2014,
+	author = {Shalev-Shwartz, S. and Ben-David, S.},
+	pages = {212--218},
+	publisher = {Cambridge University Press},
+	address = {Cambridge, United Kingdom},
+	title = {{D}ecision {T}rees},
+	year = {2014},
+	booktitle = {Understanding Machine Learning: From Theory to Algorithms},
+	doi = {10.1017/CBO9781107298019.019},
+	url = {http://dx.doi.org/10.1017/CBO9781107298019.019},
+	place = {Cambridge}
+}
+
+@article{Therneau1999,
+	title = {rpart: {R}ecursive {P}artitioning and {R}egression {T}rees},
+	url = {http://dx.doi.org/10.32614/CRAN.package.rpart},
+	doi = {10.32614/CRAN.package.rpart},
+	journal = {CRAN: Contributed Packages},
+	publisher = {The R Foundation},
+	author = {Therneau, T. and Atkinson, B.},
+	year = {1999}
+}
+
+@book{Breiman1984,
+	title = {{C}lassification and {R}egression {T}rees},
+	author = {Breiman, L. and Friedman, J. and Stone, C. J. and Olshen, R. A.},
+	isbn = {9780412048418},
+	lccn = {83019708},
+	url = {https://books.google.hr/books?id=JwQx-WOmSyQC},
+	year = {1984},
+	publisher = {Taylor \& Francis},
+	address = {Milton Park, Abingdon-on-Thames, Oxfordshire, United Kingdom}
+}
+
+@article{Hand2001,
+	author = {Hand, D. J. and Yu, K.},
+	journal = {Int. Stat. Rev.},
+	title = {{I}diot's {B}ayes: {N}ot {S}o {S}tupid after {A}ll?},
+	year = {2001},
+	month = {dec},
+	number = {3},
+	pages = {385},
+	doi = {10.1111/j.1751-5823.2001.tb00465.x},
+	url = {http://dx.doi.org/10.1111/j.1751-5823.2001.tb00465.x},
+	volume = {69},
+	publisher = {JSTOR}
+}
+
+@book{Russell1999,
+	author = {Russell, S. and Norvig, P.},
+	publisher = {Pearson},
+	title = {{A}rtificial intelligence},
+	year = {1999},
+	address = {Upper Saddle River, NJ},
+	edition = {Second},
+	month = {jul},
+	series = {Prentice Hall series in artificial intelligence}
+}
+
+@article{Caruana2006,
+	author = {Caruana, R. and Niculescu-Mizil, A.},
+	journal = {Proceedings of the 23rd international conference on Machine learning - ICML '06},
+	title = {{A}n {E}mpirical {C}omparison of {S}upervised {L}earning {A}lgorithms},
+	year = {2006},
+	month = {jun},
+	pages = {161--168},
+	volume = {2006},
+	doi = {10.1145/1143844.1143865},
+	url = {http://dx.doi.org/10.1145/1143844.1143865}
+}
+
+@article{John2013,
+	title = {{E}stimating continuous distributions in {B}ayesian classifiers},
+	author = {John, G. H. and Langley, P.},
+	year = {2013},
+	primaryclass = {cs.LG},
+	eprint = {1302.4964},
+	journal = {Proceedings of the Eleventh Conference on Uncertainty in Artificial Intelligence (UAI1995)},
+	doi = {10.48550/arXiv.1302.4964},
+	url = {http://dx.doi.org/10.48550/arXiv.1302.4964}
+}
+
+@book{Murty2011,
+	author = {Murty, M. N. and Devi, V. S.},
+	publisher = {Springer},
+	title = {{P}attern {R}ecognition: {A}n {A}lgorithmic {A}pproach},
+	year = {2011},
+	address = {London, England},
+	month = {jul},
+	series = {Undergraduate Topics in Computer Science}
+}
+
+@article{Majka2017,
+	title = {naivebayes: {H}igh {P}erformance {I}mplementation of the {N}aive {B}ayes {A}lgorithm},
+	url = {http://dx.doi.org/10.32614/CRAN.package.naivebayes},
+	doi = {10.32614/CRAN.package.naivebayes},
+	journal = {CRAN: Contributed Packages},
+	publisher = {The R Foundation},
+	author = {Majka, M.},
+	year = {2017}
+}
+
+@article{Olson2016,
+	title = {{J}{O}{U}{S}{B}oost: {I}mplements {U}nder/{O}versampling for {P}robability {E}stimation},
+	url = {http://dx.doi.org/10.32614/CRAN.package.JOUSBoost},
+	doi = {10.32614/CRAN.package.JOUSBoost},
+	journal = {CRAN: Contributed Packages},
+	publisher = {The R Foundation},
+	author = {Olson, M.},
+	year = {2016}
+}
+
+@article{Freund1997,
+	title = {{A} {D}ecision-{T}heoretic {G}eneralization of {O}n-{L}ine {L}earning and an {A}pplication to {B}oosting},
+	journal = {Journal of Computer and System Sciences},
+	volume = {55},
+	number = {1},
+	pages = {119--139},
+	year = {1997},
+	issn = {0022-0000},
+	url = {http://dx.doi.org/10.1006/jcss.1997.1504},
+	doi = {10.1006/jcss.1997.1504},
+	author = {Freund, Y. and Schapire, R. E.}
+}
+
+@article{Tharwat2016,
+	author = {Tharwat, A.},
+	journal = {Int. J. Appl. Pattern Recognit.},
+	title = {{L}inear vs. quadratic discriminant analysis classifier: a tutorial},
+	year = {2016},
+	number = {2},
+	pages = {145},
+	volume = {3},
+	publisher = {Inderscience Publishers},
+	doi = {10.1504/IJAPR.2016.079050},
+	url = {http://dx.doi.org/10.1504/IJAPR.2016.079050}
+}
+
+@article{Cover1965,
+	author = {Cover, Thomas M.},
+	journal = {IEEE Trans. Electron. Comput.},
+	title = {{G}eometrical and statistical properties of systems of linear inequalities with applications in pattern recognition},
+	year = {1965},
+	month = {jun},
+	number = {3},
+	pages = {326--334},
+	volume = {EC-14},
+	publisher = {Institute of Electrical and Electronics Engineers (IEEE)},
+	doi = {10.1109/PGEC.1965.264137},
+	url = {http://dx.doi.org/10.1109/PGEC.1965.264137}
+}
+
+@article{Ripley2009Mass,
+	title = {{M}{A}{S}{S}: {S}upport {F}unctions and {D}atasets for {V}enables and {R}ipley’s {M}{A}{S}{S}},
+	url = {http://dx.doi.org/10.32614/cran.package.mass},
+	doi = {10.32614/cran.package.mass},
+	journal = {CRAN: Contributed Packages},
+	publisher = {The R Foundation},
+	author = {Ripley, M. and Venables, B.},
+	year = {2009}
+}
+
+@book{Ripley1996,
+	place = {Cambridge},
+	title = {{P}attern {R}ecognition and {N}eural {N}etworks},
+	doi = {10.1017/CBO9780511812651},
+	url = {http://dx.doi.org/10.1017/CBO9780511812651},
+	publisher = {Cambridge University Press},
+	address = {Cambridge, United Kingdom},
+	author = {Ripley, B. D.},
+	year = {1996}
+}
+
+@book{Venables2002,
+	author = {Venables, B. and Ripley, B.},
+	year = {2002},
+	month = {01},
+	title = {{M}odern {A}pplied {S}tatistics {W}ith {S}},
+	publisher = {Springer},
+	address = {Berlin/Heidelberg, Germany},
+	doi = {10.1007/b97626},
+	url = {http://dx.doi.org/10.1007/b97626}
+}
+
+@misc{rp5Description,
+	author = {rp5},
 	year = {2024},
-	doi = {10.30765/er.2110},
-	url = {http://dx.doi.org/10.30765/er.2110},
-	publisher = {Sveu{\v{c}}ili{\v{s}}te u Rijeci, Tehni{\v{c}}ki fakultet}
+	url = {https://rp5.ru/docs/descript/en},
+	note = {Accessed},
+	title = {{D}efinitions --- rp5.ru}
 }
 
-@inproceedings{rahmah2016determination,
-	title = {{D}etermination of {O}ptimal {E}psilon ({E}ps) {V}alue on {D}{B}{S}{C}{A}{N} {A}lgorithm to {C}lustering {D}ata on {P}eatland {H}otspots in {S}umatra},
-	author = {Rahmah, N. and Sitanggang, I. S.},
-	booktitle = {IOP conference series: earth and environmental science},
-	volume = {31},
+@article{Ligges2006,
+	title = {signal: {S}ignal {P}rocessing},
+	url = {http://dx.doi.org/10.32614/CRAN.package.signal},
+	doi = {10.32614/CRAN.package.signal},
+	journal = {CRAN: Contributed Packages},
+	publisher = {The R Foundation},
+	author = {Ligges, U. and Short, T. and Kienzle, P.},
+	year = {2006}
+}
+
+@article{Benhamou2004,
+	author = {Benhamou, S.},
+	journal = {Journal of theoretical biology},
+	title = {{H}ow to reliably estimate the tortuosity of an animal's path: {S}traightness, sinuosity, or fractal dimension?},
+	year = {2004},
+	month = {aug},
+	volume = {229},
+	doi = {10.1016/j.jtbi.2004.03.016},
+	url = {http://dx.doi.org/10.1016/j.jtbi.2004.03.016}
+}
+
+@article{Bovet1988,
+	author = {Bovet, P. and Benhamou, S.},
+	journal = {Journal of Theoretical Biology},
+	title = {{S}patial analysis of animals' movements using a correlated random walk model},
+	year = {1988},
+	issn = {0022-5193},
+	number = {4},
+	pages = {419--433},
+	volume = {131},
+	doi = {10.1016/S0022-5193(88)80038-9},
+	url = {http://dx.doi.org/10.1016/S0022-5193(88)80038-9}
+}
+
+@article{Cheung2007,
+	author = {Cheung, A. and Zhang, S. and Stricker, C. and Srinivasan, M. V.},
+	journal = {Biol Cybern},
+	title = {{A}nimal navigation: the difficulty of moving in a straight line},
+	year = {2007},
+	month = {may},
 	number = {1},
-	doi = {10.1088/1755-1315/31/1/012012},
-	url = {http://dx.doi.org/10.1088/1755-1315/31/1/012012},
-	pages = {012012},
-	year = {2016},
-	organization = {IoP Publishing}
+	pages = {47--61},
+	volume = {97},
+	address = {Germany},
+	doi = {10.1007/s00422-007-0158-0},
+	url = {http://dx.doi.org/10.1007/s00422-007-0158-0}
 }
 
-@article{jolliffe2016principal,
-	title = {{P}rincipal component analysis: a review and recent developments},
-	author = {Jolliffe, I. T. and Cadima, J.},
-	journal = {Philosophical transactions of the royal society A: Mathematical, Physical and Engineering Sciences},
-	volume = {374},
-	number = {2065},
-	pages = {20150202},
-	year = {2016},
-	doi = {10.1098/rsta.2015.0202},
-	url = {http://dx.doi.org/10.1098/rsta.2015.0202},
-	publisher = {the Royal Society publishing}
+@book{Mandelbrot1967,
+	issn = {00368075, 10959203},
+	url = {http://www.jstor.org/stable/1721427},
+	author = {Mandelbrot, B.},
+	journal = {Science},
+	number = {3775},
+	pages = {636--638},
+	publisher = {American Association for the Advancement of Science},
+	address = {Washington, D.C., United States of America},
+	title = {{H}ow {L}ong {I}s the {C}oast of {B}ritain? {S}tatistical {S}elf-{S}imilarity and {F}ractional {D}imension},
+	urldate = {2024-11-29},
+	volume = {156},
+	year = {1967}
+}
+
+@article{Nams2006,
+	author = {Nams, V.},
+	journal = {Acta biotheoretica},
+	title = {{I}mproving {A}ccuracy and {P}recision in {E}stimating {F}ractal {D}imension of {A}nimal movement paths},
+	year = {2006},
+	month = {feb},
+	pages = {1--11},
+	volume = {54},
+	doi = {10.1007/s10441-006-5954-8},
+	url = {http://dx.doi.org/10.1007/s10441-006-5954-8}
+}
+
+@article{Turchin1996,
+	author = {Turchin, P.},
+	journal = {Ecology},
+	title = {{F}ractal {A}nalyses of {A}nimal {M}ovement: {A} {C}ritique},
+	year = {1996},
+	number = {7},
+	pages = {2086--2090},
+	volume = {77},
+	publisher = {Ecological Society of America},
+	doi = {10.2307/2265702},
+	url = {http://dx.doi.org/10.2307/2265702}
+}
+
+@article{Kitamura2015,
+	author = {Kitamura, T. and Imafuku, M.},
+	journal = {Proceedings. Biological sciences / The Royal Society},
+	title = {{B}ehavioural mimicry in flight path of {B}atesian intraspecific polymorphic butterfly {P}apilio polytes},
+	year = {2015},
+	month = {jun},
+	volume = {282},
+	doi = {10.1098/rspb.2015.0483},
+	url = {http://dx.doi.org/10.1098/rspb.2015.0483}
 }
 
 @article{altman1994diagnostic1,
@@ -482,15 +847,54 @@
 	publisher = {Wiley Online Library}
 }
 
-@article{mcnemar1947note,
-	title = {{N}ote on the sampling error of the difference between correlated proportions or percentages},
-	author = {McNemar, Q.},
+@article{edwards1948note,
+	title = {{N}ote on the "correction for continuity" in testing the significance of the difference between correlated proportions},
+	author = {Edwards, A. L.},
 	journal = {Psychometrika},
-	volume = {12},
-	number = {2},
-	pages = {153--157},
-	year = {1947},
-	publisher = {Springer-Verlag New York},
-	doi = {10.1007/BF02295996},
-	url = {http://dx.doi.org/10.1007/BF02295996}
+	volume = {13},
+	number = {3},
+	pages = {185--187},
+	year = {1948},
+	doi = {10.1007/BF02289261},
+	url = {http://dx.doi.org/10.1007/BF02289261},
+	publisher = {Springer}
+}
+
+@book{bonferroni1936teoria,
+	title = {{T}eoria statistica delle classi e calcolo delle probabilit\`a},
+	author = {Bonferroni, C.E.},
+	series = {Pubblicazioni del R. Istituto superiore di scienze economiche e commerciali di Firenze},
+	url = {https://books.google.hr/books?id=3CY-HQAACAAJ},
+	year = {1936},
+	publisher = {Seeber},
+	address = {Bagni di Lucca, Italy}
+}
+
+@book{mittelhammer2000econometric,
+	title = {{E}conometric foundations pack with {C}{D}-{R}{O}{M}},
+	author = {Mittelhammer, R. and Judge, G. G. and Miller, D. J.},
+	year = {2000},
+	publisher = {Cambridge University Press},
+	address = {Cambridge, United Kingdom}
+}
+
+@article{dunn1961multiple,
+	title = {{M}ultiple comparisons among means},
+	author = {Dunn, O. J.},
+	journal = {Journal of the American statistical association},
+	volume = {56},
+	number = {293},
+	pages = {52--64},
+	year = {1961},
+	publisher = {Taylor \& Francis},
+	doi = {10.2307/2282330},
+	url = {http://dx.doi.org/10.2307/2282330}
+}
+
+@book{rupert2012simultaneous,
+	title = {{S}imultaneous statistical inference},
+	author = {Rupert Jr, G. and others},
+	year = {2012},
+	publisher = {Springer Science \& Business Media},
+	address = {Berlin/Heidelberg, Germany}
 }

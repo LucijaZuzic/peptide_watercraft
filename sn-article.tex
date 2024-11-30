@@ -1,564 +1,785 @@
-%% 
-%% Copyright 2007-2024 Elsevier Ltd
-%% 
-%% This file is part of the 'Elsarticle Bundle'.
-%% ---------------------------------------------
-%% 
-%% It may be distributed under the conditions of the LaTeX Project Public
-%% License, either version 1.3 of this license or (at your option) any
-%% later version.  The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 1999/12/01 or later.
-%% 
-%% The list of all files belonging to the 'Elsarticle Bundle' is
-%% given in the file `manifest.txt'.
-%% 
-%% Template article for Elsevier's document class `elsarticle'
-%% with harvard style bibliographic references
+%Version 3 October 2023
+% See section 11 of the User Manual for version history
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                 %%
+%% Please do not use \input{...} to include other tex files.       %%
+%% Submit your LaTeX manuscript as one .tex document.              %%
+%%                                                                 %%
+%% All additional figures and files should be attached             %%
+%% separately and not embedded in the \TeX\ document itself.       %%
+%%                                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[preprint,12pt]{elsarticle}
+%%\documentclass[referee,sn-basic]{sn-jnl}% referee option is meant for double line spacing
 
-%% Use the option review to obtain double line spacing
-%% \documentclass[preprint,review,12pt]{elsarticle}
+%%=======================================================%%
+%% to print line numbers in the margin use lineno option %%
+%%=======================================================%%
 
-%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
-%% for a journal layout:
-%% \documentclass[final,1p,times]{elsarticle}
-%% \documentclass[final,1p,times,twocolumn]{elsarticle}
-%% \documentclass[final,3p,times]{elsarticle}
-%% \documentclass[final,3p,times,twocolumn]{elsarticle}
-%% \documentclass[final,5p,times]{elsarticle}
-%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+%%\documentclass[lineno,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
 
-%% For including figures, graphicx.sty has been loaded in
-%% elsarticle.cls. If you prefer to use the old commands
-%% please give \usepackage{epsfig}
+%%======================================================%%
+%% to compile with pdflatex/xelatex use pdflatex option %%
+%%======================================================%%
 
-%% The amssymb package provides various useful mathematical symbols
-\usepackage{amssymb}
-%% The amsmath package provides various useful equation environments.
-\usepackage{amsmath}
-%% The amsthm package provides extended theorem environments
-%% \usepackage{amsthm}
+%%\documentclass[pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
 
-%% The lineno packages adds line numbers. Start line numbering with
-%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
-%% for the whole article with \linenumbers.
-%% \usepackage{lineno}
 
-%\usepackage[utf8]{inputenc}
-%\usepackage[T1]{fontenc}
-\usepackage{gensymb}
-\usepackage{algorithm}
-\usepackage{algorithmic}
-\usepackage{multirow}
-\usepackage{xcolor}
-\usepackage{colortbl}
+%%Note: the following reference styles support Namedate and Numbered referencing. By default the style follows the most common style. To switch between the options you can add or remove Numbered in the optional parenthesis. 
+%%The option is available for: sn-basic.bst, sn-vancouver.bst, sn-chicago.bst%  
+ 
+%%\documentclass[sn-nature]{sn-jnl}% Style for submissions to Nature Portfolio journals
+%%\documentclass[sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+%%%%\documentclass[sn-mathphys-num]{sn-jnl}% Math and Physical Sciences Numbered Reference Style 
+%%\documentclass[sn-mathphys-ay]{sn-jnl}% Math and Physical Sciences Author Year Reference Style
+%%\documentclass[sn-aps]{sn-jnl}% American Physical Society (APS) Reference Style
+%%\documentclass[sn-vancouver,Numbered]{sn-jnl}% Vancouver Reference Style
+%%\documentclass[sn-apa]{sn-jnl}% APA Reference Style 
+%%\documentclass[sn-chicago]{sn-jnl}% Chicago-based Humanities Reference Style
 
-\journal{Mathematics and Computers in Simulation}
+\let\LaTeXcline\cline\documentclass[sn-mathphys-num]{sn-jnl}\let\cline\LaTeXcline
+
+%%%% Standard Packages
+%%<additional latex packages if required can be included here>
+
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{amsthm}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm}%
+\usepackage{algorithmicx}%
+\usepackage{algpseudocode}%
+\usepackage{listings}%
+%%%%
+\usepackage{anyfontsize}
+
+%%%%%=============================================================================%%%%
+%%%%  Remarks: This template is provided to aid authors with the preparation
+%%%%  of original research articles intended for submission to journals published 
+%%%%  by Springer Nature. The guidance has been prepared in partnership with 
+%%%%  production teams to conform to Springer Nature technical requirements. 
+%%%%  Editorial and presentation requirements differ among journal portfolios and 
+%%%%  research disciplines. You may find sections in this template are irrelevant 
+%%%%  to your work and are empowered to omit any such section if allowed by the 
+%%%%  journal you intend to submit to. The submission guidelines and policies 
+%%%%  of the journal take precedence. A detailed User Manual is available in the 
+%%%%  template package for technical guidance.
+%%%%%=============================================================================%%%%
+
+%% as per the requirement new theorem styles can be included as shown below
+%\theoremstyle{thmstyleone}%
+\newtheorem{theorem}{Theorem}%  meant for continuous numbers
+%%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
+%% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
+\newtheorem{proposition}[theorem]{Proposition}% 
+%%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
+
+%\theoremstyle{thmstyletwo}%
+\newtheorem{example}{Example}%
+\newtheorem{remark}{Remark}%
+
+%\theoremstyle{thmstylethree}%
+\newtheorem{definition}{Definition}%
+
+\raggedbottom
+%%\unnumbered% uncomment this for unnumbered level heads
 
 \begin{document}
 
-\begin{frontmatter}
+\title[aaa]
 
-%% Title, authors and addresses
+\author*[1,2]{\fnm{Lucija} \sur{\v{Z}u\v{z}i\'{c}}}\email{lucija.zuzic@uniri.hr}
+\equalcont{These authors contributed equally to this work.}
 
-%% use the tnoteref command within \title for footnotes;
-%% use the tnotetext command for theassociated footnote;
-%% use the fnref command within \author or \affiliation for footnotes;
-%% use the fntext command for theassociated footnote;
-%% use the corref command within \author for corresponding author footnotes;
-%% use the cortext command for theassociated footnote;
-%% use the ead command for the email address,
-%% and the form \ead[url] for the home page:
-%% \title{Title\tnoteref{label1}}
-%% \tnotetext[label1]{}
-%% \author{Name\corref{cor1}\fnref{label2}}
-%% \ead{email address}
-%% \ead[url]{home page}
-%% \fntext[label2]{}
-%% \cortext[cor1]{}
-%% \affiliation{organization={},
-%%             addressline={},
-%%             city={},
-%%             postcode={},
-%%             state={},
-%%             country={}}
-%% \fntext[label3]{}
+\author[1,2,3]{\fnm{Renato} \sur{Filjar}}\email{renato.filjar@uniri.hr}
 
-\title{Inflection Points for Similar Trajectory Retrieval} %% Article title
+\affil*[1]{\orgdiv{Department of Computer Engineering}, \orgname{Faculty of Engineering, University of Rijeka}, \orgaddress{\street{Vukovarska 58}, \city{Rijeka}, \postcode{51000}, \country{Croatia}}}
 
-%% use optional labels to link authors explicitly to addresses:
-%% \author[label1,label2]{}
-%% \affiliation[label1]{organization={},
-%%             addressline={},
-%%             city={},
-%%             postcode={},
-%%             state={},
-%%             country={}}
-%%
-%% \affiliation[label2]{organization={},
-%%             addressline={},
-%%             city={},
-%%             postcode={},
-%%             state={},
-%%             country={}}
-%AUTHOR 1
-\author[1,2]{Lucija \v{Z}u\v{z}i\'{c}}
-\ead{lucija.zuzic@uniri.hr}
+\affil[2]{\orgdiv{Center for Artificial Intelligence and Cybersecurity}, \orgname{University of Rijeka}, \orgaddress{\street{Radmile Matejcic 2}, \city{Rijeka}, \postcode{51000}, \country{Croatia}}}
 
-\author[1,2]{Franko Hr\v{z}i\'{c}}
-\ead{franko.hrzic@riteh.uniri.hr}
+\affil[3]{\orgdiv{Laboratory for Spatial Intelligence}, \orgname{Hrvatsko Zagorje Krapina University of Applied Sciences}, \orgaddress{\street{Setaliste hrvatskog narodnog preporoda 6}, \city{Krapina}, \postcode{49000}, \country{Croatia}}}
 
-\author[2,3]{Irena Petrijev\v{c}anin}
-\ead{ipetrijevcanin@mup.hr}
+\abstract{ }
 
-\author[1,2]{Jonatan Lerga\corref{cor1}}%\fnref[label2]
-\ead{jonatan.lerga@riteh.uniri.hr}
- 
-% Address/affiliation
-\affiliation[1]{organization={Department of Computer Engineering, Faculty of Engineering, University of Rijeka},
-addressline={Vukovarska 58}, 
-%         city={Rijeka},
-%citysep={Rijeka}, % Uncomment if no comma needed between city and postcode
-postcode={51000 Rijeka}, 
-country={Croatia}}
+\keywords{ }
 
-\affiliation[2]{organization={Center for Artificial Intelligence and Cybersecurity, University of Rijeka},
-addressline={Radmile Matejcic 2}, 
-postcode={51000 Rijeka}, 
-country={Croatia}}
+%%\pacs[JEL Classification]{D8, H51}
 
-\affiliation[3]{organization={Ministry of the Interior of the Republic of Croatia},
-addressline={Ulica grada Vukovara 33}, 
-postcode={10000 Zagreb}, 
-country={Croatia}}
+%%\pacs[MSC Classification]{35A01, 65L10, 65L12, 65L20, 65L70}
 
-%\fntext[label2]{http://www.riteh.uniri.hr/osoba/jonatan-lerga}
-% Corresponding author text
-\cortext[cor1]{Corresponding author} 
+\maketitle
 
-%% Abstract
-\begin{abstract}
-Recognizing potentially reckless and inexperienced drivers of personal watercraft, especially those renting them, is imperative to avoid collisions and hazards, especially in crowded spaces during the peak of the tourist season. One potential way to recognize such drivers is by examining their driving patterns and trajectories that arise from them. A trajectory consists of points in a two-dimensional coordinate system, obtained from GPS (Global Positioning System) transmissions and paired with timestamps, representing the path traversed by a vehicle in a given ride. Separating drivers based on the trajectories is a demanding challenge due to the difference in trajectory patterns, lengths, and versatility of environments where rides occur. In this study, a novel algorithm based on inflection points of the trajectories is used to cluster similar trajectories and, thereby, drivers' behavior. The study aims to investigate and properly evaluate the clustering capabilities of Density-Based Spatial Clustering Applications with Noise (DBSCAN) and K-means when using features based on inflection points that represent the trajectory. Comprehensively evaluation is done by conducting a large-scale experiment with human raters and comparing the results to the generated clustering, indirectly evaluating the proposed algorithm for extracting inflection points from the trajectories.
-\end{abstract}
-
-%%Graphical abstract
-%\begin{graphicalabstract}
-%\includegraphics{grabs}
-%\end{graphicalabstract}
-
-%%Research highlights
-%\begin{highlights}
-%\item A novel trajectory segment classification metric using inflection point sequences
-%\item Retrieving an entire trajectory and measuring the similarity to another sample
-%\item Additionally detecting anomalies based on the smallest cluster
-%\item Large-scale human evaluation using a web application to validate clustering
-%\end{highlights}
-
-%% Keywords
-\begin{keyword}
-personal watercraft \sep trajectory \sep classification \sep clustering
-\end{keyword}
-
-\end{frontmatter}
-
-%% Add \usepackage{lineno} before \begin{document} and uncomment 
-%% following line to enable line numbers
-%% \linenumbers
-
-%% main text
-%%
-
-% MAIN TEXT 
 \section{Introduction}
+%\label{sec:Intro}
+
+The problem addressed in this paper is the creation of a classifier of aircraft trajectories based on the temporal and geometric features of the trajectories and meteorological features. Other works have successfully used the \textit{R} \textit{trajr} library \cite{McLean2018-jr} to analyze the trajectories of animals, such as griffon vultures \cite{dumenvcic2022trajectory}, and vehicles, such as airplanes \cite{Makar2022, filjarairplane}. Aircraft flight data is publicly available thanks to OpenSkyNetwork, a non-profit network of Automatic Dependent Surveillance-Broadcast (ADS-B) receivers, and has been studied for aircraft trajectory analysis \cite{Makar2022}. 
+
+Publicly available data on meteorological features was also used to describe the trajectories. Meteorological conditions influence the frequency of incidents, as confirmed by reports on airplane accidents \cite{Gultepe2019}. The results of trajectory classification based on features provided by the \textit{trajr} library, meteorological features, and both sets of features were compared. To more easily adapt the class decision process for devices with lower computational capabilities, a model was built that uses only two features that encompass both static (scalar-based) and dynamic (vector-based) aspects of the analysis provided by the \textit{trajr} library.
+
+Before model training, the trajectories were separated into two classes by visual inspection. The departure airport Zagreb Pleso, and the destination airport London Heathrow were selected. A regular airline connects these airports on Mondays, so the regular schedule and limited scope simplify the experiment. In addition to the periodically recurring connection, the ease of analysis is facilitated by the fact that there is only one takeoff runway from Zagreb Pleso Airport. It is not necessary to separate trajectories based on multiple runways but on the direction of movement along the single existing runway.
+
+This work hypothesizes that based on the features of the aircraft trajectory obtained using the \textit{trajr} library and meteorological features, it is possible to classify previously marked trajectories in R without directly entering the coordinates into the model.
+
+The k-Nearest Neighbor (k-NN), Linear and Radial Basis Function (RBF) Support Vector Machine (SVM), Gaussian Process (GP), Decision Tree (DT), Random Forest (RF), Multilayer Perceptron (MLP), Naive Bayes (NB), Quadratic Discriminant Analysis (QDA) and AdaBoost (AB) algorithms were used for classification in this paper. The listed classifiers have solved various problems, including individual mobility classification \cite{csl-202004-0019} and behavior analysis \cite{Garcia_Ceja2021-tw}. Bosson and Nikoleris \cite{Bosson2018} use some of these classifiers and additional methods to predict the runway on which airplanes land, while this paper focuses on takeoff direction.
+
+The hypothesis is that temporal and geometric features of trajectories, which have already been used in other methods of trajectory analysis \cite{dumenvcic2022trajectory, Makar2022}, have a greater influence on the class of trajectories than meteorological conditions, so classifiers that use them will be more successful.
  
-When driving personal vehicles, on land or water, it is desirable to limit the possibility of human error and thereby prevent accidents. For this reason, some facilities for personal watercraft rental have installed a tracking system on their vehicles, such as the OtoTrak system \cite{ototrakOtoTrakTrack}, which provided database access for this study. The limits of the permitted driving zone in the studied system \cite{ototrakOtoTrakTrack} are determined according to latitude and longitude. Global Positioning System (GPS) signals enable all system features \cite{ototrakOtoTrakTrack} by periodically emitting records to be included in the database. Speed limits have been implemented once a driver ventures outside the zone or in the proximity of another vehicle with the same cloud-based marine watercraft tracking system that includes vehicle remote control. This study proposes an algorithm to detect anomalies that could replace this hard-coded system.
- 
-Anomalies in maritime traffic may be associated with various incidents, including criminal activities such as smuggling or illegal transshipment, as well as accidents like navigation failure or engine damage. The excess data from different information systems and sensors can be difficult to process \citep{2013Kazemi}, so efficient anomaly detection algorithms are critically important.
+The hypothesis also claims that among the meteorological features at the selected departure airport Zagreb Pleso, temperature and dew point have the greatest influence on aircraft trajectories \cite{Gultepe2019}. At low temperatures, ice can suddenly form on aircraft wings, which seriously impairs their aerodynamic properties and causes sudden descent and an inability to fly. Icing occurs due to the atmospheric physical properties. Water droplets exist at temperatures lower than $0$ degrees $\mathrm{C}$, but freeze rapidly when they come in contact with an aircraft, its wings or engine, and other solid surfaces. Aircraft icing can be extremely dangerous. Modern aircraft have anti-icing systems, but icing can still be a threat, especially for light aircraft. Meteorologists forecast icing zones and forward such information to their users to prevent accidents.
 
-Examples of maritime anomalies include vessels that move randomly in open water, stop suddenly before reaching their destination, travel very short distances, encounter many other vessels, have a high frequency of looping, appear to cross land according to transmitted data, deviate from planned routes, exceed the speed limit, violate traffic regulations and so on \citep{2014Mascaro, 2008Laxhammar}.
+The AdaBoost algorithm, which uses Decision Trees as weak classifiers, is often called the best classifier using initial settings without adjustment \cite{Kegl2013}, so it is hypothesized to be more successful than other classifiers.
 
-Chandola et al. \citep{2009Chandola} provide a different definition of vessel behavior abnormalities than Martineau and Roy \citep{2011Martineau}, proving that a consensus has not been reached on this topic. The term anomaly has multiple connotations across domains, making it a somewhat vague idea with different interpretations among domain experts \citep{2008Roy}. In many data-rich areas, such as global maritime trade \citep{2022Kim}, most historical data are assumed to be normal. The anomaly detection algorithm initially considers any deviation from the models created based on such data an anomaly.
-
-This work aims to classify driver behavior based on the inflection points of the trajectory of a personal watercraft represented by a function. The standard mathematical definition of an inflection point in two dimensions is used, meaning the movement direction on either axis changes. Each inflection point is assigned a type based on whether the $x$ and $y$ coordinates increase or decrease before and after the inflection point. Inflection points in our work are identified on subsets of a trajectory of ten or twenty consecutive data points.
-
-The most common sequences of types of inflection points represent the trajectory fingerprint. The trajectory fingerprints are used to classify the entire trajectory and cluster trajectories using K-means and Density-Based Spatial Clustering Applications with Noise (DBSCAN). Trajectories in the smallest cluster are marked as anomalies in this paper. An experiment where humans select the five most similar out of twenty possible trajectories is used to validate the algorithm. The classification generated in this paper can replace hard-coded systems and avoid unnecessary speed limits in situations that are not dangerous. Additionally, it guarantees the safety of the driver and other participants in maritime traffic.
- 
-No examples of classifying or measuring the similarity of personal watercraft trajectories were found in the literature reviewed. However, Dynamic Time Warping (DTW) has been utilized for assessing the similarity of trajectories \cite{2017Fu, 2021Pedroche} of other vehicles, both on land and at sea. A novel metric based on trajectory subsequences and inflection points is proposed in this paper, reducing the high computational cost of DTW. This makes the algorithm applicable for real-time routing problems involving multiple vehicles \cite{BERTAZZI2025104892}. Maritime vessels could also be automated using a mechanism akin to Adaptive Cruise Control (ACC) for land vehicles \cite{YU2025104931, GUAN2025104914}, even in lane-free traffic \cite{BEZA2025104898}, so this work is highly relevant for watercraft fleets.
-
-Many studies on trajectory tracking control use Lyapunov’s direct method for inertia matrix decomposition and the Lipschitz representation for the nonlinear longitudinal model of the vehicle. The vehicles used include underwater or horizontally moving vehicles, indoor airships, and wheeled robots. Boukhari et al. \cite{BOUKHARI2019236} proposed two Fault Tolerant Control (FTC) schemes for more reliable spacing control of an autonomous vehicle using the desired velocity in an Automated Highway System (AHS). Herman \cite{HERMAN20102317} uses a modified PD (proportional-derivative) controller for Autonomous Underwater Vehicles (AUVs). The application is expanded to different classes of vehicles in an experiment by Herman and Adamski \cite{HERMAN2020175}. Fu and Peng \cite{FU20231} use an adaptive iterative learning control strategy based on point-to-point trajectory update tracking for an Unmanned Aerial Vehicle (UAV) formation system. Xu et al. \cite{XU2022603} implement path planning for a wheeled robot using a different approach based on the inverse trajectory and the Martingale method since disturbances considered in other research are concerned with the controllers or actuators, not the locating sensors. However, none of these approaches deal with personal watercraft trajectories. The competing methods are much more complex models, tailored to specific devices. The simple inflection point-based approach proposed in this study can be applied to any trajectory. The main contributions of this study are:
-
-\begin{itemize}
-    \item A novel trajectory segment classification metric using inflection point sequences
-    \item Retrieving an entire trajectory and measuring the similarity to another sample
-    \item Additionally detecting anomalies based on the smallest cluster
-    \item Large-scale human evaluation using a web application to validate clustering
-\end{itemize}
-
-The rest of the paper is organized as follows. Other relevant work that detects anomalies in maritime traffic are listed in section \ref{sec:Related}. The dataset is described in section \ref{sec:Dataset}, followed by the methodology used in this paper outlined in section \ref{sec:Methodology}. The results are discussed in section \ref{sec:Results}. Next, the main points are summarised, and the conclusion is given in section \ref{sec:Conclusion}.
-
-\section{Related Work}
-\label{sec:Related}
-
-Since the goal was to classify trajectories, various papers on trajectories of larger vehicles were studied due to a scarcity of work on personal watercraft trajectories. The most commonly utilized approaches for this purpose are DBSCAN and K-means, while the K-means algorithm is used far less frequently than DBSCAN. 
-
-One notable example is a study by Hanyang et al. \citep{2019Hanyang} using K-means on Automated Identification System (AIS) data from the National University of Defense Technology's "TianTuo-3" satellite. They identify the number of clusters using the elbow rule. The clustering features are the normalized standard deviation of the course over ground and speed over ground of South African vessels. Unlikely behavior is identified as an anomaly regarding a vessel's sailing stability.
-
-DBSCAN can have several advantages over K-means. Namely, DBSCAN clusters do not have a fixed size and shape because they are based on density. Density-based clusters are useful for marine data, which is highly dense in some areas and sparse in others. On the other hand, K-means does not perform as well with unevenly distributed data or without clearly defined groups. Hence, DBSCAN overcomes these obstacles and is suited for varying shapes and densities of data distributions since the number of clusters is not predefined.
-
-As mentioned before, maritime monitoring using AIS datasets often utilizes DBSCAN because it can detect noise and delete extraneous marine objects \citep{2018Coscia, 2018dAfflisio1, Ester1996ADA, Khan2004RealtimePO}. Unlike DBSCAN, K-means underperforms in the presence of outliers and noise.
-
-DBSCAN clustering varies greatly with the input parameters. These parameter modifications can be challenging and time-consuming. The K-means algorithm has fewer parameters to tune, the most important being the number of clusters. DBSCAN results are usually highly accurate with properly defined parameters such as the number of points and maximum distance of points in a cluster. The resulting clusters are more flexible than K-means which has a fixed number of cluster centroids and splits the data according to distance from these points without considering distribution density.
-
-Table~\ref{tab:DBSCANdetect} demonstrates that density-based spatial clustering techniques, especially DBSCAN \citep{Ester1996ADA}, are widely used in detecting abnormal vessel behavior. As the other algorithms in Table~\ref{tab:DBSCANdetect} illustrate, DBSCAN is usually not a standalone method, requiring a probability density distribution and a distance metric, and is often the input for additional processing steps.
-
-Dynamic Time Warping (DWT) is often used for assessing the similarity of trajectories \cite{2017Fu, 2021Pedroche} but has a high computational cost for longer trajectories. The algorithm developed and proposed in this paper does not require the time-consuming and computationally intensive step of time-series alignment done in DTW. This novel approach separates the trajectory into subsequences and detects inflection points instead.
-
-The most recent study referenced in this section \cite{2023Li} uses Long Short-Term Memory (LSTM), following trends in the development and wider use of deep learning. This study is not focused on a similar approach since embedded systems often do not meet the hardware requirements for implementing Recurrent Neural Networks (RNN), and real-time systems require fast responses.
-
-Other models use information on position, speed, and course \cite{2014Wang, 2015Pallotta, 2018Lei, 2023Li}, while the proposed algorithm uses only position. This decision was made assuming that personal watercraft change speed and course more often because they have stronger engines and smaller dimensions than maritime vessels studied in related work. For this reason, any limits proposed for speed and course might be too strict to detect anomalies. Sudden turns can also be detected in location data forming a trajectory mitigating concerns about loss of information.
-
-The referenced models are trained and tested on real AIS datasets \cite{2023Li, 2015Pallotta, 2017Fu} that are abundant and easily accessible. On the other hand, the developed models focus on a specific area, such as data gathered near Brest by the Naval Academy Research Lab \cite{2013Pallotta2} or the Chinese QiongZhou strait \cite{2018Lei}, meaning the model is only valid for a specific use case. However, the proposed algorithm is not location-specific and processes data from multiple locations worldwide, providing higher usability and transferability without relying on route extraction.
-
-Note that DBSCAN clusters in many related papers use critical points of AIS tracks to create waypoints where vessels stop, enter, or exit the region of interest. Using these waypoints as nodes, graphs where maritime routes represent edges are created. Clustering methods relying on graphs will not always be able to connect a track to an edge of the normality graph, which hinders the possibility of assigning a track's start and end points to any waypoint. These methods apply only to cargo and tanker vessels or other vessel types that follow predetermined traffic route patterns. Fishing vessels and many others do not conform to these rules. Preprocessing is necessary for an operational system to separate different vessel types, as AIS metadata is often inaccurate.
-
-Some methods, like the proposed algorithm in this study, use complete trajectories to detect anomalies or group trajectories based on similarity metrics \citep{2011Laxhammar, Vries2013}. Liu et al. \citep{2015Liu} debated an "ad-hoc" similarity measure for creating and grouping trajectory segments. Since DBSCAN is usually restricted to point clustering, this method can be explained as DBSCAN applied to trajectory clustering. 
-
-Not all clustering methods rely on graphs but use a single point instead \citep{2012Kowalska, 2013Guillarme}. Grid cell size can lower the effectiveness of point-based methods for marine traffic analysis because they use the number of AIS messages in each cell. If a cell is too large, the prediction accuracy is lowered. A reliable local statistical model cannot be created if the grid is divided into too many sections. For these reasons, point-based techniques can only be used in regions with a low AIS message density. Trajectory-based techniques do not depend on grids and are more resilient regarding message density. However, trajectory-based techniques need sufficiently dense sub-areas inside a region of interest to successfully cluster waypoints and create reliable piecewise linear approximations of trajectories.
-
-\begin{table}[!ht]
-    \centering
-    \begin{tabular}{|c|c|c|c|c|}
-        \hline
-        Author & Year & Algorithm \\ \hline
-        Pallotta & 2013 & DBSCAN, \\
-        et al. \cite{2013Pallotta2} & & Kernel Density Estimation (KDE) \\ \hline
-         & & Speed and Direction DBSCAN, \\
-        Wang et al. \cite{2014Wang} & 2014 & the Parallel Meta-Learning (PML), \\
-         & & algorithm on Hadoop \\ \hline
-        Pallotta and & 2015 & DBSCAN, on/off route, \\
-        Jousselme \cite{2015Pallotta} & & speed/heading anomaly on route \\ \hline
-        Sun et al. \cite{2015Sun} & 2015 & DBSCAN, unsupervised, extract \\
-         & & traffic patterns from time/location \\ \hline
-         Li et al. \cite{Li2017ADR} & 2017 & DTW, spectral clustering, \\
-         & & Principal Component Analysis (PCA) \\ \hline
-        Fu et al. \cite{2017Fu} & 2017 & DBSCAN, abnormal trajectories, DTW, \\
-         & & Piecewise Linear Segmentation (PLS) \\ \hline
-         & & DBSCAN, extract gravity vectors, \\
-        Lei and & 2018 & sample stop points from clusters, \\
-        Mingchao \cite{2018Lei} & & cluster relative and angular distance, \\
-         & & distance  and speed/heading anomaly \\ \hline
-        Botts \cite{2021Botts} & 2021 & DBSCAN, asymptotic properties \\
-         & & of a novel anomaly metric \\ \hline
-        Pedroche et al. \cite{2021Pedroche} & 2021 & DBSCAN, DTW, data mining \\ \hline
-         & & Course/Speed-DBSCAN, \\
-        Li et al. \cite{2023Li} & 2023 & Long Short-Term Memory (LSTM), \\
-         & & added geospatial features \\ \hline
-    \end{tabular}
-    \caption{Sources using DBSCAN and other algorithms to detect unusual vessel trajectories the position, speed, and course variables obtained from AIS data.}
-    \label{tab:DBSCANdetect}
-\end{table}
-
-\section{Dataset}
+\section{Method and data}
 \label{sec:Dataset}
 
-The database \cite{ototrakOtoTrakTrack} contains information about the rental locations, the vehicles, and the data sent for each ride, including speed, heading, latitude, and longitude. In this paper, only the latitude, and longitude data were used to detect and prevent anomalies.
+A k-Nearest Neighbours (k-NN), Linear and Radial Basis Function (RBF) Support Vector Machine (SVM), Gaussian Process (GP), Decision Tree (DT), Random Forest (RF), Naive Bayes (NB), Multilayer Perceptron (MLP), AdaBoost (AB), and Quadratic Discriminant Analysis (QDA) method were tested based on their ability to classify a set of observations of trajectory features, and other meteorological predictors, into one of the scenarios of trajectory classes based on the first three points of a trajectory and their position when it comes to the origin airport. Two classes were predefined using observed data on a map. Statistical analysis of the data confirmed that distributions of trajectory features change for different labels, supporting the validity of the labeling. The study assumes that the dependent output variable, the trajectory class, can be predicted based on the independent variables used as input. Meteorological data was obtained using the rp5.ru website. The OpenSky Network database contains state vectors transmitted for an aircraft. The two datasets are merged based on location, date, and time.
 
-Vehicle trajectories were recorded in Croatia, Spain, Portugal, Greece, Canada, and the USA in July 2022 and 2023. Trajectories, where the maximum time between two records in the database was greater than or equal to five seconds, were disregarded since the expected time equals one second. Also, those trajectories marked as "ERROR" or "TRACKING" in the database were disregarded. The flag "ERROR" means that records are missing. In "TRACKING" mode, records are sent less often than usual, while the expected time between records is one second in normal operating modes.
+\subsection{Method}
+%\label{subsec:Method}
 
-The system \cite{ototrakOtoTrakTrack} identifies data of the same trajectory using unique location, vehicle, and ride numbers. This study processed data for $2171$ rides forming trajectories originating from $14$ locations and $19$ vehicles.
+The methods were selected because they represent larger families of classification methods. Support Vector Machine (SVM) models are supervised maximum margin models. Decision Tree (DT) models also apply supervised learning based on decision rules, while Random Forest (RF) and AdaBoost (AB) algorithms can utilize multiple DT classifies. The k-Nearest Neighbours algorithm (k-NN) is a non-parametric supervised learning classification method using votes from the nearest data points. Naive Bayes (NB) classifiers are probabilistic classifiers that can be parametric or non-parametric, but this study uses a non-parametric approach. A Gaussian Process (GP) is another parametric model that can be combined with Bayesian inference. A shallow neural network (NN) approach to machine learning (ML) is represented by the Multilayer Perceptron (MLP) method. Artificial intelligence (AI) techniques replicate biological neurons using layers. Input is processed using an activation function and the result is used for the next layer until the final output. Feedforward methods such as MLP do this only in one direction, with standard backpropagation for training. Quadratic Discriminant Analysis (QDA) uses a non-parametric non-linear decision surface to create a classification.
 
-\subsection{Trajectory Preprocessing}
+\subsubsection{K-Nearest Neighbours}
+%\label{subsubsec:k-NN}
 
-First, before inflection points are calculated, the trajectory must be entirely in the first Quadrant of a Cartesian coordinate system, have an ending $0$ $y$ coordinate, and starting $0$ $x$ and $y$ coordinates. A trajectory is first translated so that the starting point has a $0$ $x$ and $y$ coordinate. All coordinates are then transferred from a Cartesian to a polar coordinate system and rotated so that the final point lies on the $x$ axis and has a $0$ $y$ coordinate. If any part of the resulting trajectory lies on the negative part of the $x$ or $y$ axis, each coordinate in the corresponding axis is replaced by the distance from the maximum value of all the trajectory coordinates for the axis. The visual demonstration of trajectory preprocessing is displayed in Figure~\ref{fig:visual_transform}. The dash-dotted and light blue trajectory is unaltered, the dotted and orange trajectory is translated to a $0$ $x$ and $y$ starting coordinate and rotated, and the solid and green trajectory is mirrored to eliminate negative values. All points except the red diamonds that mark inflection points are dark blue circles.
+In statistics, the k-Nearest Neighbours algorithm (k-NN) is a non-parametric supervised learning classification and regression method first developed by Evelyn Fix and Joseph Hodges in 1951 \cite{Fix1989} and later extended by Thomas Cover \cite{Cover1967}. An object is classified by the majority vote of its $k$ nearest neighbors.
 
-\begin{figure}[!ht]
+Since this algorithm relies on distance for classification, if the features represent different physical units or have very different scales, normalizing the data and removing noisy or unimportant features before training can dramatically improve accuracy \cite{Hastie2009}.
+ 
+The best choice of $k$ depends on the data. Larger values of $k$ reduce the effect of noise \cite{Everitt2011}, but make the boundaries between classes less clear. A good $k$ can be chosen via the bootstrap method \cite{Hall2008} or using different heuristic techniques, such as hyperparameter optimization. In binary classification, $k$ is often an odd number to avoid ties.
+
+The \textit{knn3} function from the \textit{caret} library \cite{Kuhn2007} was applied in this study. The \textit{train} function from the \textit{caret} library \cite{Kuhn2007} was used to set the parameter network for tuning the $k$ value with ten folds for cross-validation and three repetitions. Integers from one to twenty, including the range limits, were tested as $k$ values.
+
+\subsubsection{Gaussian Process}
+%\label{subsubsec:GP}
+
+In probability theory and statistics, a Gaussian Process (GP) is a stochastic process, a set of random variables indexed in time or space, such that any finite set of these random variables has a multivariate normal distribution. The distribution of a Gaussian Process is the joint distribution of infinitely many random variables represented by functions with a continuous domain, such as time or space.
+
+Gaussian Processes are useful in statistical modeling because they benefit from properties inherited from the normal distribution. While exact models often scale poorly for large amounts of data, multiple approximation methods retain good accuracy while drastically reducing computation time.
+  
+A Gaussian Process can be used as a prior probability distribution of functions in Bayesian inference \cite{Rasmussen2005, Liu2010}. Given any set of $N$ points in the desired function domain, one can study a multivariate Gaussian Process whose covariance matrix parameter is the Gram matrix of $N$ points with the desired kernel probability density function and sample from that process.
+
+The \textit{gausspr} function from the \textit{kernlab} library \cite{Karatzoglou2004} is an implementation of the Gaussian Process that can be used for regression or classification and is based on the work written by Williams and Barber \cite{Williams1998}.
+
+\subsubsection{Random Forest}
+%\label{subsubsec:RF}
+
+Random Forest (RF) or Random Decision Forest is a collective learning method for classification, regression, and other tasks, constructing many Decision Trees during training. For classification, the output class is chosen by the majority of Decision Trees.
+
+Random Decision Forests remove the tendency of Decision Trees to overfit to the training data set \cite{Ho1995}. The Random Forest algorithm implements a classification approach called "stochastic discrimination" \cite{Kleinberg1990, Kleinberg1996, Kleinberg2000}. 
+
+Leo Breiman \cite{Breiman2001} and Adele Cutler \cite{Breiman2002} combined bagging and random feature selection \cite{Ho1995, Amit1997} to build a collection of Decision Trees with controlled variance and extend the Random Forest method. The implementation of Random Forest in the function \textit{randomForest} in the library of the same name is based on Breiman and Cutler's work \cite{Breiman2001, Breiman2002}.
+
+\subsubsection{Multilayer Perceptron}
+%\label{subsubsec:MLP}
+
+Multilayer Perceptron (MLP) is the name for an artificial neural network (ANN) with feedforward data transfer, which consists of fully connected neurons with a nonlinear activation function, organized in at least three layers, known for being able to distinguish data that are not linearly separable \cite{Cybenko1989}. Modern feedforward neural networks are trained using backpropagation for gradient estimation \cite{Linnainmaa1976, Kelley1960, Rosenblatt1962, Werbos1970, Rumelhart1987}. Shallow neural networks with a single hidden layer and standard backpropagation, such as MLP, are colloquially called "vanilla" neural networks \cite{Hastie2009}. The function \textit{MLP} from the \textit{fdm2id} library \cite{Blansche2019} is based on the implementation of a neural network with one layer from the function \textit{nnet} in the library of the same name \cite{Ripley2009}.
+
+\subsubsection{Support Vector Machine}
+%\label{subsubsec:SupportVectorMachine}
+
+The Support Vector Machine (SVM) or Support Vector Network (SVN) algorithm is a supervised maximum margin classification approach. Non-linear classification is possible thanks to the hyperplane kernel trick \cite{Boser1992}. The hyperplane furthest from the nearest training sample of any class represents optimal division \cite{HastieRosset2009}. SVM models were pitted against other classification methods in extensive tests \cite{Meyer2003}. Despite this, their performance status regarding various linear models, such as logistic and linear regression, has yet to be established. The selected kernel probability density function is crucial for successful classification \cite{Press2007}. A linear and a Radial Basis Function (RBF) are applied in this experiment. The \textit{svm} function from the \textit{e1071} library \cite{Meyer1999} was used to build the SVM in this work. The implementation in the mentioned function is based on the implementation for C/C++ developed by Chang and  Lin for the \textit{LIBSVM} library \cite{Chang2007}. More details on the implementation and speed benchmarks can be found in the paper by Fan et al. \cite{Fan2008}.
+
+\subsubsection{Decision Tree}
+%\label{subsubsec:DecisionTree}
+
+Decision Tree (DT) methods apply supervised classification or regression in data mining and decision-making. The output is discrete for classification trees. DT models are easy to understand, contributing to their widespread use \cite{Wu2008}. Feature-derived rules for tree construction iteratively split the original sample set, or root node, into descendants, or successors containing its subsets \cite{ShalevShwartz2014}. The function \textit{rpart} from the library of the same name \cite{Therneau1999} that was used in this project follows the work of Breiman et al. \cite{Breiman1984}.
+
+\subsubsection{Naive Bayes}
+%\label{subsubsec:NaiveBayes}
+
+Naive Bayes (NB) models, simple Bayes or independent Bayes \cite{Hand2001} classifiers are a wide category of linear "probabilistic classifiers". It is hypothesized the predictors are conditionally independent if the output variable is known. NB models apply maximum likelihood training \cite{Russell1999} with linear complexity and no expensive iterations. Boosted Trees or Random Forest (RF) models outperform Naive Bayes (NB) models according to 2006 data \cite{Caruana2006}. However, NB models do not require as much training data as others \cite{John2013}. Using Bayes' theorem in Equation~\ref{eqn:1}, NB models determine probabilities $p(C_{k}\mid x_{1},\ldots, x_{n})$ for $K$ classes $C_{k}$ and an input vector $x = (x_{1},\ldots, x_{n})$ of $n$ predictors \cite{Murty2011}. The \textit{gaussian\_naive\_bayes} function from the \textit{naivebayes} library \cite{Majka2017} was used in this paper to build a Gaussian classifier.
+
+\begin{equation}
+	p(C_{k}\mid \mathbf{x})={\frac{p(C_{k})\ p(\mathbf{x} \mid C_{k})}{p(\mathbf{x})}}
+	\label{eqn:1}
+\end{equation}
+
+\subsubsection{AdaBoost}
+%\label{subsubsec:AdaBoost}
+
+AdaBoost, short for Adaptive Boosting, is a statistical classification meta-algorithm. The output of other learning algorithms, or weak classifiers, is combined into a weighted sum. The relative "weight" of each training sample's class prediction is gathered in each iteration.
+
+This data can be fed into a Decision Tree training algorithm. Later trees can use the information to focus on difficult-to-classify samples. Decision trees can be built that favor splitting sample sets with large weight sums.
+
+Each weak learner produces an output hypothesis $h$ that improves the prediction $h(x_{i})$ for each sample in the training set. In each iteration, marked as $t$, a weak classifier is selected and a coefficient $\alpha_{t}$ is determined such that the total training error $E_{t}$ of the resulting $t$-stage boosted classifier, given in Equation~\ref{eqn:2}, is minimized.
+ 
+\begin{equation}
+[E_{t} = \sum_i E[F_{t-1}(x_{i}) + \alpha_{t} h(x_{i})] \label{eqn:2}
+\end{equation}
+ 
+$F_{t-1}(x)$ is the boosted classifier built in the previous training stage, and $f_{t}(x) = \alpha_{t} h(x)$ is the weak classifier considered to be added. In each iteration of the training process, a weight $w_{i,t}$ equal to the current error $E(F_{t-1}(x_{i}))$ is assigned to all samples. The \textit{adaboost} function from the \textit{JOSUBoost} library \cite{Olson2016}, based on a paper written by Freund and Shapire \cite{Freund1997}, is used in this paper.
+
+\subsubsection{Quadratic Discriminant Analysis}
+%\label{subsubsec:QDA}
+ 
+Quadratic Discriminant Analysis (QDA) is a statistical classifier that uses a quadratic decision surface to separate measurements of two or more classes of objects or events. It is a more general version of a linear classifier and closely related to Linear Discriminant Analysis (LDA) \cite{Tharwat2016}. However, unlike LDA, in QDA there is no assumption that the measurements of each class are distributed according to a normal (Gaussian) distribution \cite{Cover1965}. The \textit{qda} function from the \textit{MASS} library \cite{Ripley2009Mass} used in this paper is based on work by Ripley \cite{Ripley1996} and an implementation for the \textit{S} language by Vernables and Ripley \cite{Venables2002}.
+
+\subsection{Data description and analysis}
+%\label{subsec:Data}
+
+This paper calculates different temporal and geometric features of the trajectories representing aircraft flights from the selected point of departure to the destination airport using the statistical computing software R. Then, based on the trajectory features obtained using the \textit{trajr} library and meteorological features, obtained from meteorological reports for a certain time and place, the previously marked trajectories are classified without directly using the coordinates as input for the model. Such an analysis should confirm the significance of the temporal and geometric features of the trajectories that distinguish and describe them, and enable performance comparison of different classifiers. The results could also provide insight into the possible influence of different meteorological factors on aircraft movement.
+
+\subsubsection{OpenSkyNetwork}
+%\label{subsubsec:opensky}
+
+OpenSkyNetwork is a non-profit network of Automatic Dependent Surveillance-Broadcast (ADS-B) receivers launched in 2013 by the Swiss Defense Office, the University of Kaiserslautern, and the University of Oxford to collect air traffic data for scientific research.
+
+The OpenSky network saves received raw data only for the immediate past due to the excessive amount of such data. Access to real-time data is limited to 8 minutes per day for unregistered users and 90 minutes per day for registered users, and there are other restrictions depending on the type of query.
+ 
+State vector information, which also includes flight trajectories from a given airport, is limited to a maximum of one week in the past if real-time data access is used. A subset of historical processed or unprocessed information is available without registration, while full access requires a subscription and submitting a request. The "states" data set is available to everyone and contains state vectors for each full hour on Mondays between 05.06.2017. to 27.6.2022.
+
+Among the data downloaded in this way, ICAO24 is a unique 24-bit address determined by the International Civil Aviation Organization (ICAO) for each object that transmits ADS-B messages, such as an airport, which is the case in this study. The ICAO24 identifier is written in hexadecimal and stored as a character sequence. The callsign of the aircraft used in communication is also stored as a character string. Callsigns are derived from several ICAO or Federal Aviation Administration (FAA) rules in the United States of America. Both the ICAO24 and callsign values are necessary to identify an aircraft trajectory for a given time interval.
+
+The values of latitude, longitude, and altitude in meters were used to build the trajectory. The timestamps as seconds elapsed since the so-called epoch time (00:00:00, 01.01.1970, UTC) are also necessary for building the trajectory. State vectors with missing values in the \textit{longitude}, \textit{latitude}, or \textit{geoaltitude} fields were omitted during post-processing.
+
+The \textit{openSkies} library provides access to the OpenSky API and the OpenSky historical database, which is published on the CRAN network.
+
+As part of this project, the \textit{getAirportMetadata} function was used to obtain the latitude and longitude of the Zagreb Pleso airport and define the observation radius. An area of $0.4$ degrees longitude and latitude was selected, approximately equal to $44.4$ $km$ at the latitude and longitude of this airport. The observed area is limited to the initial phase of the flight near the airport, and only this part of each trajectory is used in further processing.
+
+The function \textit{getAirportDepartures} was used to retrieve departure flights from a specific airport in the desired time range. In this case, it is necessary to specify the ICAO24 identifier for Zagreb Pleso airport, LDZA, and the beginning and end of the time interval. An object is returned, containing all the flights that match the specified parameters, and the response is filtered by the ICAO24 identifier for the destination airport, London Heathrow, EGLL.
+
+The ICAO24 identifier and the call sign were used to connect flights with state vectors. Only the state vectors with a timestamp between departure and arrival are recorded. The values of the state vector are also associated with meteorological features at the appropriate measuring station by timestamp and location, as described in the rest of the text.
+
+\subsubsection{Meteorological features}
+%\label{subsubsec:METAR}
+
+Publicly available meteorological data, obtained from METAR reports, was used along with aircraft trajectory features to train classifiers in this paper using manually marked trajectories.
+
+Meteorological Aerodrome Report (METAR) is a format for reporting meteorological data obtained by observation or sensors. METAR reports are used mainly by aircraft pilots and meteorologists, who use the aggregated information for weather forecasts. This format is highly standardized by ICAO and the World Meteorological Organization (WMO), and understood in most of the world. The website $rp5.ru$ \cite{rp5Description} publishes meteorological forecasts and archives of historical METAR reports in various file formats for numerous measuring stations and airports.
+
+The temperature and dew point were used in this experiment and measured in degrees Celsius. Information about relative humidity between zero and $100$ percent was also used in the analysis. High relative humidity indicates the dew point is closer to the current air temperature. Relative humidity equal to $100\%$ means that the dew point is the same as the current temperature and air is maximally saturated with water. The relative humidity decreases when the dew point remains constant and the temperature rises.
+
+Air pressure values expressed in $mmHg$ (millimeters of mercury) recorded at the altitude of the measuring station and sea level ($P$), were also used. Wind speed in $m/s$ (meters per second) is included in the set of predictors.
+
+Measurements of meteorological features are added every half hour or every full hour, and state vectors for aircraft are stored every ten seconds in analyzed files. The value from the meteorological report with the smallest time gap was used for each aircraft state vector. The arithmetic mean of meteorological features is then calculated to classify a trajectory.
+
+\subsubsection{Trajectory resampling}
+%\label{subsubsec:sample}
+
+After removing points with missing latitude, longitude, or altitude values, the function \textit{TrajResampleTime} was used to linearly interpolate points along the trajectory to create a new trajectory with fixed time intervals between points. Since the distance between points was ten seconds in the original state vector data, the same value was used again to avoid data loss and maintain the same file size.
+ 
+\subsubsection{Trajectory smoothing}
+%\label{subsubsec:smooth}
+
+Many trajectories include noise that can affect the results of some analyses. The \textit{TrajSmoothSG} function reduces high-frequency noise while preserving the trajectory shape by applying a Savitzky-Golay smoothing filter from the function \textit{sgolayfilt} in the \textit{signal} library \cite{Ligges2006}. The degree of the polynomial used in the filter, and the length of the filter, which must be an odd number, both need to be specified.
+
+High-frequency noise is common in the obtained data, especially in altitude values, so smoothing was applied with the degree of the polynomial $p = 3$ and the window size $n = 11$. The values were chosen because of the ten-second interval between records and verified by visual assessment of the shape of the curve representing the trajectory.
+
+\subsubsection{Speed}
+%\label{subsubsec:speed}
+
+The function \textit{TrajDerivatives} calculates the first and second-order derivatives along the trajectory, representing speed and acceleration. The trajectory was smoothed to avoid irregularities before the derivatives were calculated. This paper uses the mean value of the speeds for the trajectory as a predictor variable.
+
+\subsubsection{Straightness}
+%\label{subsubsec:straightness}
+ 
+Various methods for measuring the straightness, or the curvature of trajectories, are available within the \textit{trajr} library. The simplest method is calculating $D/L$, where $D$ is the Euclidean distance of the beginning and end points of the trajectory, and $L$ is the length of the trajectory. This approach is implemented in the \textit{TrajStraightness} function. The return value is between $0$ to $1$, with $1$ indicating a straight line with equal Euclidean distance and length, and $0$ representing curves. Benhamou \cite{Benhamou2004} believes that the $D/L$ equation is a reliable measure of the efficiency of a directed walk, but not a random trajectory. The analyzed aircraft trajectories have a defined goal, the destination airport, and the $D/L$ formula is applicable.
+ 
+\subsubsection{Sinuosity}
+%\label{subsubsec:sinuosity2}
+
+The sinuosity index defined by Benhamou \cite{Benhamou2004} and used in this experiment is a function of the mean cosine of the turning angles, representing a suitable measure of the curvature of a trajectory representing a random walk. This is a corrected form of the original sinuosity index defined by Bovet and Benhamou \cite{Bovet1988}. The function \textit{TrajSinuosity2} calculates the corrected form of the sinuosity index. The uncorrected form of the curvature index should only be used for a trajectory with a constant step size, which is not the case in this experiment.
+
+The equation for the corrected sinuosity index is $S = 2 {[p(((1+c)/(1-c))+b^{2})]}^{-0.5}$, where $p$ denotes the mean step size, $c$ the mean cosine of the turning angles, and $b$ the step size variation coefficient. A sinuosity index closer to $1$ represents straighter trajectories because the cosine of turning angles approaches $1$ as the turning angle decreases. A sinuosity index near $0$ indicates a curve because the cosine of turning angles close to a right angle approaches $0$.
+
+\subsubsection{Maximum expected displacement}
+%\label{subsubsec:emax}
+
+$E_{max}^{a}$ is a dimensionless estimate of the maximum expected displacement from the beginning to the end of the trajectory returned by the function \textit{TrajEmax}. Larger values represent straighter trajectories \cite{Cheung2007}). $E_{max}^{b}$ is $E_{max}^{a}$ multiplied by the mean step size, thus giving the maximum possible displacement expressed in spatial units. The dimensionless $E_{max}^{a}$ value was used in this study because the step size is not constant. The formula for maximum expected displacement is $f * b / (1 - b)$, where $f$ represents the mean value of the step sizes returned by the function \textit{TrajStepLengths} or $1$ for a dimensionless estimated. In the same formula, $b$ represents the mean value of the cosine of the turning angles returned by the function \textit{TrajAngles}.
+ 
+\subsubsection{Fractal dimension}
+%\label{subsubsec:fd}
+
+In mathematics, fractal dimension is a term used in geometry to give a rational statistical index of the complexity of detail in a pattern \cite{Mandelbrot1967}. A fractal pattern changes with the scale at which it is measured, which is the step size for trajectories. The fractal dimension is also a measure of the space occupied by the pattern and describes how the fractal scales differently in the non-integer fractal dimension.
+
+The fractal dimension is considered a promising measure of straightness or curvature, varying between $1$ for a straight line and $2$ for Brownian motion. However, several studies have found it unsuitable for animal trajectories, because they are not fractal curves, and the fractal dimension depends on the provided range of step sizes \cite{Nams2006, Turchin1996}.
+
+Fractal dimension is still used, despite these limitations, and the function \textit{TrajFractalDimension} by default calculates the fractal dimension using a modified  "dividers" method to account for rounding errors \cite{Nams2006}. This function compensates for overestimating the trajectory length by going through "splits" representing trajectory segments forward and backward and returning the arithmetic mean of the calculated fractal dimension values. After the last step, the length of the remaining trajectory is estimated. The formula for calculating fractal dimension is given in Equation~\ref{eqn:3}, where $\varepsilon$ is the step size, $N(\varepsilon)$ the number of trajectory segments, and $D_{0}$ the fractal dimension.
+  
+\begin{equation}
+D_{0}=\lim_{\varepsilon \rightarrow 0} \frac{\log{N(\varepsilon)}}{\log{\frac{1}{\varepsilon}}} \label{eqn:3}
+\end{equation}
+  
+The range of step sizes used to calculate the fractal dimension must be predefined. The function \textit{TrajLogSequence} returns a specified number of points in a given range that can be used as step sizes, and the points are uniformly spaced if viewed on a logarithmic axis. A thousand values uniformly spaced between one and two kilometers on the logarithmic axis were used to estimate the fractal dimension of the aircraft's trajectory. An empirical assessment of the minimum and maximum aircraft speed and distance traveled in one ten-second step determines the lower and upper range boundaries.
+
+A test using the function \textit{TrajFractalDimensionValues} returns the trajectory lengths calculated for a range of step sizes. If the relationship between step size and trajectory length is linear, then the trajectory is a fractal curve for a given range of step sizes. The direction in which the trajectory length is linearly dependent on the step size was estimated by linear regression using the \textit{lm} function from the \textit{stats} library.
+
+\subsubsection{Direction change}
+%\label{subsubsec:DC_SDDC}
+ 
+Direction Change is the change in angle (in degrees) between two steps in the trajectory, divided by the time difference between the two steps. Kitamura and Imafuku \cite{Kitamura2015} originally used it to assess locomotor mimicry in butterflies. The direction changes between all adjacent step pairs are calculated using the function \textit{TrajDirectionalChange}. The arithmetic mean of direction change represents the non-linearity index and the standard deviation measures irregularity.
+
+\subsubsection{Data preprocessing}
+%\label{subsubsec:Preprocessing}
+
+Before the data was used as input to classification models, each feature, or each column of the matrix, was scaled. When scaling, the arithmetic mean of all feature values (matrix column) is subtracted from the feature value for a given sample (trajectory), and the result is then divided by the standard deviation of the feature value (matrix column).
+
+\subsubsection{Training and testing dataset}
+%\label{subsubsec:DataTrainTest}
+
+All trajectories in which the third point was east of the latitude of $16.0688$ degrees $\mathrm{E}$ or north of the longitude of $45.7429$ degrees $\mathrm{N}$ representing the Zagreb Pleso airport are marked as class $1$. Other trajectories that satisfied none of the two specified conditions are marked as class $-1$. Trajectories were smoothed and resampled to a constant time interval of $10$ $s$ between points before labeling. The third point was used because the first and second points were too close to the airport to distinguish between classes based on their coordinates.
+
+\begin{figure}[ht]
     \centering
-    \includegraphics[width = 0.7 \linewidth]{rotate_illustrate_42.pdf}
-    \caption{The visual demonstration of trajectory preprocessing. The original trajectory is dash-dotted and light blue. The dotted and orange trajectory is translated to a $0$ $x$ and $y$ starting coordinate and rotated to a $0$ $y$ ending coordinate. The mirrored trajectory to eliminate negative values is solid and green. The inflection points are red diamonds, and all other points are dark blue circles.}
-    \label{fig:visual_transform}
+    \includegraphics[width = 0.49 \linewidth]{all_2D.pdf}
+    \caption{Classification of all trajectories based on the third step and location relative to the Zagreb Pleso airport.}
+    \label{fig:labeling}
 \end{figure}
 
-Two lists of similar trajectories exist because trajectories are separated into $10$ or $20$ points segments, as demonstrated in Figure~\ref{fig:splitting_new_demo}. The segments in this step overlap, but this does not result in duplicate entries because different surrounding points mean inflection points will not always be detected.
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width = 0.99 \linewidth]{splitting_new12.pdf}
-    \caption{An example of splitting a trajectory. The entire trajectory is solid and light blue. Window 1 is red, and points upward, while window 2 is green and points downward since they overlap. The start of window 1 is a red square. Window 1 with a window size of $10$ is a dash-dotted red line that ends with a wide red diamond. Window 1 with a window size of $20$ is a dotted red line that ends with a narrow red diamond. The start of window 2 is a green circle. Window 2 with a window size of $10$ is a dashed green line that ends with a triangle pointing right. Window 2 with a window size of $20$ is a solid green line that ends with a triangle pointing left.}
-    \label{fig:splitting_new_demo}
-\end{figure}
-
-\subsection{Types of Inflection Points}
-
-Inflection points occur when either the $x$ or $y$ coordinate stops increasing and starts decreasing, or vice versa. In this paper, each type of inflection point is represented by a hexadecimal, and binary code, as described in Table~\ref{tab:classes}. The visual demonstration for each inflection point type is displayed in Figure~\ref{fig:visual_class}.
-
-The hexadecimal codes, where the first number equals the second, and the third equals the fourth, do not represent an inflection point. There are four such sequences, specifically $0$ ($0000$), $3$ ($0011$), $c$ ($1100$), and $f$ ($0011$). These codes are marked with a yellow background in Figure~\ref{fig:visual_class} and Table~\ref{tab:classes}. These sequences are used for movement in a constant direction. Using these codes, all trajectory segments are fully described, even where inflection points do not occur. 
-
-In the binary value used to generate the hexadecimal code, the increase or decrease of the $x$ and $y$ coordinates before and after the inflection point is represented by $1$ or $0$. A sequence of inflection points describes each trajectory segment and a series of these segment descriptions will be called trajectory fingerprints in further text. Since trajectories have an unequal length, they are separated into $10$ or $20$ points segments. These segment sizes were chosen to allow multiple inflection points to occur in a segment while limiting the number of different sequences of inflection points. 
+The original set of observations has been split into training and testing subsets, considering the results of exploratory statistical, and outlier analysis, while sustaining proportions of data relating to classes of trajectories. $294$ original trajectories are used for training and testing. The samples are divided into training and testing datasets as close as possible to a ratio of $70\%$ for training and $30\%$ for testing. The division was stratified so that an approximately equal ratio of classes was present in both the training and testing data. Table~\ref{tab:classranges} lists the total number of samples in each class, and the number of samples used for testing, and training.
 
 \begin{table}[!ht]
     \centering
+    \caption{The total number of samples in each class, and the number of samples used for testing, and training. The total number of samples in any class used for training and testing is also listed.}
+    \label{tab:classranges}
     \begin{tabular}{|c|c|c|c|c|}
         \hline
-        Hex & $x_{1}$ & $x_{2}$ & $y_{1}$ & $y_{2}$ \\ \hline
-        \rowcolor{yellow} 0 & 0 & 0 & 0 & 0 \\ \hline
-        1 & 0 & 0 & 0 & 1 \\ \hline
-        2 & 0 & 0 & 1 & 0 \\ \hline
-        \rowcolor{yellow} 3 & 0 & 0 & 1 & 1 \\ \hline
-        4 & 0 & 1 & 0 & 0 \\ \hline 
-        5 & 0 & 1 & 0 & 1 \\ \hline
-        6 & 0 & 1 & 1 & 0 \\ \hline
-        7 & 0 & 1 & 1 & 1 \\ \hline
-        8 & 1 & 0 & 0 & 0 \\ \hline
-        9 & 1 & 0 & 0 & 1 \\ \hline
-        a & 1 & 0 & 1 & 0 \\ \hline
-        b & 1 & 0 & 1 & 1 \\ \hline
-        \rowcolor{yellow} c & 1 & 1 & 0 & 0 \\ \hline
-        d & 1 & 1 & 0 & 1 \\ \hline
-        e & 1 & 1 & 1 & 0 \\ \hline
-        \rowcolor{yellow} f & 1 & 1 & 1 & 1 \\ \hline
+        Class & Total samples & Test samples & Train samples \\ \hline
+        1 & 200 & 71 & 129 \\ \hline
+        -1 & 94 & 22 & 72 \\ \hline
+        All & 294 & 93 & 201 \\ \hline
     \end{tabular}
-    \caption{The hexadecimal, and binary representation of the code for types of inflection points and the increase ($1$) or decrease ($0$) of the $x$ and $y$ coordinates before and after the inflection point.}
-    \label{tab:classes}
 \end{table}
 
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width = 0.8 \linewidth]{class_illustrate_42.pdf}
-    \caption{The visual demonstration for a hexadecimal, and binary representation of the code for types of inflection points and the increase ($1$) or decrease ($0$) of the $x$ and $y$ coordinates before and after the inflection point. The inflection point is a red diamond, the point before is a green triangle, and the point after is a dark blue circle.}
-    \label{fig:visual_class}
-\end{figure}
+It is evident from Table~\ref{tab:classranges} that class $1$ is around three times as common as class $-1$, impacting model performance.
 
-\subsection{Selecting Sequences of Inflection Points for Trajectory Fingerprints}
+\subsubsection{Distribution analysis for predictors}
+%\label{subsubsec:Distribution}
 
-A total of $4678$ different sequences of inflection points occurred when separating trajectories into segments of $10$ points, and $31490$ different sequences of inflection points occurred when separating trajectories into segments of $20$ points. Only the frequency of the $200$ most frequent sequences of inflection points were used when calculating Euclidean distance and clustering trajectory fingerprints to decrease the complexity of the calculation and the memory requirements.
-
-The total frequency of sequences of inflection points when separating trajectories into segments of either $10$ or $20$ points is visible in Table~\ref{tab:classes1020} with only sequences of inflection points with a frequency over $1\%$ being represented.
-
-The displayed most frequent sequences of inflection points cover a larger portion of the trajectories when separating trajectories into segments of $10$ points, representing $91.24\%$ instead of $81.68\%$ of segments. The sequences of inflection points are longer and individually less frequent when separating trajectories into segments of $20$ points. This demonstrates a greater variety of sequences that a larger window size can distinguish.
-
-The three most frequent sequences of inflection points when separating trajectories into segments of either $10$ or $20$ points are $e$, $ede$, and $ed$, previewed in Figure~\ref{fig:visual_class} and Table~\ref{tab:classes}. This demonstrates the similarity between both algorithms and the validity of using these sequences.
+Table~\ref{tab:avgsd} and Table~\ref{tab:minmax} provide the minimum, $1^{st}$ quartile, median, arithmetic mean, standard deviation, $3^{rd}$ quartile, and maximum values for all variables, suggesting that variables are not normally distributed.
 
 \begin{table}[!ht]
     \centering
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        \multicolumn{2}{|c|}{Window size $10$} & \multicolumn{2}{c|}{Window size $20$} \\ \hline
-        Sequence & Frequency & Sequence & Frequency \\ \hline
-        e & $42.35\%$ & e & $21.99\%$ \\ \hline
-        ede & $17.39\%$ & ede & $13.6\%$ \\ \hline
-        ed & $16.32\%$ & ed & $9.68\%$ \\ \hline
-        eded & $7.17\%$ & edede & $8.21\%$ \\ \hline
-        edede & $4.46\%$ & eded & $7.47\%$ \\ \hline
-        e8 & $2.26\%$ & ededed & $4.56\%$ \\ \hline
-        ededed & $1.29\%$ & ededede & $4.01\%$ \\ \hline
-        Total & $91.24\%$ & e8 & $3.9\%$ \\ \hline
-        \multicolumn{2}{c|}{} & b2 & $3.49\%$ \\ \cline{3-4}
-        \multicolumn{2}{c|}{} & edededed & $2.07\%$ \\ \cline{3-4}
-        \multicolumn{2}{c|}{} & edededede & $1.47\%$ \\ \cline{3-4}
-        \multicolumn{2}{c|}{} & e81 & $1.23\%$ \\ \cline{3-4}
-        \multicolumn{2}{c|}{} & Total & $81.68\%$ \\ \cline{3-4}
-    \end{tabular}
-    \caption{The total frequency of sequences of inflection points with a frequency over $1\%$ when separating trajectories into segments of $10$ (left) or $20$ (right) points.}
-    \label{tab:classes1020}
+    \caption{The median, arithmetic mean, and standard deviation values for all variables.}
+    \label{tab:avgsd}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+            \hline
+            Variable & Median & Mean & Sd \\ \hline
+            Diffusion distance & $45244.58$ & $43033.61$ & $8765.07$ \\ \hline
+            Length & $56627.78$ & $53136.65$ & $12343.34$ \\ \hline
+            Duration & $410$ & $384.116$ & $74.672$ \\ \hline
+            Speed & $137.31$ & $136.692$ & $14.076$ \\ \hline
+            Acceleration & $2.809 \times 10^{-1}$ & $2.683 \times 10^{-1}$ & $1.17 \times 10^{-1}$ \\ \hline
+            Straightness & $8.154 \times 10^{-1}$ & $8.202 \times 10^{-1}$ & $8.041 \times 10^{-2}$ \\ \hline
+            Sinuosity & $2.663 \times 10^{-3}$ & $2.962 \times 10^{-3}$ & $1.894 \times 10^{-3}$ \\ \hline
+            Maximum expected displacement & $206.472$ & $213945.9$ & $3584062$ \\ \hline
+            Direction change (arithmetic average) & $1.524 \times 10^{-1}$ & $1.721 \times 10^{-1}$ & $1.007 \times 10^{-1}$ \\ \hline   
+            Direction change (standard deviation) & $2.415 \times 10^{-1}$ & $2.772 \times 10^{-1}$ & $2.632 \times 10^{-1}$ \\ \hline   
+            Fractal dimension & $1.001$ & $1.001$ & $2.518 \times 10^{-3}$ \\ \hline
+            Temperature & $16$ & $16.236$ & $9.081$ \\ \hline
+            Air pressure at sea level & $762$ & $761.999$ & $5.856$ \\ \hline
+            Air pressure at the measuring station & $752.6$ & $752.514$ & $5.728$ \\ \hline
+            Relative humidity & $60$ & $61.334$ & $18.14$ \\ \hline
+            Wind speed & $2.09$ & $2.854$ & $1.998$ \\ \hline
+            Dew point & $8$ & $7.974$ & $7.376$ \\ \hline
+        \end{tabular}
 \end{table}
-
-\section{Methodology}
-\label{sec:Methodology}
-
-\subsection{Design of a Human Similar Trajectory Selection Experiment}
-
-Because ground truth classification in the dataset is unavailable, an experiment was conducted using a website inspired by Shanmugaraj et al. \citep{shanmugaraj2024smart} as a basis for validation and comparison with the algorithm. Due to time constraints, $28$ trajectories were used as a baseline in a similar trajectory selection experiment conducted with humans. A selection screen example is shown in Figure~\ref{fig:user_select}. Out of $20$ trajectories, users must select the $5$ most similar. The algorithm selects those with the smallest Euclidean distance of trajectory fingerprints. The order in which the $20$ trajectories are displayed is randomized.
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width = 0.99 \linewidth]{Rate2.pdf}
-    \caption{An example of the user selection screen for one testing condition. The baseline trajectory in the first row has a blue outline, the selected five trajectories have a green outline, and fifteen other trajectories have a red outline.}
-    \label{fig:user_select}
-\end{figure}
-
-Two trajectories were randomly selected for each of the $14$ locations where personal watercraft are rented, as visible in Figure~\ref{fig:baseline}. An ordered list of all $2171$ trajectories is generated for each baseline trajectory, progressing from the smallest to the largest Euclidean distance of trajectory fingerprints. Two lists of similar trajectories exist because trajectories are separated into $10$ or $20$ points segments, as demonstrated in Figure~\ref{fig:splitting_new_demo}. The experiment is repeated for each user for each of the $28$ baseline trajectories split into $10$ or $20$ points segments, for a total of $56$ times per user.
-
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width = 0.99 \linewidth]{baseline.pdf}
-    \caption{The $28$ randomly selected baseline trajectories for the human selection experiment, two for each of the $14$ locations where personal watercraft are rented.}
-    \label{fig:baseline}
-\end{figure}
-
-In the experiment, $20$ trajectories other than the baseline are displayed. These trajectories include the ones at the $1$st, $115$th, and all other places increasing by $114$ and less than $2171$, ending with the $2167$th place, based on the Euclidean distance of their fingerprints. The step size of $114$ was chosen because it divides the total number of $2171$ trajectories into $20$ equal parts with the smallest remainder.
-
-The order in which the $56$ testing conditions are displayed for a user is determined by the class assigned to a user. A balanced Latin square is used to eliminate the order effect. An example of a balanced Latin square for four testing conditions represented by letters from $A$ to $D$ is given in Table~\ref{tab:latin}. Each row in the Latin square represents the order in which the testing conditions are displayed for a user assigned to the corresponding class. This ensures that an equal number of users see the testing conditions in a certain order. Users automatically get assigned to the class with the least participants when first registering. If multiple classes have the same number of participants, the class with the smallest number is chosen. In this analysis, $56$ users were included to ensure that each testing condition appears exactly once. This amounts to $1568$ conducted tests for subsequences of $10$ or $20$ points, for $56$ users and $28$ test trajectories.
 
 \begin{table}[!ht]
     \centering
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        A & B & C & D \\ \hline
-        B & C & D & A \\ \hline
-        C & D & A & B \\ \hline
-        D & A & B & C \\ \hline
-    \end{tabular}
-    \caption{An example of a balanced Latin square for four testing conditions represented by letters from $A$ to $D$.}
-    \label{tab:latin}
+    \caption{The minimum, $1^{st}$ quartile, $3^{rd}$ quartile, and maximum values for all variables.}
+    \label{tab:minmax}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|}
+            \hline
+            Variable & Min. & $1^{st}$ Qu. & $3^{rd}$ Qu. & Max. \\ \hline
+            Diffusion distance & $22785.48$ & $34392.51$ & $50887.14$ & $54349.69$ \\ \hline
+            Length & $22785.89$ & $40090.68$ & $63180.26$ & $82608.51$ \\ \hline
+            Duration & $120$ & $320$ & $440$ & $540$ \\ \hline
+            Speed & $107.833$ & $128.075$ & $144.625$ & $212.095$ \\ \hline
+            Acceleration & $-6.114 \times 10^{-1}$ & $2.392 \times 10^{-1}$ & $3.118 \times 10^{-1}$ & $9.134 \times 10^{-1}$ \\ \hline  
+            Straightness & $5.92 \times 10^{-1}$ & $7.772 \times 10^{-1}$ & $8.643 \times 10^{-1}$ & $10.0 \times 10^{-1}$ \\ \hline     
+            Sinuosity & $4.145 \times 10^{-6}$ & $2.433 \times 10^{-3}$ & $3.013 \times 10^{-3}$ & $1.666 \times 10^{-2}$ \\ \hline      
+            Maximum expected & \multirow{2}{*}{$4.596$} &  \multirow{2}{*}{$172.644$} &  \multirow{2}{*}{$247.63$} &  \multirow{2}{*}{$61450080$} \\
+            displacement & & & & \\ \hline
+            Direction change & \multirow{2}{*}{$3.391 \times 10^{-4}$} & \multirow{2}{*}{$1.342 \times 10^{-1}$} & \multirow{2}{*}{$1.795 \times 10^{-1}$} & \multirow{2}{*}{$8.763 \times 10^{-1}$} \\
+            (arithmetic average) & & & & \\ \hline
+            Direction change & \multirow{2}{*}{$4.091 \times 10^{-4}$} & \multirow{2}{*}{$2.162 \times 10^{-1}$} & \multirow{2}{*}{$2.613 \times 10^{-1}$} & \multirow{2}{*}{$2.216$} \\
+             (standard deviation) & & & & \\ \hline
+            Fractal dimension & $1$ & $1.001$ & $1.002$ & $1.041$ \\ \hline
+            Temperature & $-1$ & $9$ & $24$ & $35$ \\ \hline
+            Air pressure at sea level & $746.3$ & $758.2$ & $765$ & $783.8$ \\ \hline
+            Air pressure at the & \multirow{2}{*}{$736.8$} & \multirow{2}{*}{$749.128$} & \multirow{2}{*}{$755.65$} & \multirow{2}{*}{$773.6$} \\
+            measuring station & & & & \\ \hline
+            Relative humidity & $19$ & $45.962$ & $76$ & $100$ \\ \hline
+            Wind speed & $0$ & $1.672$ & $4$ & $12$ \\ \hline
+            Dew point & $-12$ & $2$ & $14$ & $21$ \\ \hline
+        \end{tabular}
 \end{table}
 
-The experiment is designed to restrict navigation within a single testing condition, preventing the user from going back, moving forward, or changing a submitted answer. However, the entire experiment can be paused or repeated indefinitely, provided the browser tab remains open. If the experiment is repeated, any previously submitted answers are overwritten. If the user exits the experiment, they will need to restart from the beginning to resume participation.
+The Shapiro-Wilk normality tests, using the \textit{R} function \textit{shapiro.test}, did not yield a $p$-value larger than the selected $\alpha$-value of $0.05$ for any variable, further strengthening the claim based on Table~\ref{tab:minmax} that variables do not follow a normal (Gaussian) distribution.
 
-\subsection{Clustering Trajectories Based on the Most Frequent Sequences of Inflection Points}
+\subsubsection{Correlation analysis for predictors}
+%\label{subsubsec:Correlation}
 
-The trajectories were clustered using K-means and DBSCAN, based on the trajectory fingerprint when separating trajectories into segments of either $10$ or $20$ points. The DBSCAN and K-means algorithms were selected based on previous related work presented in section \ref{sec:Related}.
+Observations of statistical variables were assessed for their mutual association/correlation to identify the classification model structure, potential predictors, and targets. Figure~\ref{fig:correlation} contains a heat map of the correlation between all variables used in the study.
 
-The DBSCAN algorithm used a fixed minimum number of $346$ points inside a cluster. This choice is based on research that indicates it should be larger than the number of features \cite{Ester1996ADA}, which in this case represent the $200$ most frequent sequences of inflection points used in a trajectory fingerprint. $346$ was the largest possible minimum number of points inside a cluster that produced at least two clusters to detect anomalies.
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[width=0.99\linewidth]{corrplot.pdf}
+    \caption{A heat map of the correlation between all variables used in this study. Red represents a high positive correlation, blue represents a high negative correlation, and white represents a low correlation. Variables are fully correlated with themselves, so values on the secondary diagonal equal $1$. The matrix is symmetrical concerning the secondary diagonal because the same combination of correlated variables is achieved when swapping the row and column indices.}
+    \label{fig:correlation}
+\end{figure}
 
-An $\epsilon$ parameter value of $6.086 \times 10^{-2}$ and $9.343 \times 10^{-2}$ was used for a window size of $10$ and $20$ respectively. The $\epsilon$ parameter value was determined by finding the elbow in a $k$-nearest neighbors plot of Euclidean distances based on trajectory fingerprints, as suggested by Rahmah and Sitanggang \cite{rahmah2016determination}. The $k$ value in a $k$-nearest neighbors plot was $346$, the same as the minimum number of points inside a cluster.
+The largest correlation coefficient in Figure~\ref{fig:correlation} depicts a significant correlation between sinuosity and the arithmetic average and standard deviation of direction change and equals $0.96$. This is due to the similarity in the calculation methods for direction change and sinuosity. The arithmetic average and standard deviation of direction change have a correlation coefficient of $0.91$ since they represent different characteristics of the same sequence of direction change values.
 
-DBSCAN finds fewer and denser clusters if the minimum number of samples is larger, while K-means finds the specified number of clusters. The number of clusters DBSCAN generated was used for the K-means algorithm to allow comparisons. The trajectories in the smallest cluster DBSCAN or K-means are flagged as anomalies because it is assumed that most trajectories are normal.
+The length variable exhibits the second and third largest correlation coefficient in Figure~\ref{fig:correlation} when paired with duration or diffusion distance, equaling $0.93$ and $0.91$ respectively. Diffusion distance and duration have a correlation coefficient of $0.82$. The association between these variables seems logical since trajectory length increases with duration, and diffusion distance is usually larger for longer trajectories.
 
-To visualize the clusters of trajectories in two dimensions, the Principal Component Analysis (PCA) algorithm, with the number of components set to two, was applied to the trajectory fingerprint with multiple features when separating trajectories into segments of either $10$ or $20$ points. The PCA algorithm is chosen based on previous work that plots the data in two dimensions using the first two principal components to visually identify closely related data points in clusters \cite{jolliffe2016principal}.
+The speed variable demonstrates a correlation coefficient of $0.56$ and $0.51$ when paired with diffusion distance and trajectory length respectively. This occurs because planes gradually accelerate as they travel further from the airport and start cruising at larger altitudes.
 
-\subsection{Comparing the Algorithm and Clustering with the User's Selection}
+Straightness has a negative correlation coefficient of $-0.55$ and $-0.59$ with trajectory length and duration respectively. There is a higher chance of a larger number of turns when the trajectory length and duration are larger, which decreases straightness.
 
-To assess how well an algorithm's selection aligns with the users, the five most similar trajectories selected by the user belong to the positive class. In contrast, the other fifteen out of twenty belong to the negative class. This means $25\%$ of samples belong to the positive, and $75\%$ to the negative class. The five trajectories the algorithm selected are classified into the positive class, while the other fifteen out of twenty are classified into the negative class.
+The fractal dimension of a trajectory is strongly positively correlated with the maximum expected displacement, and the arithmetic average and standard deviation of direction change, with a correlation coefficient of $0.54$, $0.63$, and $0.6$ respectively.
+ 
+Temperature and dew point are the meteorological features most strongly correlated with one another, exhibiting a correlation coefficient of $0.84$. This is expected because dew point depends on temperature as defined by the laws of physics. Similarly, the temperature and relative humidity have a strong negative correlation coefficient of $-0.53$.
 
-Similarly, K-means and DBSCAN clustering for each window size are compared with the user's selection. The trajectories that belong to the same cluster as the baseline trajectory are classified into the positive class, and others belong to the negative class. The clustering can generate between $0$ and $20$ positive classifications, while the rest are negative. The arrays representing all users and trajectories are aligned with K-means and DBSCAN clustering results for each window size. In this way, each clustering algorithm is benchmarked against the users to see which classification method is more successful based on an independent ground truth value obtained from users.
+Trajectory class is most strongly associated with diffusion distance, trajectory length, duration, and speed, with correlation coefficients of $0.78$, $0.72$, $0.6$, and $0.59$ respectively. This confirms that the assigned class can be predicted using trajectory features.
 
-A confusion matrix and the derived metrics can be used to assess the difference from the users' choices. The choices for all users and trajectories are merged in a single array for each window size since the window sizes use different algorithms. $1568$ tests are conducted for each window size, one for each combination of $56$ users and $28$ test trajectories. Thus, out of $31360$ samples, $20$ for each one among $1568$ tests, $7840$ samples belong to the positive class, $5$ for each test, and $23520$ to the negative class, $15$ for each test.
+The box plots of all variables in Figure~\ref{fig:iono3boxplot} are used to support the correlations shown in Figure~\ref{fig:correlation} by exhibiting the trend of each variable.
 
-\subsubsection{Confusion Matrix}
-%\label{subsubsec:ConfusionMatrix}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\linewidth]{boxplot.pdf}
+    \caption{Box plots of all variables used as predictors for trajectory class.}
+    \label{fig:iono3boxplot}
+\end{figure}
 
-A correct classification is marked as a True Positive (TP), or True Negative (TN) result. A type I or II error in classification is marked as False Positive (FP) or False Negative (FN), respectively.
+Figure~\ref{fig:iono3boxplot} shows the minimum, maximum, and arithmetic mean of the diffusion distance, trajectory length, duration, and speed increasing for trajectories in class $1$. The maximum expected displacement, relative humidity, air pressure at the measuring station, and sea level exhibit this trend, but it is less prominent, as they have a lower positive correlation in Figure~\ref{fig:correlation}. The opposite behavior is observed for all other variables, as indicated by a negative correlation in Figure~\ref{fig:correlation}.
+
+\subsection{Confusion matrix}
+%\label{subsec:Metrics}
+
+The default approach to a confusion matrix uses only two groups (Yes and No, positive and negative). A correct classification is marked as a True Positive (TP), or True Negative (TN) result. A type I or II error in classification is marked as False Positive (FP) or False Negative (FN), respectively.
 
 The percentage of correctly classified samples that truly belong to a class is evaluated by sensitivity, recall, hit rate, or True Positive Rate (TPR), calculated as $\mathrm{TP}/(\mathrm{TP}+\mathrm{FN})$, and specificity, selectivity, or True Negative Rate (TNR), calculated as $\mathrm{TN}/(\mathrm{TN}+\mathrm{FP})$ \cite{altman1994diagnostic1, altman1994diagnostic2}.
 
 Precision, or Positive Predictive Value (PPV), calculated as $\mathrm{TP}/(\mathrm{TP}+\mathrm{FP})$, and Negative Predictive Value (NPV), calculated as $\mathrm{TN}/(\mathrm{TN}+\mathrm{FN})$, represent the ratio of correct assignment among samples classified to a class.
 
-The proportion of samples of a class or classifications to a class is recorded by prevalence, calculated as $(\mathrm{TP}+\mathrm{FN})/(\mathrm{TP}+\mathrm{FP}+\mathrm{FN}+\mathrm{TN})$, and Detection Prevalence (DP), calculated as $(\mathrm{TP}+\mathrm{FP})/(\mathrm{TP}+\mathrm{FP}+\mathrm{FN}+\mathrm{TN})$, respectively. If prevalence is not equally distributed among classes, they are unbalanced.
+The proportion of samples of a class or classifications to a class is recorded by Prevalence (P), calculated as $(\mathrm{TP}+\mathrm{FN})/(\mathrm{TP}+\mathrm{FP}+\mathrm{FN}+\mathrm{TN})$, and Detection Prevalence (DP), calculated as $(\mathrm{TP}+\mathrm{FP})/(\mathrm{TP}+\mathrm{FP}+\mathrm{FN}+\mathrm{TN})$, respectively. If prevalence is not equally distributed among classes, they are unbalanced.
 
-The proportion of correct assignment for a single or any class is noted by the Detection Rate (DR), calculated as $\mathrm{TP}/(\mathrm{TP}+\mathrm{FP}+\mathrm{FN}+\mathrm{TN})$, and accuracy (Acc), calculated as $(\mathrm{TP} + \mathrm{TN}) / (\mathrm{TP} + \mathrm{TN} + \mathrm{FP} + \mathrm{FN})$, respectively.
+The proportion of correct assignment for a single or any class is noted by the Detection Rate (DR), calculated as $\mathrm{TP}/(\mathrm{TP}+\mathrm{FP}+\mathrm{FN}+\mathrm{TN})$, and Accuracy (Acc), calculated as $(\mathrm{TP} + \mathrm{TN}) / (\mathrm{TP} + \mathrm{TN} + \mathrm{FP} + \mathrm{FN})$, respectively.
 
-Balanced Accuracy (BA) \cite{velez2007balanced} is used for unbalanced classes since accuracy does not consider them individually. In this study, there is only $25\%$ of positive samples. The formula $(\mathrm{TPR} + \mathrm{TNR}) / 2$ equals the arithmetic mean of TPR and TNR, focused on the positive and the negative classes, respectively.
+Balanced Accuracy (BA) \cite{velez2007balanced} is used for unbalanced classes since accuracy does not consider them individually. In this study, only $31.97\%$ of trajectories belong to the negative class. The formula $(\mathrm{TPR} + \mathrm{TNR}) / 2$ equals the arithmetic mean of TPR and TNR, focused on the positive and the negative classes, respectively.
 
 Another metric that can be used instead of accuracy to consider each class separately is the $F1$ score, or the harmonic mean of PPV and TPR, calculated as $2 \times (\mathrm{PPV} \times \mathrm{TPR}) / (\mathrm{PPV} + \mathrm{TPR}) = 2 \times \mathrm{TP} / (2 \times \mathrm{TP} + \mathrm{FP} + \mathrm{FN})$.
 
 \subsubsection{McNemar's test}
 %\label{subsubsec:McNemar}
 
-Created for techniques that distinguish between two classes, McNemar's test for correlated proportions is based on the chi-squared distribution and is applied to paired categorical data. Comparing the sensitivity and specificity of two candidate models directly is not as informative of model difference as the truth value of the null hypothesis of marginal homogeneity, which asserts that the marginal probability for each outcome is equal for both compared models \cite{mcnemar1947note}.
+McNemar’s test is applied to paired classification results to test correlated proportions with the chi-squared distribution. It was conceived for binary classification. The null hypothesis of marginal homogeneity means marginal probabilities for all outcomes are the same. This can better describe model differences than a simple sensitivity and specificity comparison.
 
-\section{Results and Discussion}
-\label{sec:Results}
+If a value smaller than $6$ occurs in the contingency table, the chi-squared distribution might not be appropriate. Edwards \cite{edwards1948note} proposed continuity correction using an approximation of the exact $p$-value for the binomial distribution, as shown in Equation~\ref{eqn:4}. In Equation~\ref{eqn:4}, $b$ is the number of samples the first method labeled as positive, while the second assigned a contradicting label. Similarly, $c$ is the number of samples the second method labeled as positive, while the first assigned a contradicting label.
  
-The clusters of trajectories generated by DBSCAN and K-means are illustrated in Figure~\ref{fig:10_20_DBSCAN_PCA} using two components generated by PCA of the trajectory fingerprint when separating trajectories into segments of $10$ or $20$ points. DBSCAN isolated a dense area surrounded by scattered data points, while K-means split the area into two equal surfaces regardless of density.
+\begin{equation}
+    \chi^{2}=\frac{(|b-c|-1)^{2}}{b+c}
+    \label{eqn:4}
+\end{equation}
+
+The Bonferroni correction \cite{bonferroni1936teoria} can account for the increased likelihood of incorrectly rejecting a null hypothesis when conducting multiple tests, equal to making a Type I error \cite{mittelhammer2000econometric}. This procedure can also be used on confidence intervals, as proposed by Dunn \cite{dunn1961multiple}. The significance level $\alpha$ is divided by the number of tests \cite{rupert2012simultaneous}. A total of $20$ models are compared in the statistical tests in this experiment, using $10$ types of classifiers and $2$ sets of predictors. The sets of predictors encompass all trajectory features or only diffusion distance and the arithmetic average of direction change. The number of tests equals $20 * 19 / 2 = 10 * 19 = 190$. With a standard value of $\alpha = 0.05$, the Bonferroni correction tests each hypothesis at $0.05 / 190 = 2.63 \times 10 ^{-4}$.
+
+\section{Research results}
+\label{sec:Results}
+
+Candidate models were assessed to determine the optimal method and set of predictors to be used in the final model for application in real settings. The performance metrics of the candidate models is listed in Table~\ref{tab:acc:all}, Table~\ref{tab:acc:noMETAR}, Table~\ref{tab:acc:METAR} and Table~\ref{tab:acc:dist_dc}. The execution time in seconds ($s$) utilizing the \textit{R} \textit{system.time} function for all candidate models is displayed in Table~\ref{tab:time}. Research results are presented with eleven trajectory-derived predictors: diffusion distance, trajectory length, duration, speed, acceleration, straightness, sinuosity, maximum expected displacement, the arithmetic average and standard deviation of direction change, and fractal dimension. The following six meteorological features were also included: temperature, air pressure at sea level and the measuring station, relative humidity, wind speed, and dew point. Candidate models have been developed using: (1.): trajectory and meteorological features (Table~\ref{tab:acc:all}) (2.): exclusively trajectory features (Table~\ref{tab:acc:noMETAR}) (3.): exclusively meteorological features (Table~\ref{tab:acc:METAR}), and (4.): exclusively diffusion distance and the arithmetic average of direction change (Table~\ref{tab:acc:dist_dc}). The reasoning behind this approach was the assumption that reducing the set of predictors would reduce model complexity and computation time. It is theoretically sound that the impact of changes in meteorological features is reflected in the movement of the aircraft and the trajectory features describing it, so adding additional data is redundant. Diffusion distance and the arithmetic average of direction change were chosen to establish a model with a minimal predictor set since they describe the static and dynamic aspects of the trajectory expressed as a scalar and vector variable, in that order. This pair of predictors was also used in the final model. The highest accuracy was achieved in Table~\ref{tab:acc:dist_dc} using diffusion distance and the arithmetic average of direction change as predictors with the Gaussian Process (GP) classifier method. This supports the hypothesis that meteorological features and trajectory features other than diffusion distance and the arithmetic average of direction change should be removed from the set of predictors. The Gaussian Process method yielded the model with the highest accuracy, leading to the decision that it should be used in the final model.
+
+\begin{table}[!ht]
+    \centering
+    \caption{The performance metrics for each candidate model developed using different methods and trajectory and meteorological features as predictors. The bold values indicate the best value for each performance metric. All metrics except FP, FN, FNR, FPR, FDR, and FOR are maximized. The values N and P in brackets represent the Negative and Positive classes respectively.}
+	\label{tab:acc:all}
+    	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+    		\hline
+            \multicolumn{11}{|c|}{Trajectory and Meteorological Features as Predictors} \\ \hline
+             & \multicolumn{10}{|c|}{Classifier Method} \\ \hline
+            \multirow{9}{*}{\rotatebox{90}{Metric}} & & & & & & & & & & \\
+             & \multirow{9}{*}{\rotatebox{90}{k-Nearest} \rotatebox{90}{Neighbours}} & \multirow{9}{*}{\rotatebox{90}{Linear Support} \rotatebox{90}{Vector Machine}} & \multirow{9}{*}{\rotatebox{90}{Radial Basis} \rotatebox{90}{Function Support} \rotatebox{90}{Vector Machine}} & \multirow{9}{*}{\rotatebox{90}{Gaussian} \rotatebox{90}{Process}} & \multirow{9}{*}{\rotatebox{90}{Decision} \rotatebox{90}{Tree}} & \multirow{9}{*}{\rotatebox{90}{Random} \rotatebox{90}{Forest}} & \multirow{9}{*}{\rotatebox{90}{Naive} \rotatebox{90}{Bayes}} & \multirow{9}{*}{\rotatebox{90}{Multilayer} \rotatebox{90}{Perceptron}} & \multirow{9}{*}{\rotatebox{90}{AdaBoost}} & \multirow{9}{*}{\rotatebox{90}{Quadratic} \rotatebox{90}{Discriminant Analysis}} \\
+             & & & & & & & & & & \\
+             & & & & & & & & & & \\
+             & & & & & & & & & & \\
+             & & & & & & & & & & \\
+             & & & & & & & & & & \\
+             & & & & & & & & & & \\
+             & & & & & & & & & & \\
+             & & & & & & & & & & \\ \hline
+            TP & $\mathbf{65}$ & $62$ & $\mathbf{65}$ & $64$ & $62$ & $64$ & $\mathbf{65}$ & $62$ & $63$ & $64$ \\ \hline
+            TN & $20$ & $\mathbf{22}$ & $\mathbf{22}$ & $\mathbf{22}$ & $21$ & $\mathbf{22}$ & $21$ & $\mathbf{22}$ & $\mathbf{22}$ & $\mathbf{22}$ \\ \hline
+            FP & $2$ & $\mathbf{0}$ & $\mathbf{0}$ & $\mathbf{0}$ & $1$ & $\mathbf{0}$ & $1$ & $\mathbf{0}$ & $\mathbf{0}$ & $\mathbf{0}$ \\ \hline
+            FN & $\mathbf{6}$ & $9$ & $\mathbf{6}$ & $7$ & $9$ & $7$ & $\mathbf{6}$ & $9$ & $8$ & $7$ \\ \hline
+            TPR & $\mathbf{91.55}$ & $87.32$ & $\mathbf{91.55}$ & $90.14$ & $87.32$ & $90.14$ & $\mathbf{91.55}$ & $87.32$ & $88.73$ & $90.14$ \\ \hline
+            FNR & $\mathbf{8.45}$ & $12.68$ & $\mathbf{8.45}$ & $9.86$ & $12.68$ & $9.86$ & $\mathbf{8.45}$ & $12.68$ & $11.27$ & $9.86$ \\ \hline
+            TNR & $90.91$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ & $95.45$ & $\mathbf{100.0}$ & $95.45$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ \\ \hline
+            FPR & $9.09$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ & $4.55$ & $\mathbf{0.0}$ & $4.55$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ \\ \hline
+            PPV & $97.01$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ & $98.41$ & $\mathbf{100.0}$ & $98.48$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ \\ \hline
+            FDR & $2.99$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ & $1.59$ & $\mathbf{0.0}$ & $1.52$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ \\ \hline
+            NPV & $76.92$ & $70.97$ & $\mathbf{78.57}$ & $75.86$ & $70.0$ & $75.86$ & $77.78$ & $70.97$ & $73.33$ & $75.86$ \\ \hline
+            FOR & $23.08$ & $29.03$ & $\mathbf{21.43}$ & $24.14$ & $30.0$ & $24.14$ & $22.22$ & $29.03$ & $26.67$ & $24.14$ \\ \hline
+            DR & \multirow{2}{*}{$\mathbf{69.89}$} & \multirow{2}{*}{$66.67$} & \multirow{2}{*}{$\mathbf{69.89}$} & \multirow{2}{*}{$68.82$} & \multirow{2}{*}{$66.67$} & \multirow{2}{*}{$68.82$} & \multirow{2}{*}{$\mathbf{69.89}$} & \multirow{2}{*}{$66.67$} & \multirow{2}{*}{$67.74$} & \multirow{2}{*}{$68.82$} \\
+            (P) & & & & & & & & & & \\ \hline
+            DR & \multirow{2}{*}{$21.51$} & \multirow{2}{*}{$\mathbf{23.66}$} & \multirow{2}{*}{$\mathbf{23.66}$} & \multirow{2}{*}{$\mathbf{23.66}$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$\mathbf{23.66}$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$\mathbf{23.66}$} & \multirow{2}{*}{$\mathbf{23.66}$} & \multirow{2}{*}{$\mathbf{23.66}$} \\
+            (N) & & & & & & & & & & \\ \hline
+            DP & \multirow{2}{*}{$\mathbf{72.04}$} & \multirow{2}{*}{$66.67$} & \multirow{2}{*}{$69.89$} & \multirow{2}{*}{$68.82$} & \multirow{2}{*}{$67.74$} & \multirow{2}{*}{$68.82$} & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$66.67$} & \multirow{2}{*}{$67.74$} & \multirow{2}{*}{$68.82$} \\
+            (P) & & & & & & & & & & \\ \hline
+            DP & \multirow{2}{*}{$27.96$} & \multirow{2}{*}{$\mathbf{33.33}$} & \multirow{2}{*}{$30.11$} & \multirow{2}{*}{$31.18$} & \multirow{2}{*}{$32.26$} & \multirow{2}{*}{$31.18$} & \multirow{2}{*}{$29.03$} & \multirow{2}{*}{$\mathbf{33.33}$} & \multirow{2}{*}{$32.26$} & \multirow{2}{*}{$31.18$} \\     
+            (N) & & & & & & & & & & \\ \hline
+            Acc & $91.4$ & $90.32$ & $\mathbf{93.55}$ & $92.47$ & $89.25$ & $92.47$ & $92.47$ & $90.32$ & $91.4$ & $92.47$ \\ \hline
+            BA & $91.23$ & $93.66$ & $\mathbf{95.77}$ & $95.07$ & $91.39$ & $95.07$ & $93.5$ & $93.66$ & $94.37$ & $95.07$ \\ \hline
+            F1 & $94.2$ & $93.23$ & $\mathbf{95.59}$ & $94.81$ & $92.54$ & $94.81$ & $94.89$ & $93.23$ & $94.03$ & $94.81$ \\ \hline
+    	\end{tabular}
+\end{table}
+
+With trajectory and meteorological features used as predictors, the Radial Basis Function (RBF) Support Vector Machine (SVM) is the most successful classifier in Table~\ref{tab:acc:all}. It has the most TP and TN classifications, and the highest TPR, TNR, PPV, NPV, DR for both classes, accuracy, BA, and F1 score values. The RBF SVM method has the least FN and FP classifications, and the lowest FNR, FPR, FDR, and FOR. The Linear and RBF SVM, GP, Random Forest (RF), Multilayer Perceptron (MLP), AdaBoost (AB), and Quadratic Discriminant Analysis (QDA) methods make no misclassifications for the negative class, as indicated by the highest number of TN classifications, no FP classifications, the highest DR for the negative class, a TNR and PPV of $100\%$, and FPR and FDR equal to $0\%$. Concerning the positive class, the k-Nearest Neighbours (k-NN) and Naive Bayes (NB) methods are tied with the RBF SVM method in terms of TP and FN classifications, TPR, FNR, and DR for the positive class. The k-NN method has the highest DP for the positive class, while the Linear SVM and MLP methods have the highest DP for the negative class.
+        
+\begin{table}[!ht]
+    \centering
+    \caption{The performance metrics for each candidate model developed using different methods and trajectory features as predictors. The bold values indicate the best value for each performance metric. All metrics except FP, FN, FNR, FPR, FDR, and FOR are maximized. The values N and P in brackets represent the Negative and Positive classes respectively.}
+	\label{tab:acc:noMETAR}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+        \multicolumn{11}{|c|}{Trajectory Features as Predictors} \\ \hline
+         & \multicolumn{10}{|c|}{Classifier Method} \\ \hline
+        \multirow{9}{*}{\rotatebox{90}{Metric}} & & & & & & & & & & \\
+         & \multirow{9}{*}{\rotatebox{90}{k-Nearest} \rotatebox{90}{Neighbours}} & \multirow{9}{*}{\rotatebox{90}{Linear Support} \rotatebox{90}{Vector Machine}} & \multirow{9}{*}{\rotatebox{90}{Radial Basis} \rotatebox{90}{Function Support} \rotatebox{90}{Vector Machine}} & \multirow{9}{*}{\rotatebox{90}{Gaussian} \rotatebox{90}{Process}} & \multirow{9}{*}{\rotatebox{90}{Decision} \rotatebox{90}{Tree}} & \multirow{9}{*}{\rotatebox{90}{Random} \rotatebox{90}{Forest}} & \multirow{9}{*}{\rotatebox{90}{Naive} \rotatebox{90}{Bayes}} & \multirow{9}{*}{\rotatebox{90}{Multilayer} \rotatebox{90}{Perceptron}} & \multirow{9}{*}{\rotatebox{90}{AdaBoost}} & \multirow{9}{*}{\rotatebox{90}{Quadratic} \rotatebox{90}{Discriminant Analysis}} \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\ \hline
+        TP & $65$ & $66$ & $66$ & $66$ & $60$ & $65$ & $65$ & $63$ & $\mathbf{70}$ & $64$ \\ \hline
+        TN & $21$ & $\mathbf{22}$ & $\mathbf{22}$ & $\mathbf{22}$ & $21$ & $\mathbf{22}$ & $21$ & $21$ & $21$ & $\mathbf{22}$ \\ \hline
+        FP & $1$ & $\mathbf{0}$ & $\mathbf{0}$ & $\mathbf{0}$ & $1$ & $\mathbf{0}$ & $1$ & $1$ & $1$ & $\mathbf{0}$ \\ \hline
+        FN & $6$ & $5$ & $5$ & $5$ & $11$ & $6$ & $6$ & $8$ & $\mathbf{1}$ & $7$ \\ \hline
+        TPR & $91.55$ & $92.96$ & $92.96$ & $92.96$ & $84.51$ & $91.55$ & $91.55$ & $88.73$ & $\mathbf{98.59}$ & $90.14$ \\ \hline
+        FNR & $8.45$ & $7.04$ & $7.04$ & $7.04$ & $15.49$ & $8.45$ & $8.45$ & $11.27$ & $\mathbf{1.41}$ & $9.86$ \\ \hline
+        TNR & $95.45$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ & $95.45$ & $\mathbf{100.0}$ & $95.45$ & $95.45$ & $95.45$ & $\mathbf{100.0}$ \\ \hline
+        FPR & $4.55$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ & $4.55$ & $\mathbf{0.0}$ & $4.55$ & $4.55$ & $4.55$ & $\mathbf{0.0}$ \\ \hline
+        PPV & $98.48$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ & $\mathbf{100.0}$ & $98.36$ & $\mathbf{100.0}$ & $98.48$ & $98.44$ & $98.59$ & $\mathbf{100.0}$ \\ \hline
+        FDR & $1.52$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ & $\mathbf{0.0}$ & $1.64$ & $\mathbf{0.0}$ & $1.52$ & $1.56$ & $1.41$ & $\mathbf{0.0}$ \\ \hline
+        NPV & $77.78$ & $81.48$ & $81.48$ & $81.48$ & $65.62$ & $78.57$ & $77.78$ & $72.41$ & $\mathbf{95.45}$ & $75.86$ \\ \hline
+        FOR & $22.22$ & $18.52$ & $18.52$ & $18.52$ & $34.38$ & $21.43$ & $22.22$ & $27.59$ & $\mathbf{4.55}$ & $24.14$ \\ \hline
+        DR & \multirow{2}{*}{$69.89$} & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$64.52$} & \multirow{2}{*}{$69.89$} & \multirow{2}{*}{$69.89$} & \multirow{2}{*}{$67.74$} & \multirow{2}{*}{$\mathbf{75.27}$} & \multirow{2}{*}{$68.82$} \\
+        (P) & & & & & & & & & & \\ \hline
+        DR & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$\mathbf{23.66}$} & \multirow{2}{*}{$\mathbf{23.66}$} & \multirow{2}{*}{$\mathbf{23.66}$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$\mathbf{23.66}$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$\mathbf{23.66}$} \\
+        (N) & & & & & & & & & & \\ \hline
+        DP & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$65.59$} & \multirow{2}{*}{$69.89$} & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$68.82$} & \multirow{2}{*}{$\mathbf{76.34}$} & \multirow{2}{*}{$68.82$} \\
+        (P) & & & & & & & & & & \\ \hline
+        DP & \multirow{2}{*}{$29.03$} & \multirow{2}{*}{$29.03$} & \multirow{2}{*}{$29.03$} & \multirow{2}{*}{$29.03$} & \multirow{2}{*}{$\mathbf{34.41}$} & \multirow{2}{*}{$30.11$} & \multirow{2}{*}{$29.03$} & \multirow{2}{*}{$31.18$} & \multirow{2}{*}{$23.66$} & \multirow{2}{*}{$31.18$} \\
+        (N) & & & & & & & & & & \\ \hline
+        Acc & $92.47$ & $94.62$ & $94.62$ & $94.62$ & $87.1$ & $93.55$ & $92.47$ & $90.32$ & $\mathbf{97.85}$ & $92.47$ \\ \hline
+        BA & $93.5$ & $96.48$ & $96.48$ & $96.48$ & $89.98$ & $95.77$ & $93.5$ & $92.09$ & $\mathbf{97.02}$ & $95.07$ \\ \hline
+        F1 & $94.89$ & $96.35$ & $96.35$ & $96.35$ & $90.91$ & $95.59$ & $94.89$ & $93.33$ & $\mathbf{98.59}$ & $94.81$ \\ \hline
+	\end{tabular}
+\end{table}
+        
+The AB method is the most successful classifier if trajectory features are provided as the only model input, as presented in Table~\ref{tab:acc:METAR}. The AB method has the most TP and least FN classifications. It also has the highest TPR, NPV, positive class DR and DP, accuracy, BA, and F1 score values, and the lowest FNR and FOR values. The Linear and RBF SVM, GP, RF, and QDA methods classify all negative samples correctly since they exhibit the highest number of TN classifications, no FP classifications, the highest DR for the negative class, a TNR and PPV of $100\%$, and FPR and FDR equal to $0\%$. The Decision Tree (DT) method has the highest DP for the negative class.
+
+\begin{table}[!ht]
+    \centering
+    \caption{The performance metrics for each candidate model developed using different methods and meteorological features as predictors. The bold values indicate the best value for each performance metric. All metrics except FP, FN, FNR, FPR, FDR, and FOR are maximized. The values N and P in brackets represent the Negative and Positive classes respectively.}
+	\label{tab:acc:METAR}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+        \multicolumn{11}{|c|}{Meteorological Features as Predictors} \\ \hline
+         & \multicolumn{10}{|c|}{Classifier Method} \\ \hline
+        \multirow{9}{*}{\rotatebox{90}{Metric}} & & & & & & & & & & \\
+         & \multirow{9}{*}{\rotatebox{90}{k-Nearest} \rotatebox{90}{Neighbours}} & \multirow{9}{*}{\rotatebox{90}{Linear Support} \rotatebox{90}{Vector Machine}} & \multirow{9}{*}{\rotatebox{90}{Radial Basis} \rotatebox{90}{Function Support} \rotatebox{90}{Vector Machine}} & \multirow{9}{*}{\rotatebox{90}{Gaussian} \rotatebox{90}{Process}} & \multirow{9}{*}{\rotatebox{90}{Decision} \rotatebox{90}{Tree}} & \multirow{9}{*}{\rotatebox{90}{Random} \rotatebox{90}{Forest}} & \multirow{9}{*}{\rotatebox{90}{Naive} \rotatebox{90}{Bayes}} & \multirow{9}{*}{\rotatebox{90}{Multilayer} \rotatebox{90}{Perceptron}} & \multirow{9}{*}{\rotatebox{90}{AdaBoost}} & \multirow{9}{*}{\rotatebox{90}{Quadratic} \rotatebox{90}{Discriminant Analysis}} \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\ \hline
+        TP & $57$ & $65$ & $\mathbf{66}$ & $64$ & $51$ & $53$ & $50$ & $57$ & $52$ & $60$ \\ \hline
+        TN & $5$ & $3$ & $4$ & $5$ & $\mathbf{9}$ & $8$ & $\mathbf{9}$ & $6$ & $7$ & $4$ \\ \hline
+        FP & $17$ & $19$ & $18$ & $17$ & $\mathbf{13}$ & $14$ & $\mathbf{13}$ & $16$ & $15$ & $18$ \\ \hline
+        FN & $14$ & $6$ & $\mathbf{5}$ & $7$ & $20$ & $18$ & $21$ & $14$ & $19$ & $11$ \\ \hline
+        TPR & $80.28$ & $91.55$ & $\mathbf{92.96}$ & $90.14$ & $71.83$ & $74.65$ & $70.42$ & $80.28$ & $73.24$ & $84.51$ \\ \hline
+        FNR & $19.72$ & $8.45$ & $\mathbf{7.04}$ & $9.86$ & $28.17$ & $25.35$ & $29.58$ & $19.72$ & $26.76$ & $15.49$ \\ \hline
+        TNR & $22.73$ & $13.64$ & $18.18$ & $22.73$ & $\mathbf{40.91}$ & $36.36$ & $\mathbf{40.91}$ & $27.27$ & $31.82$ & $18.18$ \\ \hline
+        FPR & $77.27$ & $86.36$ & $81.82$ & $77.27$ & $\mathbf{59.09}$ & $63.64$ & $\mathbf{59.09}$ & $72.73$ & $68.18$ & $81.82$ \\ \hline
+        PPV & $77.03$ & $77.38$ & $78.57$ & $79.01$ & $\mathbf{79.69}$ & $79.1$ & $79.37$ & $78.08$ & $77.61$ & $76.92$ \\ \hline
+        FDR & $22.97$ & $22.62$ & $21.43$ & $20.99$ & $\mathbf{20.31}$ & $20.9$ & $20.63$ & $21.92$ & $22.39$ & $23.08$ \\ \hline
+        NPV & $26.32$ & $33.33$ & $\mathbf{44.44}$ & $41.67$ & $31.03$ & $30.77$ & $30.0$ & $30.0$ & $26.92$ & $26.67$ \\ \hline
+        FOR & $73.68$ & $66.67$ & $\mathbf{55.56}$ & $58.33$ & $68.97$ & $69.23$ & $70.0$ & $70.0$ & $73.08$ & $73.33$ \\ \hline
+        DR & \multirow{2}{*}{$61.29$} & \multirow{2}{*}{$69.89$} & \multirow{2}{*}{$\mathbf{70.97}$} & \multirow{2}{*}{$68.82$} & \multirow{2}{*}{$54.84$} & \multirow{2}{*}{$56.99$} & \multirow{2}{*}{$53.76$} & \multirow{2}{*}{$61.29$} & \multirow{2}{*}{$55.91$} & \multirow{2}{*}{$64.52$} \\
+        (P) & & & & & & & & & & \\ \hline
+        DR & \multirow{2}{*}{$5.38$} & \multirow{2}{*}{$3.23$} & \multirow{2}{*}{$4.3$} & \multirow{2}{*}{$5.38$} & \multirow{2}{*}{$\mathbf{9.68}$} & \multirow{2}{*}{$8.6$} & \multirow{2}{*}{$\mathbf{9.68}$} & \multirow{2}{*}{$6.45$} & \multirow{2}{*}{$7.53$} & \multirow{2}{*}{$4.3$} \\
+        (N) & & & & & & & & & & \\ \hline
+        DP & \multirow{2}{*}{$79.57$} & \multirow{2}{*}{$\mathbf{90.32}$} & \multirow{2}{*}{$\mathbf{90.32}$} & \multirow{2}{*}{$87.1$} & \multirow{2}{*}{$68.82$} & \multirow{2}{*}{$72.04$} & \multirow{2}{*}{$67.74$} & \multirow{2}{*}{$78.49$} & \multirow{2}{*}{$72.04$} & \multirow{2}{*}{$83.87$} \\      
+        (P) & & & & & & & & & & \\ \hline
+        DP & \multirow{2}{*}{$20.43$} & \multirow{2}{*}{$9.68$} & \multirow{2}{*}{$9.68$} & \multirow{2}{*}{$12.9$} & \multirow{2}{*}{$31.18$} & \multirow{2}{*}{$27.96$} & \multirow{2}{*}{$\mathbf{32.26}$} & \multirow{2}{*}{$21.51$} & \multirow{2}{*}{$27.96$} & \multirow{2}{*}{$16.13$} \\
+        (N) & & & & & & & & & & \\ \hline
+        Acc & $66.67$ & $73.12$ & $\mathbf{75.27}$ & $74.19$ & $64.52$ & $65.59$ & $63.44$ & $67.74$ & $63.44$ & $68.82$ \\ \hline
+        BA & $51.5$ & $52.59$ & $55.57$ & $\mathbf{56.43}$ & $56.37$ & $55.51$ & $55.67$ & $53.78$ & $52.53$ & $51.34$ \\ \hline
+        F1 & $78.62$ & $83.87$ & $\mathbf{85.16}$ & $84.21$ & $75.56$ & $76.81$ & $74.63$ & $79.17$ & $75.36$ & $80.54$ \\ \hline
+	\end{tabular}
+\end{table}
+
+Using exclusively meteorological predictors results in the RBF SVM method being the most accurate, with the highest number of TP classifications, TPR, NPV, positive class DR and DP, accuracy, and F1 score values, listed in Table~\ref{tab:acc:METAR}. The RBF SVM method has the lowest number of FN classifications, FNR, and FOR. The Linear SVM method has the highest positive class DP, the same as the RBF SVM method. The DT and NB methods achieve the best performance for the negative class, as demonstrated by the highest number of TN classifications, no FP classifications, the highest TNR and negative class DR, and the lowest FPR. Additionally, the DT method has the highest PPV and lowest FDR value, and the GP method has the highest BA value. The NB method has the highest negative class DP.
+        
+\begin{table}[!ht]
+    \centering
+    \caption{The performance metrics for each candidate model developed using different methods and diffusion distance and the arithmetic average of direction change as predictors. The bold values indicate the best value for each performance metric. All metrics except FP, FN, FNR, FPR, FDR, and FOR are maximized. The values N and P in brackets represent the Negative and Positive classes respectively.}
+	\label{tab:acc:dist_dc}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+        \multicolumn{11}{|c|}{Diffusion Distance and the Arithmetic Average of Direction Change as Predictors} \\ \hline
+         & \multicolumn{10}{|c|}{Classifier Method} \\ \hline
+        \multirow{9}{*}{\rotatebox{90}{Metric}} & & & & & & & & & & \\
+         & \multirow{9}{*}{\rotatebox{90}{k-Nearest} \rotatebox{90}{Neighbours}} & \multirow{9}{*}{\rotatebox{90}{Linear Support} \rotatebox{90}{Vector Machine}} & \multirow{9}{*}{\rotatebox{90}{Radial Basis} \rotatebox{90}{Function Support} \rotatebox{90}{Vector Machine}} & \multirow{9}{*}{\rotatebox{90}{Gaussian} \rotatebox{90}{Process}} & \multirow{9}{*}{\rotatebox{90}{Decision} \rotatebox{90}{Tree}} & \multirow{9}{*}{\rotatebox{90}{Random} \rotatebox{90}{Forest}} & \multirow{9}{*}{\rotatebox{90}{Naive} \rotatebox{90}{Bayes}} & \multirow{9}{*}{\rotatebox{90}{Multilayer} \rotatebox{90}{Perceptron}} & \multirow{9}{*}{\rotatebox{90}{AdaBoost}} & \multirow{9}{*}{\rotatebox{90}{Quadratic} \rotatebox{90}{Discriminant Analysis}} \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\
+         & & & & & & & & & & \\ \hline
+        TP & $68$ & $60$ & $66$ & $\mathbf{70}$ & $65$ & $67$ & $61$ & $68$ & $66$ & $62$ \\ \hline
+        TN & $21$ & $21$ & $21$ & $21$ & $21$ & $21$ & $\mathbf{22}$ & $21$ & $20$ & $\mathbf{22}$ \\ \hline
+        FP & $1$ & $1$ & $1$ & $1$ & $1$ & $1$ & $\mathbf{0}$ & $1$ & $2$ & $\mathbf{0}$ \\ \hline
+        FN & $3$ & $11$ & $5$ & $\mathbf{1}$ & $6$ & $4$ & $10$ & $3$ & $5$ & $9$ \\ \hline
+        TPR & $95.77$ & $84.51$ & $92.96$ & $\mathbf{98.59}$ & $91.55$ & $94.37$ & $85.92$ & $95.77$ & $92.96$ & $87.32$ \\ \hline
+        FNR & $4.23$ & $15.49$ & $7.04$ & $\mathbf{1.41}$ & $8.45$ & $5.63$ & $14.08$ & $4.23$ & $7.04$ & $12.68$ \\ \hline
+        TNR & $95.45$ & $95.45$ & $95.45$ & $95.45$ & $95.45$ & $95.45$ & $\mathbf{100.0}$ & $95.45$ & $90.91$ & $\mathbf{100.0}$ \\ \hline
+        FPR & $4.55$ & $4.55$ & $4.55$ & $4.55$ & $4.55$ & $4.55$ & $\mathbf{0.0}$ & $4.55$ & $9.09$ & $\mathbf{0.0}$ \\ \hline
+        PPV & $98.55$ & $98.36$ & $98.51$ & $98.59$ & $98.48$ & $98.53$ & $\mathbf{100.0}$ & $98.55$ & $97.06$ & $\mathbf{100.0}$ \\ \hline
+        FDR & $1.45$ & $1.64$ & $1.49$ & $1.41$ & $1.52$ & $1.47$ & $\mathbf{0.0}$ & $1.45$ & $2.94$ & $\mathbf{0.0}$ \\ \hline
+        NPV & $87.5$ & $65.62$ & $80.77$ & $\mathbf{95.45}$ & $77.78$ & $84.0$ & $68.75$ & $87.5$ & $80.0$ & $70.97$ \\ \hline
+        FOR & $12.5$ & $34.38$ & $19.23$ & $\mathbf{4.55}$ & $22.22$ & $16.0$ & $31.25$ & $12.5$ & $20.0$ & $29.03$ \\ \hline
+        DR & \multirow{2}{*}{$73.12$} & \multirow{2}{*}{$64.52$} & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$\mathbf{75.27}$} & \multirow{2}{*}{$69.89$} & \multirow{2}{*}{$72.04$} & \multirow{2}{*}{$65.59$} & \multirow{2}{*}{$73.12$} & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$66.67$} \\
+        (P) & & & & & & & & & & \\ \hline
+        DR & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$\mathbf{23.66}$} & \multirow{2}{*}{$22.58$} & \multirow{2}{*}{$21.51$} & \multirow{2}{*}{$\mathbf{23.66}$} \\     
+        (N) & & & & & & & & & & \\ \hline
+        DP & \multirow{2}{*}{$74.19$} & \multirow{2}{*}{$65.59$} & \multirow{2}{*}{$72.04$} & \multirow{2}{*}{$\mathbf{76.34}$} & \multirow{2}{*}{$70.97$} & \multirow{2}{*}{$73.12$} & \multirow{2}{*}{$65.59$} & \multirow{2}{*}{$74.19$} & \multirow{2}{*}{$73.12$} & \multirow{2}{*}{$66.67$} \\
+        (P) & & & & & & & & & & \\ \hline
+        DP & \multirow{2}{*}{$25.81$} & \multirow{2}{*}{$\mathbf{34.41}$} & \multirow{2}{*}{$27.96$} & \multirow{2}{*}{$23.66$} & \multirow{2}{*}{$29.03$} & \multirow{2}{*}{$26.88$} & \multirow{2}{*}{$\mathbf{34.41}$} & \multirow{2}{*}{$25.81$} & \multirow{2}{*}{$26.88$} & \multirow{2}{*}{$33.33$} \\     
+        (N) & & & & & & & & & & \\ \hline
+        Acc & $95.7$ & $87.1$ & $93.55$ & $\mathbf{97.85}$ & $92.47$ & $94.62$ & $89.25$ & $95.7$ & $92.47$ & $90.32$ \\ \hline
+        BA & $95.61$ & $89.98$ & $94.21$ & $\mathbf{97.02}$ & $93.5$ & $94.91$ & $92.96$ & $95.61$ & $91.93$ & $93.66$ \\ \hline
+        F1 & $97.14$ & $90.91$ & $95.65$ & $\mathbf{98.59}$ & $94.89$ & $96.4$ & $92.42$ & $97.14$ & $94.96$ & $93.23$ \\ \hline
+	\end{tabular}
+\end{table}
+
+The diffusion distance and the arithmetic average of direction change as predictors yield the GP method as the best overall performer in Table~\ref{tab:acc:dist_dc}, with the highest number of TP classifications, TPR, NPV, positive class DR and DP, accuracy, BA, and F1 score values. The GP method has the lowest number of FN classifications, FNR, and FOR. The NB and QDA methods achieve perfect results for the negative class, as indicated by the highest number of TN classifications, highest DR for the negative class, no FP classifications, a TNR and PPV of $100\%$, and FPR and FDR equal to $0\%$. The NB and Linear SVM methods have the highest DP for the negative class.
+
+The study was conducted on the \textit{Windows} 11 operating system with \textit{R Studio} version 2024.04.2+764 and \textit{R} version 4.4.1, the AMD Radeon RX 6600 Graphics Processing Unit (GPU), $16$ GB of Random Access Memory (RAM), running the AMD Ryzen 5 PRO 4650G Central Processing Unit (CPU) with $6$ cores. Execution time is releveant because built-in systems for mobile devices and embedded systems have low computational capabilities. The candidate models using the k-NN method in Table~\ref{tab:time} have the highest execution time. The extensive hyperparameter running process explains this. AB is the only other classifier with execution time over one second, due to the iterative boosting approach. k-NN and AB were excluded from further consideration for the final model due to these challenges.
+
+\begin{table}[!ht]
+    \centering
+    \caption{The execution time in seconds ($s$) for each candidate model developed using different methods and sets of predictors.}
+	\label{tab:time}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+		\hline
+        & \multicolumn{4}{|c|}{Sets of Predictors} \\ \hline
+         & Trajectory & & & Diffusion Distance \\
+        Classifier & and & Trajectory & Meteorological & and the \\
+        Method & Meteorological & Features & Features & Arithmetic Average \\
+         & Features & & & of Direction Change \\ \hline
+        k-Nearest Neighbours & $2.42$ & $2.26$ & $2.25$ & $2.06$ \\ \hline
+        Linear Support & \multirow{2}{*}{$0.01$} & \multirow{2}{*}{$<0.01$} & \multirow{2}{*}{$<0.01$} & \multirow{2}{*}{$<0.01$} \\
+        Vector Machine & & & & \\ \hline
+        Radial Basis & & & & \\
+        Function Support & $<0.01$ & $<0.01$ & $0.01$ & $<0.01$ \\
+        Vector Machine & & & & \\ \hline
+        Gaussian Process & $0.15$ & $0.12$ & $0.07$ & $0.1$ \\ \hline
+        Decision Tree & $0.12$ & $0.14$ & $0.13$ & $0.14$ \\ \hline
+        Random Forest & $0.07$ & $0.05$ & $0.08$ & $0.05$ \\ \hline
+        Naive Bayes & $<0.01$ & $0.02$ & $0.02$ & $<0.01$ \\ \hline
+        Multilayer Perceptron & $0.89$ & $0.72$ & $0.61$ & $0.47$ \\ \hline
+        AdaBoost & $1.22$ & $1$ & $0.79$ & $0.63$ \\ \hline
+        Quadratic & \multirow{2}{*}{$<0.01$} & \multirow{2}{*}{$0.01$} & \multirow{2}{*}{$0.01$} & \multirow{2}{*}{$<0.01$} \\
+        Discriminant Analysis & & & & \\ \hline
+	\end{tabular}
+\end{table}
+
+The performance assessment of candidate models revealed the success of several methods, such as the Gaussian Process (GP) and AdaBoost classifiers. Accuracy results in Table~\ref{tab:acc:all}, Table~\ref{tab:acc:noMETAR}, Table~\ref{tab:acc:METAR} and Table~\ref{tab:acc:dist_dc} may lead to an incorrect conclusion as the dataset is unbalanced, as shown in Table~\ref{tab:classranges}. Further assessment is needed to determine if a candidate model differs significantly from others. The results of McNemar’s test are presented only for candidate models using either exclusively trajectory features or diffusion distance and the arithmetic average of direction change as predictor variables. These sets of predictors yielded the most accurate among tested candidate models compared to those using both trajectory and meteorological features or exclusively meteorological features.
+
+\subsection{Results of McNemar's test}
+%\label{subsec:ResultsMcNemar}
+
+McNemar’s test can help assess if a candidate model performs significantly worse or better than others. Figure~\ref{fig:mcnemarplot} contains $p$-values of McNemar's test when comparing candidate models using either exclusively trajectory features or diffusion distance and the arithmetic average of direction change as predictor variables and various classification methods. A lower $p$-value indicates that the classifications are unequal for a pair of candidate models. A higher $p$-value suggests that the classifications are equal for a pair of candidate models.
 
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width = 0.99\linewidth]{DBSCAN_Kmeans_all_newn_2_PCA.pdf}
-    \caption{DBSCAN and K-means clusters for a window size of $10$ or $20$ with two components generated by PCA of the trajectory fingerprint.}
-    \label{fig:10_20_DBSCAN_PCA}
+ \centering
+ \includegraphics[width=0.99\linewidth]{mcnemarplot.pdf}
+    \caption{Candidate model comparison using $p$-values of McNemar's test with various classification methods combined with trajectory features or diffusion distance and the arithmetic average of direction change as predictor variables. Black represents a low $p$-value near $0$, white represents a high $p$-value near $1$, and red represents a $p$-value near $0.5$ between the two extremes. Each candidate model is equal to itself, so values on the primary diagonal equal $1$. The matrix is symmetrical concerning the primary diagonal because the same result is achieved when swapping the order of the first and second compared candidate models.}
+    \label{fig:mcnemarplot}
 \end{figure}
 
-Table~\ref{tab:DBSCAN_K-meansAnomalyEuclid} gives the average Euclidean distance of trajectory fingerprints in pairs where both, none, or only one is an anomaly for a window size of $10$ or $20$ and DBSCAN or K-means clusters.
+The classifications are not statistically significantly different when comparing the candidate models using any tested classification method combined with trajectory features or diffusion distance and the arithmetic average of direction change as predictors, as shown in Figure~\ref{fig:mcnemarplot}. The $p$-values of McNemar's test larger than the significance level of $2.63 \times 10 ^{-4}$, which was adjusted from an alpha value of $0.05$ with the Bonferroni correction, indicate that any of the compared models might yield similar results and could be used to infer trajectory class. The diffusion distance and the arithmetic average of direction change as predictors combined with the Gaussian Process (GP) classifier method yield the best accuracy in Table~\ref{tab:acc:dist_dc}, so this was chosen as the final model.
 
-\begin{table}[!ht]
-    \centering
-    \begin{tabular}{|c|c|c|c|c|} \hline
-        Algorithm & Window size & Both & None & One \\ \hline
-        K-means & $10$ & $0.1265$ & $0.2341$ & $0.1364$ \\ \hline
-        K-means & $20$ & $0.1787$ & $0.1558$ & $0.2604$ \\ \hline
-        DBSCAN & $10$ & $0.054$ & $0.1551$ & $0.1973$ \\ \hline
-        DBSCAN & $20$ & $0.2795$ & $0.1382$ & $0.2494$ \\ \hline
-    \end{tabular}
-    \caption{The average Euclidean distance of trajectory fingerprints in pairs where both (left), none (center), or only one (right) is an anomaly for different window sizes and DBSCAN or K-means clusters.}
-    \label{tab:DBSCAN_K-meansAnomalyEuclid}
-\end{table}
+\section{Discussion}
+\label{sec:Discussion}
 
-The largest average Euclidean distance of trajectory fingerprints in pairs with different anomaly flags of $0.2604$ is achieved for K-means clusters and a window size of $20$. Pairs of two trajectories in different clusters have a larger average Euclidean distance of fingerprints than two trajectories with the same positive or negative anomaly flag for K-means clusters and a window size of $20$. This is not true for a window size of $10$ and K-means clusters, indicating that classified trajectories in one cluster are not well separated from others and are less similar to those inside their cluster.
+The k-Nearest Neighbours (k-NN), and AdaBoost (AB) methods have the highest execution time, above $1$ $s$, so they were excluded from further analysis and application in the final model.
 
-For DBSCAN and a window size of $10$, pairs of two trajectories with the same anomaly flags have a smaller average Euclidean distance of fingerprints than two trajectories with different anomaly flags. This is not true for a window size of $20$ and DBSCAN clusters, indicating that normal trajectories are not well distinguished from anomalies and differ more significantly within the same cluster.
+The AB method has a high execution time for any set of predictors due to an extensive hyperparameter tuning procedure during training, evident from the data in Table~\ref{tab:time}. However, it achieved a $97.85\%$ accuracy using all trajectory features as predictors, shown in Table~\ref{tab:acc:noMETAR}. The Gaussian Process (GP) method has the same accuracy when using diffusion distance and the arithmetic average of direction change as predictors, presented in Table~\ref{tab:acc:dist_dc}, and the training time for the AB method is around ten times longer, so the GP method is preferred as the approach in the final model.
 
-Table~\ref{tab:DBSCAN_K-meansAnomalySeq} shows the frequency of the $e$ sequence of inflection points among anomalous and non-anomalous trajectories for a window size of $10$ or $20$ and DBSCAN or K-means clusters. The $e$ sequence of inflection points, representing an increasing $x$ coordinate and a $y$ coordinate that first increases and then decreases, is shown here because it is the most frequent sequence of inflection points for both window sizes.
-
-\begin{table}[!ht]
-    \centering
-    \begin{tabular}{|c|c|c|c|} \hline
-        Algorithm & Window size & Anomalous & Non-anomalous \\ \hline
-        K-means & $10$ & $50.77\%$ & $33.13\%$ \\ \hline
-        K-means & $20$ & $33.76\%$ & $15.83\%$ \\ \hline
-        DBSCAN & $10$ & $41.24\%$ & $41.99\%$ \\ \hline
-        DBSCAN & $20$ & $25.39\%$ & $20.02\%$ \\ \hline
-    \end{tabular}
-    \caption{The frequency of the $e$ sequence of inflection points among anomalous (left) and non-anomalous (right) trajectories for different window sizes and DBSCAN or K-means clusters.}
-    \label{tab:DBSCAN_K-meansAnomalySeq}
-\end{table}
-
-For a window size of $20$ and DBSCAN or K-means clusters, anomalous trajectories have a larger frequency of the $e$ sequence of inflection points than non-anomalous trajectories. For a window size of $10$, non-anomalous trajectories have a smaller frequency of the $e$ sequence of inflection points than non-anomalous trajectories only for the K-means, not the DBSCAN algorithm, even though the values $41.24\%$ and $41.99\%$ are very close. The frequency of the $e$ sequence of inflection points varies most significantly for a window size of $20$ and K-means clusters, dropping from $33.76\%$ to $15.83\%$ for non-anomalous trajectories, with a difference of $17.93\%$. These results support the conclusion that the $e$ sequence of inflection points indicates an anomaly and that a window size of $20$ and K-means clusters generate the best classification.
-
-The confusion matrix performance indicators for window sizes of $10$ and $20$ and the algorithm without clustering, K-means, and DBSCAN are presented in Table~\ref{tab:DBSCAN_K-meansConfMatrix}.
-
-\begin{table}[!ht]
-    \centering
-    \begin{tabular}{|c|c|c|c|c|c|c|} \hline
-        Model & \multicolumn{2}{c|}{Algo vs. User} & \multicolumn{2}{c|}{K-means vs. User} & \multicolumn{2}{c|}{DBSCAN vs. User} \\ \hline
-        Window size & $10$ & $20$ & $10$ & $20$ & $10$ & $20$ \\ \hline
-        TP & $2704$ & $4397$ & $4431$ & $6115$ & $6017$ & $5360$ \\ \hline
-        TN & $18384$ & $20077$ & $13223$ & $11659$ & $5569$ & $10960$ \\ \hline
-        FP & $5136$ & $3443$ & $10297$ & $11861$ & $17951$ & $12560$ \\ \hline
-        FN & $5136$ & $3443$ & $3409$ & $1725$ & $1823$ & $2480$ \\ \hline
-        Sensitivity & $34.49$ & $56.08$ & $56.52$ & $78.0$ & $76.75$ & $68.37$ \\ \hline
-        Specificity & $78.16$ & $85.36$ & $56.22$ & $49.57$ & $23.68$ & $46.6$ \\ \hline
-        PPV & $34.49$ & $56.08$ & $30.09$ & $34.02$ & $25.1$ & $29.91$ \\ \hline
-        NPV & $78.16$ & $85.36$ & $79.5$ & $87.11$ & $75.34$ & $81.55$ \\ \hline
-        DR (P) & $8.62$ & $14.02$ & $14.13$ & $19.5$ & $19.19$ & $17.09$ \\ \hline
-        DR (N) & $58.62$ & $64.02$ & $42.17$ & $37.18$ & $17.76$ & $34.95$ \\ \hline
-        DP & $25.0$ & $25.0$ & $46.96$ & $57.32$ & $76.43$ & $57.14$ \\ \hline
-        Acc & $67.24$ & $78.04$ & $56.29$ & $56.68$ & $36.95$ & $52.04$ \\ \hline
-        BA & $56.33$ & $70.72$ & $56.37$ & $63.78$ & $50.21$ & $57.48$ \\ \hline
-        F1 & $34.49$ & $56.08$ & $39.27$ & $47.37$ & $37.83$ & $41.61$ \\ \hline
-    \end{tabular}
-    \caption{The confusion matrix performance indicators for the algorithm without clustering (left), K-means (center), or DBSCAN (right) clusters compared to the user's selection. Results are separated for a window size of $10$ (left) and $20$ (right). All values except TP, TN, FP, and FN represent a percentage (\%).}
-    \label{tab:DBSCAN_K-meansConfMatrix}
-\end{table}
-
-K-means, compared to user selection, has a larger specificity, PPV, NPV, accuracy, balanced accuracy, and F1 score than the DBSCAN algorithm for both window sizes. The DBSCAN algorithm has a larger sensitivity for a window size of $10$, but not for a window size of $20$. This means that K-means outperforms DBSCAN when aligned with user classification.
-
-The algorithm without clustering compared to user selection has a larger specificity, PPV, NPV, accuracy, and balanced accuracy than the DBSCAN algorithm for both window sizes. The DBSCAN algorithm has a larger sensitivity and F1 score for a window size of $10$, but not for a window size of $20$. The results indicate that the DBSCAN algorithm is less similar to the user-selected values than the algorithm without clustering.
-
-The algorithm without clustering compared to user selection has a larger specificity, PPV, and accuracy than the K-means algorithm for both window sizes. The K-means algorithm has a larger sensitivity and NPV for both window sizes, and a larger balanced accuracy and F1 score for a window size of $10$, but not for a window size of $20$. This means that K-means outperforms DBSCAN when aligned with user classification. The results indicate that the algorithm without clustering is more similar to user selection than the K-means algorithm.
-
-K-means, DBSCAN, and the algorithm without clustering compared to user selection have a larger PPV, NPV, accuracy, balanced accuracy, and F1 score for a window size of $20$ than for a window size of $10$. This supports the conclusion that a larger window size enables better alignment with user's choices.
-
-K-means compared, to user selection, has a larger specificity for a window size of $20$ than for a window size of $10$. DBSCAN has a larger sensitivity for a window size of $20$ when comparing window sizes. The algorithm without clustering has a smaller specificity and sensitivity for a window size of $10$ when comparing window sizes. This adds validity to the claim that a smaller window yields results dissimilar to user classification.
-
-The marginal probabilities for both anomaly classes differ when comparing the algorithm without clustering and the user selection for both window sizes, since the $p$-values of McNemar's test equal $1$. The TP, TN, FP, and FN values from Table~\ref{tab:DBSCAN_K-meansConfMatrix} were used in the contingency tables for the statistical tests.  The $p$-values of McNemar's test equal $0$ when comparing either K-means, or DBSCAN clustering to user selection, so the null-hypothesis that marginal probabilities for both anomaly classes are equal cannot be rejected. This indicates that the algorithm without clustering is statistically significantly different from user selection, but this is not true after either clustering algorithm is applied.
+All candidate models developed using exclusively meteorological features fail to achieve an accuracy over $90\%$, ranging between $63\%$ and $75\%$. This indicates that these meteorological features are less suitable as predictors for this particular application. All models using at least two trajectory features achieved an accuracy larger than $87\%$, suggesting they could be applied in practice.
 
 \section{Conclusion}
 \label{sec:Conclusion}
 
-This work aims to classify driver behavior based on the inflection points of the function that represents the vehicle trajectory. Each inflection point is assigned a type based on whether the $x$ and $y$ coordinates increase or decrease before and after the inflection point. Inflection points are identified on subsets of a trajectory of $10$ or $20$ consecutive data points. The $200$ most common sequences of types of inflection points are used to generate a trajectory fingerprint, classify an entire trajectory, and cluster trajectories using K-means and DBSCAN. Anomalies are then identified as members of the smallest cluster. An experiment where humans select the five most similar out of twenty possible trajectories compared to a baseline trajectory is used to validate the algorithm by applying confusion matrix performance indicators. The algorithm without clustering compared to user selection has an accuracy of $78.04\%$ for a window size of $20$, supporting the hypothesis that an algorithm using inflection points matches human classification.
+The presented study aims to classify trajectories originating from a chosen origin airport and heading for a target destination airport. Classification models were applied to descriptions of the trajectories using multiple features and meteorological data. It was assumed observations contained independent variables to generate the dependent variable representing the trajectory class. The trajectories were labeled based on the first three points of the trajectory relative to the start airport coordinates. Statistical analysis confirmed that trajectory features change distribution based on trajectory class.
 
-The average Euclidean distance of trajectory fingerprints is smaller for two anomalous or non-anomalous trajectories than for trajectories with different statuses for a window size of $20$ and K-means clusters. This validates the K-means algorithm with a larger window size. The $e$ sequence of inflection points is the most frequent one and represents an increasing $x$ coordinate and a shift from increasing to decreasing for the $y$ coordinate. For a window size of $20$ and K-means cluster, the frequency of the $e$ sequence of inflection points is larger for anomalies. These results further support the K-means algorithm and a window size of $20$.
+The k-Nearest Neighbours (k-NN), Linear and Radial Basis Function (RBF) Support Vector Machine (SVM), Gaussian Process (GP), Decision Tree (DT), Random Forest (RF), Naive Bayes (NB), Multilayer Perceptron (MLP), AdaBoost (AB), and Quadratic Discriminant Analysis (QDA) method created a trajectory classification from multiple combinations of input variables.
 
-DBSCAN, compared to user selection, has a lower specificity, PPV, NPV, accuracy, balanced accuracy, and F1 score than the K-means algorithm for both window sizes. This supports the conclusion that K-means clustering better matches user selection than DBSCAN.
+The GP method using the arithmetic average of direction change and diffusion distance as predictors achieved a $97.85\%$ testing accuracy. The total execution time is around ten times shorter than the AdaBoost method using all tested trajectory features, making it more suitable for compact, low-performance, and low-cost portable devices such as smartphones. The exclusion of meteorological features and other trajectory features besides the arithmetic average of direction change and diffusion distance from the final is supported by their theoretical definitions, representing both dynamic and static features of the trajectory using vector and scalar values.
 
-The algorithm without clustering compared to user selection has a larger sensitivity, specificity, PPV, NPV, accuracy, balanced accuracy, and F1 score for a window size of $20$ than for a window size of $10$. This indicates that a window size of $10$ yields an algorithm different from user ratings, so a larger window size of $20$ might be beneficial. Future research may consider a larger window size on a larger dataset.
+\section{Declarations}
+%\label{sec:Declarations}
 
-The algorithm without clustering is statistically significantly different from user selection according to the $p$-values of McNemar's test for either window size. This statement does not hold if K-means or DBSCAN clustering algorithm is used, making a case for the usefulness of the generated clustering.
+\subsection{Availability of data and materials}
+%\label{subsec:Availability}
 
-% conflicts of interest
-\section*{Declaration of competing interest}
+The datasets used during the current study are available from the corresponding author upon reasonable request.
+
+\subsection{Competing interests}
+%\label{subsec:Competing}
+
 The authors declare no conflict of interest.
 
-\section*{CRediT authorship contribution statement}
-\textbf{Lucija \v{Z}u\v{z}i\'{c}:} Conceptualization, Methodology, Software, Validation, Investigation, Data Curation, Writing -- Original Draft, Visualization. \textbf{Franko Hr\v{z}i\'{c}:} Conceptualization,  Validation, Formal analysis, Investigation, Resources, Writing -- Original Draft, Writing -- Review \& Editing, Supervision. \textbf{Jonatan Lerga:} Conceptualization, Methodology, Validation, Formal analysis, Investigation, Resources, Writing -- Original Draft, Writing -- Review \& Editing, Supervision, Project administration, Funding acquisition.
+\subsection{Funding}
+%\label{subsec:Funding}
 
-% acknowledgment
-\section*{Funding}
-This work was fully supported by the EU Horizon 2020 project INNO2MARE under the no. 101087348, Ministry of Education, Science and Innovation of Montenegro grant no. 04-082/23-2527/1, and University of Rijeka projects no. uniri-iskusni-tehnic-23-83, uniri-iskusni-tehnic-23-74, uniri-iskusni-tehnic-23-11, and uniri-zip-2103-4-22.
+The authors have no funding sources to declare.
 
+\subsection{Authors' contributions}
+%\label{subsec:Contributions}
+
+L\v{Z} contributed to conceptualization, methodology, software, validation, formal analysis, investigation, data curation, original draft writing, text review and editing, and visualization. RF contributed to conceptualization, methodology, investigation, resources, original draft writing, text review and editing, and supervision. All authors read and approved the final manuscript.
+
+\subsection{Acknowledgements}
+%\label{subsec:Acknowledgements}
+
+Not applicable
+
+\subsection{Authors' information}
+%\label{subsec:Information}
+
+L\v{Z} is a doctoral student at the Faculty of Engineering, University of Rijeka, currently employed as an assistant at the Department of Computer Science. Her research interests include applied machine learning in biology, chemistry, medicine, and transportation. Maritime transportation is also the subject of her doctoral research.
+
+RF is an external Professor of Electronics Engineering with the Department for Computer Science, Faculty of Engineering, and Center for Artificial Intelligence and Cybersecurity, both at the University of Rijeka, Croatia, and Head of the Laboratory for Spatial Intelligence at Hrvatsko Zagorje Krapina University of Applied Science, Krapina, Croatia. He holds a BSc, MSc, and PhD in electrical engineering, obtained in 1987, 1994, and 2007, respectively, from the Faculty of Electrical Engineering and Computing, University of Zagreb, Croatia. His professional interests include Ambient-Aware Application-Aligned ((AA)2) Global Navigation Satellite System (GNSS) Positioning, Navigation, and Timing (PNT), spatial uncertainty quantification, spatial statistical learning, predictive modeling, statistical signal processing, trajectory analysis and prediction, and occupancy modeling. Professor Filjar is a Fellow of The Royal Institute of Navigation (RIN) (London, United Kingdom), a Member of The Institute of Navigation (ION) (Manassas, Virginia), a Senior Member of Union Radio-Scientifique Internationale (URSI) (Ghent, Belgium) and a Member of The Society for Industrial and Applied Mathematics  (Philadelphia, Philadelphia).
+
+%%===========================================================================================%%
+%% If you are submitting to one of the Nature Portfolio journals, using the eJP submission   %%
+%% system, please include the references within the manuscript file itself. You may do this  %%
+%% by copying the reference list from your .bbl file, paste it into the main manuscript .tex %%
+%% file, and delete the associated \verb+\bibliography+ commands.                            %%
+%%===========================================================================================%%
+
+%\bibliography{sn-bibliography}% common bib file
+%%\input sn-article.bbl
 \begin{thebibliography}{101}
 % BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
 \ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
@@ -588,7 +809,7 @@ This work was fully supported by the EU Horizon 2020 project INNO2MARE under the
 \ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
 \ifx \bparticle \undefined \def \bparticle#1{#1}\fi
 \ifx \barticle \undefined \def \barticle#1{#1}\fi
-%\bibcommenthead
+\bibcommenthead
 \ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
 \ifx \botherref \undefined \def \botherref #1{#1}\fi
 \ifx \url \undefined \def \url#1{\textsf{#1}}\fi
@@ -601,506 +822,858 @@ This work was fully supported by the EU Horizon 2020 project INNO2MARE under the
 \ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
 \ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
 \csname PreBibitemsHook\endcsname
-
+ 
 %%% 1
-\bibitem{ototrakOtoTrakTrack}
-\begin{botherref}
-\oauthor{\bsnm{OtoTrak}}
-(\byear{2024}).
-{O}to{T}rak - {T}rack your watercraft --- ototrak.com.
-\url{https://www.ototrak.com/en-us}.
-Accessed 19 November 2024.
-\end{botherref}
+\bibitem{dumenvcic2022trajectory}
+\begin{barticle}
+\bauthor{\bsnm{Dumen{\v{c}}i{\'c}}, \binits{S.}},
+\bauthor{\bsnm{{\v{Z}}u{\v{z}}i{\'c}}, \binits{L.}}, \&
+\bauthor{\bsnm{Bre{\v{s}}}, \binits{B.}}
+(\byear{2022}).
+\batitle{{T}rajectory {A}nalysis of {G}riffon {V}ulture in {K}varner {B}ay}.
+\bjtitle{The Journal of CIEES},
+\bvolume{2},
+\bfpage{36}--\bfpage{42}.
+doi:10.48149/jciees.2022.2.2.6.
+\end{barticle}
 \endbibitem
 
 %%% 2
-\bibitem{2013Kazemi}
+\bibitem{McLean2018-jr}
 \begin{barticle}
-\bauthor{\bsnm{Kazemi}, \binits{S.}},
-\bauthor{\bsnm{Abghari}, \binits{S.}},
-\bauthor{\bsnm{Lavesson}, \binits{N.}},
-\bauthor{\bsnm{Johnson}, \binits{H.}}, \&
-\bauthor{\bsnm{Ryman}, \binits{P.}}
-(\byear{2013}).
-\batitle{{O}pen data for anomaly detection in maritime surveillance}.
-\bjtitle{Expert Systems with Applications},
-\bvolume{40},
-\bfpage{5719}--\bfpage{5729}.
-doi:10.1016/j.eswa.2013.04.029.
+\bauthor{\bsnm{McLean}, \binits{D.J.}}, \&
+\bauthor{\bsnm{Skowron Volponi}, \binits{M.}}
+(\byear{2018}).
+\batitle{trajr: {A}n {R} package for characterisation of animal trajectories}.
+\bjtitle{Ethology},
+\bvolume{124},
+\bfpage{440}--\bfpage{448}.
+doi:10.1111/eth.12739.
 \end{barticle}
 \endbibitem
 
 %%% 3
-\bibitem{2014Mascaro}
-\begin{barticle}
-\bauthor{\bsnm{Mascaro}, \binits{S.}},
-\bauthor{\bsnm{Nicholso}, \binits{A.}}, \&
-\bauthor{\bsnm{Korb}, \binits{K.}}
-(\byear{2014}).
-\batitle{{A}nomaly detection in vessel tracks using {B}ayesian networks}.
-\bjtitle{International Journal of Approximate Reasoning},
-\bvolume{55},
-\bfpage{84}--\bfpage{98}.
-doi:10.1016/j.ijar.2013.03.012.
-\end{barticle}
+\bibitem{Makar2022}
+\begin{botherref}
+\oauthor{\bsnm{Makar}, \binits{D.}}
+(\byear{2022}).
+{A}naliza putanja zrakoplova kori{\v{s}}tenjem opa{\v{z}}anja iz mre{\v{z}}e {O}pen{S}ky {N}etwork.
+\url{https://urn.nsk.hr/urn:nbn:hr:190:547850}.
+Accessed 30 November 2024.
+\end{botherref}
 \endbibitem
 
 %%% 4
-\bibitem{2008Laxhammar}
-\begin{bchapter}
-\bauthor{\bsnm{Laxhammar}, \binits{R.}}
-(\byear{2008}).
-\bctitle{{A}nomaly detection for sea surveillance}.
-In \bbtitle{2008 11th {I}nternational {C}onference on {I}nformation {F}usion}
-(pp. \bfpage{1}--\bfpage{8}).
-\end{bchapter}
+\bibitem{Gultepe2019}
+\begin{barticle}
+\bauthor{\bsnm{Gultepe}, \binits{I.}},
+\bauthor{\bsnm{Sharman}, \binits{R.}},
+\bauthor{\bsnm{Williams}, \binits{P.D.}},
+\bauthor{\bsnm{Zhou}, \binits{B.}},
+\bauthor{\bsnm{Ellrod}, \binits{G.P.}},
+\bauthor{\bsnm{Minnis}, \binits{P.}},
+\bauthor{\bsnm{Trier}, \binits{S.}},
+\bauthor{\bsnm{Griffin}, \binits{S.}},
+\bauthor{\bsnm{Yum}, \binits{S.S.}},
+\bauthor{\bsnm{Gharabaghi}, \binits{B.}},
+\bauthor{\bsnm{Feltz}, \binits{W.}},
+\bauthor{\bsnm{Temimi}, \binits{M.}},
+\bauthor{\bsnm{Dimri}, \binits{A.P.}},
+\bauthor{\bsnm{Dietz}, \binits{S.}},
+\bauthor{\bsnm{Fran{\c{c}}a}, \binits{G.B.}},
+\bauthor{\bsnm{Almeida}, \binits{M.V.}},
+\bauthor{\bsnm{Albquerque}, \binits{F.}},
+\bauthor{\bsnm{Pu}, \binits{Z.}},
+\bauthor{\bsnm{Kneringer}, \binits{P.}},
+\bauthor{\bsnm{Weston}, \binits{M.}},
+\bauthor{\bsnm{Chuang}, \binits{H.Y.}}, \&
+\bauthor{\bsnm{Thobois}, \binits{L.}}
+(\byear{2019}).
+\batitle{{A} {R}eview of {H}igh {I}mpact {W}eather for {A}viation {M}eteorology}.
+\bjtitle{Pure and Applied Geophysics},
+\bvolume{176},
+\bfpage{1869}--\bfpage{1921}.
+doi:10.1007/s00024-019-02168-6.
+\end{barticle}
 \endbibitem
 
 %%% 5
-\bibitem{2009Chandola}
+\bibitem{Kegl2013}
 \begin{barticle}
-\bauthor{\bsnm{Chandola}, \binits{V.}},
-\bauthor{\bsnm{Banerjee}, \binits{A.}}, \&
-\bauthor{\bsnm{Kumar}, \binits{V.}}
-(\byear{2009}).
-\batitle{{A}nomaly {D}etection: {A} {S}urvey}.
-\bjtitle{ACM Comput. Surv.},
-\bvolume{41}.
-doi:10.1145/1541880.1541882.
+\bauthor{\bsnm{K{\'e}gl}, \binits{B.}}
+(\byear{2013}).
+\batitle{{T}he return of {A}da{B}oost.{M}{H}: multi-class {H}amming trees}.
+\bjtitle{International Conference on Learning Representations}.
+doi:10.48550/arXiv.1312.6086.
 \end{barticle}
 \endbibitem
 
 %%% 6
-\bibitem{2011Martineau}
+\bibitem{filjarairplane}
 \begin{bchapter}
-\bauthor{\bsnm{Martineau}, \binits{E.}}, \&
-\bauthor{\bsnm{Roy}, \binits{J.}}
-(\byear{2011}).
-\bctitle{{M}aritime {A}nomaly {D}etection: {D}omain {I}ntroduction and {R}eview of {S}elected {L}iterature}.
-In \bbtitle{{D}efence {R}esearch and {D}evelopment {C}anada {V}alcartier ({Q}uebec)}.
+\bauthor{\bsnm{Filjar}, \binits{R.}}, \&
+\bauthor{\bsnm{Spudi{\'c}}, \binits{R.}}
+(\byear{2023}).
+\bctitle{{A}irplane {T}rajectory {R}econstruction and {A}nalysis {U}sing {G}{N}{S}{S}-{B}ased {A}{D}{S}-{B} {D}ata: {W}hat to {D}o with the {O}pen {A}ccess {D}ata {U}sing {O}pen-{S}ource {S}oftware}.
+In \bbtitle{{U}nited {N}ations/{F}inland {W}orkshop on the {A}pplications of {G}lobal {N}avigation {S}atellite {S}ystems}.
 \end{bchapter}
 \endbibitem
 
 %%% 7
-\bibitem{2008Roy}
-\begin{barticle}
-\bauthor{\bsnm{Roy}, \binits{J.}}
-(\byear{2008}).
-\batitle{{A}nomaly detection in the maritime domain}.
-\bjtitle{Proc SPIE}.
-doi:10.1117/12.776230.
-\end{barticle}
+\bibitem{Garcia_Ceja2021-tw}
+\begin{bbook}
+\bauthor{\bsnm{Garcia Ceja}, \binits{E.}}
+(\byear{2021}).
+\bbtitle{{B}ehavior analysis with machine learning using {R}}.
+\blocation{Philadelphia, PA}: 
+\bpublisher{Chapman \& Hall/CRC}.
+\end{bbook}
 \endbibitem
 
 %%% 8
-\bibitem{2022Kim}
+\bibitem{csl-202004-0019}
 \begin{barticle}
-\bauthor{\bsnm{Kim}, \binits{Y.J.}},
-\bauthor{\bsnm{Lee}, \binits{J.S.}},
-\bauthor{\bsnm{Pititto}, \binits{A.}},
-\bauthor{\bsnm{Falco}, \binits{L.}},
-\bauthor{\bsnm{Lee}, \binits{M.S.}},
-\bauthor{\bsnm{Yoon}, \binits{K.K.}}, \&
-\bauthor{\bsnm{Cho}, \binits{I.S.}}
-(\byear{2022}).
-\batitle{{M}aritime {T}raffic {E}valuation {U}sing {S}patial-{T}emporal {D}ensity {A}nalysis {B}ased on {B}ig {A}{I}{S} {D}ata}.
-\bjtitle{Applied Sciences},
-\bvolume{12}.
-doi:10.3390/app122111246.
+\bauthor{\bsnm{Filjar}, \binits{R.}},
+\bauthor{\bsnm{Sklebar}, \binits{I.}}, \&
+\bauthor{\bsnm{Horvat}, \binits{M.}}
+(\byear{2020}).
+\batitle{{A} {C}omparison of {M}achine {L}earning-{B}ased {I}ndividual {M}obility {C}lassification {M}odels {D}eveloped on {S}ensor {R}eadings from {L}oosely {A}ttached {S}martphones}.
+\bjtitle{{C}ommunications - {S}cientific {L}etters of the {U}niversity of {Z}ilina},
+\bvolume{22},
+\bfpage{153}--\bfpage{162}.
+doi:10.26552/com.C.2020.4.153-162.
 \end{barticle}
 \endbibitem
 
 %%% 9
-\bibitem{2017Fu}
-\begin{barticle}
-\bauthor{\bsnm{Fu}, \binits{P.}},
-\bauthor{\bsnm{Wang}, \binits{H.}},
-\bauthor{\bsnm{Liu}, \binits{K.}},
-\bauthor{\bsnm{Hu}, \binits{X.}}, \&
-\bauthor{\bsnm{Zhang}, \binits{H.}}
-(\byear{2017}).
-\batitle{{F}inding {A}bnormal {V}essel {T}rajectories {U}sing {F}eature {L}earning}.
-\bjtitle{IEEE Access},
-\bvolume{5},
-\bfpage{7898}--\bfpage{7909}.
-doi:10.1109/ACCESS.2017.2698208.
-\end{barticle}
+\bibitem{Bosson2018}
+\begin{bchapter}
+\bauthor{\bsnm{Bosson}, \binits{C.}}, \&
+\bauthor{\bsnm{Nikoleris}, \binits{T.}}
+(\byear{2018}).
+\bctitle{{S}upervised {L}earning {A}pplied to {A}ir {T}raffic {T}rajectory {C}lassification}.
+In \bbtitle{2018 {A}{I}{A}{A} {I}nformation {S}ystems-{A}{I}{A}{A} {I}nfotech}
+(pp. \bfpage{}).
+doi:10.2514/6.2018-1637.
+\end{bchapter}
 \endbibitem
 
 %%% 10
-\bibitem{2021Pedroche}
+\bibitem{Fix1989}
 \begin{barticle}
-\bauthor{\bsnm{Pedroche}, \binits{D.S.}},
-\bauthor{\bsnm{Herrero}, \binits{D.A.}},
-\bauthor{\bsnm{Herrero}, \binits{J.G.}}, \&
-\bauthor{\bsnm{Lopez}, \binits{J.M.M.}}
-(\byear{2021}).
-\batitle{{C}lustering of maritime trajectories with {A}{I}{S} features for context learning}.
-\bjtitle{2021 IEEE 24th International Conference on Information Fusion (FUSION)}.
-doi:10.23919/fusion49465.2021.9626956.
+\bauthor{\bsnm{Fix}, \binits{E.}}, \&
+\bauthor{\bsnm{Hodges}, \binits{J.L.}}
+(\byear{1989}).
+\batitle{{D}iscriminatory {A}nalysis. {N}onparametric {D}iscrimination: {C}onsistency {P}roperties}.
+\bjtitle{International Statistical Review},
+\bvolume{57},
+\bfpage{238}--\bfpage{247}.
+doi:10.2307/1403797.
 \end{barticle}
 \endbibitem
 
 %%% 11
-\bibitem{BERTAZZI2025104892}
+\bibitem{Cover1967}
 \begin{barticle}
-\bauthor{\bsnm{Bertazzi}, \binits{L.}},
-\bauthor{\bsnm{Chagas}, \binits{G.O.}},
-\bauthor{\bsnm{Coelho}, \binits{L.C.}},
-\bauthor{\bsnm{Lagan{\'a}}, \binits{D.}}, \&
-\bauthor{\bsnm{Vocaturo}, \binits{F.}}
-(\byear{2025}).
-\batitle{{O}nline algorithms for the multi-vehicle inventory-routing problem with real-time demands}.
-\bjtitle{Transportation Research Part C: Emerging Technologies},
-\bvolume{170},
-\bfpage{104892}.
-doi:10.1016/j.trc.2024.104892.
+\bauthor{\bsnm{Cover}, \binits{T.M.}}, \&
+\bauthor{\bsnm{Hart}, \binits{P.E.}}
+(\byear{1967}).
+\batitle{{N}earest neighbor pattern classification}.
+\bjtitle{IEEE Trans. Inf. Theory},
+\bvolume{13},
+\bfpage{21}--\bfpage{27}.
+doi:10.1109/TIT.1967.1053964.
 \end{barticle}
 \endbibitem
 
 %%% 12
-\bibitem{YU2025104931}
+\bibitem{Hastie2009}
 \begin{barticle}
-\bauthor{\bsnm{Yu}, \binits{H.}}, \&
-\bauthor{\bsnm{Yeo}, \binits{H.}}
-(\byear{2025}).
-\batitle{{D}ynamic characteristics of commercial {A}daptive {C}ruise {C}ontrol across driving situations: {R}esponse time, string stability, and asymmetric behavior}.
-\bjtitle{Transportation Research Part C: Emerging Technologies},
-\bvolume{170},
-\bfpage{104931}.
-doi:10.1016/j.trc.2024.104931.
+\bauthor{\bsnm{Hastie}, \binits{T.}},
+\bauthor{\bsnm{Rosset}, \binits{S.}},
+\bauthor{\bsnm{Zhu}, \binits{J.}}, \&
+\bauthor{\bsnm{Zou}, \binits{H.}}
+(\byear{2009}).
+\batitle{{M}ulti-class {A}da{B}oost}.
+\bjtitle{Stat. Interface},
+\bvolume{2},
+\bfpage{349}--\bfpage{360}.
+doi:10.4310/SII.2009.v2.n3.a8.
 \end{barticle}
 \endbibitem
 
 %%% 13
-\bibitem{GUAN2025104914}
-\begin{barticle}
-\bauthor{\bsnm{Guan}, \binits{H.}},
-\bauthor{\bsnm{Meng}, \binits{Q.}}, \&
-\bauthor{\bsnm{Chen}, \binits{X.}}
-(\byear{2025}).
-\batitle{{D}ynamic lane management for emerging mixed traffic with semi-autonomous vehicles}.
-\bjtitle{Transportation Research Part C: Emerging Technologies},
-\bvolume{170},
-\bfpage{104914}.
-doi:10.1016/j.trc.2024.104914.
-\end{barticle}
+\bibitem{Everitt2011}
+\begin{bbook}
+\bauthor{\bsnm{Everitt}, \binits{B.S.}},
+\bauthor{\bsnm{Landau}, \binits{S.}},
+\bauthor{\bsnm{Leese}, \binits{M.}}, \&
+\bauthor{\bsnm{Stahl}, \binits{D.}}
+(\byear{2011}).
+\bbtitle{{C}luster {A}nalysis}.
+\blocation{Hoboken, New Jersey, United States of America}: 
+\bpublisher{Wiley}.
+\end{bbook}
 \endbibitem
 
 %%% 14
-\bibitem{BEZA2025104898}
+\bibitem{Hall2008}
 \begin{barticle}
-\bauthor{\bsnm{Beza}, \binits{A.D.}},
-\bauthor{\bsnm{Xie}, \binits{Z.}},
-\bauthor{\bsnm{Ramezani}, \binits{M.}}, \&
-\bauthor{\bsnm{Levinson}, \binits{D.}}
-(\byear{2025}).
-\batitle{{F}rom lane-less to lane-free: {I}mplications in the era of automated vehicles}.
-\bjtitle{Transportation Research Part C: Emerging Technologies},
-\bvolume{170},
-\bfpage{104898}.
-doi:10.1016/j.trc.2024.104898.
+\bauthor{\bsnm{Hall}, \binits{P.}},
+\bauthor{\bsnm{Park}, \binits{B.U.}}, \&
+\bauthor{\bsnm{Samworth}, \binits{R.J.}}
+(\byear{2008}).
+\batitle{{C}hoice of neighbor order in nearest-neighbor classification}.
+\bjtitle{Ann. Stat.},
+\bvolume{36},
+\bfpage{2135}--\bfpage{2152}.
+doi:10.1214/07-AOS537.
 \end{barticle}
 \endbibitem
 
 %%% 15
-\bibitem{2019Hanyang}
+\bibitem{Kuhn2007}
 \begin{barticle}
-\bauthor{\bsnm{Hanyang}, \binits{Z.}},
-\bauthor{\bsnm{Xin}, \binits{S.}}, \&
-\bauthor{\bsnm{Zhenguo}, \binits{Y.}}
-(\byear{2019}).
-\batitle{{V}essel {S}ailing {P}atterns {A}nalysis from {S}-{A}{I}{S} {D}ata {D}ased on {K}-means {C}lustering {A}lgorithm}.
-\bjtitle{2019 IEEE 4th International Conference on Big Data Analytics (ICBDA)}.
-doi:10.1109/icbda.2019.8713231.
+\bauthor{\bsnm{Kuhn}, \binits{M.}}
+(\byear{2007}).
+\batitle{caret: {C}lassification and {R}egression {T}raining}.
+\bjtitle{CRAN: Contributed Packages}.
+doi:10.32614/cran.package.caret.
 \end{barticle}
 \endbibitem
 
 %%% 16
-\bibitem{2018Coscia}
-\begin{barticle}
-\bauthor{\bsnm{Coscia}, \binits{P.}},
-\bauthor{\bsnm{Braca}, \binits{P.}},
-\bauthor{\bsnm{Millefiori}, \binits{L.M.}},
-\bauthor{\bsnm{Palmieri}, \binits{F.A.N.}}, \&
-\bauthor{\bsnm{Willett}, \binits{P.}}
-(\byear{2018}).
-\batitle{{M}ultiple {O}rnstein-{U}hlenbeck {P}rocesses for {M}aritime {T}raffic {G}raph {R}epresentation}.
-\bjtitle{IEEE Transactions on Aerospace and Electronic Systems},
-\bvolume{54},
-\bfpage{2158}--\bfpage{2170}.
-doi:10.1109/TAES.2018.2808098.
-\end{barticle}
+\bibitem{Rasmussen2005}
+\begin{bbook}
+\bauthor{\bsnm{Rasmussen}, \binits{C.E.}}, \&
+\bauthor{\bsnm{Williams}, \binits{C.K.I.}}
+(\byear{2005}).
+\bbtitle{{G}aussian processes for machine learning}.
+\blocation{Cambridge, Massachusetts}: 
+\bpublisher{MIT Press}.
+\end{bbook}
 \endbibitem
 
 %%% 17
-\bibitem{2018dAfflisio1}
-\begin{barticle}
-\bauthor{\bsnm{d'Afflisio}, \binits{E.}},
-\bauthor{\bsnm{Braca}, \binits{P.}},
-\bauthor{\bsnm{Millefiori}, \binits{L.M.}}, \&
-\bauthor{\bsnm{Willett}, \binits{P.}}
-(\byear{2018}).
-\batitle{{D}etecting {A}nomalous {D}eviations {F}rom {S}tandard {M}aritime {R}outes {U}sing the {O}rnstein-{U}hlenbeck {P}rocess}.
-\bjtitle{IEEE Transactions on Signal Processing},
-\bvolume{66},
-\bfpage{6474}--\bfpage{6487}.
-doi:10.1109/TSP.2018.2875887.
-\end{barticle}
+\bibitem{Liu2010}
+\begin{bbook}
+\bauthor{\bsnm{Liu}, \binits{W.}},
+\bauthor{\bsnm{Principe}, \binits{J.C.}}, \&
+\bauthor{\bsnm{Haykin}, \binits{S.S.}}
+(\byear{2010}).
+\bbtitle{{K}ernel adaptive filtering}.
+\blocation{Hoboken, NJ}: 
+\bpublisher{Wiley-Blackwell}.
+\end{bbook}
 \endbibitem
 
 %%% 18
-\bibitem{Ester1996ADA}
-\begin{bchapter}
-\bauthor{\bsnm{Ester}, \binits{M.}},
-\bauthor{\bsnm{Kriegel}, \binits{H.P.}},
-\bauthor{\bsnm{Sander}, \binits{J.}}, \&
-\bauthor{\bsnm{Xu}, \binits{X.}}
-(\byear{1996}).
-\bctitle{{A} {D}ensity-{B}ased {A}lgorithm for {D}iscovering {C}lusters in {L}arge {S}patial {D}atabases with {N}oise}.
-In \bbtitle{{K}{D}{D}'96: {P}roceedings of the {S}econd {I}nternational {C}onference on {K}nowledge {D}iscovery and {D}ata {M}ining}
-(pp. \bfpage{226}--\bfpage{231}).
-\end{bchapter}
-\endbibitem
-
-%%% 19
-\bibitem{Khan2004RealtimePO}
-\begin{bchapter}
-\bauthor{\bsnm{Khan}, \binits{A.}},
-\bauthor{\bsnm{Bil}, \binits{C.}},
-\bauthor{\bsnm{Marion}, \binits{K.E.}}, \&
-\bauthor{\bsnm{Crozier}, \binits{M.}}
-(\byear{2004}).
-\bctitle{{R}eal-time prediction of ship motion and attitude using advanced prediction techniques}.
-In \bbtitle{24th {I}nternational {C}ongress of the {A}eronautical {S}ciences}.
-\end{bchapter}
-\endbibitem
-
-%%% 20
-\bibitem{2023Li}
+\bibitem{Karatzoglou2004}
 \begin{barticle}
-\bauthor{\bsnm{Li}, \binits{J.}},
-\bauthor{\bsnm{Liu}, \binits{J.}},
-\bauthor{\bsnm{Zhang}, \binits{X.}},
-\bauthor{\bsnm{Li}, \binits{X.}},
-\bauthor{\bsnm{Wang}, \binits{J.}}, \&
-\bauthor{\bsnm{Wu}, \binits{Z.}}
-(\byear{2023}).
-\batitle{{A} {N}ovel {H}ybrid {A}pproach for {D}etecting {A}bnormal {V}essel {B}ehavior in {M}aritime {T}raffic}.
-\bjtitle{2023 7th International Conference on Transportation Information and Safety (ICTIS)}.
-doi:10.1109/ictis60134.2023.10243728.
+\bauthor{\bsnm{Karatzoglou}, \binits{A.}},
+\bauthor{\bsnm{Smola}, \binits{A.}}, \&
+\bauthor{\bsnm{Hornik}, \binits{K.}}
+(\byear{2004}).
+\batitle{kernlab: {K}ernel-{B}ased {M}achine {L}earning {L}ab}.
+\bjtitle{CRAN: Contributed Packages}.
+doi:10.32614/CRAN.package.kernlab.
 \end{barticle}
 \endbibitem
 
-%%% 21
-\bibitem{2014Wang}
+%%% 19
+\bibitem{Williams1998}
+\begin{barticle}
+\bauthor{\bsnm{Williams}, \binits{C.K.I.}}, \&
+\bauthor{\bsnm{Barber}, \binits{D.}}
+(\byear{1998}).
+\batitle{{B}ayesian classification with {G}aussian processes}.
+\bjtitle{IEEE Transactions on Pattern Analysis and Machine Intelligence},
+\bvolume{20},
+\bfpage{1342}--\bfpage{1351}.
+doi:10.1109/34.735807.
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem{Ho1995}
 \begin{bchapter}
-\bauthor{\bsnm{Wang}, \binits{X.}},
-\bauthor{\bsnm{Liu}, \binits{X.}},
-\bauthor{\bsnm{Liu}, \binits{B.}},
-\bauthor{\bsnm{de Souza}, \binits{E.N.}}, \&
-\bauthor{\bsnm{Matwin}, \binits{S.}}
-(\byear{2014}).
-\bctitle{{V}essel route anomaly detection with {H}adoop {M}ap{R}educe}.
-In \bbtitle{2014 {I}{E}{E}{E} {I}nternational {C}onference on {B}ig {D}ata ({B}ig {D}ata)}
-(pp. \bfpage{25}--\bfpage{30}).
-doi:10.1109/BigData.2014.7004464.
+\bauthor{\bsnm{Ho}, \binits{T.K.}}
+(\byear{1995}).
+\bctitle{{R}andom decision forests}.
+In \bbtitle{{P}roceedings of 3rd {I}nternational {C}onference on {D}ocument {A}nalysis and {R}ecognition}
+(pp. \bfpage{278}--\bfpage{282}).
+doi:10.1109/ICDAR.1995.598994.
 \end{bchapter}
+\endbibitem
+
+%%% 21
+\bibitem{Kleinberg1990}
+\begin{barticle}
+\bauthor{\bsnm{Kleinberg}, \binits{E.M.}}
+(\byear{1990}).
+\batitle{{S}tochastic discrimination}.
+\bjtitle{Annals of Mathematics and Artificial Intelligence},
+\bvolume{1},
+\bfpage{207}--\bfpage{239}.
+doi:10.1007/BF01531079.
+\end{barticle}
 \endbibitem
 
 %%% 22
-\bibitem{2015Pallotta}
-\begin{bchapter}
-\bauthor{\bsnm{Pallotta}, \binits{G.}}, \&
-\bauthor{\bsnm{Jousselme}, \binits{A.L.}}
-(\byear{2015}).
-\bctitle{{D}ata-driven detection and context-based classification of maritime anomalies}.
-In \bbtitle{2015 18th {I}nternational {C}onference on {I}nformation {F}usion ({F}usion)}
-(pp. \bfpage{1152}--\bfpage{1159}).
-\end{bchapter}
+\bibitem{Kleinberg1996}
+\begin{barticle}
+\bauthor{\bsnm{Kleinberg}, \binits{E.M.}}
+(\byear{1996}).
+\batitle{{A}n overtraining-resistant stochastic modeling method for pattern recognition}.
+\bjtitle{Ann. Stat.},
+\bvolume{24},
+\bfpage{2319}--\bfpage{2349}.
+doi:10.1214/aos/1032181157.
+\end{barticle}
 \endbibitem
 
 %%% 23
-\bibitem{2018Lei}
+\bibitem{Kleinberg2000}
 \begin{barticle}
-\bauthor{\bsnm{Lei}, \binits{B.}}, \&
-\bauthor{\bsnm{Mingchao}, \binits{D.}}
-(\byear{2018}).
-\batitle{{A} distance-based trajectory outlier detection method on maritime traffic data}.
-\bjtitle{2018 4th International Conference on Control, Automation and Robotics (ICCAR)}.
-doi:10.1109/iccar.2018.8384697.
+\bauthor{\bsnm{Kleinberg}, \binits{E.M.}}
+(\byear{2000}).
+\batitle{{O}n the algorithmic implementation of stochastic discrimination}.
+\bjtitle{IEEE Trans. Pattern Anal. Mach. Intell.},
+\bvolume{22},
+\bfpage{473}--\bfpage{490}.
+doi:10.1109/34.857004.
 \end{barticle}
 \endbibitem
 
 %%% 24
-\bibitem{2013Pallotta2}
-\begin{bchapter}
-\bauthor{\bsnm{Pallotta}, \binits{G.}},
-\bauthor{\bsnm{Vespe}, \binits{M.}}, \&
-\bauthor{\bsnm{Bryan}, \binits{K.}}
-(\byear{2013}).
-\bctitle{{T}raffic {R}oute {E}xtraction and {A}nomaly {D}etection from {A}{I}{S} {D}ata}.
-In \bbtitle{{I}nternational {C}{O}{S}{T} {M}{O}{V}{E} {W}orkshop on {M}oving {O}bjects at {S}ea}
-(pp. \bfpage{1}--\bfpage{4}).
-doi:10.3390/s17081792.
-\end{bchapter}
+\bibitem{Breiman2001}
+\begin{barticle}
+\bauthor{\bsnm{Breiman}, \binits{L.}}
+(\byear{2001}).
+\batitle{{R}andom {F}orests}.
+\bjtitle{Machine Learning},
+\bvolume{45},
+\bfpage{5}--\bfpage{32}.
+doi:10.1023/A:1010933404324.
+\end{barticle}
 \endbibitem
 
 %%% 25
-\bibitem{2011Laxhammar}
-\begin{bchapter}
-\bauthor{\bsnm{Laxhammar}, \binits{R.}}
-(\byear{2011}).
-\bctitle{{A}nomaly detection in trajectory data for surveillance applications}.
-In \bbtitle{{S}tudies from the school of science and technology at \"{O}rebro university}
-(pp. \bfpage{130}).
-\blocation{{\"O}rebro}: 
-\bpublisher{{\"O}rebro University}.
-\end{bchapter}
+\bibitem{Amit1997}
+\begin{barticle}
+\bauthor{\bsnm{Amit}, \binits{Y.}}, \&
+\bauthor{\bsnm{Geman}, \binits{D.}}
+(\byear{1997}).
+\batitle{{S}hape quantization and recognition with randomized trees}.
+\bjtitle{Neural Comput.},
+\bvolume{9},
+\bfpage{1545}--\bfpage{1588}.
+doi:10.1162/neco.1997.9.7.1545.
+\end{barticle}
 \endbibitem
 
 %%% 26
-\bibitem{Vries2013}
-\begin{bchapter}
-\bauthor{\bsnm{Vries}, \binits{G.}}, \&
-\bauthor{\bsnm{van Someren}, \binits{M.}}
-(\byear{2013}).
-\bctitle{{R}ecognizing {V}essel {M}ovements from {H}istorical {D}ata}.
-In \bbtitle{{S}ituation {A}wareness with {S}ystems of {S}ystems}
-(pp. \bfpage{105}--\bfpage{118}).
-\blocation{New York, NY}: 
-\bpublisher{Springer New York}.
-doi:10.1007/978-1-4614-6230-9\_7.
-\end{bchapter}
+\bibitem{Breiman2002}
+\begin{barticle}
+\bauthor{\bsnm{Breiman}, \binits{L.}},
+\bauthor{\bsnm{Cutler}, \binits{A.}},
+\bauthor{\bsnm{Liaw}, \binits{A.}}, \&
+\bauthor{\bsnm{Wiener}, \binits{M.}}
+(\byear{2002}).
+\batitle{random{F}orest: {B}reiman and {C}utlers {R}andom {F}orests for {C}lassification and {R}egression}.
+\bjtitle{CRAN: Contributed Packages}.
+doi:10.32614/CRAN.package.randomForest.
+\end{barticle}
 \endbibitem
 
 %%% 27
-\bibitem{2015Liu}
-\begin{bchapter}
-\bauthor{\bsnm{Liu}, \binits{B.}},
-\bauthor{\bsnm{de Souza}, \binits{E.N.}},
-\bauthor{\bsnm{Hilliard}, \binits{C.}}, \&
-\bauthor{\bsnm{Matwin}, \binits{S.}}
-(\byear{2015}).
-\bctitle{{S}hip movement anomaly detection using specialized distance measures}.
-In \bbtitle{2015 18th {I}nternational {C}onference on {I}nformation {F}usion ({F}usion)}
-(pp. \bfpage{1113}--\bfpage{1120}).
-\end{bchapter}
+\bibitem{Cybenko1989}
+\begin{barticle}
+\bauthor{\bsnm{Cybenko}, \binits{G.}}
+(\byear{1989}).
+\batitle{{A}pproximation by superpositions of a sigmoidal function}.
+\bjtitle{Mathematics of Control, Signals and Systems},
+\bvolume{2},
+\bfpage{303}--\bfpage{314}.
+doi:10.1007/BF02551274.
+\end{barticle}
 \endbibitem
 
 %%% 28
-\bibitem{2012Kowalska}
-\begin{bchapter}
-\bauthor{\bsnm{Kowalska}, \binits{K.}}, \&
-\bauthor{\bsnm{Peel}, \binits{L.}}
-(\byear{2012}).
-\bctitle{{M}aritime anomaly detection using {G}aussian {P}rocess active learning}.
-In \bbtitle{2012 15th {I}nternational {C}onference on {I}nformation {F}usion}
-(pp. \bfpage{1164}--\bfpage{1171}).
-\end{bchapter}
+\bibitem{Linnainmaa1976}
+\begin{barticle}
+\bauthor{\bsnm{Linnainmaa}, \binits{S.}}
+(\byear{1976}).
+\batitle{{T}aylor expansion of the accumulated rounding error}.
+\bjtitle{BIT Numerical Mathematics},
+\bvolume{16},
+\bfpage{146}--\bfpage{160}.
+doi:10.1007/BF01931367.
+\end{barticle}
 \endbibitem
 
 %%% 29
-\bibitem{2013Guillarme}
-\begin{bchapter}
-\bauthor{\bsnm{La Guillarme}, \binits{N.}}, \&
-\bauthor{\bsnm{Lerouvreur}, \binits{X.}}
-(\byear{2013}).
-\bctitle{{U}nsupervised extraction of knowledge from {S}-{A}{I}{S} data for maritime situational awareness}.
-In \bbtitle{{P}roceedings of the 16th {I}nternational {C}onference on {I}nformation {F}usion}
-(pp. \bfpage{2025}--\bfpage{2032}).
-\end{bchapter}
+\bibitem{Kelley1960}
+\begin{barticle}
+\bauthor{\bsnm{Kelley}, \binits{H.J.}}
+(\byear{1960}).
+\batitle{{G}radient theory of optimal flight paths}.
+\bjtitle{ARS J.},
+\bvolume{30},
+\bfpage{947}--\bfpage{954}.
+doi:10.2514/8.5282.
+\end{barticle}
 \endbibitem
 
 %%% 30
-\bibitem{2015Sun}
-\begin{bchapter}
-\bauthor{\bsnm{Sun}, \binits{F.}},
-\bauthor{\bsnm{Deng}, \binits{Y.}},
-\bauthor{\bsnm{Deng}, \binits{F.}},
-\bauthor{\bsnm{Zhu}, \binits{Q.}}, \&
-\bauthor{\bsnm{Chu}, \binits{H.}}
-(\byear{2015}).
-\bctitle{{U}nsupervised maritime traffic pattern extraction from spatio-temporal data}.
-In \bbtitle{2015 11th {I}nternational {C}onference on {N}atural {C}omputation ({I}{C}{N}{C})}
-(pp. \bfpage{1218}--\bfpage{1223}).
-doi:10.1109/ICNC.2015.7378165.
-\end{bchapter}
+\bibitem{Rosenblatt1962}
+\begin{bbook}
+\bauthor{\bsnm{Rosenblatt}, \binits{F.}}
+(\byear{1962}).
+\bbtitle{{P}rinciples of {N}eurodynamics: {P}erceptrons and the {T}heory of {B}rain {M}echanisms}.
+\blocation{Lymington, Hampshire, United Kingdom}: 
+\bpublisher{Spartan books}.
+\end{bbook}
 \endbibitem
 
 %%% 31
-\bibitem{Li2017ADR}
+\bibitem{Werbos1970}
 \begin{barticle}
-\bauthor{\bsnm{Li}, \binits{H.}},
-\bauthor{\bsnm{Liu}, \binits{J.}},
-\bauthor{\bsnm{Liu}, \binits{R.W.}},
-\bauthor{\bsnm{Xiong}, \binits{N.N.}},
-\bauthor{\bsnm{Wu}, \binits{K.}}, \&
-\bauthor{\bsnm{Kim}, \binits{T.h.}}
-(\byear{2017}).
-\batitle{{A} {D}imensionality {R}eduction-{B}ased {M}ulti-{S}tep {C}lustering {M}ethod for {R}obust {V}essel {T}rajectory {A}nalysis}.
-\bjtitle{Sensors (Basel, Switzerland)},
-\bvolume{17}.
-doi:10.3390/s17081792.
+\bauthor{\bsnm{Werbos}, \binits{P.}}
+(\byear{1970}).
+\batitle{{A}pplications of advances in nonlinear sensitivity analysis}.
+\bjtitle{System Modeling and Optimization},
+\bvolume{38},
+\bfpage{762}--\bfpage{770}.
+doi:10.1007/BFb0006203.
 \end{barticle}
 \endbibitem
 
 %%% 32
-\bibitem{2021Botts}
-\begin{barticle}
-\bauthor{\bsnm{Botts}, \binits{C.H.}}
-(\byear{2021}).
-\batitle{{A} {N}ovel {M}etric for {D}etecting {A}nomalous {S}hip {B}ehavior {U}sing a {V}ariation of the {D}{B}{S}{C}{A}{N} {C}lustering {A}lgorithm}.
-\bjtitle{SN Computer Science},
-\bvolume{2}.
-doi:10.1007/s42979-021-00804-4.
-\end{barticle}
+\bibitem{Rumelhart1987}
+\begin{bchapter}
+\bauthor{\bsnm{Rumelhart}, \binits{D.E.}}, \&
+\bauthor{\bsnm{McClelland}, \binits{J.L.}}
+(\byear{1987}).
+\bctitle{{L}earning {I}nternal {R}epresentations by {E}rror {P}ropagation}.
+In \bbtitle{{P}arallel {D}istributed {P}rocessing: {E}xplorations in the {M}icrostructure of {C}ognition: {F}oundations}
+(pp. \bfpage{318}--\bfpage{362}).
+\blocation{Cambridge, Massachusetts}: 
+\bpublisher{MIT Press}.
+\end{bchapter}
 \endbibitem
 
 %%% 33
-\bibitem{shanmugaraj2024smart}
+\bibitem{Blansche2019}
 \begin{barticle}
-\bauthor{\bsnm{Shanmugaraj}, \binits{A.K.}},
-\bauthor{\bsnm{Nagaradjane}, \binits{A.}},
-\bauthor{\bsnm{Candassamy}, \binits{A.}}, \&
-\bauthor{\bsnm{Dhamodharan}, \binits{K.}}
-(\byear{2024}).
-\batitle{{S}mart heart disease prediction and amalgamation tracking system}.
-\bjtitle{Engineering Review},
-\bvolume{44},
-\bfpage{14}--\bfpage{24}.
-doi:10.30765/er.2110.
+\bauthor{\bsnm{Blansch{\'e}}, \binits{A.}}
+(\byear{2019}).
+\batitle{fdm2id: {D}ata {M}ining and {R} {P}rogramming for {B}eginners}.
+\bjtitle{CRAN: Contributed Packages}.
+doi:10.32614/CRAN.package.fdm2id.
 \end{barticle}
 \endbibitem
 
 %%% 34
-\bibitem{rahmah2016determination}
-\begin{bchapter}
-\bauthor{\bsnm{Rahmah}, \binits{N.}}, \&
-\bauthor{\bsnm{Sitanggang}, \binits{I.S.}}
-(\byear{2016}).
-\bctitle{{D}etermination of {O}ptimal {E}psilon ({E}ps) {V}alue on {D}{B}{S}{C}{A}{N} {A}lgorithm to {C}lustering {D}ata on {P}eatland {H}otspots in {S}umatra}.
-In \bbtitle{{I}{O}{P} conference series: earth and environmental science}
-(pp. \bfpage{012012}).
-doi:10.1088/1755-1315/31/1/012012.
-\end{bchapter}
-\endbibitem
-
-%%% 35
-\bibitem{jolliffe2016principal}
+\bibitem{Ripley2009}
 \begin{barticle}
-\bauthor{\bsnm{Jolliffe}, \binits{I.T.}}, \&
-\bauthor{\bsnm{Cadima}, \binits{J.}}
-(\byear{2016}).
-\batitle{{P}rincipal component analysis: a review and recent developments}.
-\bjtitle{Philosophical transactions of the royal society A: Mathematical, Physical and Engineering Sciences},
-\bvolume{374},
-\bfpage{20150202}.
-doi:10.1098/rsta.2015.0202.
+\bauthor{\bsnm{Ripley}, \binits{B.}}
+(\byear{2009}).
+\batitle{nnet: {F}eed-{F}orward {N}eural {N}etworks and {M}ultinomial {L}og-{L}inear {M}odels}.
+\bjtitle{CRAN: Contributed Packages}.
+doi:10.32614/CRAN.package.nnet.
 \end{barticle}
 \endbibitem
 
+%%% 35
+\bibitem{Boser1992}
+\begin{bchapter}
+\bauthor{\bsnm{Boser}, \binits{Bernhard E.}},
+\bauthor{\bsnm{Guyon}, \binits{Isabelle M.}}, \&
+\bauthor{\bsnm{Vapnik}, \binits{Vladimir N.}}
+(\byear{1992}).
+\bctitle{{A} training algorithm for optimal margin classifiers}.
+In \bbtitle{{P}roceedings of the fifth annual workshop on {C}omputational learning theory}.
+\blocation{New York, NY, USA}: 
+\bpublisher{ACM}.
+\end{bchapter}
+\endbibitem
+
 %%% 36
+\bibitem{HastieRosset2009}
+\begin{barticle}
+\bauthor{\bsnm{Hastie}, \binits{T.}},
+\bauthor{\bsnm{Rosset}, \binits{S.}},
+\bauthor{\bsnm{Zhu}, \binits{J.}}, \&
+\bauthor{\bsnm{Zou}, \binits{H.}}
+(\byear{2009}).
+\batitle{{M}ulti-class {A}da{B}oost}.
+\bjtitle{Stat. Interface},
+\bvolume{2},
+\bfpage{349}--\bfpage{360}.
+doi:10.4310/SII.2009.v2.n3.a8.
+\end{barticle}
+\endbibitem
+
+%%% 37
+\bibitem{Meyer2003}
+\begin{barticle}
+\bauthor{\bsnm{Meyer}, \binits{D.}},
+\bauthor{\bsnm{Leisch}, \binits{F.}}, \&
+\bauthor{\bsnm{Hornik}, \binits{K.}}
+(\byear{2003}).
+\batitle{{T}he support vector machine under test}.
+\bjtitle{Neurocomputing},
+\bvolume{55},
+\bfpage{169}--\bfpage{186}.
+doi:10.1016/S0925-2312(03)00431-4.
+\end{barticle}
+\endbibitem
+
+%%% 38
+\bibitem{Press2007}
+\begin{bbook}
+\bauthor{\bsnm{Press}, \binits{William H.}},
+\bauthor{\bsnm{Teukolsky}, \binits{Saul A.}},
+\bauthor{\bsnm{Vetterling}, \binits{William T.}}, \&
+\bauthor{\bsnm{Flannery}, \binits{Brian P.}}
+(\byear{2007}).
+\bbtitle{{N}umerical recipes 3rd edition}.
+\blocation{Cambridge, England}: 
+\bpublisher{Cambridge University Press}.
+\end{bbook}
+\endbibitem
+
+%%% 39
+\bibitem{Meyer1999}
+\begin{barticle}
+\bauthor{\bsnm{Meyer}, \binits{D.}},
+\bauthor{\bsnm{Dimitriadou}, \binits{E.}},
+\bauthor{\bsnm{Hornik}, \binits{K.}},
+\bauthor{\bsnm{Weingessel}, \binits{A.}}, \&
+\bauthor{\bsnm{Leisch}, \binits{F.}}
+(\byear{1999}).
+\batitle{e1071: {M}isc {F}unctions of the {D}epartment of {S}tatistics, {P}robability {T}heory {G}roup ({F}ormerly: {E}1071)}.
+\bjtitle{CRAN: Contributed Packages}.
+doi:10.32614/CRAN.package.e1071.
+\end{barticle}
+\endbibitem
+
+%%% 40
+\bibitem{Chang2007}
+\begin{barticle}
+\bauthor{\bsnm{Chang}, \binits{C.C.}}, \&
+\bauthor{\bsnm{Lin}, \binits{C.J.}}
+(\byear{2011}).
+\batitle{{L}{I}{B}{S}{V}{M}: {A} library for support vector machines}.
+\bjtitle{ACM Trans. Intell. Syst. Technol.},
+\bvolume{2}.
+doi:10.1145/1961189.1961199.
+\end{barticle}
+\endbibitem
+
+%%% 41
+\bibitem{Fan2008}
+\begin{barticle}
+\bauthor{\bsnm{Fan}, \binits{R.E.}},
+\bauthor{\bsnm{Chang}, \binits{K.W.}},
+\bauthor{\bsnm{Hsieh}, \binits{C.J.}},
+\bauthor{\bsnm{Wang}, \binits{X.R.}}, \&
+\bauthor{\bsnm{Lin}, \binits{C.J.}}
+(\byear{2008}).
+\batitle{{L}{I}{B}{L}{I}{N}{E}{A}{R}: a library for large linear classification}.
+\bjtitle{Journal of Machine Learning Research},
+\bvolume{9},
+\bfpage{1871}--\bfpage{1874}.
+doi:10.1145/1390681.1442794.
+\end{barticle}
+\endbibitem
+
+%%% 42
+\bibitem{Wu2008}
+\begin{barticle}
+\bauthor{\bsnm{Wu}, \binits{X.}},
+\bauthor{\bsnm{Kumar}, \binits{V.}},
+\bauthor{\bsnm{Quinlan}, \binits{R.J.}},
+\bauthor{\bsnm{Ghosh}, \binits{J.}},
+\bauthor{\bsnm{Yang}, \binits{Q.}},
+\bauthor{\bsnm{Motoda}, \binits{H.}},
+\bauthor{\bsnm{McLachlan}, \binits{G.J.}},
+\bauthor{\bsnm{Ng}, \binits{A.}},
+\bauthor{\bsnm{Liu}, \binits{B.}},
+\bauthor{\bsnm{Yu}, \binits{P.S.}},
+\bauthor{\bsnm{Zhou}, \binits{Z.H.}},
+\bauthor{\bsnm{Steinbach}, \binits{M.}},
+\bauthor{\bsnm{Hand}, \binits{D.J.}}, \&
+\bauthor{\bsnm{Steinberg}, \binits{D.}}
+(\byear{2008}).
+\batitle{{T}op 10 algorithms in data mining}.
+\bjtitle{Knowl. Inf. Syst.},
+\bvolume{14},
+\bfpage{1}--\bfpage{37}.
+doi:10.1007/s10115-007-0114-2.
+\end{barticle}
+\endbibitem
+
+%%% 43
+\bibitem{ShalevShwartz2014}
+\begin{bchapter}
+\bauthor{\bsnm{Shalev-Shwartz}, \binits{S.}}, \&
+\bauthor{\bsnm{Ben-David}, \binits{S.}}
+(\byear{2014}).
+\bctitle{{D}ecision {T}rees}.
+In \bbtitle{{U}nderstanding {M}achine {L}earning: {F}rom {T}heory to {A}lgorithms}
+(pp. \bfpage{212}--\bfpage{218}).
+\blocation{Cambridge, United Kingdom}: 
+\bpublisher{Cambridge University Press}.
+doi:10.1017/CBO9781107298019.019.
+\end{bchapter}
+\endbibitem
+
+%%% 44
+\bibitem{Therneau1999}
+\begin{barticle}
+\bauthor{\bsnm{Therneau}, \binits{T.}}, \&
+\bauthor{\bsnm{Atkinson}, \binits{B.}}
+(\byear{1999}).
+\batitle{rpart: {R}ecursive {P}artitioning and {R}egression {T}rees}.
+\bjtitle{CRAN: Contributed Packages}.
+doi:10.32614/CRAN.package.rpart.
+\end{barticle}
+\endbibitem
+
+%%% 45
+\bibitem{Breiman1984}
+\begin{bbook}
+\bauthor{\bsnm{Breiman}, \binits{L.}},
+\bauthor{\bsnm{Friedman}, \binits{J.}},
+\bauthor{\bsnm{Stone}, \binits{C.J.}}, \&
+\bauthor{\bsnm{Olshen}, \binits{R.A.}}
+(\byear{1984}).
+\bbtitle{{C}lassification and {R}egression {T}rees}.
+\blocation{Milton Park, Abingdon-on-Thames, Oxfordshire, United Kingdom}: 
+\bpublisher{Taylor \& Francis}.
+\end{bbook}
+\endbibitem
+
+%%% 46
+\bibitem{Hand2001}
+\begin{barticle}
+\bauthor{\bsnm{Hand}, \binits{D.J.}}, \&
+\bauthor{\bsnm{Yu}, \binits{K.}}
+(\byear{2001}).
+\batitle{{I}diot's {B}ayes: {N}ot {S}o {S}tupid after {A}ll?}.
+\bjtitle{Int. Stat. Rev.},
+\bvolume{69},
+\bfpage{385}.
+doi:10.1111/j.1751-5823.2001.tb00465.x.
+\end{barticle}
+\endbibitem
+
+%%% 47
+\bibitem{Russell1999}
+\begin{bbook}
+\bauthor{\bsnm{Russell}, \binits{S.}}, \&
+\bauthor{\bsnm{Norvig}, \binits{P.}}
+(\byear{1999}).
+\bbtitle{{A}rtificial intelligence}.
+\blocation{Upper Saddle River, NJ}: 
+\bpublisher{Pearson}.
+\end{bbook}
+\endbibitem
+
+%%% 48
+\bibitem{Caruana2006}
+\begin{barticle}
+\bauthor{\bsnm{Caruana}, \binits{R.}}, \&
+\bauthor{\bsnm{Niculescu-Mizil}, \binits{A.}}
+(\byear{2006}).
+\batitle{{A}n {E}mpirical {C}omparison of {S}upervised {L}earning {A}lgorithms}.
+\bjtitle{Proceedings of the 23rd international conference on Machine learning - ICML '06},
+\bvolume{2006},
+\bfpage{161}--\bfpage{168}.
+doi:10.1145/1143844.1143865.
+\end{barticle}
+\endbibitem
+
+%%% 49
+\bibitem{John2013}
+\begin{barticle}
+\bauthor{\bsnm{John}, \binits{G.H.}}, \&
+\bauthor{\bsnm{Langley}, \binits{P.}}
+(\byear{2013}).
+\batitle{{E}stimating continuous distributions in {B}ayesian classifiers}.
+\bjtitle{Proceedings of the Eleventh Conference on Uncertainty in Artificial Intelligence (UAI1995)}.
+doi:10.48550/arXiv.1302.4964.
+\end{barticle}
+\endbibitem
+
+%%% 50
+\bibitem{Murty2011}
+\begin{bbook}
+\bauthor{\bsnm{Murty}, \binits{M.N.}}, \&
+\bauthor{\bsnm{Devi}, \binits{V.S.}}
+(\byear{2011}).
+\bbtitle{{P}attern {R}ecognition: {A}n {A}lgorithmic {A}pproach}.
+\blocation{London, England}: 
+\bpublisher{Springer}.
+\end{bbook}
+\endbibitem
+
+%%% 51
+\bibitem{Majka2017}
+\begin{barticle}
+\bauthor{\bsnm{Majka}, \binits{M.}}
+(\byear{2017}).
+\batitle{naivebayes: {H}igh {P}erformance {I}mplementation of the {N}aive {B}ayes {A}lgorithm}.
+\bjtitle{CRAN: Contributed Packages}.
+doi:10.32614/CRAN.package.naivebayes.
+\end{barticle}
+\endbibitem
+
+%%% 52
+\bibitem{Olson2016}
+\begin{barticle}
+\bauthor{\bsnm{Olson}, \binits{M.}}
+(\byear{2016}).
+\batitle{{J}{O}{U}{S}{B}oost: {I}mplements {U}nder/{O}versampling for {P}robability {E}stimation}.
+\bjtitle{CRAN: Contributed Packages}.
+doi:10.32614/CRAN.package.JOUSBoost.
+\end{barticle}
+\endbibitem
+
+%%% 53
+\bibitem{Freund1997}
+\begin{barticle}
+\bauthor{\bsnm{Freund}, \binits{Y.}}, \&
+\bauthor{\bsnm{Schapire}, \binits{R.E.}}
+(\byear{1997}).
+\batitle{{A} {D}ecision-{T}heoretic {G}eneralization of {O}n-{L}ine {L}earning and an {A}pplication to {B}oosting}.
+\bjtitle{Journal of Computer and System Sciences},
+\bvolume{55},
+\bfpage{119}--\bfpage{139}.
+doi:10.1006/jcss.1997.1504.
+\end{barticle}
+\endbibitem
+
+%%% 54
+\bibitem{rp5Description}
+\begin{botherref}
+\oauthor{\bsnm{rp5}}
+(\byear{2024}).
+{D}efinitions --- rp5.ru.
+\url{https://rp5.ru/docs/descript/en}.
+Accessed 30 November 2024.
+\end{botherref}
+\endbibitem
+
+%%% 55
+\bibitem{Ligges2006}
+\begin{barticle}
+\bauthor{\bsnm{Ligges}, \binits{U.}},
+\bauthor{\bsnm{Short}, \binits{T.}}, \&
+\bauthor{\bsnm{Kienzle}, \binits{P.}}
+(\byear{2006}).
+\batitle{signal: {S}ignal {P}rocessing}.
+\bjtitle{CRAN: Contributed Packages}.
+doi:10.32614/CRAN.package.signal.
+\end{barticle}
+\endbibitem
+
+%%% 56
+\bibitem{Benhamou2004}
+\begin{barticle}
+\bauthor{\bsnm{Benhamou}, \binits{S.}}
+(\byear{2004}).
+\batitle{{H}ow to reliably estimate the tortuosity of an animal's path: {S}traightness, sinuosity, or fractal dimension?}.
+\bjtitle{Journal of theoretical biology},
+\bvolume{229}.
+doi:10.1016/j.jtbi.2004.03.016.
+\end{barticle}
+\endbibitem
+
+%%% 57
+\bibitem{Bovet1988}
+\begin{barticle}
+\bauthor{\bsnm{Bovet}, \binits{P.}}, \&
+\bauthor{\bsnm{Benhamou}, \binits{S.}}
+(\byear{1988}).
+\batitle{{S}patial analysis of animals' movements using a correlated random walk model}.
+\bjtitle{Journal of Theoretical Biology},
+\bvolume{131},
+\bfpage{419}--\bfpage{433}.
+doi:10.1016/S0022-5193(88)80038-9.
+\end{barticle}
+\endbibitem
+
+%%% 58
+\bibitem{Cheung2007}
+\begin{barticle}
+\bauthor{\bsnm{Cheung}, \binits{A.}},
+\bauthor{\bsnm{Zhang}, \binits{S.}},
+\bauthor{\bsnm{Stricker}, \binits{C.}}, \&
+\bauthor{\bsnm{Srinivasan}, \binits{M.V.}}
+(\byear{2007}).
+\batitle{{A}nimal navigation: the difficulty of moving in a straight line}.
+\bjtitle{Biol Cybern},
+\bvolume{97},
+\bfpage{47}--\bfpage{61}.
+doi:10.1007/s00422-007-0158-0.
+\end{barticle}
+\endbibitem
+
+%%% 59
+\bibitem{Mandelbrot1967}
+\begin{bbook}
+\bauthor{\bsnm{Mandelbrot}, \binits{B.}}
+(\byear{1967}).
+In \bbtitle{{H}ow {L}ong {I}s the {C}oast of {B}ritain? {S}tatistical {S}elf-{S}imilarity and {F}ractional {D}imension}
+(pp. \bfpage{636}--\bfpage{638}).
+\blocation{Washington, D.C., United States of America}: 
+\bpublisher{American Association for the Advancement of Science}.
+\end{bbook}
+\endbibitem
+
+%%% 60
+\bibitem{Nams2006}
+\begin{barticle}
+\bauthor{\bsnm{Nams}, \binits{V.}}
+(\byear{2006}).
+\batitle{{I}mproving {A}ccuracy and {P}recision in {E}stimating {F}ractal {D}imension of {A}nimal movement paths}.
+\bjtitle{Acta biotheoretica},
+\bvolume{54},
+\bfpage{1}--\bfpage{11}.
+doi:10.1007/s10441-006-5954-8.
+\end{barticle}
+\endbibitem
+
+%%% 61
+\bibitem{Turchin1996}
+\begin{barticle}
+\bauthor{\bsnm{Turchin}, \binits{P.}}
+(\byear{1996}).
+\batitle{{F}ractal {A}nalyses of {A}nimal {M}ovement: {A} {C}ritique}.
+\bjtitle{Ecology},
+\bvolume{77},
+\bfpage{2086}--\bfpage{2090}.
+doi:10.2307/2265702.
+\end{barticle}
+\endbibitem
+
+%%% 62
+\bibitem{Kitamura2015}
+\begin{barticle}
+\bauthor{\bsnm{Kitamura}, \binits{T.}}, \&
+\bauthor{\bsnm{Imafuku}, \binits{M.}}
+(\byear{2015}).
+\batitle{{B}ehavioural mimicry in flight path of {B}atesian intraspecific polymorphic butterfly {P}apilio polytes}.
+\bjtitle{Proceedings. Biological sciences / The Royal Society},
+\bvolume{282}.
+doi:10.1098/rspb.2015.0483.
+\end{barticle}
+\endbibitem
+
+%%% 63
 \bibitem{altman1994diagnostic1}
 \begin{barticle}
 \bauthor{\bsnm{Altman}, \binits{D.G.}}, \&
@@ -1114,7 +1687,7 @@ doi:10.1136/bmj.308.6943.1552.
 \end{barticle}
 \endbibitem
 
-%%% 37
+%%% 64
 \bibitem{altman1994diagnostic2}
 \begin{barticle}
 \bauthor{\bsnm{Altman}, \binits{D.G.}}, \&
@@ -1128,7 +1701,7 @@ doi:10.1136/bmj.309.6947.102.
 \end{barticle}
 \endbibitem
 
-%%% 38
+%%% 65
 \bibitem{velez2007balanced}
 \begin{barticle}
 \bauthor{\bsnm{Velez}, \binits{D.R.}},
@@ -1147,17 +1720,66 @@ doi:10.1002/gepi.20211.
 \end{barticle}
 \endbibitem
 
-%%% 39
-\bibitem{mcnemar1947note}
+%%% 66
+\bibitem{edwards1948note}
 \begin{barticle}
-\bauthor{\bsnm{McNemar}, \binits{Q.}}
-(\byear{1947}).
-\batitle{{N}ote on the sampling error of the difference between correlated proportions or percentages}.
+\bauthor{\bsnm{Edwards}, \binits{A.L.}}
+(\byear{1948}).
+\batitle{{N}ote on the "correction for continuity" in testing the significance of the difference between correlated proportions}.
 \bjtitle{Psychometrika},
-\bvolume{12},
-\bfpage{153}--\bfpage{157}.
-doi:10.1007/BF02295996.
+\bvolume{13},
+\bfpage{185}--\bfpage{187}.
+doi:10.1007/BF02289261.
 \end{barticle}
+\endbibitem
+
+%%% 67
+\bibitem{bonferroni1936teoria}
+\begin{bbook}
+\bauthor{\bsnm{Bonferroni}, \binits{C.E.}}
+(\byear{1936}).
+\bbtitle{{T}eoria statistica delle classi e calcolo delle probabilit\`a}.
+\blocation{Bagni di Lucca, Italy}: 
+\bpublisher{Seeber}.
+\end{bbook}
+\endbibitem
+
+%%% 68
+\bibitem{mittelhammer2000econometric}
+\begin{bbook}
+\bauthor{\bsnm{Mittelhammer}, \binits{R.}},
+\bauthor{\bsnm{Judge}, \binits{G.G.}}, \&
+\bauthor{\bsnm{Miller}, \binits{D.J.}}
+(\byear{2000}).
+\bbtitle{{E}conometric foundations pack with {C}{D}-{R}{O}{M}}.
+\blocation{Cambridge, United Kingdom}: 
+\bpublisher{Cambridge University Press}.
+\end{bbook}
+\endbibitem
+
+%%% 69
+\bibitem{dunn1961multiple}
+\begin{barticle}
+\bauthor{\bsnm{Dunn}, \binits{O.J.}}
+(\byear{1961}).
+\batitle{{M}ultiple comparisons among means}.
+\bjtitle{Journal of the American statistical association},
+\bvolume{56},
+\bfpage{52}--\bfpage{64}.
+doi:10.2307/2282330.
+\end{barticle}
+\endbibitem
+
+%%% 70
+\bibitem{rupert2012simultaneous}
+\begin{bbook}
+\bauthor{\bsnm{Rupert Jr}, \binits{G.}}, \&
+\bauthor{\bsnm{others}}
+(\byear{2012}).
+\bbtitle{{S}imultaneous statistical inference}.
+\blocation{Berlin/Heidelberg, Germany}: 
+\bpublisher{Springer Science \& Business Media}.
+\end{bbook}
 \endbibitem
 
 \end{thebibliography}
